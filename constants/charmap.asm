@@ -309,6 +309,7 @@
 ; English characters
 
 	charmap " ",         $7f
+	charmap "_",         $7f
 	
 	charmap "A",         $80
 	charmap "B",         $81
@@ -392,3 +393,13 @@
 	
 	charmap "¥",         $f0
 	charmap ",",         $f4
+	charmap "0", $f6
+	charmap "1", $f7
+	charmap "2", $f8
+	charmap "3", $f9
+	charmap "4", $fa
+	charmap "5", $fb
+	charmap "6", $fc
+	charmap "7", $fd
+	charmap "8", $fe
+	charmap "9", $ff
