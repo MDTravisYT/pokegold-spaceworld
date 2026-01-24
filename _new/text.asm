@@ -201,3 +201,147 @@ _BattleText_PlayerPickedUpPayDayMoney:
 	deciram wPayDayMoney, 3, 6
 	text "!"
 	prompt
+	
+_FaintedText:
+	text "Enemy @"
+	text_from_ram wBattleMonNickname
+	text_start
+	line "fainted!"
+	prompt
+	
+_BattleText_RainContinuesToFall:
+	text "Rain continues to"
+	line "fall."
+	prompt
+
+_BattleText_TheSunlightIsStrong:
+	text "The sunlight is"
+	line "strong."
+	prompt
+
+_BattleText_TheRainStopped:
+	text "The rain stopped."
+	prompt
+
+_BattleText_TheSunlightFaded:
+	text "The sunlight"
+	line "faded."
+	prompt
+	
+_EnemyMonFainted:
+	text "Enemy @"
+	text_from_ram wEnemyMonNickname
+	text_start
+	line "fainted!"
+	prompt
+	
+_GotMoneyForWinningText:
+	text "<PLAYER> got ¥@"
+	deciram wBattleReward, 3, 6
+	text_start
+	line "for winning!"
+	prompt
+
+_BattleText_EnemyWasDefeated:
+	text_from_ram wOTClassName
+	line "was defeated!"
+	prompt
+	
+_RivalLossText:
+	text "<RIVAL>: Huh? I"
+	line "should've chosen"
+	cont "your #MON!"
+	prompt
+	
+_BattleText_UseNextMon:
+	text "Use next #MON?"
+	done
+
+_RivalWinText:
+	text "<RIVAL>: Yes!"
+	line "I guess I chose a"
+	cont "good #MON!"
+	prompt
+	
+_OutOfUsableMonsText:
+	text "<PLAYER> is out of"
+	line "useable #MON!"
+
+	para "<PLAYER> blacked"
+	line "out!"
+	prompt
+
+_LostAgainstText:
+	text "<PLAYER> lost to"
+	line "@"
+	text_from_ram wOTClassName
+	text "!"
+	prompt
+	
+_TrainerAboutToUseText:
+	text_from_ram wOTClassName
+	text " is"
+	line "about to use"
+	cont "@"
+	text_from_ram wEnemyMonNickname
+	text "!"
+
+	para "Will <PLAYER>"
+	line "change #MON?"
+	done
+
+_TrainerSentOutText:
+	text_from_ram wOTClassName
+	text " sent"
+	line "out @"
+	text_from_ram wEnemyMonNickname
+	text "!"
+	done
+	
+_BattleText_TheresNoWillToBattle::
+	text "There's no will"
+	line "to fight!"
+	prompt
+	
+_BattleText_CantEscape:
+	text "Can't escape!"
+	prompt
+	
+_BattleText_TheresNoEscapeFromTrainerBattle:
+	text "No! There's no"
+	line "running from a"
+	cont "trainer battle!"
+	prompt
+
+_BattleText_GotAwaySafely:
+	text "Got away safely!"
+	prompt
+
+_BattleText_UserFledUsingAStringBuffer1:
+	text "<USER>"
+	line "fled using a"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "!"
+	prompt
+	
+_BattleText_UserHurtBySpikes:
+	text "<USER>'s"
+	line "hurt by SPIKES!"
+	prompt
+	
+_RecoveredUsingText:
+	text "<TARGET>"
+	line "recovered using a"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "!"
+	prompt
+	
+_UseItemFailedText:
+	text "UseItemFailedText"	;	to be translated
+;	text "<USER>が　そうびしていた"
+;	line "@"
+;	text_from_ram wStringBuffer1
+;	text "が　さどうした！"
+	prompt

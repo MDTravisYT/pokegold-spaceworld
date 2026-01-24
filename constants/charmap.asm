@@ -337,6 +337,13 @@
 	charmap "Y",         $98
 	charmap "Z",         $99
 
+	charmap "(",         $9a
+	charmap ")",         $9b
+	charmap ":",         $9c
+	charmap ";",         $9d
+	charmap "[",         $9e
+	charmap "]",         $9f
+
 	charmap "a",         $a0
 	charmap "b",         $a1
 	charmap "c",         $a2
@@ -383,4 +390,5 @@
 	charmap "!",         $e7
 	charmap ".",         $e8
 	
+	charmap "¥",         $f0
 	charmap ",",         $f4

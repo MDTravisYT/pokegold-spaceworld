@@ -954,24 +954,36 @@ HandleWeather:	;	0f:4704
 	dw BattleText_TheRainStopped
 	dw BattleText_TheSunlightFaded
 
-BattleText_RainContinuesToFall:
-	text "あめが　ふりつずいている"
-	prompt
+BattleText_RainContinuesToFall:	;	0f:472e
+	text_far _BattleText_RainContinuesToFall
+	text_end
+rept $9
+	nop
+endr
 
-BattleText_TheSunlightIsStrong:
-	text "ひざしが　つよい"
-	prompt
+BattleText_TheSunlightIsStrong:	;	0f:473c
+	text_far _BattleText_TheSunlightIsStrong
+	text_end
+rept $5
+	nop
+endr
 
-BattleText_TheRainStopped:
-	text "あめが　やんだ！"
-	prompt
+BattleText_TheRainStopped:	;	0f:4746
+	text_far _BattleText_TheRainStopped
+	text_end
+rept $5
+	nop
+endr
 
-BattleText_TheSunlightFaded:
-	text "ひざしが　よわくなった！"
-	prompt
+BattleText_TheSunlightFaded:	;	0f:4750
+	text_far _BattleText_TheSunlightFaded
+	text_end
+rept $9
+	nop
+endr
 
 ; Subtract c HP from mon
-SubtractHPFromUser:
+SubtractHPFromUser:	;	0f:475e
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
 	and a
@@ -1353,14 +1365,15 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld [wBattleParticipantsNotFainted], a
 	jp GiveExperiencePoints
 
-EnemyMonFainted:
-	text "てきの　@"
-	text_from_ram wEnemyMonNickname
-	text "は　たおれた！"
-	prompt
+EnemyMonFainted:	;	0f:4996
+	text_far _EnemyMonFainted
+	text_end
+rept $D
+	nop
+endr
 
 ; TODO: Does it really stop the Danger Sound? wBattleLowHealthAlarm doesn't appear to be read anywhere else...
-StopDangerSound:
+StopDangerSound:	;	0f:49a8
 	inc a
 	ld [wBattleLowHealthAlarm], a
 	ret
@@ -1494,28 +1507,28 @@ WinTrainerBattle:
 	call PrintText
 	ret
 
-GotMoneyForWinningText:
-	text "<PLAYER>は　しょうきんとして"
-	line "@"
-	deciram wBattleReward, 3, 6
-	text "円　てにいれた！"
-	prompt
+GotMoneyForWinningText:	;	0f:4a8c
+	text_far _GotMoneyForWinningText
+	text_end
+rept $17
+	nop
+endr
 
-BattleText_EnemyWasDefeated:
-	text_from_ram wOTClassName
-	text "の　@"
-	text_from_ram wStringBuffer1
-	text_start
-	line "との　しょうぶに　かった！"
-	prompt
+BattleText_EnemyWasDefeated:	;	0f:4aa8
+	text_far _BattleText_EnemyWasDefeated
+	text_end
+rept $15
+	nop
+endr
 
-RivalLossText:
-	text "<RIVAL>『あれー？"
-	line "おまえの　#に"
-	cont "すりゃあ　よかったのかなあ？"
-	prompt
+RivalLossText:	;	0f:4ac2
+	text_far _RivalLossText
+	text_end
+rept $1A
+	nop
+endr
 
-PlayVictoryMusic:
+PlayVictoryMusic:	;	0f:4ae1
 	push de
 	ld de, MUSIC_NONE
 	call PlayMusic
@@ -1602,12 +1615,14 @@ UpdateFaintedPlayerMon:
 	ld hl, FaintedText
 	jp PrintText
 
-FaintedText:
-	text_from_ram wBattleMonNickname
-	text "は　たおれた！"
-	prompt
+FaintedText:	;	0f:4b91
+	text_far _FaintedText
+	text_end
+rept $7
+	nop
+endr
 
-AskUseNextPokemon:
+AskUseNextPokemon:	;	0f:4b9d
 	call EmptyBattleTextbox
 	call BackUpTilesToBuffer
 ; We don't need to be here if we're in a Trainer battle,
@@ -1635,11 +1650,14 @@ AskUseNextPokemon:
 	ld de, wEnemyMonSpeed
 	jp TryToRunAwayFromBattle
 
-BattleText_UseNextMon:
-	text "つぎの　#をつかいますか？"
-	done
+BattleText_UseNextMon:	;	0f:4bcc
+	text_far _BattleText_UseNextMon
+	text_end
+rept $A
+	nop
+endr
 
-ForcePlayerMonChoice:
+ForcePlayerMonChoice:	;	0f:4bdb
 	call LoadStandardMenuHeader
 	ld a, PARTYMENUACTION_SWITCH
 	ld [wPartyMenuActionText], a
@@ -1739,26 +1757,28 @@ LostBattle:
 	scf
 	ret
 
-RivalWinText:
-	text "<RIVAL>『やった！"
-	line "いい#　えらんだかも！"
-	prompt
+RivalWinText:	;	0f:4c9d
+	text_far _RivalWinText
+	text_end
+rept $F
+	nop
+endr
 
-OutOfUsableMonsText:
-	text "<PLAYER>の　てもとには"
-	line "たたかえる　#が　いない！"
+OutOfUsableMonsText:	;	0f:4cb1
+	text_far _OutOfUsableMonsText
+	text_end
+rept $27
+	nop
+endr
 
-	para "<PLAYER>は"
-	line "めのまえが　まっくらに　なった！"
-	prompt
+LostAgainstText:	;	0f:4cdd
+	text_far _LostAgainstText
+	text_end
+rept $D
+	nop
+endr
 
-LostAgainstText:
-	text_from_ram wOTClassName
-	text "との"
-	line "しょうぶに　まけた！"
-	prompt
-
-MonFaintedAnimation:
+MonFaintedAnimation:	;	0f:4cef
 	ld a, [wJoypadFlags]
 	push af
 	set 6, a ; JOYPAD_DISABLE_MON_FAINT_F
@@ -2252,30 +2272,21 @@ EnemySendOutFirstMon:
 ; BUG: They forgot to terminate the line immediately after StringBuffer1.
 ; This makes the game halt the script early and throw up an error handler,
 ; due to reading the start of the following 'text' line as a <NULL> character.
-TrainerAboutToUseText:
-	text_from_ram wOTClassName
-	text "の　@"
-	text_from_ram wStringBuffer1
-	text "は"
-	line
-	text_from_ram wEnemyMonNickname
-	text "を　くりだそうと　している"
+TrainerAboutToUseText:	;	0f:5028
+	text_far _TrainerAboutToUseText
+	text_end
+rept $29
+	nop
+endr
 
-	para "<PLAYER>も　#を"
-	line "とりかえますか？"
-	done
+TrainerSentOutText:	;	0f:5056
+	text_far _TrainerSentOutText
+	text_end
+rept $16
+	nop
+endr
 
-TrainerSentOutText:
-	text_from_ram wOTClassName
-	text "の　@"
-	text_from_ram wStringBuffer1
-	text "は"
-	line "@"
-	text_from_ram wEnemyMonNickname
-	text "を　くりだした！"
-	done
-
-NewEnemyMonStatus:
+NewEnemyMonStatus:	;	0f:5071
 	xor a
 	ld hl, wLastEnemyCounterMove
 	ld [hli], a
@@ -2326,11 +2337,14 @@ CheckIfCurPartyMonIsFitToFight:
 	xor a
 	ret
 
-BattleText_TheresNoWillToBattle:
-	text "たたかう　きりょくが　ない！"
-	prompt
+BattleText_TheresNoWillToBattle:	;	0f:50bd
+	text_far _BattleText_TheresNoWillToBattle
+	text_end
+rept $B
+	nop
+endr
 
-TryToRunAwayFromBattle:
+TryToRunAwayFromBattle:	;	0f:50cd
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
 	jp z, .can_escape
@@ -2472,28 +2486,35 @@ TryToRunAwayFromBattle:
 	scf
 	ret
 
-BattleText_CantEscape:
-	text "にげられない！"
-	prompt
+BattleText_CantEscape:	;	0f:51d6
+	text_far _BattleText_CantEscape
+	text_end
+rept $4
+	nop
+endr
 
-BattleText_TheresNoEscapeFromTrainerBattle:
-	text "ダメだ！"
-	line "しょうぶの　さいちゅうに"
-	cont "あいてに　せなかは　みせられない！"
-	prompt
+BattleText_TheresNoEscapeFromTrainerBattle:	;	0f:51df
+	text_far _BattleText_TheresNoEscapeFromTrainerBattle
+	text_end
+rept $20
+	nop
+endr
 
-BattleText_GotAwaySafely:
-	text "うまく　にげきれた！"
-	prompt
+BattleText_GotAwaySafely:	;	0f:5204
+	text_far _BattleText_GotAwaySafely
+	text_end
+rept $7
+	nop
+endr
 
-BattleText_UserFledUsingAStringBuffer1:
-	text "<TARGET>は　そうびしていた"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "を　つかって　にげた"
-	prompt
+BattleText_UserFledUsingAStringBuffer1:	;	0f:5210
+	text_far _BattleText_UserFledUsingAStringBuffer1
+	text_end
+rept $17
+	nop
+endr
 
-LoadBattleMonFromParty:
+LoadBattleMonFromParty:	;	0f:522c
 	ld a, [wCurPartyMon]
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld hl, wPartyMon1
@@ -2722,12 +2743,14 @@ SpikesDamage:
 
 	ret
 
-BattleText_UserHurtBySpikes:
-	text "<USER>は　まきびしの"
-	line "ダメージを　うけた！"
-	prompt
+BattleText_UserHurtBySpikes:	;	0f:53cc
+	text_far _BattleText_UserHurtBySpikes
+	text_end
+rept $10
+	nop
+endr
 
-RecallPlayerMon:
+RecallPlayerMon:	;	0f:53e1
 	ldh a, [hBattleTurn]
 	push af
 	xor a
@@ -2886,14 +2909,14 @@ ItemRecoveryAnim:
 	ldh [hBattleTurn], a
 	ret
 
-RecoveredUsingText:
-	text "<TARGET>は　そうびしていた"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "で　かいふくした！"
-	prompt
+RecoveredUsingText:	;	0f:54f0
+	text_far _RecoveredUsingText
+	text_end
+rept $16
+	nop
+endr
 
-HandleStatBoostingHeldItems:
+HandleStatBoostingHeldItems:	;	0f:550b
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player1
@@ -2986,14 +3009,14 @@ HandleStatBoostingHeldItems:
 
 INCLUDE "data/battle/held_stat_up.inc"
 
-UseItemFailedText:
-	text "<USER>が　そうびしていた"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "が　さどうした！"
-	prompt
+UseItemFailedText:	;	0f:55ae
+	text_far _UseItemFailedText
+	text_end
+rept $15
+	nop
+endr
 
-UpdateBattleHuds::
+UpdateBattleHuds::	;	0f:55c8
 	call UpdatePlayerHUD
 	jp UpdateEnemyHUD
 
