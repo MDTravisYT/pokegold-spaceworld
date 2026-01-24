@@ -65,12 +65,13 @@ SilentHillHouseNPCText1:
 	call ScreenCleanup
 	ret
 
-SilentHillHouseTextString1:
-	text "おや？　<RIVAL>あてに　メールが"
-	line "とどいている　ようだ"
-	cont "よんでみる？@"
-
+SilentHillHouseTextString1:	;	34:489b
+	text_far _SilentHillHouseTextString1
 	start_asm
+rept $1D
+	nop
+endr
+
 	call YesNoBox
 	jr c, .jump
 	ld hl, wd41a
@@ -85,20 +86,19 @@ SilentHillHouseTextString1:
 	call TextAsmEnd
 	ret
 
-SilentHillHouseTextString2:
-	text "とつぜん　メールを　さしあげる"
-	line "しつれいを　おゆるしあれ"
+SilentHillHouseTextString2:	;	34:48db
+	text_far _PlayerHouse2FTextString6
+	text_end
+rept $57
+	nop
+endr
 
-	para "じつは　きみに　どうしても"
-	line "わたしたい　ものが　あるのじゃが"
-	cont "うけとって　もらえんかのう"
-	cont "ポケモンけんきゅうしゃ　オーキド"
-	done
-
-SilentHillHouseTextString3:
-	text "ひとのメールは"
-	line "みちゃ　いけないよな<⋯⋯>"
-	done
+SilentHillHouseTextString3:	;	34:4937
+	text_far _SilentHillHouseTextString3
+	text_end
+rept $24
+	nop
+endr
 
 SilentHillHouse_TextPointers::
 	dw SilentHillHouseNPCText3
@@ -109,10 +109,12 @@ SilentHillHouseNPCText3:
 	call OpenTextbox
 	ret
 
-SilentHillHouseTextString4:
-	text "このまえ　かわったいろの"
-	line "ポッポを　みかけたわ"
-	done
+SilentHillHouseTextString4:	;	34:4970
+	text_far _SilentHillHouseTextString4
+	text_end
+;rept $57
+;	nop
+;endr
 
 SilentHillHouseNPCText4:
 	ld hl, wd41e
@@ -131,37 +133,25 @@ SilentHillHouseNPCText4:
 	call OpenTextbox
 	ret
 
-SilentHillHouseTextString5:
-	text "ケン『ななな"
-	line "なんだ　<PLAYER>　じゃないか！"
+SilentHillHouseTextString5:	;	34:4991
+	text_far _SilentHillHouseTextString5
+	text_end
+rept $93
+	nop
+endr
 
-	para "おれは　ちょっと　あのー"
-	line"がっこうの　しゅくだいを"
-	cont "おしえに　きてるんだ！"
+SilentHillHouseTextString6:	;	34:4a29
+	text_far _SilentHillHouseTextString6
+	text_end
+rept $48
+	nop
+endr
 
-	para "えっ　マップ？"
-	line "そうか　そんな　やくそくも　してたな"
-	cont "わかった"
-	cont "トレーナーギアを　かしてみな"
+SilentHillHouseTextString7:	;	34:4a76
+	text_far _SilentHillHouseTextString7
+	text_end
+rept $31
+	nop
+endr
 
-	para "スロットに　マップの　カセットを　"
-	line "さしこんでっと⋯⋯"
-	cont "よし　これで　マップが　みれるぞ！"
-	done
-
-SilentHillHouseTextString6:
-	text "もし　オールドにいくなら"
-	line "マサキって　やつに　あうといい"
-
-	para "おれの　ともだちで"
-	line "すごい　ポケモン　マニアだ！"
-	cont "きっと　おまえの"
-	cont "てだすけを　してくれるぜ"
-	done
-
-SilentHillHouseTextString7:
-	text "ケン『<PLAYER>"
-	line "オーキドはかせに　みこまれて"
-	cont "ポケモンずかんを　つくるんだって？"
-	cont "すごいじゃないか　がんばれよ"
-	done
+;	34:4aac

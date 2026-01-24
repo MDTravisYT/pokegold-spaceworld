@@ -47,13 +47,11 @@ PlayerHouse1FNPCText1:
 	call OpenTextbox
 	ret
 
-PlayerHouse1FTextString1:
-	text "おかあさん『えっ　あなた"
-	line "オーキドはかせに"
-	cont "ポケモンずかんを　つくってくれって"
-	cont "たのまれたの？"
-
-	para "すごいじゃない！"
-	line "わたしも　ポケモン　きらいって"
-	cont "わけじゃないし　がんばるのよ！"
-	done
+PlayerHouse1FTextString1:	;	34:40d8
+	text_far _PlayerHouse1FTextString1
+	text_end
+rept $55
+	nop
+endr
+	
+;	34:4132

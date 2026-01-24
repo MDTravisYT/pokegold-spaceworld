@@ -1,6 +1,6 @@
 INCLUDE "constants.asm"
 
-SECTION "_new/text.asm", ROMX
+SECTION "_new/text/battle.asm", ROMX
 
 _WildPokemonAppearedText::
 	text "Wild @"

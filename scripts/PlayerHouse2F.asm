@@ -143,75 +143,60 @@ PlayerHouse2FN64Text:
 	call OpenTextbox
 	ret
 
-PlayerHouse2FTextString1:
-	text "ケン『おっ　おまえの　うでで"
-	line "ひかりかがやく　そのとけいは⋯⋯"
-	cont "<PLAYER>も　ついに"
-	cont "トレーナーギアを　かったのか！"
+PlayerHouse2FTextString1:	;	34:4272
+	text_far _PlayerHouse2FTextString1
+	text_end
+rept $BB
+	nop
+endr
 
-	para "すごいじゃないか！"
-	line "でも　かったばかりじゃ　じかんしか"
-	cont "わからないだろ？"
-	cont "あとで　マップが"
-	cont "みられるように　してやるよ！"
-	cont "おまえ　どうせ"
-	cont "あそびに　いくんだろう？"
+PlayerHouse2FTextString2:	;	34:4332
+	text_far _PlayerHouse2FTextString2
+	text_end
+rept $2E
+	nop
+endr
 
-	para "ざんねんながら　おふくろは"
-	line "かいものに　いってるから"
-	cont "おこづかいを　もらおうなんて"
-	cont "きょうは　むり　だぜ！"
-	done
+PlayerHouse2FTextString3:	;	34:4365
+	text_far _PlayerHouse2FTextString3
+	text_end
+rept $23
+	nop
+endr
 
-PlayerHouse2FTextString2:
-	text "そうだ　おまえの　パソコンに"
-	line "メールが　とどいていたな"
-	cont "でかけるんなら"
-	cont "メールぐらい　よんでおけよ"
-	done
+PlayerHouse2FTextString4:	;	34:438d
+	text_far _PlayerHouse2FTextString4
+	text_end
+rept $2B
+	nop
+endr
 
-PlayerHouse2FTextString3:
-	text "クリスマスに　カントーの"
-	line "しんせきに　プレゼント"
-	cont "してもらった　にんぎょうだ"
-	done
-
-PlayerHouse2FTextString4:
-	text "ニンテンドウ６４を　してる！"
-	cont "⋯⋯　⋯⋯　さてと！"
-	cont "そろそろ　そとに　あそびに"
-	cont "でかけるか！"
-	done
-
-PlayerHouse2FTextString5:
-	text "<PLAYER>は"
-	line "パソコンの　スイッチを　いれた！"
-
-	para "おや？　<PLAYER>あてに"
-	line "メールが　とどいている　ようだ"
-	cont "よんでみる？@"
+PlayerHouse2FTextString5:	;	34:43bd
+	text_far _PlayerHouse2FTextString5
+rept $31
+	nop
+endr
 
 	start_asm
 	call PlayerHouse2FCheckEmail
 	call TextAsmEnd
 	ret
 
-PlayerHouse2FTextString6:
-	text "とつぜん　メールを　さしあげる"
-	line "しつれいを　おゆるしあれ"
+PlayerHouse2FTextString6:	;	34:43fa
+	text_far _PlayerHouse2FTextString6
+	text_end
+rept $57
+	nop
+endr
 
-	para "じつは　きみに　どうしても"
-	line "わたしたい　ものが　あるのじゃが"
-	cont "うけとって　もらえんかのう"
-	cont "ポケモンけんきゅうしゃ　オーキド"
-	done
+PlayerHouse2FTextString7:	;	34:4456
+	text_far _PlayerHouse2FTextString7
+	text_end
+rept $6
+	nop
+endr
 
-PlayerHouse2FTextString7:
-	text "あとで"
-	line "よもっと<⋯⋯>"
-	done
-
-PlayerHouse2FTextString8: ; (unused?)
+PlayerHouse2FTextString8: ; (unused?)	;	34:4461
 	text "しんはつばい　トレーナーギア！"
 	line "ポケモントレーナーの　ための"
 	cont "さいせんたんの　とけい　です"
@@ -229,31 +214,11 @@ PlayerHouse2FTextString8: ; (unused?)
 	cont "シルフの　ホームページだ"
 	done
 
-PlayerHouse2FTextString9:
-	text "<PLAYER>は"
-	line "ラジオのスイッチを　おした！"
+PlayerHouse2FTextString9:	;	34:44fe
+	text_far _PlayerHouse2FTextString9
+	text_end
+rept $FC
+	nop
+endr
 
-	para "ジェイ　オー　ピー　エム"
-	line "こちらは"
-	cont "#　ほうそうきょく　です"
-
-	para "#ニュースを　おおくりします"
-	line "<⋯⋯>　#の　せかいてきな"
-	cont "けんきゅうしゃ　オーキドはかせが"
-	cont "カントー　から"
-	cont "すがたを　けしました"
-	cont "あらたな　けんきゅうの　ばしょを"
-	cont "もとめて　いどうした　との"
-	cont "みかたも　ありますが"
-	cont "なんらかの　じけんに　まきこまれた"
-	cont "かのうせいも　あり"
-	cont "かんけいしゃは　とても"
-	cont "しんぱい　しています"
-
-	para "<⋯⋯><⋯⋯>いじょう"
-	line "#ニュースでした"
-
-	para "<⋯⋯><⋯⋯><⋯⋯><⋯⋯><⋯⋯><⋯⋯>"
-	line "それでは　ひきつづき"
-	cont "おんがくを　おたのしみ　ください"
-	done
+;	34:45ff
