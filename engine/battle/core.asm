@@ -180,19 +180,21 @@ WildFled_EnemyFled_LinkBattleCanceled:
 ; Was originally AnimationSlideEnemyMonOff in pokered.
 	jpfar Functioncc000
 
-WildPokemonFledText:
-	text "やせいの@"
-	text_from_ram wEnemyMonNickname
-	text "は　にげだした！"
-	prompt
+WildPokemonFledText:	;	0f:415e
+	text_far _WildPokemonFledText
+	text_end
+rept $E
+	nop
+endr
 
-EnemyPokemonFledText:
-	text "てきの@"
-	text_from_ram wEnemyMonNickname
-	text "は　にげだした！"
-	prompt
+EnemyPokemonFledText:	;	0f:4171
+	text_far _EnemyPokemonFledText
+	text_end
+rept $D
+	nop
+endr
 
-BattleTurn:
+BattleTurn:	;	0f:4183
 	call UpdateBattleMonInParty
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -755,37 +757,49 @@ ResidualDamage:
 	xor a
 	ret
 
-HurtByPoisonText:
-	text "<USER>は"
-	line "どくの　ダメージを　うけている！"
-	prompt
+HurtByPoisonText:	;	0f:45ae
+	text_far _HurtByPoisonText
+	text_end
+rept $10
+	nop
+endr
 
-HurtByBurnText:
-	text "<USER>は"
-	line "やけどの　ダメージを　うけている！"
-	prompt
+HurtByBurnText:	;	0f:45c3
+	text_far _HurtByBurnText
+	text_end
+rept $11
+	nop
+endr
 
-LeechSeedSapsText:
-	text "やどりぎが　<USER>の"
-	line "たいりょくを　うばう！"
-	prompt
+LeechSeedSapsText:	;	0f:45d9
+	text_far _LeechSeedSapsText
+	text_end
+rept $11
+	nop
+endr
 
-HasANightmareText:
-	text "<USER>は"
-	line "あくむに　うなされている！"
-	prompt
+HasANightmareText:	;	0f:45ef
+	text_far _HasANightmareText
+	text_end
+rept $D
+	nop
+endr
 
-HurtByCurseText:
-	text "<USER>は"
-	line "のろわれている！"
-	prompt
+HurtByCurseText:	;	0f:4601
+	text_far _HurtByCurseText
+	text_end
+rept $8
+	nop
+endr
 
-SandstormHitsText:
-	text "すなあらしが　<USER>を"
-	line "おそう！"
-	prompt
+SandstormHitsText:	;	0f:460e
+	text_far _SandstormHitsText
+	text_end
+rept $B
+	nop
+endr
 
-HandlePerishSong:
+HandlePerishSong:	;	0f:461e
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player1
@@ -864,14 +878,14 @@ HandlePerishSong:
 	ld [hl], a
 	ret
 
-PerishCountText:
-	text "<USER>の　ほろびの"
-	line "カウントが　@"
-	deciram wNumSetBits, 1, 1
-	text "になった！"
-	prompt
+PerishCountText:	;	0f:469d
+	text_far _PerishCountText
+	text_end
+rept $16
+	nop
+endr
 
-HandleSafeguard:
+HandleSafeguard:	;	0f:46b8
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
 	jr z, .check_enemy
@@ -899,12 +913,14 @@ HandleSafeguard:
 	ld hl, BattleText_SafeguardFaded
 	jp PrintText
 
-BattleText_SafeguardFaded:
-	text "<USER>を　つつんでいた"
-	line "しんぴの　ベールが　なくなった！"
-	prompt
+BattleText_SafeguardFaded:	;	0f:46e8
+	text_far _BattleText_SafeguardFaded
+	text_end
+rept $17
+	nop
+endr
 
-HandleWeather:
+HandleWeather:	;	0f:4704
 	ld a, [wBattleWeather]
 	and a ; WEATHER_NONE
 	ret z
@@ -3301,12 +3317,14 @@ BattleMenu_Pack:
 	call PrintText
 	jp BattleMenu
 
-BattleText_ItemsCantBeUsedHere:
-	text "ここでは　どうぐを"
-	line "つかうことは　できません"
-	prompt
+BattleText_ItemsCantBeUsedHere:	;	0f:581a
+	text_far _BattleText_ItemsCantBeUsedHere
+	text_end
+rept $13
+	nop
+endr
 
-StopUsingTrappingMove:
+StopUsingTrappingMove:	;	0f:5832
 	ld a, [wPlayerSubStatus3]
 	bit SUBSTATUS_USING_TRAPPING_MOVE, a
 	jr z, .done
@@ -3570,18 +3588,21 @@ PassedBattleMonEntrance:
 	call SpikesDamage
 	ret
 
-BattleText_MonIsAlreadyOut_0f:
-	text_from_ram wBattleMonNickname
-	text "はもうでています"
-	prompt
+BattleText_MonIsAlreadyOut_0f:	;	0f:5a68
+	text_far _BattleText_MonIsAlreadyOut_0f
+	text_end
+rept $8
+	nop
+endr
 
-BattleText_MonCantBeRecalled:
-	text_from_ram wBattleMonNickname
-	text "を　もどすことが"
-	line "できない！"
-	prompt
+BattleText_MonCantBeRecalled:	;	0f:5a75
+	text_far _BattleText_MonCantBeRecalled
+	text_end
+rept $E
+	nop
+endr
 
-BattleMenu_Run:
+BattleMenu_Run:	;	0f:5a88
 	call ReloadTilesFromBuffer
 	ld a, 3
 	ld [wMenuCursorY], a
@@ -3820,19 +3841,28 @@ MoveSelectionScreen::
 
 
 
-.BattleText_TheresNoPPLeftForThisMove:
-	text "わざの　のこりポイントが　ない！"
-	prompt
+.BattleText_TheresNoPPLeftForThisMove:	;	0f:5c26
+	text_far _BattleText_TheresNoPPLeftForThisMove
+	text_end
+rept $D
+	nop
+endr
 
-.BattleText_TheMoveIsDisabled:
-	text "わざを　ふうじられている！"
-	prompt
+.BattleText_TheMoveIsDisabled:	;	0f:5c38
+	text_far _BattleText_TheMoveIsDisabled
+	text_end
+rept $A
+	nop
+endr
 
-.Unused_BattleText_MimicWhichMove:
-	db   "どのわざを"
-	next "ものまねする？@"
+.Unused_BattleText_MimicWhichMove:	;	0f:5c47
+	text_far _Unused_BattleText_MimicWhichMove
+	text_end
+rept $9
+	nop
+endr
 
-.pressed_up
+.pressed_up	;	0f:5c55
 	ld a, [wMenuCursorY]
 	and a
 	jp nz, .menu_loop
@@ -3956,13 +3986,14 @@ MoveSelectionScreen::
 	xor a
 	ret
 
-.BattleText_MonHasNoMovesLeft:
-	text_from_ram wBattleMonNickname
-	text "は　だすことの　できる"
-	line "わざが　ない！"
-	done
+.BattleText_MonHasNoMovesLeft:	;	0f:5d19
+	text_far _BattleText_MonHasNoMovesLeft
+	text_end
+rept $13
+	nop
+endr
 
-.pressed_select
+.pressed_select	;	0f:5d31
 	ld a, [wDebugFlags]
 	bit DEBUG_BATTLE_F, a
 	jp nz, .DebugMovePreview
@@ -4126,12 +4157,13 @@ MoveInfoBox:
 .done
 	jp WaitBGMap
 
-.Disabled:
-	db "ふうじられている！@"
-.Type:
-	db "わざタイプ@"
+.Disabled:	;	0f:5e5e
+	db "disabled!@"
+.Type:	;	0f:5e68
+	db "TYPE@"
+	nop
 
-ParseEnemyAction:
+ParseEnemyAction:	;	0f:5e6e
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
@@ -4355,13 +4387,15 @@ LinkBattleSendRecieveAction:
 	jr nz, .acknowledge
 	ret
 
-BattleText_TargetsEncoreEnded:
-	text "<TARGET>の"
-	line "アンコールじょうたいが　とけた！"
-	prompt
+BattleText_TargetsEncoreEnded:	;	0f:5fdd
+	text_far _BattleText_TargetsEncoreEnded
+	text_end
+rept $10
+	nop
+endr
 
 ; The Counter code from Generation I, completely unchanged.
-Old_HandleCounterMove:
+Old_HandleCounterMove:	;	0f:5ff2
 	ldh a, [hBattleTurn]
 	and a
 	ld hl, wCurEnemyMove
@@ -5508,9 +5542,8 @@ BoostExp:
 	pop bc
 	ret
 
-BoostedExpPointsText:
-	text_from_ram wStringBuffer1
-	text "は@"
+BoostedExpPointsText:	;	0f:6693
+	text_far _GainedText
 	start_asm
 	ld a, [wBoostExpByExpAll]
 	ld hl, .WithExpAllText
@@ -5523,31 +5556,40 @@ BoostedExpPointsText:
 	ld hl, .BoostedExpPointsText
 	ret
 
-.WithExpAllText:
-	text "　がくしゅうそうちで@"
+rept $2
+	nop
+endr
+
+.WithExpAllText:	;	0f:66ae
+	text_far _WithExpAllText
 	start_asm
 	ld hl, .ExpPointsText
 	ret
 
-.BoostedExpPointsText:
-	text "　おおめに@"
-.ExpPointsText:
-	text_start
-	line "@"
-	deciram wStringBuffer2, 2, 4
-	text "　けいけんちを　もらった！"
-	prompt
+rept $6 ; things get offset a little but should get resynced down the line
+	nop
+endr
 
-GrewToLevelText:
-	text_from_ram wStringBuffer1
-	text "は"
-	line "レベル@"
-	deciram wCurPartyLevel, 1, 3
-	text "　に　あがった！@"
+.BoostedExpPointsText:	;	0f:66bf
+	text_far _BoostedText
+.ExpPointsText:	;	0f:66c6
+	text_far _ExpPointsText
+	text_end
+
+rept $16 ; resyncs here
+	nop
+endr
+
+GrewToLevelText:	;	0f:66dc
+	text_far _GrewLevelText
 	sound_dex_fanfare_50_79
 	text_end
 
-SendOutMonText:
+rept $14
+	nop
+endr
+
+SendOutMonText:	;	0f:66f6
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
@@ -5612,27 +5654,35 @@ SendOutMonText:
 .skip_to_textbox
 	jp PrintText
 
-GoMonText:
-	text "ゆけっ！　@"
-	start_asm
-	jr PrintPlayerMon1Text
+GoMonText:	;	0f:675a
+	text_far _GoMonText
+	text_end
+rept $5
+	nop
+endr
 
-DoItMonText:
-	text "いってこい！　@"
-	start_asm
-	jr PrintPlayerMon1Text
+DoItMonText:	;	0f:6764
+	text_far _DoItMonText
+	text_end
+rept $7
+	nop
+endr
 
-GoForItMonText:
-	text "がんばれ！　@"
-	start_asm
-	jr PrintPlayerMon1Text
+GoForItMonText:	;	0f:6770
+	text_far _GoForItMonText
+	text_end
+rept $6
+	nop
+endr
 
-YourFoesWeakGetmMonText:
-	text "あいてが　よわっている！"
-	line "チャンスだ！　@"
-	start_asm
+YourFoesWeakGetmMonText:	;	0f:677b
+	text_far _YourFoesWeakGetmMonText
+	text_end
+rept $12
+	nop
+endr
 
-PrintPlayerMon1Text:
+PrintPlayerMon1Text:	;	0f:6792
 	ld hl, .Text
 	ret
 .Text:
@@ -5695,31 +5745,39 @@ PlayerMon2Text:
 	ld hl, GoodText
 	ret
 
-EnoughText:
-	text "もういい！@"
-	start_asm
-	jr PrintComeBackText
+EnoughText:	;	0f:67f2
+	text_far _EnoughText
+	text_end
+rept $5
+	nop
+endr
 
-OKExclamationText:
-	text "いいぞ！@"
-	start_asm
-	jr PrintComeBackText
+OKExclamationText:	;	0f:67fc
+	text_far _OKExclamationText
+	text_end
+rept $4
+	nop
+endr
 
-GoodText:
-	text "よくやった！@"
-	start_asm
-	jr PrintComeBackText
+GoodText:	;	0f:6805
+	text_far _GoodText
+	text_end
+rept $6
+	nop
+endr
 
-PrintComeBackText:
+PrintComeBackText:	;	0f:6810
 	ld hl, ComeBackText
 	ret
 
-ComeBackText:
-	text_start
-	line "もどれ！"
-	done
+ComeBackText:	;	0f:6814
+	text_far _ComeBackText
+	text_end
+rept $2
+	nop
+endr
 
-PrintSafariZoneBattleText:
+PrintSafariZoneBattleText:	;	0f:681b
 	ld hl, wUnused_SafariBaitFactor
 	ld a, [hl]
 	and a
@@ -6390,14 +6448,14 @@ AddBattleMoneyToAccount:
 	call PrintText
 	ret
 
-BattleText_PlayerPickedUpPayDayMoney:
-	text "<PLAYER>は　@"
-	deciram wPayDayMoney, 3, 6
-	text "円"
-	line "ひろった！"
-	prompt
+BattleText_PlayerPickedUpPayDayMoney:	;	0f:71e1
+	text_far _BattleText_PlayerPickedUpPayDayMoney
+	text_end
+rept $D
+	nop
+endr
 
-ShowLinkBattleParticipantsAfterEnd:
+ShowLinkBattleParticipantsAfterEnd:	;	0f:71f3
 	ld a, [wCurOTMon]
 	ld hl, wOTPartyMon1Status
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -6654,29 +6712,28 @@ BattleStartMessage:
 	call PrintText
 	ret
 
-WildPokemonAppearedText:
-	text "あ！　やせいの"
-	line "@"
-	text_from_ram wEnemyMonNickname
-	text "が　とびだしてきた！"
-	prompt
+WildPokemonAppearedText:	;	0f:7596
+	text_far _WildPokemonAppearedText
+	text_end
+rept $14
+	nop
+endr
 
-HookedPokemonAttackedText:
-	text "つりあげた　@"
-	text_from_ram wEnemyMonNickname
-	text "が"
-	line "とびかかってきた！"
-	prompt
+HookedPokemonAttackedText:	;	0f:75af
+	text_far _HookedPokemonAttackedText
+	text_end
+rept $13
+	nop
+endr
 
-WantsToBattleText:
-	text_from_ram wOTClassName
-	text "の　@"
-	text_from_ram wStringBuffer1
-	text "が"
-	line "しょうぶを　しかけてきた！"
-	prompt
+WantsToBattleText:	;	0f:75c7
+	text_far _WantsToBattleText
+	text_end
+rept $16
+	nop
+endr
 
-ShowLinkBattleParticipants:
+ShowLinkBattleParticipants:	;	0f:75e2
 	call IsLinkBattle
 	jr nz, .ok
 	call _ShowLinkBattleParticipants

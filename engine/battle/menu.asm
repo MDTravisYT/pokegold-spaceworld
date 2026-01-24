@@ -22,18 +22,19 @@ CommonBattleMenu:
 
 BattleMenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 9, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 7, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1
 
 .MenuData:
 	db STATICMENU_CURSOR
 	dn 2, 2
-	db 5
-	db "たたかう@" ; "FIGHT"
-	db "どうぐ@"   ; "ITEM"
-	db "#@"       ; "<PK><MN>"
-	db "にげる@"   ; "RUN"
+	db 6
+	db "FIGHT@" ; "FIGHT" 4
+	db "ITEM@"   ; "ITEM" 3
+	db "PKMN@"       ; "<PK><MN>" 1
+	db "RUN@"   ; "RUN" 3
+	; 11 bytes orig
 
 SafariBattleMenuHeader:
 	db MENU_BACKUP_TILES
