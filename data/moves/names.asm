@@ -2,7 +2,7 @@ INCLUDE "constants.asm"
 
 SECTION "data/moves/names.asm", ROMX
 
-MoveNames::
+MoveNames::	;	to be lengthened
 	db "POUND@"		; POUND
 	db "KARATE_@"   ; KARATE_CHOP
 	db "DOUBLES@"   ; DOUBLESLAP

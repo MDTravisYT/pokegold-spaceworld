@@ -4745,8 +4745,11 @@ BattleCommand_PoisonTarget:
 	jp CallFromBank0F
 
 WasPoisonedText:
-	text "<TARGET>は　どくをあびた！"
-	prompt
+	text_far _WasPoisonedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Poison:
 	ld de, wEnemyMonStatus
@@ -4864,14 +4867,18 @@ BattleCommand_Poison:
 	jp PrintText
 
 AlreadyPoisonedText:
-	text "<TARGET>は　すでに"
-	line "どくを　あびている"
-	prompt
+	text_far _AlreadyPoisonedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BadlyPoisonedText:
-	text "<TARGET>は"
-	line "もうどくをあびた！"
-	prompt
+	text_far _BadlyPoisonedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_DrainTarget:
 	call SapHealth
@@ -4879,9 +4886,11 @@ BattleCommand_DrainTarget:
 	jp PrintText
 
 SuckedHealthText:
-	text "<TARGET>から"
-	line "たいりょくを　すいとった！"
-	prompt
+	text_far _SuckedHealthText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_EatDream:
 	call SapHealth
@@ -4889,9 +4898,11 @@ BattleCommand_EatDream:
 	jp PrintText
 
 DreamEatenText:
-	text "<TARGET>の"
-	line "ゆめを　くった！"
-	prompt
+	text_far _DreamEatenText
+	text_end
+;rept $E
+;	nop
+;endr
 
 SapHealth:
 	; Divide damage by two
@@ -5052,9 +5063,11 @@ BattleCommand_BurnTarget:
 	jp CallFromBank0F
 
 WasBurnedText:
-	text "<TARGET>は"
-	line "やけどをおった！"
-	prompt
+	text_far _WasBurnedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 Defrost:
 	ld a, [de]
@@ -5079,9 +5092,11 @@ Defrost:
 	jp PrintText
 
 DefrostedOpponentText:
-	text "ほのおをあびて<TARGET>の"
-	line "こおりが　とけた！"
-	prompt
+	text_far _DefrostedOpponentText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_FreezeTarget:
 	xor a
@@ -5147,9 +5162,11 @@ BattleCommand_FreezeTarget:
 	jp CallFromBank0F
 
 WasFrozenText:
-	text "<TARGET>は"
-	line "こおりづけになった！"
-	prompt
+	text_far _WasFrozenText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_ParalyzeTarget:
 	xor a
@@ -5397,10 +5414,11 @@ BattleCommand_StatUp:
 	jp PrintNoChangesText
 
 Text_BattleEffectActivate:
-	text "<USER>の"
-	line "@"
-	text_from_ram wStringBuffer2
-	text "が@"
+	text_far _Text_BattleEffectActivate
+;	text_end
+;rept $E
+;	nop
+;endr
 	start_asm
 
 	ld hl, .BattleStatWentWayUpText
@@ -5417,13 +5435,19 @@ Text_BattleEffectActivate:
 	ret
 
 .BattleStatWentWayUpText
-	text_exit
-	text "<SCROLL>ぐーんと@"
+	text_far _BattleStatWentWayUpText
+	text_end
+;rept $E
+;	nop
+;endr
 	; Fallthrough. These strings are connected in Japanese, but separate in English.
 
 .BattleStatWentUpText
-	text "　あがった！"
-	prompt
+	text_far _BattleStatWentUpText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_StatDown:
 	ld hl, wEnemyStatLevels
@@ -5628,10 +5652,7 @@ BattleCommand_StatDown:
 	jp TryPrintButItFailed
 
 Text_BattleFoeEffectActivate:
-	text "<TARGET>の"
-	line "@"
-	text_from_ram wStringBuffer2
-	text "が@"
+	text_far _Text_BattleFoeEffectActivate
 	start_asm
 	ld hl, .BattleStatFellText
 	ldh a, [hBattleTurn]
@@ -5649,13 +5670,13 @@ Text_BattleFoeEffectActivate:
 	ret
 
 .BattleStatSharplyFellText:
-	text_exit
-	text "<SCROLL>がくっと@"
+	text_far _BattleStatSharplyFellText
+	text_end
 	; Fallthrough. These strings are connected in Japanese, but separate in English.
 
 .BattleStatFellText:
-	text "　さがった！"
-	prompt
+	text_far _BattleStatFellText
+	text_end
 
 GetStatName:
 	ld hl, StatNames
@@ -5973,19 +5994,25 @@ BattleCommand_TryEscape:
 	jp PrintText
 
 FledFromBattleText:
-	text "<USER>は　せんとうから"
-	line "りだつした！"
-	prompt
+	text_far _FledFromBattleText
+	text_end
+;rept $E
+;	nop
+;endr
 
 FledInFearText:
-	text "<TARGET>は　おじけづいて"
-	line "にげだした！"
-	prompt
+	text_far _FledInFearText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BlownAwayText:
-	text "<TARGET>は"
-	line "ふきとばされた！"
-	prompt
+	text_far _BlownAwayText
+	text_end
+;rept $E
+;	nop
+;endr
 
 ; Loop back to 'critical'.
 BattleCommand_EndLoop:
@@ -6097,16 +6124,18 @@ BattleCommand_EndLoop:
 	ret
 
 PlayerHitTimesText:
-	text "あいてに　@"
-	deciram wPlayerDamageTaken, 1, 1
-	text "かい　あたった！"
-	prompt
+	text_far _PlayerHitTimesText
+	text_end
+;rept $E
+;	nop
+;endr
 
 EnemyHitTimesText:
-	text "あいてに　@"
-	deciram wEnemyDamageTaken, 1, 1
-	text "かい　あたった！"
-	prompt
+	text_far _EnemyHitTimesText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_FlinchTarget:
 	call CheckSubstituteOpp
@@ -6285,34 +6314,46 @@ BattleCommand_Charge:
 	ret
 
 BattleMadeWhirlwindText:
-	text "の　まわりで"
-	line "くうきが　うずを　まく！"
-	prompt
+	text_far _BattleMadeWhirlwindText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleTookSunlightText:
-	text "は"
-	line "ひかりを　きゅうしゅうした！"
-	prompt
+	text_far _BattleTookSunlightText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleLoweredHeadText:
-	text "は"
-	line "くびを　ひっこめた！"
-	prompt
+	text_far _BattleLoweredHeadText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleGlowingText:
-	text "を"
-	line "はげしい　ひかりが　つつむ！"
-	prompt
+	text_far _BattleGlowingText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleFlewText:
-	text "は"
-	line "そらたかく　とびあがった！"
-	prompt
+	text_far _BattleFlewText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleDugText:
-	text "は"
-	line "あなをほって　ちちゅうに　もぐった！"
-	prompt
+	text_far _BattleDugText
+	text_end
+;rept $E
+;	nop
+;endr
 
 ; Skips to the traptarget command in the move's battle script buffer.
 ; This command was dummied out in the final game, most likely due to 
@@ -6410,9 +6451,11 @@ BattleCommand_Mist:
 	jp PrintButItFailed
 
 MistText:
-	text "<USER>は"
-	line "しろい　きりに　つつまれた！"
-	prompt
+	text_far _MistText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_FocusEnergy:
 	ld hl, wPlayerSubStatus4
@@ -6434,10 +6477,11 @@ BattleCommand_FocusEnergy:
 	jp PrintButItFailed
 
 GettingPumpedText:
-	text_exit
-	text "<USER>は"
-	line "はりきっている！"
-	prompt
+	text_far _GettingPumpedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Recoil:
 	ldh a, [hBattleTurn]
@@ -6512,9 +6556,11 @@ BattleCommand_Recoil:
 	jp PrintText
 
 RecoilText:
-	text "<USER>は　こうげきの"
-	line "はんどうを　うけた！"
-	prompt
+	text_far _RecoilText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_ConfuseTarget:
 	call GetOpponentItem
@@ -6586,9 +6632,11 @@ BattleCommand_FinishConfusingTarget:
 	jp PrintText
 
 BecameConfusedText:
-	text "<TARGET>は"
-	line "こんらんした！"
-	prompt
+	text_far _BecameConfusedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 	cp EFFECT_CONFUSE_HIT
@@ -6752,19 +6800,25 @@ BattleCommand_Substitute:
 	jp PrintText
 
 MadeSubstituteText:
-	text "<USER>の"
-	line "ぶんしんが　あらわれた"
-	prompt
+	text_far _MadeSubstituteText
+	text_end
+;rept $E
+;	nop
+;endr
 
 HasSubstituteText:
-	text "しかし　<USER>の"
-	line "みがわりは　すでに　でていた！"
-	prompt
+	text_far _HasSubstituteText
+	text_end
+;rept $E
+;	nop
+;endr
 
 TooWeakSubText:
-	text "しかし　ぶんしんを　だすには"
-	line "たいりょくが　たりなかった！"
-	prompt
+	text_far _TooWeakSubText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_RechargeNextTurn:
 	ld hl, wPlayerSubStatus4
@@ -6839,11 +6893,11 @@ BattleCommand_Mimic:
 	jp PrintButItFailed
 
 MimicLearnedMoveText:
-	text "<USER>は"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "を　おぼえた！"
-	prompt
+	text_far _MimicLearnedMoveText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_LeechSeed:
 	ld a, [wAttackMissed]
@@ -6882,14 +6936,18 @@ BattleCommand_LeechSeed:
 	jp PrintText
 
 WasSeededText:
-	text "<TARGET>に"
-	line "たねを　うえつけた！"
-	prompt
+	text_far _WasSeededText
+	text_end
+;rept $E
+;	nop
+;endr
 
 EvadedText:
-	text "<TARGET>は"
-	line "こうげきを　かわした！"
-	prompt
+	text_far _EvadedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Splash:
 	call LoadMoveAnim
@@ -6970,11 +7028,11 @@ BattleCommand_Disable:
 	jp PrintButItFailed
 
 MoveDisabledText:
-	text "<TARGET>の"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "を　ふうじこめた！"
-	prompt
+	text_far _WasDisabledText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_PayDay:
 	xor a
@@ -7002,8 +7060,11 @@ BattleCommand_PayDay:
 	jp PrintText
 
 CoinsScatteredText:
-	text "こばんが　あたりに　ちらばった！"
-	prompt
+	text_far _CoinsScatteredText
+	text_end
+;rept $E
+;	nop
+;endr
 
 ; Works as in Gen 1: copies the opponent's types to the user.
 BattleCommand_Conversion:
@@ -7030,9 +7091,11 @@ BattleCommand_Conversion:
 	jp PrintText
 
 .TransformedTypeText
-	text "<TARGET>の　タイプを"
-	line "じぶんに　はりつけた！"
-	prompt
+	text_far _TransformedTypeText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .fail
 	jp PrintButItFailed
@@ -7130,9 +7193,11 @@ BattleCommand_ResetStats:
 	ret
 
 EliminatedStatsText:
-	text "すべての　ステータスが"
-	line "もとに　もどった！"
-	prompt
+	text_far _EliminatedStatsText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Heal:
 	ldh a, [hBattleTurn]
@@ -7208,19 +7273,25 @@ BattleCommand_Heal:
 	jp PrintButItFailed
 
 WentToSleepText:
-	text "<USER>は"
-	line "ねむりはじめた！"
-	done
+	text_far _WentToSleepText
+	text_end
+;rept $E
+;	nop
+;endr
 
 RestedText:
-	text "<USER>は　けんこうになって"
-	line "ねむりはじめた！"
-	done
+	text_far _RestedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 RegainedHealthText:
-	text "<USER>は　たいりょくを"
-	line "かいふくした！"
-	prompt
+	text_far _RegainedHealthText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Transform:
 	ld hl, wBattleMonSpecies
@@ -7381,11 +7452,11 @@ BattleCommand_Transform:
 	jp PrintButItFailed
 
 TransformedText:
-	text "<USER>は"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "に　へんしんした！"
-	prompt
+	text_far _TransformedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Screen:
 	ld hl, wPlayerSubStatus5
@@ -7426,14 +7497,18 @@ BattleCommand_Screen:
 	jp PrintButItFailed
 
 LightScreenEffectText:
-	text "<USER>は"
-	line "とくしゅこうげきに　つよくなった！"
-	prompt
+	text_far _LightScreenEffectText
+	text_end
+;rept $E
+;	nop
+;endr
 
 ReflectEffectText:
-	text "<USER>は"
-	line "だげきこうげきに　つよくなった！"
-	prompt
+	text_far _ReflectEffectText
+	text_end
+;rept $E
+;	nop
+;endr
 
 ; Hasn't been split into "can't go any higher/lower!" yet
 PrintNoChangesText:
@@ -7441,16 +7516,22 @@ PrintNoChangesText:
 	jp PrintText
 
 NoChangesText:
-	text "しかし　こうかが　なかった！"
-	prompt
+	text_far _NothingHappenedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 PrintNothingHappenedText:
 	ld hl, NothingHappenedText
 	jp PrintText
 
 NothingHappenedText:
-	text "しかし　なにもおこらない"
-	prompt
+	text_far _NoEffectText
+	text_end
+;rept $E
+;	nop
+;endr
 
 TryPrintButItFailed:
 	ld a, [wAlreadyFailed]
@@ -7462,38 +7543,47 @@ PrintButItFailed:
 	jp PrintText
 
 ButItFailedText:
-	text "しかし　うまく　きまらなかった！"
-	prompt
+	text_far _ButItFailedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 PrintDidntAffectText:
 	ld hl, DidntAffectText
 	jp PrintText
 
 DidntAffectText:
-	text "しかし　<TARGET>には"
-	line "きかなかった！"
-	prompt
+	text_far _DidntAffectText
+	text_end
+;rept $E
+;	nop
+;endr
 
 IsUnaffectedText:
-	text "<TARGET>は"
-	line "へいきな　かおを　している！"
-	prompt
+	text_far _IsUnaffectedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 PrintParalyze:
 	ld hl, ParalyzedText
 	jp PrintText
 
 ParalyzedText:
-	text "<TARGET>は　まひして"
-	line "わざが　でにくくなった！"
-	prompt
+	text_far _ParalyzedMayNotAttackText
+	text_end
+;rept $E
+;	nop
+;endr
 
 ProtectedByText:
-	text "<TARGET>は　"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "で　まもられてる！"
-	prompt
+	text_far _ProtectedByText
+	text_end
+;rept $E
+;	nop
+;endr
 
 CheckSubstituteOpp:
 	push hl
@@ -7589,9 +7679,11 @@ BattleCommand_MirrorMove:
 	jp EndMoveEffect
 
 MirrorMoveFailedText:
-	text "しかし　オウムがえしは"
-	next "しっぱいにおわった！"
-	prompt
+	text_far _MirrorMoveFailedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Metronome:
 	call LoadMoveAnim
@@ -7718,11 +7810,11 @@ BattleCommand_Thief:
 	ret
 
 StoleText:
-	text "<USER>は　<TARGET>から"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "を　うばいとった！"
-	prompt
+	text_far _StoleText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_ArenaTrap:
 	ld hl, wEnemySubStatus5
@@ -7747,9 +7839,11 @@ BattleCommand_ArenaTrap:
 	jp PrintText
 
 .CantEscapeNowText:
-	text "<TARGET>は"
-	line "もう　にげられない！"
-	prompt
+	text_far _CantEscapeNowText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -7787,9 +7881,11 @@ BattleCommand_Nightmare:
 	jp PrintText
 
 .StartedNightmareText:
-	text "<TARGET>は"
-	line "あくむを　みはじめた！"
-	prompt
+	text_far _StartedNightmareText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -7831,9 +7927,11 @@ BattleCommand_Defrost:
 	ret
 
 WasDefrostedText:
-	text "<USER>の"
-	line "こおりが　とけた！"
-	prompt
+	text_far _WasDefrostedTextBattle
+	text_end
+;rept $E
+;	nop
+;endr
 
 ; Cut HP in half and put a curse on the opponent.
 BattleCommand_NailDown:
@@ -7858,12 +7956,11 @@ BattleCommand_NailDown:
 	jp PrintText
 
 .PutACurseText
-	text "<USER>は"
-	line "じぶんに　くぎを　うった"
-
-	para "<TARGET>は"
-	line "のろいを　かけられた！"
-	prompt
+	text_far _PutACurseText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -7883,9 +7980,11 @@ BattleCommand_Protect:
 	jp PrintText
 
 ProtectedItselfText:
-	text "<USER>は"
-	line "まもりの　たいせいに　はいった！"
-	prompt
+	text_far _ProtectedItselfText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Spikes:
 	ld hl, wEnemyScreens
@@ -7913,9 +8012,11 @@ BattleCommand_Spikes:
 	jp PrintText
 
 .SpikesText
-	text "<TARGET>の　あしもとに"
-	line "まきびしが　ちらばった！"
-	prompt
+	text_far _SpikesText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -7945,9 +8046,11 @@ BattleCommand_Foresight:
 	jp PrintText
 
 .IdentifiedText:
-	text "<USER>は　<TARGET>の"
-	line "しょうたいを　みやぶった！"
-	prompt
+	text_far _IdentifiedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -7991,9 +8094,12 @@ BattleCommand_PerishSong:
 	jp PrintButItFailed
 
 StartPerishText:
-	text "おたがいの#は"
-	line "３ターンごに　ほろびてしまう！"
-	prompt
+	text_far _StartPerishText
+	text_end
+;rept $E
+;	nop
+;endr
+
 
 BattleCommand_StartSandstorm:
 	ld hl, wEnemyScreens
@@ -8016,9 +8122,11 @@ BattleCommand_StartSandstorm:
 	jp PrintText
 
 .SandstormBrewedText:
-	text "<TARGET>は"
-	line "すなあらしに　まきこまれた！"
-	prompt
+	text_far _SandstormBrewedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -8038,9 +8146,11 @@ BattleCommand_Endure:
 	jp PrintText
 
 BracedItselfText:
-	text "<USER>は　こらえる"
-	line "たいせいに　はいった！"
-	prompt
+	text_far _BracedItselfText
+	text_end
+;rept $E
+;	nop
+;endr
 
 DEF MAX_ROLLOUT_COUNT EQU 5
 
@@ -8273,9 +8383,11 @@ BattleCommand_Attract:
 	jp PrintText
 
 .FellInLoveText:
-	text "<TARGET>は"
-	line "メロメロに　なった！"
-	prompt
+	text_far _FellInLoveText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -8410,9 +8522,11 @@ BattleCommand_Safeguard:
 	jp PrintText
 
 .CoveredByVeilText:
-	text "<USER>は"
-	line "しんぴのベールに　つつまれた！"
-	prompt
+	text_far _CoveredByVeilText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -8447,9 +8561,11 @@ BattleCommand_CheckSafeguard:
 	jp PrintText
 
 SafeguardProtectText:
-	text "<TARGET>は"
-	line "しんぴのベールに　まもられている！"
-	prompt
+	text_far _SafeguardProtectText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_GetMagnitude:
 	push bc
@@ -8478,10 +8594,11 @@ BattleCommand_GetMagnitude:
 	ret
 
 MagnitudeText:
-	text "マグニチュード@"
-	deciram wTextDecimalByte, 1, 1
-	text "！！"
-	prompt
+	text_far _MagnitudeText
+	text_end
+;rept $E
+;	nop
+;endr
 
 INCLUDE "data/moves/magnitude_power.inc"
 
@@ -8632,9 +8749,11 @@ BattleCommand_BatonPass:
 	jp PrintButItFailed
 
 BattleText_MonIsAlreadyOut_0d:
-	text_from_ram wBattleMonNickname
-	text "はもうでています"
-	prompt
+	text_far _BattleText_MonIsAlreadyOut_0f
+	text_end
+;rept $E
+;	nop
+;endr
 
 ; Has not been implemented yet in any capacity.
 BattleCommand_PursuitPlaceholder:
@@ -8656,9 +8775,11 @@ BattleCommand_EscapeTrappingMove:
 	ret
 
 ReleasedByText:
-	text "<USER>は　<TARGET>の"
-	line "こうげきから　かいほうされた！"
-	prompt
+	text_far _ReleasedByText
+	text_end
+;rept $E
+;	nop
+;endr
 
 
 BattleCommand_HealMorn:
@@ -8725,9 +8846,11 @@ BattleCommand_TimeBasedHealContinue:
 	ret
 
 .RegainedHealthText
-	text "<USER>は　たいりょくを"
-	line "かいふくした！"
-	prompt
+	text_far _ReleasedByText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_HiddenPower:
 	ld a, [wAttackMissed]
@@ -8843,8 +8966,11 @@ BattleCommand_StartRain:
 	jp PrintText
 
 .DownpourText
-	text "おおあめに　なった！"
-	prompt
+	text_far _DownpourText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -8864,8 +8990,11 @@ BattleCommand_StartSun:
 	jp PrintText
 
 .SunGotBrightText
-	text "ひざしが　つよくなった！"
-	prompt
+	text_far _SunGotBrightText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	call BattleCommand_MoveDelay
@@ -9045,11 +9174,11 @@ PrintUsersItemActivated:
 	ret
 
 BattleText_UsersStringBuffer1Activated:
-	text "そうびしていた"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "が　さどうした！"
-	prompt
+	text_far _BattleText_UsersStringBuffer1Activated
+	text_end
+;rept $E
+;	nop
+;endr
 
 PlayDamageAnim:
 	xor a

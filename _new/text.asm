@@ -339,7 +339,7 @@ _RecoveredUsingText:
 	prompt
 	
 _UseItemFailedText:
-	text "UseItemFailedText"	;	to be translated
+	text "power_up_msg"	;	to be translated
 ;	text "<USER>が　そうびしていた"
 ;	line "@"
 ;	text_from_ram wStringBuffer1
@@ -621,4 +621,388 @@ _FellAsleepText:
 _AlreadyAsleepText:
 	text "<TARGET>'s"
 	line "already asleep!"
+	prompt
+	
+_WasPoisonedText:
+	text "<TARGET>"
+	line "was poisoned!"
+	prompt
+	
+_AlreadyPoisonedText:
+	text "<TARGET>'s"
+	line "already poisoned!"
+	prompt
+	
+_BadlyPoisonedText:
+	text "<TARGET>'s"
+	line "badly poisoned!"
+	prompt
+	
+_SuckedHealthText:
+	text "Sucked health from"
+	line "<TARGET>!"
+	prompt
+
+_DreamEatenText:
+	text "<TARGET>'s"
+	line "dream was eaten!"
+	prompt
+	
+_WasBurnedText:
+	text "<TARGET>"
+	line "was burned!"
+	prompt
+	
+_DefrostedOpponentText:
+	text "<TARGET>"
+	line "was defrosted!"
+	prompt
+	
+_WasFrozenText:
+	text "<TARGET>"
+	line "was frozen solid!"
+	prompt
+	
+_Text_BattleEffectActivate::
+	text "<USER>'s"
+	line "@"
+	text_from_ram wStringBuffer2
+	prompt
+
+_BattleStatWentWayUpText::
+	text_exit
+	text "<SCROLL>went way up!"
+	prompt
+
+_BattleStatWentUpText::
+	text " went up!"
+	prompt
+	
+_Text_BattleFoeEffectActivate::
+	text "<TARGET>'s"
+	line "@"
+	text_from_ram wStringBuffer2
+	text_end
+
+_BattleStatSharplyFellText::
+	text_exit
+	text "<SCROLL>sharply fell!"
+	prompt
+
+_BattleStatFellText::
+	text " fell!"
+	prompt
+	
+_FledFromBattleText::
+	text "<USER>"
+	line "fled from battle!"
+	prompt
+
+_FledInFearText:
+	text "<TARGET>"
+	line "fled in fear!"
+	prompt
+
+_BlownAwayText:
+	text "<TARGET>"
+	line "was blown away!"
+	prompt
+	
+_PlayerHitTimesText:
+	text "Hit @"
+	deciram wPlayerDamageTaken, 1, 1
+	text " times!"
+	prompt
+
+_EnemyHitTimesText:
+	text "Hit @"
+	deciram wEnemyDamageTaken, 1, 1
+	text " times!"
+	prompt
+	
+_BattleMadeWhirlwindText::
+	text_start
+	line "made a whirlwind!"
+	prompt
+
+_BattleTookSunlightText::
+	text_start
+	line "took in sunlight!"
+	prompt
+
+_BattleLoweredHeadText::
+	text_start
+	line "lowered its head!"
+	prompt
+
+_BattleGlowingText::
+	text_start
+	line "is glowing!"
+	prompt
+
+_BattleFlewText::
+	text_start
+	line "flew up high!"
+	prompt
+
+_BattleDugText::
+	text_start
+	line "dug a hole!"
+	prompt
+	
+_MistText:
+	text "<USER>'s"
+	line "shrouded in MIST!"
+	prompt
+	
+_GettingPumpedText:
+	text_exit
+	text "<USER>'s"
+	line "getting pumped!"
+	prompt
+	
+_RecoilText:
+	text "<USER>'s"
+	line "hit with recoil!"
+	prompt
+	
+_BecameConfusedText:
+	text "<TARGET>"
+	line "became confused!"
+	prompt
+	
+_MadeSubstituteText:
+	text "<USER>"
+	line "made a SUBSTITUTE!"
+	prompt
+
+_HasSubstituteText:
+	text "<USER>"
+	line "has a SUBSTITUTE!"
+	prompt
+
+_TooWeakSubText:
+	text "Too weak to make"
+	line "a SUBSTITUTE!"
+	prompt
+	
+_MimicLearnedMoveText:
+	text "<USER>"
+	line "learned"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "!"
+	prompt
+	
+_WasSeededText:
+	text "<TARGET>"
+	line "was seeded!"
+	prompt
+
+_EvadedText:
+	text "<TARGET>"
+	line "evaded the attack!"
+	prompt
+	
+_WasDisabledText:
+	text "<TARGET>'s"
+	line "@"
+	text_from_ram wStringBuffer1
+	text " was"
+	cont "DISABLED!"
+	prompt
+	
+_CoinsScatteredText:
+	text "Coins scattered"
+	line "everywhere!"
+	prompt
+	
+_EliminatedStatsText:
+	text "All stat changes"
+	line "were eliminated!"
+	prompt
+	
+_WentToSleepText:
+	text "<USER>"
+	line "went to sleep!"
+	done
+
+_RestedText:
+	text "<USER>"
+	line "fell asleep and"
+	cont "became healthy!"
+	done
+
+_RegainedHealthText:
+	text "<USER>"
+	line "regained health!"
+	prompt
+	
+_TransformedText:
+	text "<USER>"
+	line "TRANSFORMED into"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "!"
+	prompt
+	
+_LightScreenEffectText:
+	text "<USER>'s"
+	line "SPCL.DEF rose!"
+	prompt
+
+_ReflectEffectText:
+	text "<USER>'s"
+	line "DEFENSE rose!"
+	prompt
+	
+_NothingHappenedText::
+	text "Nothing happened!"
+	prompt
+	
+_NoEffectText::
+	text "No effect!"
+	prompt
+	
+_ButItFailedText::
+	text "But, it failed! "
+	prompt
+
+_DidntAffectText::
+	text "It didn't affect"
+	line "<TARGET>!"
+	prompt
+	
+_IsUnaffectedText::
+	text "<TARGET>"
+	line "is unaffected!"
+	prompt
+	
+_ParalyzedMayNotAttackText::
+	text "<TARGET>'s"
+	line "paralyzed! It may"
+	cont "not attack!"
+	prompt
+	
+_ProtectedByText:
+	text "<TARGET>'s"
+	line "protected by"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "!"
+	prompt
+	
+_MirrorMoveFailedText:
+	text "The MIRROR MOVE"
+	next "failed!"
+	prompt
+	
+_StoleText:
+	text "<USER>"
+	line "stole @"
+	text_from_ram wStringBuffer1
+	text_start
+	cont "from its foe!"
+	prompt
+	
+_CantEscapeNowText:
+	text "<TARGET>"
+	line "can't escape now!"
+	prompt
+	
+_StartedNightmareText:
+	text "<TARGET>"
+	line "started to have a"
+	cont "NIGHTMARE!"
+	prompt
+	
+_WasDefrostedTextBattle:
+	text "<USER>"
+	line "was defrosted!"
+	prompt
+	
+_PutACurseText:
+	text "<USER>"
+	line "cut its own HP and"
+
+	para "put a CURSE on"
+	line "<TARGET>!"
+	prompt
+	
+_ProtectedItselfText:
+	text "<USER>"
+	line "PROTECTED itself!"
+	prompt
+	
+_SpikesText:
+	text "SPIKES scattered"
+	line "all around"
+	cont "<TARGET>!"
+	prompt
+	
+_IdentifiedText:
+	text "<USER>"
+	line "identified"
+	cont "<TARGET>!"
+	prompt
+	
+_StartPerishText:
+	text "Both #MON will"
+	line "faint in 3 turns!"
+	prompt
+	
+_SandstormBrewedText:
+	text "A SANDSTORM"
+	line "brewed!"
+	prompt
+	
+_BracedItselfText:
+	text "<USER>"
+	line "braced itself!"
+	prompt
+	
+_FellInLoveText:
+	text "<TARGET>"
+	line "fell in love!"
+	prompt
+	
+_CoveredByVeilText:
+	text "<USER>'s"
+	line "covered by a veil!"
+	prompt
+	
+_SafeguardProtectText:
+	text "<TARGET>"
+	line "is protected by"
+	cont "SAFEGUARD!"
+	prompt
+	
+_MagnitudeText:
+	text "Magnitude @"
+	deciram wTextDecimalByte, 1, 1
+	text "!"
+	prompt
+	
+_ReleasedByText:
+	text "<USER>"
+	line "was released by"
+	cont "<TARGET>!"
+	prompt
+	
+_DownpourText:
+	text "A downpour"
+	line "started!"
+	prompt
+
+_SunGotBrightText:
+	text "The sunlight got"
+	line "bright!"
+	prompt
+	
+_BattleText_UsersStringBuffer1Activated:
+	text "<USER>'s"
+	line "@"
+	text_from_ram wStringBuffer1
+	text_start
+	cont "activated!"
 	prompt
