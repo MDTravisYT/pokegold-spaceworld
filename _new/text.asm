@@ -490,7 +490,11 @@ _UsedMove2Text::
 _UsedInsteadText::
 	text "instead,"
 	cont "@@"
-	
+
+_MoveNameText::
+	text_from_ram wStringBuffer2
+	text "@"
+	;	fallthrough
 _EndUsedMove1Text::
 	text "!"
 	done

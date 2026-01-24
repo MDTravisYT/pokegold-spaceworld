@@ -1217,9 +1217,7 @@ UsedMoveText_CheckObedience:	;	0d:4cc6
 	ret
 
 MoveNameText:
-	text_start
-	line "@"
-	text_from_ram wStringBuffer2
+	text_far _MoveNameText
 	start_asm
 ; get start address
 	ld hl, .endusemovetexts
