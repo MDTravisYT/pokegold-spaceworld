@@ -153,6 +153,12 @@ MACRO cry_dewgong
 	db TX_CRY_16
 ENDM
 
+	const TX_FAR ; $17
+MACRO text_far
+	db TX_FAR
+	dab \1 ; address of text commands
+ENDM
+
 	const_next $50
 
 	const TX_END ; $50

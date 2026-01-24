@@ -423,8 +423,13 @@ NextTextCommand::
 	ld [wTextboxFlags], a
 	ret
 .doTextCommand
-	push hl
-	ld hl, TextCommands
+	jp	doTextCommand_hack	;	hack to keep offsets correct, code is at unknown_3e32.asm
+;	push hl
+;	cp TX_FAR
+;	jp z, TextCommand_FAR
+;	ld hl, TextCommands
+	nop			;	rebalances offsets
+NextTextCommand_return::
 	push bc
 	add a
 	ld b, $00

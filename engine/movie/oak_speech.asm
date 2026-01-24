@@ -372,32 +372,15 @@ DemoPlayerName::
 DemoRivalName::
 	db "シゲル@"
 
-OakSpeechDemo::
-	text "ようこそ"
-	line "ポケット　モンスターの　せかいへ！"
-	cont "ごぞんじ　わしが　オーキドじゃ！"
-
-	para "きょう　きみに　きてもらったのは"
-	line "ほかでもない"
-	cont "あたらしい　ずかんづくりを"
-	cont "てつだって　ほしいのじゃ！"
-
-	para "もちろん"
-	line "きみの　パートナーとなる　ポケモンと"
-	cont "リュックは　ようい　しておる"
-
-	para "リュックの　なかには"
-	line "キズぐすりと"
-	cont "モンスターボールが"
-	cont "はいっておるから　あんしんじゃ！"
-
-	para "すでに　きみの　ライバルは"
-	line "しゅっぱつ　しとる"
-
-	para "まけないよう　がんばって　くれい！"
-	prompt
-
-OakSpeech1::
+OakSpeechDemo::	;	01:587b
+	text_far _OakSpeechDemo
+	text_end
+	
+rept $D6
+	nop
+endr
+	
+OakSpeech1::	;	01:5956
 	text "いやあ　またせた！"
 
 	para "ポケット　モンスターの　せかいへ"
