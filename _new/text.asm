@@ -345,3 +345,280 @@ _UseItemFailedText:
 ;	text_from_ram wStringBuffer1
 ;	text "が　さどうした！"
 	prompt
+	
+_FastAsleepText::
+	text "<USER>"
+	line "is fast asleep!"
+	prompt
+
+_WokeUpTextBattle::
+	text "<USER>"
+	line "woke up!"
+	prompt
+
+_IsFrozenText::
+	text "<USER>"
+	line "is frozen solid!"
+	prompt
+
+_FullyParalyzedText::
+	text "<USER>'s"
+	line "fully paralyzed!"
+	prompt
+
+_FlinchedText::
+	text "<USER>"
+	line "flinched!"
+	prompt
+
+_MustRechargeText::
+	text "<USER>"
+	line "must recharge!"
+	prompt
+
+_DisabledNoMoreText::
+	text "<USER>'s"
+	line "disabled no more!"
+	prompt
+
+_IsConfusedText::
+	text "<USER>"
+	line "is confused!"
+	prompt
+
+_HurtItselfText::
+	text "It hurt itself in"
+	line "its confusion!"
+	prompt
+
+_ConfusedNoMoreText::
+	text "<USER>'s"
+	line "confused no more!"
+	prompt
+	
+_AttackContinuesText::
+	text "<USER>'s"
+	line "attack continues!"
+	done
+
+_CantMoveText::
+	text "<USER>"
+	line "can't move!"
+	prompt
+
+_SavingEnergyText::
+	text "<USER>"
+	line "is storing energy!"
+	prompt
+
+_UnleashedEnergyText::
+	text "<USER>"
+	line "unleashed energy!"
+	prompt
+	
+_HungOnText:
+	text "<TARGET>"
+	line "hung on with"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "!"
+	prompt
+
+_EnduredText:
+	text "<TARGET>"
+	line "ENDURED the hit!"
+	prompt
+
+_InLoveWithText:
+	text "<USER>"
+	line "is in love with"
+	cont "<TARGET>!"
+	prompt
+
+_InfatuationText:
+	text "<USER>'s"
+	line "infatuation kept"
+	cont "it from attacking!"
+	prompt
+	
+_DisabledMoveText:
+	text "<USER>'s"
+	line "@"
+	text_from_ram wStringBuffer1
+	text " is"
+	cont "DISABLED!"
+	prompt
+	
+_LoafingAroundText:
+	text_from_ram wBattleMonNickname
+	text " is"
+	line "loafing around."
+	prompt
+
+_BeganToNapText:
+	text_from_ram wBattleMonNickname
+	text " began"
+	line "to nap!"
+	prompt
+
+_WontObeyText:
+	text_from_ram wBattleMonNickname
+	text " won't"
+	line "obey!"
+	prompt
+
+_TurnedAwayText:
+	text_from_ram wBattleMonNickname
+	text " turned"
+	line "away!"
+	prompt
+
+_IgnoredOrdersText:
+	text_from_ram wBattleMonNickname
+	text " ignored"
+	line "orders!"
+	prompt
+	
+_UsedMove1Text::
+	text_start
+	line "used @@"
+
+_UsedMove2Text::
+	text_start
+	line "used @@"
+
+_UsedInsteadText::
+	text "instead,"
+	cont "@@"
+	
+_EndUsedMove1Text::
+	text "!"
+	done
+	
+_NoPPLeftText:
+	text "But no PP is left"
+	line "for the move!"
+	prompt
+	
+_AttackMissedText:
+	text "<USER>'s"
+	line "attack missed!"
+	prompt
+
+_CrashedText:
+	text "<USER>"
+	line "kept going and"
+	cont "crashed!"
+	prompt
+
+_UnaffectedText:
+	text "<TARGET>'s"
+	line "unaffected!"
+	prompt
+	
+_DoesntAffectText:
+	text "It doesn't affect"
+	line "<TARGET>!"
+	prompt
+	
+_CriticalHitText:
+	text "A critical hit!"
+	prompt
+
+_OneHitKOText:
+	text "It's a one-hit KO!"
+	prompt
+	
+_SuperEffectiveText:
+	text "It's super-"
+	line "effective!"
+	prompt
+
+_NotVeryEffectiveText:
+	text "It's not very"
+	line "effective…"
+	prompt
+	
+_TookDownWithItText:
+	text "<TARGET>"
+	line "took down with it,"
+	cont "<USER>!"
+	prompt
+	
+_RageBuildingText:
+	text "<USER>'s"
+	line "RAGE is building!"
+	prompt
+	
+_GotAnEncoreText:
+	text "<TARGET>"
+	line "got an ENCORE!"
+	prompt
+	
+_SharedPainText:
+	text "The battlers"
+	line "shared pain!"
+	prompt
+	
+_TransformedTypeText:
+	text "<USER>"
+	line "transformed into"
+	cont "the @"
+	text_from_ram wStringBuffer1
+	text "-type!"
+	prompt
+
+_TookAimText:
+	text "<USER>"
+	line "took aim!"
+	prompt
+	
+_SketchedText:
+	text "<USER>"
+	line "SKETCHED"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "!"
+	prompt
+
+_DestinyBondEffectText:
+	text "<USER>'s"
+	line "trying to take its"
+	cont "opponent with it!"
+	prompt
+	
+_SpiteEffectText:
+	text "<TARGET>'s"
+	line "@"
+	text_from_ram wStringBuffer1
+	text " was"
+	cont "reduced by @"
+	deciram wTextDecimalByte, 1, 1
+	text "!"
+	prompt
+	
+_BellChimedText:
+	text "A bell chimed!"
+	line ""
+	prompt
+	
+_SubTookDamageText:
+	text "The SUBSTITUTE"
+	line "took damage for"
+	cont "<TARGET>!"
+	prompt
+
+_SubFadedText:
+	text "<TARGET>'s"
+	line "SUBSTITUTE faded!"
+	prompt
+	
+_FellAsleepText:
+	text "<TARGET>"
+	line "fell asleep!"
+	prompt
+	
+_AlreadyAsleepText:
+	text "<TARGET>'s"
+	line "already asleep!"
+	prompt

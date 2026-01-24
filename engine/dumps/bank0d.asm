@@ -710,96 +710,133 @@ EndTurn:
 	ld [wTurnEnded], a
 	ret
 
-FastAsleepText:
-	text "<USER>は"
-	line "ぐうぐう　ねむっている"
-	prompt
+FastAsleepText:	;	0d:4997
+	text_far _FastAsleepText
+	text_end
+rept $E
+	nop
+endr
 
-WokeUpText:
-	text "<USER>は　めをさました！"
-	prompt
+WokeUpText:	;	0d:49a7
+	text_far _WokeUpTextBattle
+	text_end
+;rept $E
+;	nop
+;endr
 
-FrozenSolidText:
-	text "<USER>は"
-	line "こおって　しまって　うごかない！"
-	prompt
+FrozenSolidText:	;	0d:49b3
+	text_far _IsFrozenText
+	text_end
+;rept $E
+;	nop
+;endr
 
-FullyParalyzedText:
-	text "<USER>は"
-	line "からだが　しびれて　うごけない"
-	prompt
+FullyParalyzedText:	;	0d:49c8
+	text_far _FullyParalyzedText
+	text_end
+;rept $E
+;	nop
+;endr
 
-FlinchedText:
-	text "<USER>は　ひるんだ！"
-	prompt
+FlinchedText:	;	0d:49dc
+	text_far _FlinchedText
+	text_end
+;rept $E
+;	nop
+;endr
 
-MustRechargeText:
-	text "こうげきの　はんどうで"
-	line "<USER>は　うごけない！"
-	prompt
+MustRechargeText:	;	0d:49e6
+	text_far _MustRechargeText
+	text_end
+;rept $E
+;	nop
+;endr
 
-DisabledNoMoreText:
-	text "<USER>の"
-	line "かなしばりが　とけた！"
-	prompt
+DisabledNoMoreText:	;	0d:49fd
+	text_far _DisabledNoMoreText
+	text_end
+;rept $E
+;	nop
+;endr
 
-IsConfusedText:
-	text "<USER>は"
-	line "こんらんしている！"
-	prompt
+IsConfusedText:	;	0d:4a0d
+	text_far _IsConfusedText
+	text_end
+;rept $E
+;	nop
+;endr
 
-HurtItselfText:
-	text "わけも　わからず"
-	line "じぶんを　こうげきした！"
-	prompt
+HurtItselfText:	;	0d:4a1b
+	text_far _HurtItselfText
+	text_end
+;rept $E
+;	nop
+;endr
 
-ConfusedNoMoreText:
-	text "<USER>の"
-	line "こんらんが　とけた！"
-	prompt
+ConfusedNoMoreText:	;	0d:4a32
+	text_far _ConfusedNoMoreText
+	text_end
+;rept $E
+;	nop
+;endr
 
-AttackContinuesText:
-	text "<USER>の　こうげきは"
-	line "まだ　つづいている"
-	done
+AttackContinuesText:	;	0d:4a41
+	text_far _AttackContinuesText
+	text_end
+;rept $E
+;	nop
+;endr
 
-CantMoveText:
-	text "<USER>は"
-	line "みうごきが　とれない！"
-	prompt
+CantMoveText:	;	0d:4a55
+	text_far _CantMoveText
+	text_end
+;rept $E
+;	nop
+;endr
 
-StoringEnergyText:
-	text "<USER>は　がまんしている"
-	prompt
+StoringEnergyText:	;	0d:4a65
+	text_far _SavingEnergyText
+	text_end
+;rept $E
+;	nop
+;endr
 
-UnleashedEnergyText:
-	text "<USER>の"
-	line "がまんが　とかれた！"
-	prompt
+UnleashedEnergyText:	;	0d:4a71
+	text_far _UnleashedEnergyText
+	text_end
+;rept $E
+;	nop
+;endr
 
-HungOnText:
-	text "<TARGET>は"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "で　もちこたえた！"
-	prompt
+HungOnText:	;	0d:4a80
+	text_far _HungOnText
+	text_end
+;rept $E
+;	nop
+;endr
 
-EnduredText:
-	text "<TARGET>は　あいての"
-	line "こうげきを　こらえた！"
-	prompt
+EnduredText:	;	0d:4a93
+	text_far _EnduredText
+	text_end
+;rept $E
+;	nop
+;endr
 
-InLoveWithText:
-	text "<USER>は"
-	line "<TARGET>に　メロメロだ！"
-	prompt
+InLoveWithText:	;	0d:4aa8
+	text_far _InLoveWithText
+	text_end
+;rept $E
+;	nop
+;endr
 
-InfatuationText:
-	text "<USER>は　メロメロで"
-	line "わざが　だせなかった！"
-	prompt
+InfatuationText:	;	0d:4ab6
+	text_far _InfatuationText
+	text_end
+;rept $E
+;	nop
+;endr
 
-MoveDisabled:
+MoveDisabled:	;	0d:4acc
 	ld hl, wCurPlayerMove
 	ld de, wPlayerSubStatus3
 	ldh a, [hBattleTurn]
@@ -819,14 +856,14 @@ MoveDisabled:
 	ld hl, DisabledMoveText
 	jp PrintText
 
-DisabledMoveText:
-	text "<USER>は　かなしばりで"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "がだせない！"
-	prompt
+DisabledMoveText:	;	0d:4aec
+	text_far _DisabledMoveText
+	text_end
+;rept $E
+;	nop
+;endr
 
-HitConfusion:
+HitConfusion:	;	0d:4b03
 	ld hl, HurtItselfText
 	call PrintText
 
@@ -1090,32 +1127,42 @@ BattleCommand_CheckObedience:
 .EndDisobedience
 	jp EndMoveEffect
 
-LoafingAroundText:
-	text_from_ram wBattleMonNickname
-	text "は　なまけている"
-	prompt
+LoafingAroundText:	;	0d:4c37
+	text_far _LoafingAroundText
+	text_end
+;rept $E
+;	nop
+;endr
 
-BeganToNapText:
-	text_from_ram wBattleMonNickname
-	text "は　ひるねをはじめた！"
-	prompt
+BeganToNapText:	;	0d:4c44
+	text_far _BeganToNapText
+	text_end
+;rept $E
+;	nop
+;endr
 
-WontObeyText:
-	text_from_ram wBattleMonNickname
-	text "は　いうことを　きかない"
-	prompt
+WontObeyText:	;	0d:4c54
+	text_far _WontObeyText
+	text_end
+;rept $E
+;	nop
+;endr
 
-TurnedAwayText:
-	text_from_ram wBattleMonNickname
-	text "は　そっぽを　むいた"
-	prompt
+TurnedAwayText:	;	0d:4c65
+	text_far _TurnedAwayText
+	text_end
+;rept $E
+;	nop
+;endr
 
-IgnoredOrdersText:
-	text_from_ram wBattleMonNickname
-	text "は　しらんぷりをした"
-	prompt
+IgnoredOrdersText:	;	0d:4c74
+	text_far _IgnoredOrdersText
+	text_end
+;rept $E
+;	nop
+;endr
 
-BattleCommand_UsedMoveText:
+BattleCommand_UsedMoveText:	;	0d:4c83
 	ld hl, UsedMoveText
 	jp PrintText
 
@@ -1145,15 +1192,15 @@ UsedMoveText:
 	ld hl, UsedMove1Text
 	ret
 
-UsedMove1Text:
-	text "の　@"
+UsedMove1Text:	;	0d:4cba
+	text_far _UsedMove1Text
 	start_asm
 	jr UsedMoveText_CheckObedience
 
-UsedMove2Text:
-	text "は　@"
+UsedMove2Text:	;	0d:4cc1
+	text_far _UsedMove2Text
 	start_asm
-UsedMoveText_CheckObedience:
+UsedMoveText_CheckObedience:	;	0d:4cc6
 ; check obedience
 	ld a, [wAlreadyDisobeyed]
 	and a
@@ -1162,10 +1209,10 @@ UsedMoveText_CheckObedience:
 	ld hl, .UsedInsteadText
 	ret
 
-.UsedInsteadText:
-	text "めいれいをむしして@"
+.UsedInsteadText:	;	0d:4cd0
+	text_far _UsedInsteadText
 	start_asm
-.GetMoveNameText:
+.GetMoveNameText:	;	0d:4cdc
 	ld hl, MoveNameText
 	ret
 
@@ -1205,25 +1252,25 @@ MoveNameText:
 	dw EndUsedMove5Text
 
 EndUsedMove1Text:
-	text "を　つかった！"
-	done
+	text_far _EndUsedMove1Text
+	text_end
 
 
 EndUsedMove2Text:
-	text "を　した！"
-	done
+	text_far _EndUsedMove1Text
+	text_end
 
 EndUsedMove3Text:
-	text "した！"
-	done
+	text_far _EndUsedMove1Text
+	text_end
 
 EndUsedMove4Text:
-	text "　こうげき！"
-	done
+	text_far _EndUsedMove1Text
+	text_end
 
 EndUsedMove5Text:
-	text "！"
-	done
+	text_far _EndUsedMove1Text
+	text_end
 
 GetMoveGrammar:
 ; store move grammar type in wMoveGrammar
@@ -1428,9 +1475,11 @@ BattleCommand_DoTurn:
 	ret
 
 NoPPLeftText:
-	text "しかし　わざの　ポイントが"
-	line "なかった！"
-	prompt
+	text_far _NoPPLeftText
+	text_end
+;rept $E
+;	nop
+;endr
 
 
 BattleCommand_Critical:
@@ -2633,29 +2682,36 @@ endr
 	jp DoPlayerDamage
 
 AttackMissedText:
-	text "しかし　<USER>の"
-	line "こうげきは　はずれた！"
-	prompt
+	text_far _AttackMissedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 CrashedText:
-	text "いきおい　あまって"
-	line "<USER>は"
-	cont "じめんに　ぶつかった！"
-	prompt
+	text_far _CrashedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 UnaffectedText:
-	text "<TARGET>には"
-	line "ぜんぜんきいてない！"
-	prompt
+	text_far _UnaffectedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 PrintDoesntAffect:
 	ld hl, DoesntAffectText
 	jp PrintText
 
 DoesntAffectText:
-	text "<TARGET>には"
-	line "こうかが　ない　みたいだ<⋯⋯>"
-	prompt
+	text_far _DoesntAffectText
+	text_end
+;rept $E
+;	nop
+;endr
 
 ; Prints the message for critical hits or one-hit KOs.
 
@@ -2688,12 +2744,18 @@ BattleCommand_CriticalText:
 	dw OneHitKOText
 
 CriticalHitText:
-	text "きゅうしょに　あたった！"
-	prompt
+	text_far _CriticalHitText
+	text_end
+;rept $E
+;	nop
+;endr
 
 OneHitKOText:
-	text "いちげき　ひっさつ！"
-	prompt
+	text_far _OneHitKOText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_SuperEffectiveText:
 	ld a, [wTypeModifier]
@@ -2707,12 +2769,18 @@ BattleCommand_SuperEffectiveText:
 	jp PrintText
 
 SuperEffectiveText:
-	text "こうかは　ばつぐんだ！"
-	prompt
+	text_far _SuperEffectiveText
+	text_end
+;rept $E
+;	nop
+;endr
 
 NotVeryEffectiveText:
-	text "こうかは　いまひとつの　ようだ"
-	prompt
+	text_far _NotVeryEffectiveText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_CheckFaint:
 	ld hl, wEnemyMonHP
@@ -2785,10 +2853,12 @@ BattleCommand_CheckFaint:
 .no_dbond:
 	jp EndMoveEffect
 
-TookDownWithItText:
-	text "<TARGET>は　<USER>を"
-	line "みちずれに　した！"
-	prompt
+_TookDownWithItText:
+	text_far _TookDownWithItText
+	text_end
+;rept $E
+;	nop
+;endr
 
 ; Used to handle hitting the opponent when they have SUBSTATUS_RAGE.
 ; However, Rage itself doesn't actually initiate the effect in this build, so this interaction is unseen.
@@ -2844,9 +2914,11 @@ BattleCommand_BuildOpponentRage:
 	ret
 
 RageBuildingText:
-	text "<USER>の　いかりの"
-	line "ボルテージが　あがっていく！"
-	prompt
+	text_far _RageBuildingText
+	text_end
+;rept $E
+;	nop
+;endr
 
 EndMoveEffect:
 	ld a, [wBattleScriptBufferAddress]
@@ -3645,9 +3717,11 @@ BattleCommand_Encore:
 	jp PrintDidntAffectText
 
 GotAnEncoreText:
-	text "<TARGET>は"
-	line "アンコールを　うけた！"
-	prompt
+	text_far _GotAnEncoreText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_PainSplit:
 	ld a, [wAttackMissed]
@@ -3755,9 +3829,11 @@ BattleCommand_PainSplit:
 	jp PrintDidntAffectText
 
 SharedPainText:
-	text "おたがいの　たいりょくを"
-	line "わかちあった！"
-	prompt
+	text_far _SharedPainText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Snore:
 	ld hl, wBattleMonStatus
@@ -3817,11 +3893,11 @@ BattleCommand_Conversion2:
 	jp PrintText
 
 .TransformedTypeText
-	text "<TARGET>の　タイプを"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "に　かえた！"
-	prompt
+	text_far _TransformedTypeText
+	text_end
+;rept $E
+;	nop
+;endr
 
 .failed
 	jp PrintDidntAffectText
@@ -3851,9 +3927,11 @@ BattleCommand_LockOn:
 	jp PrintDidntAffectText
 
 TookAimText:
-	text "<TARGET>を"
-	line "ロックオンした！"
-	prompt
+	text_far _TookAimText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Sketch:
 	ld a, [wLinkMode]
@@ -3888,11 +3966,11 @@ BattleCommand_Sketch:
 	jp PrintDidntAffectText
 
 SketchedText:
-	text "<USER>は"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "を　ダビングした！"
-	prompt
+	text_far _SketchedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 ; Thaw the opponent if frozen, and 
 ; raise the user's Attack one stage.
@@ -4006,9 +4084,11 @@ BattleCommand_DestinyBond:
 	jp PrintText
 
 DestinyBondEffectText:
-	text "<USER>は　あいてを"
-	line "みちずれに　しようとしている"
-	prompt
+	text_far _DestinyBondEffectText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_Spite:
 	ld a, [wAttackMissed]
@@ -4088,13 +4168,11 @@ BattleCommand_Spite:
 	jp PrintDidntAffectText
 
 SpiteEffectText:
-	text "<TARGET>の"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "を　@"
-	deciram wTextDecimalByte, 1, 1
-	text "けずった！"
-	prompt
+	text_far _SpiteEffectText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_FalseSwipe:
 ; Makes sure wCurDamage < MonHP
@@ -4175,9 +4253,11 @@ BattleCommand_BellChime:
 	jp PrintNoChangesText
 
 BellChimedText:
-	text "<USER>の"
-	line "ステータスいじょうが　なおった！"
-	prompt
+	text_far _BellChimedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 PlayFXAnimID:
 	ld a, e
@@ -4356,14 +4436,18 @@ DoSubstituteDamage:
 	jp CallFromBank0F
 
 SubTookDamageText:
-	text "<TARGET>に　かわって"
-	line "ぶんしんが　こうげきを　うけた！"
-	prompt
+	text_far _SubTookDamageText
+	text_end
+;rept $E
+;	nop
+;endr
 
 SubFadedText:
-	text "<TARGET>の　ぶんしんは"
-	line "きえてしまった<⋯⋯>"
-	prompt
+	text_far _SubFadedText
+	text_end
+;rept $E
+;	nop
+;endr
 
 UpdateMoveData:
 	ldh a, [hBattleTurn]
@@ -4493,9 +4577,11 @@ Unreferenced_OldSleepTarget:
 	jp CallFromBank0F
 
 FellAsleepText:
-	text "<TARGET>は"
-	line "ねむってしまった！"
-	prompt
+	text_far _FellAsleepText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_SleepTarget:
 	ld de, wEnemyMonStatus
@@ -4590,9 +4676,11 @@ BattleCommand_SleepTarget:
 	jp PrintText
 
 AlreadyAsleepText:
-	text "<TARGET>は　すでに"
-	line "ねむっている"
-	prompt
+	text_far _AlreadyAsleepText
+	text_end
+;rept $E
+;	nop
+;endr
 
 BattleCommand_PoisonTarget:
 	ld de, wEnemyMonStatus
