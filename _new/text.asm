@@ -151,27 +151,27 @@ _GrewLevelText::
 	
 _GoMonText::
 	text "Go! @"
-	text_from_ram PrintPlayerMon1Text
+	text_from_ram wBattleMonNickname
 	text "!"
 	done
 
 _DoItMonText::
 	text "Do it! @"
-	text_from_ram PrintPlayerMon1Text
+	text_from_ram wBattleMonNickname
 	text "!"
 	done
 
 _GoForItMonText::
 	text "Go for it,"
 	line "@"
-	text_from_ram PrintPlayerMon1Text
+	text_from_ram wBattleMonNickname
 	text "!"
 	done
 
 _YourFoesWeakGetmMonText::
 	text "Your foe's weak!"
 	line "Get'm, @"
-	text_from_ram PrintPlayerMon1Text
+	text_from_ram wBattleMonNickname
 	text "!"
 	done
 	
