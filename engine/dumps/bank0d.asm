@@ -2853,7 +2853,7 @@ BattleCommand_CheckFaint:
 .no_dbond:
 	jp EndMoveEffect
 
-_TookDownWithItText:
+TookDownWithItText:
 	text_far _TookDownWithItText
 	text_end
 ;rept $E
