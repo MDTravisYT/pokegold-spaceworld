@@ -11,7 +11,7 @@ NamesPointers::
 	dba ItemNames          ; ITEM_NAME
 	dbw $00, wPartyMonOTs  ; PARTY_OT_NAME
 	dbw $00, wOTPartyMonOT ; ENEMY_OT_NAME
-	dba TrainerClassNames  ; TRAINER_NAME
+	dba TrainerClassNames_ENG  ; TRAINER_NAME
 	dbw $04, $5677         ; MOVE_DESC_NAME_BROKEN (wrong bank..?)
 
 GetName::

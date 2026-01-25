@@ -988,6 +988,8 @@ ROMX $3f
 	
 ROMX $40
 	"_new/text/battle.asm"
+	"_new/text/class_names.asm"
+	"_new/text/move_names.asm"
 	"_new/text/oak_speech.asm"
 	"_new/text/PlayerHouse2F.asm"
 	"_new/text/PlayerHouse1F.asm"

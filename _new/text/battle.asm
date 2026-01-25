@@ -671,7 +671,7 @@ _Text_BattleEffectActivate::
 	text "<USER>'s"
 	line "@"
 	text_from_ram wStringBuffer2
-	prompt
+	text_end
 
 _BattleStatWentWayUpText::
 	text_exit
