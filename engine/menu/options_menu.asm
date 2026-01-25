@@ -42,7 +42,7 @@ OptionsMenu::
 	jr nz, .Loop
 
 	ld a, [wOptionsMenuCursorX]
-	cp 7
+	cp 10
 	jr z, .SwitchActiveFrame
 .ExitOptions:
 	push de
@@ -173,14 +173,24 @@ OptionsMenu::
 	ld a, [wOptionsTextSpeedCursorX]
 	cp 1
 	jr z, .update_text_speed
+	cp 7
+	jr nz, .fromSlowToMedium
+	sub 6
+	jr .update_text_speed
+.fromSlowToMedium
 	sub 7
 	jr .update_text_speed
 
 .text_speed_right
 	ld a, [wOptionsTextSpeedCursorX]
-	cp 15
+	cp 14
 	jr z, .update_text_speed
+	cp 7
+	jr nz, .fromFastToMedium
 	add 7
+	jr .update_text_speed
+.fromFastToMedium
+	add 6
 .update_text_speed
 	ld [wOptionsTextSpeedCursorX], a
 	jp .ClearOldMenuCursor
@@ -207,7 +217,7 @@ OptionsMenu::
 	call GetOptionsMenuCursorPos
 	ld [hl], '▷'
 	ld a, [wOptionsMenuCursorX]
-	xor %110 ; 1 <-> 7
+	xor %1011 ; 1 <-> 10
 	ld [wOptionsMenuCursorX], a
 	jp .Loop
 
@@ -328,7 +338,7 @@ DisplayOptionsMenu:
 	hlcoord 1, OPT_BOTTOM_ROW
 	ld [hl], '▷'
 ; Cursor in front of frame options
-	hlcoord 7, OPT_BOTTOM_ROW
+	hlcoord 10, OPT_BOTTOM_ROW
 	ld [hl], '▷'
 	ld a, [wOptionsTextSpeedCursorX]
 	ld [wOptionsMenuCursorX], a
@@ -393,12 +403,12 @@ DisplayOptionsMenu:
 	ld de, .OptionsText_Cancel
 	call PlaceString
 ; Draw the text box for the frame options
-	hlcoord 6, OPT_BOTTOM_ROW - 1
+	hlcoord 9, OPT_BOTTOM_ROW - 1
 	ld b, 1
-	ld c, 11
+	ld c, 9
 	call DrawTextBox
 
-	hlcoord 7, OPT_BOTTOM_ROW
+	hlcoord 11, OPT_BOTTOM_ROW
 	ld de, .OptionsText_FrameType
 	call PlaceString
 ; Place # of active frame
@@ -408,40 +418,40 @@ DisplayOptionsMenu:
 	ld [hl], a
 	ret
 
-.OptionsText_TextSpeed:
-	db "はなしの　はやさ"
-	next "　はやい　　　　ふつう　　　　おそい"
+.OptionsText_TextSpeed:	;	01:7b96
+	db   "TEXT SPEED"
+	next " FAST  MEDIUM SLOW"
 	text_end
 
-.OptionsText_BattleScene:
-	db "せんとう　アニメーション"
-	next "　じっくり　みる　　とばして　みる"
+.OptionsText_BattleScene:	;	01:7bb2
+	db   "BATTLE ANIMATION"
+	next " ON       OFF"
 	text_end
 
-.OptionsText_BattleStyle:
-	db "しあいの　ルール"
-	next "　いれかえタイプ　　かちぬきタイプ"
+.OptionsText_BattleStyle:	;	01:7bd1
+	db   "BATTLE STYLE"
+	next " SHIFT    SET"
 	text_end
 
-.OptionsText_Sound:
-	db "　モノラル　　　　　ステレオ"
+.OptionsText_Sound:	;	01:7bec
+	db   " MONO     STEREO"
 	text_end
 
-.OptionsText_Cancel:
-	db "　おわり"
+.OptionsText_Cancel:	;	01:7bfb
+	db " CANCEL"
 	text_end
 
-.OptionsText_FrameType:
-	db "　わく　を　かえる　"
+.OptionsText_FrameType:	;	01:7c00
+	db "FRAME"
 	text_end
 
 ; Table that indicates how the 3 text speed options affect frame delays.
 ; Format:
 ; 00: X coordinate of menu cursor.
 ; 01: delay after printing a letter (in frames).
-TextSpeedOptionData:
-	db 15, TEXT_DELAY_SLOW
-	db  8, TEXT_DELAY_MED
+TextSpeedOptionData:	;	01:7c0b
+	db 14, TEXT_DELAY_SLOW
+	db  7, TEXT_DELAY_MED
 	db  1, TEXT_DELAY_FAST
 	db  8, -1
 

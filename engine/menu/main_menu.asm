@@ -176,7 +176,7 @@ MainMenu::
 
 MainMenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 0, 0, 13, 7
+	menu_coords 0, 0, 14, 7
 	dw .MenuData
 	db 1 ; default option
 
@@ -187,14 +187,17 @@ MainMenuHeader:
 	dw PlaceMenuStrings
 	dw .Strings
 
-.Strings:
-	db "つづきから　はじめる@"
-	db "さいしょから　はじめる@"
-	db "せっていを　かえる@"
-	db "#を　あそぶ@"
-	db "じかんセット@"
+.Strings:	;	01:5428
+	db "CONTINUE@"
+	db "NEW GAME@"
+	db "OPTION@"
+	db "PLAY #MON@"
+	db "TIME@"
+rept 7
+	nop
+endr
 
-MainMenuJumptable:
+MainMenuJumptable:	;	01:5457
 	dw Continue
 	dw NewGame
 	dw MenuCallSettings

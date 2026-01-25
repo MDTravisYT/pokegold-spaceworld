@@ -248,12 +248,12 @@ PrintMomsName::   print_name wMomsName
 PrintPlayerName:: print_name wPlayerName
 PrintRivalName::  print_name wRivalName
 
-TrainerChar:: print_name TrainerCharText
-TMChar::      print_name TMCharText
-PCChar::      print_name PCCharText
-RocketChar::  print_name RocketCharText
-PlacePOKe::   print_name POKeCharText
-SixDotsChar:: print_name SixDotsCharText
+TrainerChar:: print_name TrainerCharText_ENG
+TMChar::      print_name TMCharText_ENG
+PCChar::      print_name PCCharText_ENG
+RocketChar::  print_name RocketCharText_ENG
+PlacePOKe::   print_name POKeCharText_ENG
+SixDotsChar:: print_name SixDotsCharText_ENG
 GaCharacter:: print_name GaCharacterTExt
 
 PlaceMoveTargetsName::

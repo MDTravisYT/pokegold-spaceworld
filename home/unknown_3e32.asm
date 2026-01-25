@@ -39,6 +39,14 @@ TextCommand_FAR::
 	ldh [hROMBank], a
 	ld [MBC3RomBank], a
 	jp NextTextCommand
+	
+TMCharText_ENG::      db "TM@"
+TrainerCharText_ENG:: db "TRAINER@"
+PCCharText_ENG::      db "PC@"
+RocketCharText_ENG::  db "ROCKET@"
+POKeCharText_ENG::    db "POKé@"
+SixDotsCharText_ENG:: db "⋯⋯@"
+EnemyText_ENG::       db "Enemy @"
 
 ;DEF Old_FarCallFunctionAddress EQU $2f91
 ;
