@@ -46,7 +46,10 @@ PalPacket_Pokedex:
 PalPacket_SlotMachine:
 	sgb_pal_set SLOTS_1, SLOTS_2, SLOTS_3, SLOTS_4
 
-PalPacket_TitleScreen:
+PalPacket_TitleScreen1:
+	sgb_pal_set LOGO_2, LOGO_2, MEWMON, PURPLEMON
+
+PalPacket_TitleScreen2:
 	sgb_pal_set LOGO_1, LOGO_2, MEWMON, PURPLEMON
 
 PalPacket_9a3c:

@@ -29,7 +29,7 @@ LoadSGBLayout:
 	dw SGB_StatsScreenHPPals
 	dw SGB_Pokedex
 	dw SGB_SlotMachine
-	dw SGB_TitleScreen
+	dw SGB_TitleScreen1
 	dw SGB_GSIntro
 	dw SGB_Diploma
 	dw SGB_MapPals
@@ -45,6 +45,7 @@ LoadSGBLayout:
 	dw SGB_TrainerGear
 	dw SGB_TrainerGearMap
 	dw SGB_TrainerGearRadio
+	dw SGB_TitleScreen2
 
 SGB_BattleGrayscale:
 	ld hl, PalPacket_BattleGrayscale
@@ -163,9 +164,14 @@ SGB_SlotMachine:
 	ld de, BlkPacket_SlotMachine
 	ret
 
-SGB_TitleScreen:
-	ld hl, PalPacket_TitleScreen
-	ld de, BlkPacket_TitleScreen
+SGB_TitleScreen1:
+	ld hl, PalPacket_TitleScreen1
+	ld de, BlkPacket_TitleScreen1
+	ret
+
+SGB_TitleScreen2:
+	ld hl, PalPacket_TitleScreen2
+	ld de, BlkPacket_TitleScreen2
 	ret
 
 SGB_Diploma:

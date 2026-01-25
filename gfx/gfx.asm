@@ -70,7 +70,7 @@ TitleScreenGFX:: INCBIN "gfx/title/title.2bpp"
 TitleScreenVersionGFX:: INCBIN "gfx/title/title_gold_version.2bpp"
 TitleScreenHoOhGFX:: INCBIN "gfx/title/title_hooh.2bpp"
 TitleScreenLogoGFX:: INCBIN "gfx/title/title_logo.2bpp"
-TitleScreenGoldLogoGFX:: INCBIN "gfx/title/title_goldlogo.2bpp"
+;TitleScreenGoldLogoGFX:: INCBIN "gfx/title/title_goldlogo.2bpp"
 else
 TitleScreenGFX:: INCBIN "gfx/title/title.2bpp"
 TitleScreenVersionGFX:: INCBIN "gfx/title/title_silver_version.2bpp"

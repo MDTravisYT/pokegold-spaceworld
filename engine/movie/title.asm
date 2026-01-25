@@ -96,15 +96,15 @@ TitleSequenceInit::
 
 	ld hl, TitleScreenLogoGFX
 	ld de, vChars1
-	ld bc, 58 tiles
+	ld bc, 112 tiles
 	ld a, BANK(TitleScreenLogoGFX)
 	call FarCopyData
 
-	ld hl, TitleScreenGoldLogoGFX
-	ld de, vChars1 tile $3a
-	ld bc, 20 tiles
-	ld a, BANK(TitleScreenGoldLogoGFX)
-	call FarCopyData
+;	ld hl, TitleScreenGoldLogoGFX
+;	ld de, vChars1 tile $3a
+;	ld bc, 20 tiles
+;	ld a, BANK(TitleScreenGoldLogoGFX)
+;	call FarCopyData
 
 	call SetTitleGfx
 	ld hl, wTileMapBackup
@@ -118,7 +118,7 @@ TitleSequenceInit::
 	ld a, '　'
 	call ByteFill
 
-	ld b, SGB_TITLE_SCREEN
+	ld b, SGB_TITLE_SCREEN1
 	call GetSGBLayout
 	call EnableLCD
 	ld a, $01
@@ -161,7 +161,7 @@ TitleSequenceInit::
 	ret
 
 FirePositionTable::
-	dbpixel 28,  9,  0,  4
+	dbpixel 28, 16,  0,  4 ; changed second value from 9 to 16 for SGB reasons
 	dbpixel 20, 11,  0,  0
 	dbpixel 18, 12,  0,  4
 	dbpixel 26, 14,  0,  0
@@ -206,12 +206,12 @@ TitleScreenSequenceTable::
 	dw TitleSeq_InitFlashTitle
 	dw TitleSeq_FlashTitle
 
-	dw TitleSeq_PMJapaneseChara
+;	dw TitleSeq_PMJapaneseChara
 	dw TitleSeq_IncreaseJumpTableIndex
 	dw TitleSeq_IncreaseJumpTableIndex
 	dw TitleSeq_IncreaseJumpTableIndex
 	dw TitleSeq_WaitForNextSequence
-	dw TitleSeq_PMSubtitle
+;	dw TitleSeq_PMSubtitle
 	dw TitleSeq_IncreaseJumpTableIndex
 	dw TitleSeq_IncreaseJumpTableIndex
 
@@ -333,6 +333,8 @@ TitleSeq_FlashTitle::
 	call TitleSeq_IncreaseJumpTableIndex
 	ld a, %11100100
 	ldh [rBGP], a
+	ld b, SGB_TITLE_SCREEN2
+	call GetSGBLayout
 	ret
 
 TitleSeq_PMJapaneseChara::
@@ -456,7 +458,7 @@ TitleSeq_FadeMusicOut::
 
 SetLYOverrides::
 	ld hl, wLYOverrides
-	ld c, $30
+	ld c, $38
 .setly_loop
 	ld [hli], a
 	dec c
@@ -470,7 +472,7 @@ PrintPMSubtitle::
 	jr LoadPrintArea
 
 PrintVersion::
-	coord hl, 4, 1
+	coord hl, 6, 7
 	ld b, $09
 	ld a, $60
 
@@ -488,13 +490,13 @@ PrintPMJapaneseChara::
 	jr PrintBoxArea
 
 PrintPokemonLogo::
-	coord hl, 15, 3
-	ld [hl], $B8
-	coord hl, 15, 4
-	ld [hl], $B9
-	coord hl, 1, 2
+;	coord hl, 15, 3
+;	ld [hl], $B8
+;	coord hl, 15, 4
+;	ld [hl], $B9
+	coord hl, 2, 0	;	x pos, y pos
 	ld a, $80
-	ld bc, $0E04
+	ld bc, $1007	;	first byte = width, second byte = height
 
 PrintBoxArea::
 	ld de, SCREEN_WIDTH
