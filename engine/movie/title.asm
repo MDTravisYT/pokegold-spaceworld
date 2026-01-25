@@ -270,7 +270,7 @@ TitleSeq_Start::
 	ld de, SFX_TITLE_ENTRANCE
 	call PlaySFX
 	pop de
-	ld a, $80
+	ld a, $90	;	starting position of title scroll
 	ld [wJumptableIndex + 2], a
 	call SetLYOverrides
 	ld a, LOW(rSCX)
