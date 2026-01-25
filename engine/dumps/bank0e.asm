@@ -379,12 +379,8 @@ AI_Switch:
 	ret
 
 .EnemyWithdrewText:
-	text_from_ram wOTClassName
-	text "は"
-	line "@"
-	text_from_ram wEnemyMonNickname
-	text "をひっこめた！"
-	prompt
+	text_far _EnemyWithdrewText
+	text_end
 
 AIUseFullHeal:
 	call AIPlayRestoringSFX
@@ -513,14 +509,8 @@ PrintText_UsedItemOn:
 	jp PrintText
 
 .EnemyUsedOnText
-	text_from_ram wOTClassName
-	text "は　@"
-	text_from_ram wEnemyMonNickname
-	text "に"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "を　つかった"
-	prompt
+	text_far _EnemyUsedOnText
+	text_end
 
 ; START OF: "engine/battle/trainer_huds.asm"
 

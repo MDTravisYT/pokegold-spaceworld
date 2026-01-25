@@ -201,7 +201,7 @@ MainMenuJumptable:	;	01:5457
 	dw Continue
 	dw NewGame
 	dw MenuCallSettings
-	dw NewGame
+	dw NewGameDemo
 	dw MainMenuOptionSetTime
 
 MainMenuItems:
@@ -222,6 +222,7 @@ ContinueMenu:
 PlayPokemonMenu:
 	db 2
 	db PLAY_POKEMON
+	db NEW_GAME
 	db OPTION
 	db -1
 
@@ -328,7 +329,7 @@ PlayerInfoText:
 	next "プレイじかん"
 	text_end
 
-NewGame::
+NewGameDemo::
 	ld de, MUSIC_NONE
 	call PlayMusic
 	ld de, MUSIC_OAK_INTRO
@@ -344,5 +345,24 @@ NewGame::
 	ld a, [wDebugFlags]
 	bit DEBUG_FIELD_F, a
 	jp z, DemoStart
+	call DebugSetUpPlayer
+	jp IntroCleanup
+
+NewGame::
+	ld de, MUSIC_NONE
+	call PlayMusic
+	ld de, MUSIC_OAK_INTRO
+	call PlayMusic
+	call LoadFontExtra
+	xor a
+	ldh [hBGMapMode], a
+	farcall InitializeNewGameWRAM
+	call ClearTileMap
+	call ClearWindowData
+	xor a
+	ldh [hMapAnims], a
+	ld a, [wDebugFlags]
+	bit DEBUG_FIELD_F, a
+	jp z, GameStart
 	call DebugSetUpPlayer
 	jp IntroCleanup

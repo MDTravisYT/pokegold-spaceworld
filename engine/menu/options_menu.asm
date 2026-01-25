@@ -456,6 +456,6 @@ TextSpeedOptionData:	;	01:7c0b
 	db  8, -1
 
 Unknown7c2a:
-rept 491
-	db $39, $00
-endr
+;rept 491
+;	db $39, $00
+;endr

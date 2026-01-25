@@ -56,14 +56,14 @@ _PlayerHouse2FTextString4:
 	done
 	
 _PlayerHouse2FTextString5:
-	text "<PLAYER> thruned on"
+	text "<PLAYER> turned on"
 	line "the PC."
 	
 	para "Oh? There seems to"
 	line "be a new e-mail"
-	para "addressed to"
-	para "<PLAYER!> Read it?"
-	text_end
+	cont "addressed to"
+	cont "<PLAYER>! Read it?"
+	start_asm
 	
 _PlayerHouse2FTextString6:
 	text "I hope you'll"

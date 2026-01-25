@@ -207,16 +207,16 @@ TitleScreenSequenceTable::
 	dw TitleSeq_FlashTitle
 
 ;	dw TitleSeq_PMJapaneseChara
-	dw TitleSeq_IncreaseJumpTableIndex
-	dw TitleSeq_IncreaseJumpTableIndex
-	dw TitleSeq_IncreaseJumpTableIndex
-	dw TitleSeq_WaitForNextSequence
+;	dw TitleSeq_IncreaseJumpTableIndex
+;	dw TitleSeq_IncreaseJumpTableIndex
+;	dw TitleSeq_IncreaseJumpTableIndex
+;	dw TitleSeq_WaitForNextSequence
 ;	dw TitleSeq_PMSubtitle
-	dw TitleSeq_IncreaseJumpTableIndex
-	dw TitleSeq_IncreaseJumpTableIndex
+;	dw TitleSeq_IncreaseJumpTableIndex
+;	dw TitleSeq_IncreaseJumpTableIndex
 
-	dw TitleSeq_IncreaseJumpTableIndex
-	dw TitleSeq_WaitForNextSequence
+;	dw TitleSeq_IncreaseJumpTableIndex
+;	dw TitleSeq_WaitForNextSequence
 	dw TitleSeq_Version
 	dw TitleSeq_IncreaseJumpTableIndex
 	dw TitleSeq_IncreaseJumpTableIndex

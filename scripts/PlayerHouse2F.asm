@@ -173,14 +173,13 @@ endr
 
 PlayerHouse2FTextString5:	;	34:43bd
 	text_far _PlayerHouse2FTextString5
-rept $31
-	nop
-endr
-
 	start_asm
 	call PlayerHouse2FCheckEmail
 	call TextAsmEnd
 	ret
+rept $31
+	nop
+endr
 
 PlayerHouse2FTextString6:	;	34:43fa
 	text_far _PlayerHouse2FTextString6

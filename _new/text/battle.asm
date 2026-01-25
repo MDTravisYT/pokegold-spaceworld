@@ -244,6 +244,7 @@ _GotMoneyForWinningText:
 
 _BattleText_EnemyWasDefeated:
 	text_from_ram wOTClassName
+	text " "
 	line "was defeated!"
 	prompt
 	
@@ -1009,4 +1010,22 @@ _BattleText_UsersStringBuffer1Activated:
 	text_from_ram wStringBuffer1
 	text_start
 	cont "activated!"
+	prompt
+	
+_EnemyWithdrewText::
+	text "<ENEMY>"
+	line "withdrew"
+	cont "@"
+	text_from_ram wEnemyMonNickname
+	text "!"
+	prompt
+
+_EnemyUsedOnText::
+	text "<ENEMY>"
+	line "used @"
+	text_from_ram wStringBuffer1
+	text_start
+	cont "on @"
+	text_from_ram wEnemyMonNickname
+	text "!"
 	prompt
