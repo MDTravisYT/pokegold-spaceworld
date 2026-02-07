@@ -272,7 +272,7 @@ _DebugMenuSoundTest::
 	text_start
 	line "@"
 	text_from_ram wStartDay
-	text "　"
+	text "　"	;	NOTRANSLATE
 	done
 
 INCLUDE "data/sound_test_text_pointers.inc"

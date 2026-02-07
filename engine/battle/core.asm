@@ -150,7 +150,7 @@ DoBattle:
 	jp nc, .check_any_alive
 	jr WildFled_EnemyFled_LinkBattleCanceled
 
-Unused_OutOfSafariBallsText:
+Unused_OutOfSafariBallsText:	;	NOTRANSLATE, UNUSED
 	text "アナウンス『ピンポーン！"
 
 	para "サファリ　ボールを"
@@ -5710,7 +5710,7 @@ PrintPlayerMon1Text:	;	0f:6792
 	ret
 .Text:
 	text_from_ram wBattleMonNickname
-	text "！"
+	text "！"	;	NOTRANSLATE
 	done
 
 RetreatMon:
@@ -5719,7 +5719,7 @@ RetreatMon:
 
 PlayerMon2Text:
 	text_from_ram wBattleMonNickname
-	text "　@"
+	text "　@"	;	NOTRANSLATE
 	start_asm
 	push de
 	push bc
@@ -5832,16 +5832,16 @@ PrintSafariZoneBattleText:	;	0f:681b
 	jp PrintText
 
 Unused_SafariZoneEatingText:
-	text "やせいの@"
+	text "やせいの@"	;	NOTRANSLATE
 	text_from_ram wEnemyMonNickname
-	text "は"
+	text "は"	;	NOTRANSLATE
 	line "エサを　たべてる！"
 	prompt
 
 Unused_SafariZoneAngryText:
-	text "やせいの@"
+	text "やせいの@"	;	NOTRANSLATE
 	text_from_ram wEnemyMonNickname
-	text "は"
+	text "は"	;	NOTRANSLATE
 	line "おこってる！"
 	prompt
 

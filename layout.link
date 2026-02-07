@@ -994,6 +994,7 @@ ROMX $40
 	"_new/text/PlayerHouse2F.asm"
 	"_new/text/PlayerHouse1F.asm"
 	"_new/text/SilentHillHouse.asm"
+	"_new/text/bank05.asm"
 
 WRAM0
 	org $c000

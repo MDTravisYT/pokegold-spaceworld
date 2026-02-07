@@ -10,7 +10,7 @@ _Unreferenced_PokemonNewsScript::
 	ret
 
 .DuplicatePokemonNewsText
-	text "<PLAYER>は"
+	text "<PLAYER>は"	;	NOTRANSLATE
 	line "ラジオのスイッチを　おした！"
 
 	para "ジェイ　オー　ピー　エム"
@@ -42,63 +42,77 @@ _PokemonBooksScript::
 	ret
 
 ; "Crammed full of POKéMON books!" flavor text
-.PokemonBooksText:
-	text "ポケモンえほんが　そろってる！"
-	done
+.PokemonBooksText:	;	05:4db3
+	text_far _PokemonBooksText
+	text_end
+rept $C
+	nop
+endr
 
-_PlayerHouse1FFridgeScript::
+_PlayerHouse1FFridgeScript::	;	05:4dc4
 	ld hl, .PlayerHouse1FFridgeText
 	call OpenTextbox
 	ret
 
 ; Player's empty fridge flavor text
-.PlayerHouse1FFridgeText:
-	text "なかは<⋯⋯>"
-	line "ほとんど　からっぽだ<⋯⋯>"
-	done
+.PlayerHouse1FFridgeText:	;	05:4dcb
+	text_far _PlayerHouse1FFridgeText
+	text_end
+rept $D
+	nop
+endr
 
-_SilentHillHouseStoveScript::
+_SilentHillHouseStoveScript::	;	05:4ddd
 	ld hl, .SilentHillHouseStoveText
 	call OpenTextbox
 	ret
 
 ; Player's stove
-.SilentHillHouseStoveText:
-	text "ガスコンロの　ひは　きえている"
-	line "あんぜん　だいいち！"
-	done
+.SilentHillHouseStoveText:	;	05:4de4
+	text_far _SilentHillHouseStoveText
+	text_end
+rept $17
+	nop
+endr
 
-_SilentHillHouseSinkScript::
+_SilentHillHouseSinkScript::	;	05:4e00
 	ld hl, .SilentHillHouseSinkText
 	call OpenTextbox
 	ret
 
-.SilentHillHouseSinkText:
-	text "ピカピカの　ながしだい！"
-	line "こんやの　メニューは　なんだろう？"
-	done
+.SilentHillHouseSinkText:	;	05:4e07
+	text_far _SilentHillHouseSinkText
+	text_end
+rept $1B
+	nop
+endr
 
-_PokecenterSignScript::
+_PokecenterSignScript::	;	05:4e27
 	ld hl, .PokecenterSignText
 	call OpenTextbox
 	ret
 
-.PokecenterSignText:
-	text "ポケモンの　たいりょく　かいふく！"
-	line "ポケモンセンター"
-	done
+.PokecenterSignText:	;	05:4e2e
+	text_far _PokecenterSignText
+	text_end
+rept $17
+	nop
+endr
 
-_RivalHouseWindowScript::
+_RivalHouseWindowScript::	;	05:4e4a
 	ld hl, .RivalHouseWindowText
 	call OpenTextbox
 	ret
 
-.RivalHouseWindowText:
-	text "まどが　よごれているぞ？"
-	done
+.RivalHouseWindowText:	;	05:4e51
+	text_far _RivalHouseWindowText
+	text_end
+rept $9
+	nop
+endr
 
 ; Various scenes from the Pokemon anime that play on the player and rival's TVs
-_SilentHillHouseTVScript::
+_SilentHillHouseTVScript::	;	05:4e5f
 	ld a, [wTimeOfDay]
 	and a
 	jr nz, .not_day
@@ -118,28 +132,30 @@ _SilentHillHouseTVScript::
 	ret
 
 ; Scene from "Pokémon: I Choose You!"
-.SilentHillHouseTVDayText:
-	text "ピカチュウが　オニスズメと"
-	line "たたかっている<⋯⋯>"
-	cont "サトシが　なみだ　ぐんでいる<⋯⋯>"
-	cont "#アニメだ！"
-	done
+.SilentHillHouseTVDayText:	;	05:4e79
+	text_far _SilentHillHouseTVDayText
+	text_end
+rept $2A
+	nop
+endr
 
 ; Scene from "Primeape Goes Bananas"
-.SilentHillHouseTVNightText:
-	text "オコリザルが　あばれている<⋯⋯>"
-	cont "サトシが　にげまわってる！<⋯⋯>"
-	cont "#アニメだ！"
-	done
+.SilentHillHouseTVNightText:	;	05:4ea8
+	text_far _SilentHillHouseTVNightText
+	text_end
+rept $21
+	nop
+endr
 
 ; Scene from "Bulbasaur's Mysterious Garden"
-.SilentHillHouseTVMorningText:
-	text "フシギダネが　すねている<⋯⋯>"
-	cont "サトシが　こまっている<⋯⋯>"
-	cont "#アニメだ！"
-	done
+.SilentHillHouseTVMorningText:	;	05:4ece
+	text_far _SilentHillHouseTVMorningText
+	text_end
+rept $1E
+	nop
+endr
 
-Unreferenced_CheckInlineTrainers:
+Unreferenced_CheckInlineTrainers:	;	05:4ef1
 	ld a, [wDebugFlags]
 	set UNK_DEBUG_FLAG_6_F, a ; Should probably be "bit UNK_DEBUG_FLAG_6_F, a"?
 	ret nz
