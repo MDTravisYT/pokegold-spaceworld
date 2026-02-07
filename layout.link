@@ -995,6 +995,13 @@ ROMX $40
 	"_new/text/PlayerHouse1F.asm"
 	"_new/text/SilentHillHouse.asm"
 	"_new/text/bank05.asm"
+	"_new/text/OldCityPokecenter2F.asm"
+	"_new/text/OldCityPokecenterBattle.asm"
+	"_new/text/Route1Gate1F.asm"
+	"_new/text/Route1Gate2F.asm"
+	"_new/text/Route1P1.asm"
+	"_new/text/Route1P2.asm"
+	"_new/text/SilentHill.asm"
 
 WRAM0
 	org $c000

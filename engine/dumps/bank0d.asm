@@ -1167,7 +1167,7 @@ BattleCommand_UsedMoveText:	;	0d:4c83
 	jp PrintText
 
 UsedMoveText:
-	text "<USER>@"
+	text "<USER>@"	;	NOTRANSLATE
 	start_asm
 	ldh a, [hBattleTurn]
 	and a
@@ -2610,17 +2610,17 @@ Unreferenced_Gen1HealEffect:
 	jp PrintButItFailed
 
 Unused_WentToSleepText:
-	text "<USER>は"
+	text "<USER>は"	;	NOTRANSLATE
 	line "ねむりはじめた！"
 	done
 
 Unused_RestedText:
-	text "<USER>は　けんこうになって"
+	text "<USER>は　けんこうになって"	;	NOTRANSLATE
 	line "ねむりはじめた！"
 	done
 
 Unused_RegainedHealthText:
-	text "<USER>は　たいりょくを"
+	text "<USER>は　たいりょくを"	;	NOTRANSLATE
 	line "かいふくした！"
 	prompt
 
@@ -6282,7 +6282,7 @@ BattleCommand_Charge:
 	jp EndMoveEffect
 
 .UsedText
-	text "<USER>@"
+	text "<USER>@"	;	NOTRANSLATE
 	start_asm
 	ld a, [wChargeMoveNum]
 	cp MOVE_RAZOR_WIND

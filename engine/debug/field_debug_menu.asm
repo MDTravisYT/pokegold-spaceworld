@@ -224,7 +224,7 @@ FieldDebug_HealPokemon:
 	ret
 
 .HealedText:
-	text "#の　たいりょくを"
+	text "#の　たいりょくを"	;	TODO WHEN DEBUG IS DISASSEMBLED
 	line "かいふくしました"
 	prompt
 

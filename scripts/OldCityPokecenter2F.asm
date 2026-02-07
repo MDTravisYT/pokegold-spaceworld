@@ -56,11 +56,14 @@ OldCityPokecenter2FText3:
 	call OpenTextbox
 	ret
 
-Text947e3:
-	text "おりゃ！"
-	done
+Text947e3:	;	25:47e3
+	text_far _Text947e3
+	text_end
+rept $1
+	nop
+endr
 
-OldCityPokecenter2FText4:
+OldCityPokecenter2FText4:	;	25:47e9
 	ld hl, OldCityPokecenter2FTextString4
 	call OpenTextbox
 	callfar Function29a1f
@@ -77,16 +80,19 @@ OldCityPokecenter2FText4:
 .asm_9480c
 	ret
 
-OldCityPokecenter2FTextString4:
-	text "うしろにあるのは"
-	line "タイムマシンです"
-	done
+OldCityPokecenter2FTextString4:	;	25:480d
+	text_far _OldCityPokecenter2FTextString4
+	text_end
+rept $E
+	nop
+endr
+
 
 ; TODO?: APPEARS to be movement data. These bytes including a set sliding command makes sense
 ; considering that the Link Cable nurse has no proper walking sprites.
 ; The latter two bytes, however, are an exact match for the address of OldCityPokecenter2FMovement1,
 ; so it's hard to be certain.
-OldCityPokecenter2FMovement_Unreferenced:
+OldCityPokecenter2FMovement_Unreferenced:	;	25:4820
 	slow_step UP
 	set_sliding
 	dw OldCityPokecenter2FMovement1

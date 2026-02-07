@@ -50,36 +50,32 @@ Route1Gate2FTextSign2:
 	call OpenTextbox
 	ret
 
-Route1Gate2FTextString1:
-	text "ガンテツさんって　しってる？"
+Route1Gate2FTextString1:	;	26:415e
+	text_far _Route1Gate2FTextString1
+	text_end
+rept $34
+	nop
+endr
 
-	para "ガンテツさんに"
-	line "きに　いられるように　なれば"
-	cont "トレーナーとして　たいしたもの　よ"
-	done
+Route1Gate2FTextString2:	;	26:4197
+	text_far _Route1Gate2FTextString2
+	text_end
+rept $3C
+	nop
+endr
 
-Route1Gate2FTextString2:
-	text "あなた　かんこうで　きたの？"
-	line "なら　ざんねんね"
+Route1Gate2FTextString3:	;	26:41d8
+	text_far _Route1Gate2FTextString3
+	text_end
+rept $22
+	nop
+endr
 
-	para "オールドシティの"
-	line "ごじゅうのとう　は"
-	cont "だれでも　はいれる　って"
-	cont "ものじゃないわ"
-	done
+Route1Gate2FTextString4:	;	26:41ff
+	text_far _Route1Gate2FTextString4
+	text_end
+rept $20
+	nop
+endr
 
-Route1Gate2FTextString3:
-	text "<PLAYER>は"
-	line "ぼうえんきょうを　のぞいた！"
-
-	para "むむむ！"
-	line "たかーい　とう　が　みえる！"
-	done
-
-Route1Gate2FTextString4:
-	text "<PLAYER>は"
-	line "ぼうえんきょうを　のぞいた！"
-
-	para "むむ？"
-	line "ながーい　かわ　が　みえる"
-	done
+;	26:4224

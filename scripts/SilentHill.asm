@@ -323,11 +323,14 @@ LabClosed:
 	call SetMapStatus
 	ret
 
-SilentHillTextString1:
-	text "あれ？　カギが　かかっている"
-	done
+SilentHillTextString1:	;	36:785f
+	text_far _SilentHillTextString1
+	text_end
+rept $B
+	nop
+endr
 
-SilentHillMovement7:
+SilentHillMovement7:	;	36:786f
 	slow_step DOWN
 	step_end
 
@@ -343,58 +346,61 @@ SilentHillLabText:
 	call OpenTextbox
 	ret
 
-SilentHillTextString2:
-	text "にゅうきょしゃ　ぼしゅうちゅう！"
-	done
+SilentHillTextString2:	;	36:7882
+	text_far _SilentHillTextString2
+	text_end
+rept $D
+	nop
+endr
 
-SilentHillSignText1:
+SilentHillSignText1:	;	36:7894
 	ld hl, SilentHillTextString3
 	call OpenTextbox
 	ret
 
-SilentHillTextString3:
-	text "ここは　サイレント　ヒル"
-	line "しずかな　おか"
-	done
+SilentHillTextString3:	;	36:789b
+	text_far _SilentHillTextString3
+	text_end
+rept $11
+	nop
+endr
 
-SilentHillPlayerHouseText:
+SilentHillPlayerHouseText:	;	36:78b1
 	ld hl, SilentHillTextString4
 	call OpenTextbox
 	ret
 
-SilentHillTextString4:
-	text "ここは　<PLAYER>　のいえ"
-	done
+SilentHillTextString4:	;	36:78b8
+	text_far _SilentHillTextString4
+	text_end
+rept $6
+	nop
+endr
 
-SilentHillRivalHouseText:
+SilentHillRivalHouseText:	;	36:78c3
 	ld hl, SilentHillTextString5
 	call OpenTextbox
 	ret
 
-SilentHillTextString5:
-	text "ここは　<RIVAL>　のいえ"
-	done
+SilentHillTextString5:	;	36:78ca
+	text_far _SilentHillTextString5
+	text_end
+rept $6
+	nop
+endr
 
-SilentHill_TextPointers::
+SilentHill_TextPointers::	;	36:78d5
 	dw SilentHillTextRival1 ; west
 	dw SilentHillTextNorthExit ; north
 	dw SilentHillTextBackpack ; npc1
 	dw SilentHillTextPokemonHate ; npc2
 
-SilentHillTextRival1:
-	text "<RIVAL>『よう　ちょっと　おまえに"
-	cont "じまん　したいことが"
-	cont "あってきたんだよ"
-
-	para "おれ　あの　ゆうめいなオーキドから"
-	line "メール　もらっちゃった！"
-	cont "え？　おまえにも　きたの？"
-	cont "ちぇっ！　つまんねーの！"
-
-	para "⋯⋯ふん！"
-	line "じゃあさ　じゃあさー　おまえさー"
-	cont "じぶんの　ははおや　のこと"
-	cont "いつも　なんて　よんでる？@"
+SilentHillTextRival1:	;	36:78dd
+	text_far _SilentHillTextRival1
+	text_end
+rept $8C
+	nop
+endr
 
 	start_asm
 	call LoadStandardMenuHeader
@@ -405,69 +411,66 @@ SilentHillTextRival1:
 	call UpdateTimePals
 	jp TextAsmEnd
 
-MomNameMenuHeaderUnused:
+MomNameMenuHeaderUnused:	;	36:7989
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 00, 00, 10, 11
 	dw .MomNameMenuDataUnused
 	db 01 ; initial selection
 
-.MomNameMenuDataUnused:
+.MomNameMenuDataUnused:	;	36:7991
 	db STATICMENU_CURSOR
 	db 04 ; items
-	db "じぶんで　きめる@"
-	db "おかあさん　@"
-	db "ママ@"
-	db "かあちゃん@"
+	db "NEW NAME@"
+	db "MOM@"
+	db "MAMA@"
+	db "MOMMY@"
+rept $1
+	nop
+endr
 
-SilentHillTextRival2: ; BYTE OFF
-	text "<RIVAL>『えー　かっこわりい！"
-	line "そんな　こどもっぽい"
-	cont "よびかた　してるなんて"
-	cont "おわらいだぜ！"
-	cont "あー　ちょっとだけ　すっきりした！"
+SilentHillTextRival2: ; BYTE OFF	;	36:79ac
+	text_far _SilentHillTextRival2
+	text_end
+rept $63
+	nop
+endr
 
-	para "そんじゃあ"
-	line "おれは　ひとあし　おさきに"
-	cont "オーキドのところへ"
-	cont "いくことに　するぜ！"
-	done
+SilentHillTextNorthExit:	;	36:7a14
+	text_far _SilentHillTextNorthExit
+	text_end
+rept $11
+	nop
+endr
 
-SilentHillTextNorthExit:
-	text "ちょいまち！"
-	line "まってよ！　まてっ　てば！"
-	done
+SilentHillTextPokemonInGrassString:	;	36:7a2a
+	text_far _SilentHillTextPokemonInGrassString
+	text_end
+rept $6A
+	nop
+endr
 
-SilentHillTextPokemonInGrassString:
-	text "きみは　まったく"
-	line "なんにも　しらないんだね！"
-	cont "くさむらでは"
-	cont "やせいの　ポケモンが　とびだす！"
-
-	para "じぶんも　ポケモンを"
-	line "もって　いれば"
-	cont "たたかえるんだ⋯⋯"
-
-	para "あっ！　ひょっとして　きみは"
-	line "⋯⋯ちょっと"
-	cont "ぼくに　ついて　きて！"
-	done
-
-SilentHillTextBackpack:
+SilentHillTextBackpack:	;	36:7a99
 	ld hl, SilentHillTextBackpackString
 	call OpenTextbox
 	ret
 
-SilentHillTextBackpackString:
-	text "あなたの　リュック　かっこいいわよ"
-	line "どこで　てに　いれたの？"
-	done
+SilentHillTextBackpackString:	;	36:7aa0
+	text_far _SilentHillTextBackpackString
+	text_end
+rept $1B
+	nop
+endr
 
-SilentHillTextPokemonHate:
+SilentHillTextPokemonHate:	;	36:7ac0
 	ld hl, SilentHillTextPokemonHateString
 	call OpenTextbox
 	ret
 
-SilentHillTextPokemonHateString:
-	text "よのなかに　ポケモンが　きらいな"
-	line "ひとは　いるのかな？"
-	done
+SilentHillTextPokemonHateString:	;	36:7ac7
+	text_far _SilentHillTextPokemonHateString
+	text_end
+rept $18
+	nop
+endr
+
+;	36:7ae4

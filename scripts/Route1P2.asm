@@ -80,38 +80,33 @@ Route1P2TextSign1:
 	call OpenTextbox
 	ret
 
-Route1P2TextString1:
-	text "まあ　かわいらしい　トレーナーやこと"
-	line "うちと　ポケモン　しはります？"
+Route1P2TextString1:	;	36:7ce8
+	text_far _Route1P2TextString1
+	text_end
+rept $1F
+	nop
+endr
+
+Route1P2TextString2: ; (unused?)	;	36:7d0c
+	text "いやあ　かんにんやわあ"	;	NOTRANSLATE
 	done
 
-Route1P2TextString2: ; (unused?)
-	text "いやあ　かんにんやわあ"
-	done
+Route1P2TextString3:	;	36:7d19
+	text_far _Route1P2TextString3
+	text_end
+rept $1D
+	nop
+endr
 
-Route1P2TextString3:
-	text "かわいい　かおして　つよおすなあ"
-	line "その　ちょうしで　おきばりやす"
-	done
+Route1P2TextString4:	;	36:7d3b
+	text_far _Route1P2TextString4
+	text_end
+rept $7D
+	nop
+endr
 
-Route1P2TextString4:
-	text "シゲル『おっ　サトシじゃないか！"
-
-	para "なんとか　ここまで　これた"
-	line "って　かんじだな"
-
-	para "じつりょくが　ないのに"
-	line "むり　するなよな"
-
-	para "もっと　ポケモン　あつめるとか"
-	line "いろんな　ポケモン　そだてるとか"
-	cont "やること　あるだろ？"
-
-	para "ここで　ひきかえしたほうが　いいぜ！"
-	line "じゃあな"
-	done
-
-Route1P2TextString5:
-	text "ここは　１ばん　どうろ"
-	line "サイレントヒル　⋯⋯　オールドシティ"
-	done
+Route1P2TextString5:	;	36:7dbd
+	text_far _Route1P2TextString5
+	text_end
+	
+;	bank ends here, no further padding needed

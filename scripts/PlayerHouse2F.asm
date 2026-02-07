@@ -196,7 +196,7 @@ rept $6
 endr
 
 PlayerHouse2FTextString8: ; (unused?)	;	34:4461
-	text "しんはつばい　トレーナーギア！"
+	text "しんはつばい　トレーナーギア！"	;	NOTRANSLATE
 	line "ポケモントレーナーの　ための"
 	cont "さいせんたんの　とけい　です"
 

@@ -150,8 +150,8 @@ DoBattle:
 	jp nc, .check_any_alive
 	jr WildFled_EnemyFled_LinkBattleCanceled
 
-Unused_OutOfSafariBallsText:	;	NOTRANSLATE, UNUSED
-	text "アナウンス『ピンポーン！"
+Unused_OutOfSafariBallsText:
+	text "アナウンス『ピンポーン！"	;	NOTRANSLATE, UNUSED
 
 	para "サファリ　ボールを"
 	line "ぜんぶ　なげました！"

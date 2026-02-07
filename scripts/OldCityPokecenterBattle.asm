@@ -37,7 +37,11 @@ OldCityPokecenterBattleText1:
 	callfar Function28000
 	ret
 
-OldCityPokecenterBattleTextString1:
-	text "ちょっとまってね！@"
-	text_exit
+OldCityPokecenterBattleTextString1:	;	25:4922
+	text_far _OldCityPokecenterBattleTextString1
 	text_end
+rept $8
+	nop
+endr
+
+;	25:492f

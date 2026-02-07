@@ -39,17 +39,20 @@ Route1Gate1FText2:
 	call OpenTextbox
 	ret
 
-Route1Gate1FText1String:
-	text "このゲートを　ぬけると"
-	line "すぐに　オールドシティ　です"
-	done
+Route1Gate1FText1String:	;	26:4090
+	text_far _Route1Gate1FText1String
+	text_end
+rept $17
+	nop
+endr
 
-Route1Gate1FText2String:
-	text "オールドシティには"
-	line "あの　ゆうめいな"
-	cont "ごじゅうのとう　が　あるの"
-
-	para "いってみたこと　ある？"
-	done
+Route1Gate1FText2String:	;	26:40ac
+	text_far _Route1Gate1FText2String
+	text_end
+rept $29
+	nop
+endr
 
 ;ends at 40D9
+
+;	26:40da

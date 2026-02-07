@@ -62,25 +62,32 @@ Route1P1TextSign2:
 	call OpenTextbox
 	ret
 
-Route1P1TextString1:
-	text "しょうねん！"
+Route1P1TextString1:	;	36:7bd7
+	text_far _Route1P1TextString1
+	text_end
+rept $2C
+	nop
+endr
 
-	para "モンスターボールは"
-	line "やせいの　ポケモンを　よわらせてから"
-	cont "つかうのが　きほんだ！"
-	done
+Route1P1TextString2:	;	36:7c08
+	text_far _Route1P1TextString2
+	text_end
+rept $1D
+	nop
+endr
 
-Route1P1TextString2:
-	text "ぼく　ゆうがた　じゅくの　かえりに"
-	line "かわった　ポケモンを　みたよ"
-	done
+Route1P1TextString3:	;	36:7c2a
+	text_far _Route1P1TextString3
+	text_end
+rept $19
+	nop
+endr
 
-Route1P1TextString3:
-	text "このさき　しずかな　おか"
-	line "やせいの　ポケモンに　ちゅうい"
-	done
+Route1P1TextString4:	;	36:7c48
+	text_far _Route1P1TextString4
+	text_end
+rept $1B
+	nop
+endr
 
-Route1P1TextString4:
-	text "ここは　１ばん　どうろ"
-	line "サイレントヒル　⋯⋯　オールドシティ"
-	done
+;	36:7c68
