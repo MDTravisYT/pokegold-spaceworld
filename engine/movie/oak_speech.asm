@@ -367,15 +367,15 @@ DemoItemList::
 	db -1
 
 DemoPlayerName::
-	db "サトシ@"
+	db "ASH@"
 
 DemoRivalName::
-	db "シゲル@"
+	db "GARY@"
 
 OakSpeechDemo::	;	01:587b
 	text_far _OakSpeechDemo
 	text_end
-rept $D6
+rept $D6-1
 	nop
 endr
 

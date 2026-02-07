@@ -162,62 +162,69 @@ ENDM
 	dict '<TARGET>', PlaceMoveTargetsName
 	dict '<USER>', PlaceMoveUsersName
 
-	cp 'ﾟ'
-	jr z, .diacritic
-	cp 'ﾞ'
-	jr nz, .not_diacritic
-.diacritic:
-	push hl
-	ld bc, -SCREEN_WIDTH
-	add hl, bc
-	ld [hl], a
-	pop hl
-	jr NextChar
+;	vvv none of this is needed in english
 
-.not_diacritic:
-	cp FIRST_REGULAR_TEXT_CHAR
-	jr nc, .place
-	cp 'パ'
-	jr nc, .handakuten
-	cp FIRST_HIRAGANA_DAKUTEN_CHAR
-	jr nc, .hiragana_dakuten
-	add 'カ' - 'ガ'
-	jr .katakana_dakuten
+;	cp 'ﾟ'
+;	jr z, .diacritic
+;	cp 'ﾞ'
+;	jr nz, .not_diacritic
+;.diacritic:
+;	push hl
+;	ld bc, -SCREEN_WIDTH
+;	add hl, bc
+;	ld [hl], a
+;	pop hl
+;	jr NextChar
+;
+;.not_diacritic:
+;	cp FIRST_REGULAR_TEXT_CHAR
+;	jr nc, .place
+;	cp 'パ'
+;	jr nc, .handakuten
+;	cp FIRST_HIRAGANA_DAKUTEN_CHAR
+;	jr nc, .hiragana_dakuten
+;	add 'カ' - 'ガ'
+;	jr .katakana_dakuten
+;
+;.hiragana_dakuten:
+;	add 'か' - 'が'
+;.katakana_dakuten:
+;	push af
+;	ld a, 'ﾞ'
+;	push hl
+;	ld bc, -SCREEN_WIDTH
+;	add hl, bc
+;	ld [hl], a
+;	pop hl
+;	pop af
+;	jr .place
+;
+;.handakuten:
+;	cp 'ぱ'
+;	jr nc, .hiragana_handakuten
+;	add 'ハ' - 'パ'
+;	jr .katakana_handakuten
+;
+;.hiragana_handakuten:
+;	add 'は' - 'ぱ'
+;.katakana_handakuten:
+;	push af
+;	ld a, 'ﾟ'
+;	push hl
+;	ld bc, -SCREEN_WIDTH
+;	add hl, bc
+;	ld [hl], a
+;	pop hl
+;	pop af
+;.place:
 
-.hiragana_dakuten:
-	add 'か' - 'が'
-.katakana_dakuten:
-	push af
-	ld a, 'ﾞ'
-	push hl
-	ld bc, -SCREEN_WIDTH
-	add hl, bc
-	ld [hl], a
-	pop hl
-	pop af
-	jr .place
-
-.handakuten:
-	cp 'ぱ'
-	jr nc, .hiragana_handakuten
-	add 'ハ' - 'パ'
-	jr .katakana_handakuten
-
-.hiragana_handakuten:
-	add 'は' - 'ぱ'
-.katakana_handakuten:
-	push af
-	ld a, 'ﾟ'
-	push hl
-	ld bc, -SCREEN_WIDTH
-	add hl, bc
-	ld [hl], a
-	pop hl
-	pop af
-.place:
+;	^^^ none of this is needed in english
+rept $45
+	nop
+endr
 	ld [hli], a
 	call PrintLetterDelay
-NextChar::
+NextChar::	;	00:0f62
 	inc de
 	jp PlaceNextChar
 
