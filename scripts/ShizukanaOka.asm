@@ -149,98 +149,92 @@ ShizukanaOkaSignpost1:
 	call OpenTextbox
 	ret
 
-ShizukanaOkaTrainer6EncounterString:
-	text "ねえ　ねえ　みてよ"
+ShizukanaOkaTrainer6EncounterString:	;	2f:5752
+	text_far _ShizukanaOkaTrainer6EncounterString
+	text_end
+rept $3D
+	nop
+endr
 
-	para "これ　ぜったい"
-	line "しんしゅの　ポケモン　だよ！"
-	done
+ShizukanaOkaTrainer6WonString:	;	2f:5794
+	text_far _ShizukanaOkaTrainer6WonString
+	text_end
+rept $25
+	nop
+endr
 
-	text "まだ　ポケモンの　とくちょう"
-	line "わかってないから　しかたないよ"
-	done
+ShizukanaOkaTrainer5EncounterString:	;	2f:57be
+	text_far _ShizukanaOkaTrainer5EncounterString
+	text_end
+rept $2E
+	nop
+endr
 
-ShizukanaOkaTrainer6WonString:
-	text "あたらしい　ポケモンだけでなく"
-	line "あたらしい　タイプも"
-	cont "みつかったって　うわさだよ"
-	done
+ShizukanaOkaTrainer5WonString:	;	2f:57f1
+	text_far _ShizukanaOkaTrainer5WonString
+	text_end
+rept $15
+	nop
+endr
 
-ShizukanaOkaTrainer5EncounterString:
-	text "いい　てんきねー"
-	line "あなた　ちょうしは　いかが？"
-	done
+ShizukanaOkaTrainer4EncounterString:	;	2f:580b
+	text_far _ShizukanaOkaTrainer4EncounterString
+	text_end
+rept $1D
+	nop
+endr
 
-	text "なにするニャー"
-	line "⋯⋯なにいってるのかしら　あたし"
-	done
+ShizukanaOkaTrainer4WonString:	;	2f:582d
+	text_far _ShizukanaOkaTrainer4WonString
+	text_end
+rept $32
+	nop
+endr
 
-ShizukanaOkaTrainer5WonString:
-	text "なんで　こうなるの？"
-	line "さんぽしてた　だけなのに@@"
+ShizukanaOkaTrainer3EncounterString:	;	2f:5864
+	text_far _ShizukanaOkaTrainer3EncounterString
+	text_end
+rept $1c
+	nop
+endr
 
-ShizukanaOkaTrainer4EncounterString:
-	text "こんなところで"
-	line "ひを　ふく　れんしゅう！"
-	done
+ShizukanaOkaTrainer3WonString:	;	2f:5885
+	text_far _ShizukanaOkaTrainer3WonString
+	text_end
+rept $2E
+	nop
+endr
 
-	text "あちち　しっぱいだー"
-	done
+ShizukanaOkaTrainer2EncounterString:	;	2f:58b8
+	text_far _ShizukanaOkaTrainer2EncounterString
+	text_end
+rept $30
+	nop
+endr
 
-ShizukanaOkaTrainer4WonString:
-	text "よるになると　くらくなるから"
-	line "こどもは　はやく　かえりなさい！"
+ShizukanaOkaTrainer2WonString:	;	2f:58ed
+	text_far _ShizukanaOkaTrainer2WonString
+	text_end
+rept $28
+	nop
+endr
 
-	para "おれ？"
-	line "おれは　ひをふくから　だいじょうぶ"
-	done
+ShizukanaOkaText1String:	;	2f:591a
+	text_far _ShizukanaOkaText1String
+	text_end
+rept $49
+	nop
+endr
 
-ShizukanaOkaTrainer3EncounterString:
-	text "むしポケモンの　ことなら"
-	line "だれよりも　くわしいよ"
-	done
+ShizukanaOkaSignpost2String:	;	2f:5968
+	text_far _ShizukanaOkaSignpost2String
+	text_end
+rept $12
+	nop
+endr
 
-	text "パラパラー"
-	done
+ShizukanaOkaSignpost1String:	;	2f:597f
+	text_far _ShizukanaOkaSignpost1String
+	text_end
 
-ShizukanaOkaTrainer3WonString:
-	text "ポケモンずかんを　つくるんだって？"
-	line "ちょっと　みせてよ"
-
-	para "へー"
-	line "タイプべつに　ポケモン　さがせるんだ"
-	done
-
-ShizukanaOkaTrainer2EncounterString:
-	text "いっとくけど"
-	line "きみよりも　べんきょう　してるから"
-	cont "きみよりも　つよいよ　ぜったい！"
-	done
-
-	text "な　なぜなんだ？"
-	done
-
-ShizukanaOkaTrainer2WonString:
-	text "おかしいよ⋯⋯"
-	line "まいにち　ポケモンの　べんきょうを"
-	cont "きちんと　してるのに　まけるなんて"
-	done
-
-ShizukanaOkaText1String:
-	text "この　おかの　ポケモンは　よわい！"
-	line "だから　ここで　しゅぎょう　している"
-	cont "トレーナーも　おおいよ"
-
-	para "みんな　バトルが　すきだから"
-	line "うでだめしを　するといい"
-	done
-
-ShizukanaOkaSignpost2String:
-	text "しずかな　おか"
-	line "サイレントヒル　は　こちら"
-	done
-
-ShizukanaOkaSignpost1String:
-	text "しずかな　おか"
-	line "オールドシティ　は　こちら"
-	done
+;	bank ends here, no need to pad

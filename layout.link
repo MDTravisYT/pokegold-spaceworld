@@ -1002,6 +1002,8 @@ ROMX $40
 	"_new/text/Route1P1.asm"
 	"_new/text/Route1P2.asm"
 	"_new/text/SilentHill.asm"
+	"_new/text/SilentHillPokecenter.asm"
+	"_new/text/ShizukanaOka.asm"
 
 WRAM0
 	org $c000
