@@ -6,7 +6,7 @@ SECTION "home/names.asm@Names", ROM0
 NamesPointers::
 ; entries correspond to GetName constants (see constants/text_constants.asm)
 	dba PokemonNames       ; MON_NAME (not used; jumps to GetPokemonName)
-	dba MoveNames          ; MOVE_NAME
+	dba MoveNames_ENG          ; MOVE_NAME
 	dbw 0, 0               ; DUMMY_NAME
 	dba ItemNames          ; ITEM_NAME
 	dbw $00, wPartyMonOTs  ; PARTY_OT_NAME

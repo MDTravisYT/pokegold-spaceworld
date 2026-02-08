@@ -83,6 +83,8 @@ wSFXDuration:: db
 
 wMusicInitEnd::
 
+wStringBuffer1:: ds STRING_BUFFER_LENGTH+8
+wStringBuffer2:: ds STRING_BUFFER_LENGTH+8
 
 SECTION "OAM Buffer", WRAM0
 
@@ -1039,7 +1041,7 @@ wTMHMMoveNameBackup:: ds 8
 	ds 1
 
 
-wStringBuffer1:: ds STRING_BUFFER_LENGTH
+;wStringBuffer1:: ds STRING_BUFFER_LENGTH
 
 SECTION "CD31", WRAM0[$CD31]
 
@@ -1052,7 +1054,7 @@ NEXTU
 wHPBarTempHP:: dw
 
 NEXTU
-wStringBuffer2:: ds STRING_BUFFER_LENGTH
+;wStringBuffer2:: ds STRING_BUFFER_LENGTH
 
 NEXTU
 

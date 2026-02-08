@@ -493,7 +493,7 @@ _UsedInsteadText::
 
 _MoveNameText::
 	text_from_ram wStringBuffer2
-	text "@"
+	db "@@"
 	;	fallthrough
 _EndUsedMove1Text::
 	text "!"
