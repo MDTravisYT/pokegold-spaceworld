@@ -64,7 +64,7 @@ DisplayStartMenu:
 
 .StartMenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords $0C, 00, $13, $11
+	menu_coords $0A, 00, $13, $11
 	dw .MenuData
 	db 1 ; default option
 
