@@ -4,17 +4,19 @@ SECTION "engine/items/print_item_description.asm", ROMX
 
 PrintItemDescription::
 	push de
-	ld hl, ItemDescriptions
+	ld hl, ItemDescriptions_ENG
 	ld a, [wSelectedItem]
 	dec a
 	ld c, a
 	ld b, 0
 	add hl, bc
 	add hl, bc
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
+	ld a, BANK(ItemDescriptions_ENG)
+	call GetFarWord
+	ld d, h
+	ld e, l
 	pop hl
-	jp PlaceString
+	ld a, BANK(ItemDescriptions_ENG)
+	jp PlaceFarString
 
 INCLUDE "data/items/descriptions.inc"

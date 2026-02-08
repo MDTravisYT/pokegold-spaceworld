@@ -48,6 +48,38 @@ POKeCharText_ENG::    db "POKé@"
 SixDotsCharText_ENG:: db "⋯⋯@"
 EnemyText_ENG::       db "Enemy @"
 
+PlaceFarString::
+	ld b, a
+	ldh a, [hROMBank]
+	push af
+
+	ld a, b
+	call Bankswitch
+	call PlaceString
+
+	pop af
+	call Bankswitch
+	ret
+
+GetFarWord::
+; retrieve a halfword from a:hl, and return it in hl.
+	; bankswitch to new bank
+	ld [wTempBank], a
+	ldh a, [hROMBank]
+	push af
+	ld a, [wTempBank]
+	call Bankswitch
+
+	; get halfword from new bank, put it in hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	; bankswitch to previous bank and return
+	pop af
+	call Bankswitch
+	ret
+
 ;DEF Old_FarCallFunctionAddress EQU $2f91
 ;
 ;Unreferenced_Function3e32:

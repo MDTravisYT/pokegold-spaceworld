@@ -1406,6 +1406,7 @@ wTimeOfDay:: db
 
 wcd3e: ds 1
 wcd3f: ds 1
+wTempBank: ds 1
 
 SECTION "Options", WRAM0[$CE5F]
 

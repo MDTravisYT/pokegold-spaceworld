@@ -8,7 +8,7 @@ NamesPointers::
 	dba PokemonNames       ; MON_NAME (not used; jumps to GetPokemonName)
 	dba MoveNames_ENG          ; MOVE_NAME
 	dbw 0, 0               ; DUMMY_NAME
-	dba ItemNames          ; ITEM_NAME
+	dba ItemNames_ENG          ; ITEM_NAME
 	dbw $00, wPartyMonOTs  ; PARTY_OT_NAME
 	dbw $00, wOTPartyMonOT ; ENEMY_OT_NAME
 	dba TrainerClassNames_ENG  ; TRAINER_NAME
