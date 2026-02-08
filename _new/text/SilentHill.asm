@@ -86,7 +86,7 @@ _SilentHillTextPokemonInGrassString:
 	
 _SilentHillTextBackpackString:
 	text "That's such a cute"
-	line "PACK! Where'd you"
+	line "BAG! Where'd you"
 	cont "get it?"
 	done
 	
