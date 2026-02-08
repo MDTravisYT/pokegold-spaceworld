@@ -748,9 +748,9 @@ PrintCantUseText:
 	ret
 
 .CantUseHereText:
-	text "オーキドの ことば<⋯⋯>"
-	line "<PLAYER>よ！ こういうものには"
-	cont "つかいどきが あるのじゃ！"
+	text "OAK: <PLAYER>!"
+	line "This isn't the"
+	cont "time to use that!"
 	prompt
 
 DrawNoItemsText:
@@ -1157,8 +1157,8 @@ PokemonNotHoldingText:
 	prompt
 
 ItemStorageFullText:
-	text "どうぐが いっぱいで"
-	line "そうびを はずせません！"
+	text "Item storage space"
+	line "full."
 	prompt
 
 PokemonTookItemText:
