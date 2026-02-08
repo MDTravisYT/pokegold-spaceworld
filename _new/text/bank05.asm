@@ -36,12 +36,13 @@ _RivalHouseWindowText:
 	line "wrong with it."
 	done
 	
-_SilentHillHouseTVDayText:
-	text "SilentHillHouseTVDayText"	;	to be translated
-;	text "ピカチュウが　オニスズメと"
-;	line "たたかっている<⋯⋯>"
-;	cont "サトシが　なみだ　ぐんでいる<⋯⋯>"
-;	cont "#アニメだ！"
+_SilentHillHouseTVDayText:	;	translated by Discord user @mauvesea
+	text "BULBASAUR is"
+	line "pouting and ASH"
+	cont "is in trouble!"
+	
+	para "The #MON anime"
+	line "is on the TV!"
 	done
 	
 _SilentHillHouseTVNightText:
@@ -53,9 +54,12 @@ _SilentHillHouseTVNightText:
 	line "is on the TV!"
 	done
 	
-_SilentHillHouseTVMorningText:
-	text "SilentHillHouseTVMorningText"	;	to be translated
-;	text "フシギダネが　すねている<⋯⋯>"
-;	cont "サトシが　こまっている<⋯⋯>"
-;	cont "#アニメだ！"
+_SilentHillHouseTVMorningText:	;	translated by Discord user @mauvesea
+	text "PIKACHU and"
+	line "SPEAROW are"
+	cont "fighting and ASH"
+	cont "is crying..."
+	
+	para "The #MON anime"
+	line "is on the TV!"
 	done

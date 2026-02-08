@@ -339,12 +339,11 @@ _RecoveredUsingText:
 	text "!"
 	prompt
 	
-_UseItemFailedText:
-	text "power_up_msg"	;	to be translated
-;	text "<USER>が　そうびしていた"
-;	line "@"
-;	text_from_ram wStringBuffer1
-;	text "が　さどうした！"
+_UseItemFailedText:	;	translated by Discord user @mauvesea
+	text "<USER>'s @"
+	text_from_ram wStringBuffer1
+	text " "
+	line "has activated!"
 	prompt
 	
 _FastAsleepText::
