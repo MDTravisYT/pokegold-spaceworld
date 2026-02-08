@@ -8,4 +8,6 @@ Based on the following translations:
  
 For safety reasons, all `text_far` calls and code modifications are padded back to the original length they were in the original ROM. This is due to the disassembly not yet being completed, which can cause shifting around things to get dangerous.
 
+Big thanks to [@Narishma-gb](https://github.com/Narishma-gb/) for their disassemblies of the Japanese versions of the retail games. I wouldn't have been able to know where to look for various things without them.
+
 Find a bug? Something untranslated? Something translated wrong? I made a dumb typo? Report it at the [issues tab](https://github.com/MDTravisYT/pokegold-spaceworld/issues)!
