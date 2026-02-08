@@ -593,7 +593,7 @@ DebugSelectedItemMenu:
 
 SelectedItemMenu:
 	db MENU_BACKUP_TILES
-	menu_coords $0E, $0A, $13, $0E
+	menu_coords $0D, $0A, $13, $0E
 	dw .SelectedItemMenuText
 	db 01
 
