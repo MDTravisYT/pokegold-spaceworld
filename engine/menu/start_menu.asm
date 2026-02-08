@@ -1123,33 +1123,37 @@ GiveTakeItemMenuData:
 
 ItemCantHeldText:
 	text_from_ram wStringBuffer1
-	text "can't be"
-	line "held."
+	text ""
+	line "can't be held."
 	prompt
 
 PokemonSwapItemText:
+	text "Took @"
 	text_from_ram wMonOrItemNameBuffer
-	text "は そうび していた"
+	text "'s"
 	line "@"
 	text_from_ram wStringBuffer1
-	text "を はずして"
-	para "@"
+	text " and"
+
+	para "made it hold"
+	line "@"
 	text_from_ram wStringBuffer2
-	text "を そうびした！"
+	text "."
 	prompt
 
 PokemonHoldItemText:
+	text "Made @"
 	text_from_ram wMonOrItemNameBuffer
-	text "は @"
+	text_start
+	line "hold @"
 	text_from_ram wStringBuffer2
-	text "を"
-	line "そうびした！"
+	text "."
 	prompt
 
 PokemonNotHoldingText:
 	text_from_ram wMonOrItemNameBuffer
-	text "は なにも"
-	line "そうび していません！"
+	text " isn't"
+	line "holding anything."
 	prompt
 
 ItemStorageFullText:
@@ -1158,22 +1162,23 @@ ItemStorageFullText:
 	prompt
 
 PokemonTookItemText:
-	text_from_ram wMonOrItemNameBuffer
-	text "から @"
+	text "Took @"
 	text_from_ram wStringBuffer1
-	text "を"
-	line "はずしました！"
+	text_start
+	line "from @"
+	text_from_ram wMonOrItemNameBuffer
+	text "."
 	prompt
 
 PokemonAskSwapItemText:
 	text_from_ram wMonOrItemNameBuffer
-	text "は @"
-	text_from_ram wStringBuffer1
-	text "を"
-	line "すでに そうび しています"
+	text " is"
+	line "already holding"
 
-	para "そうびしている どうぐを"
-	line "とりかえますか？"
+	para "@"
+	text_from_ram wStringBuffer1
+	text "."
+	line "Switch items?"
 	done
 
 GetPartyItemOffset:
