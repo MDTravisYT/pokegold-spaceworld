@@ -1111,20 +1111,20 @@ PartyHeldItem:
 
 GiveTakeItemMenuData:
 	db STATICMENU_NO_TOP_SPACING | STATICMENU_PLACE_TITLE
-	menu_coords 4, 4, $e, 9
+	menu_coords 4, 4, $f, 9
 	dw .Items
 	db 1 ; default option
 
 .Items:
 	db STATICMENU_CURSOR ; flags
 	db 2 ; # items
-	db "そうびを する@"
-	db "そうびを はずす@"
+	db "GIVE ITEM@"
+	db "TAKE ITEM@"
 
 ItemCantHeldText:
 	text_from_ram wStringBuffer1
-	text "を そうびすることは"
-	line "できません"
+	text "can't be"
+	line "held."
 	prompt
 
 PokemonSwapItemText:
