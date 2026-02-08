@@ -16,7 +16,15 @@ PlacePackItems::
 	ld a, [hl]
 	pop de
 	ld [de], a
-	inc de
+	
+;	ld h, d
+;	ld l, e
+;	ld bc, -SCREEN_WIDTH
+;	add hl, bc
+;	ld d, h
+;	ld e, l
+	
+;	inc de
 	jr PlaceMenuItemName
 
 .attribute_icons:
@@ -36,7 +44,7 @@ PlacePackItems::
 	ret
 
 .CancelString:
-	db "　ーーやめるーー@"
+	db   "-- CANCEL --@"
 
 PlaceMenuItemName::
 	push de
@@ -56,6 +64,10 @@ PlaceMenuItemQuantity::
 	pop hl
 	and a
 	jr nz, .done
+
+	ld bc, SCREEN_WIDTH ; 1 row down, one column to left
+	add hl, bc
+
 	ld [hl], '×'
 	inc hl
 	ld de, wMenuSelectionQuantity

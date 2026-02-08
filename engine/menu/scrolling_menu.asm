@@ -302,6 +302,7 @@ ScrollingMenu_InitFlags::
 ScrollingMenu_UpdateDisplay::
 	call ClearWholeMenuBox
 	ld a, [wMenuScrollPosition]
+
 	and a
 	jr z, .okay
 	ld a, [wMenuBorderTopCoord]
