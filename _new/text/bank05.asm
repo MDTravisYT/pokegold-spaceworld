@@ -63,3 +63,8 @@ _SilentHillHouseTVMorningText:	;	translated by Discord user @mauvesea
 	para "The #MON anime"
 	line "is on the TV!"
 	done
+	
+_GameOverText:
+	text "Do your best next"
+	line "time around!!"
+	done

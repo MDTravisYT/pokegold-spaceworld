@@ -91,6 +91,11 @@ OverworldLoop_ExitBattle::
 	call GBFadeOutToBlack
 	jp Init
 
-.text:
-	text "つぎは　がんばるぞ！！"
-	done
+.text:	;	00:393e
+	text_far _GameOverText
+	text_end
+rept $8
+	nop
+endr
+
+;	00:394b
