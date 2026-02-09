@@ -416,7 +416,7 @@ DebugBackpackLoop:
 	jp HandleBackpackInput
 
 .ToolsPocketText
-	db "     TOOLS BAG      @"
+	db "───TOOLS BAG───@"
 
 .NoTools
 	ld hl, KeyItemsPocketHeader
@@ -436,7 +436,7 @@ DebugBackpackLoop:
 	jr HandleBackpackInput
 
 KeyItemsPocketText:
-	db "   KEY ITEMS BAG    @"
+	db "───KEY ITEMS───@"
 
 NondebugBackpackLoop:
 	ld hl, BackpackMenuHeader
@@ -461,7 +461,7 @@ NondebugBackpackLoop:
 	jr HandleBackpackInput
 
 BackpackHeaderText:
-	db "         BAG        @"
+	db "──────BAG──────@"
 
 HandleBackpackInput:
 	ld a, [wMenuJoypad]
@@ -812,7 +812,7 @@ DrawBackpackTitleRow:
 ;	ld de, .BlankLine
 ;	call PlaceString
 ;	pop de
-	hlcoord 0, 0
+	hlcoord 3, 1
 	call PlaceString
 	ret
 
