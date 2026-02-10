@@ -161,7 +161,7 @@ ENDM
 	dict '<DEXEND>', PlaceDexEnd
 	dict '<TARGET>', PlaceMoveTargetsName
 	dict '<USER>', PlaceMoveUsersName
-	dict '<PAGE>',    PlaceMoveUsersName
+	dict '<PAGE>',    PageChar
 
 ;	vvv none of this is needed in english
 

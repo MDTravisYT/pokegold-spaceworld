@@ -112,7 +112,12 @@ PokedexEntryPointers1_ENG::
 BulbasaurDexEntry_ENG:
 	db   "FarStringTest"
 	next "AAAAAAAAAAAAA"
-	next "scram.@"
+	next "scram."
+	
+	page "bebebebebebebe"
+	next "there are bees."
+	next "        stingy."
+	dex
 
 IvysaurDexEntry_ENG:
 	db "たね@"

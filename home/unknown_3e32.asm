@@ -79,6 +79,23 @@ GetFarWord::
 	pop af
 	call Bankswitch
 	ret
+	
+PageChar::
+	push de
+	ld a, '▼'
+	ldcoord_a 18, 16
+	call ProtectedWaitBGMap
+	call ButtonSound
+	hlcoord 1, 10
+	lb bc, 7, 18
+	call ClearBox
+	ld c, 20
+	call DelayFrames
+	pop de
+	pop hl
+	hlcoord 1, 11
+	push hl
+	jp NextChar
 
 ;DEF Old_FarCallFunctionAddress EQU $2f91
 ;
