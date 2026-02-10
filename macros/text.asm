@@ -31,7 +31,7 @@ MACRO page
 ENDM
 
 MACRO dex
-	db "<DEXEND>@" ; End a Pokédex entry
+	db "@" ; End a Pokédex entry
 ENDM
 
 ; TextCommands indexes (see home/text.asm)

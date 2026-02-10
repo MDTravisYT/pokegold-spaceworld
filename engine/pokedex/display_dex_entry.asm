@@ -92,7 +92,6 @@ _DisplayDexEntry:
 
 .skip_height
 	inc de
-;	inc de
 	ld a, [de]
 	ld b, a
 	inc de

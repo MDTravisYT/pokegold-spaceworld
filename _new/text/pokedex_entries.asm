@@ -110,13 +110,12 @@ PokedexEntryPointers1_ENG::
 	dw KinglerDexEntry_ENG
 
 BulbasaurDexEntry_ENG:
-	db   "FarStringTest"
-	next "AAAAAAAAAAAAAAAAAA"
-	next "scram."
+	db   "Some kind of seed"
+	next "was planted on its"
+	next "back at birth."
 	
-	page "bebebebebebebe"
-	next "there are bees."
-	next "        stingy"
+	page "The seed sprouts"
+	next "as its body grows."
 	dex
 
 IvysaurDexEntry_ENG:

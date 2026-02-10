@@ -110,9 +110,9 @@ PokedexEntryPointers1::
 	dw KinglerDexEntry
 
 BulbasaurDexEntry:
-	db "DRILL@"
-	db 1,23
-	dw 4567
+	db "SEED@"
+	db 2,4
+	dw 150
 
 IvysaurDexEntry:
 	db "たね@"
