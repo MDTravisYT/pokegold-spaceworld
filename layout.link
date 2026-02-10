@@ -1008,6 +1008,9 @@ ROMX $41
 	"_new/text/move_names.asm"
 	"_new/text/item_names.asm"
 	"_new/text/item_descriptions.asm"
+	
+ROMX $42
+	"_new/text/pokedex_entries.asm"
 
 WRAM0
 	org $c000

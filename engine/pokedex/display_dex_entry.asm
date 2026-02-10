@@ -121,11 +121,25 @@ _DisplayDexEntry:
 	ldh [hPokedexTempWeight + 1], a
 	pop af
 	ldh [hPokedexTempWeight], a
-.skip_weight
-	pop de
-	inc de
+.skip_weight	;	below handles dex entry!!
+;	pop de
+;	inc de
+
+	ld hl, PokedexEntryPointers1_ENG
+	ld a, [wTempSpecies]
+	dec a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld a, BANK(PokedexEntryPointers1_ENG)
+	call GetFarWord
+	ld d, h
+	ld e, l
+	pop hl
+	ld a, BANK(PokedexEntryPointers1_ENG)
 	hlcoord 1, 11
-	call PlaceString
+	call PlaceFarString
 	ret
 
 PokedexText_HeightWeight:

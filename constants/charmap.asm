@@ -61,6 +61,8 @@
 	charmap "<な゛>", $35
 	charmap "<に゛>", $36
 	charmap "<ぬ゛>", $37
+	
+	charmap "<PAGE>",    $37
 
 	charmap "<RED>",     $38 ; wRedsName
 	charmap "<GREEN>",   $39 ; wGreensName

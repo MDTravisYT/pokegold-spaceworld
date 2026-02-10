@@ -161,6 +161,7 @@ ENDM
 	dict '<DEXEND>', PlaceDexEnd
 	dict '<TARGET>', PlaceMoveTargetsName
 	dict '<USER>', PlaceMoveUsersName
+	dict '<PAGE>',    PlaceMoveUsersName
 
 ;	vvv none of this is needed in english
 
@@ -219,7 +220,7 @@ ENDM
 ;.place:
 
 ;	^^^ none of this is needed in english
-rept $45
+rept $41
 	nop
 endr
 	ld [hli], a

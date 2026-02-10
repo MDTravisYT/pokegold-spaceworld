@@ -26,6 +26,14 @@ MACRO prompt
 	db "<PROMPT>" ; Prompt the player to end a text box (initiating some other event)
 ENDM
 
+MACRO page
+	db "<PAGE>", \# ; Start a new Pokédex page
+ENDM
+
+MACRO dex
+	db "<DEXEND>@" ; End a Pokédex entry
+ENDM
+
 ; TextCommands indexes (see home/text.asm)
 	const_def
 
