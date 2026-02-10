@@ -309,6 +309,8 @@
 	charmap "№",         $74
 	
 ; English characters
+	charmap "′",         $60 ; gfx/pokedex/pokedex.png
+	charmap "″",         $61 ; gfx/pokedex/pokedex.png
 
 	charmap " ",         $7f
 	charmap "_",         $7f

@@ -36,8 +36,8 @@ _DisplayDexEntry:
 	ld h, b
 	ld l, c
 	push de
-	ld de, PokedexText_Pokemon
-	call PlaceString
+;	ld de, PokedexText_Pokemon
+;	call PlaceString
 	hlcoord 2, 8
 	ld a, '№'
 	ld [hli], a
@@ -53,6 +53,24 @@ _DisplayDexEntry:
 	ld [wCurSpecies], a
 	pop af
 	pop de
+	
+	push af
+	push bc
+	push de
+	push hl
+
+	call WaitBGMap
+	call GetBaseData
+	hlcoord 1, 1
+	call PrepMonFrontpic
+	ld a, [wCurPartySpecies]
+	call PlayCry
+
+	pop hl
+	pop de
+	pop bc
+	pop af
+	
 	ret z
 
 	inc de
@@ -143,10 +161,10 @@ _DisplayDexEntry:
 	ret
 
 PokedexText_HeightWeight:
-	db   "たかさ　　？？？", POKEDEX_m
-	next "おもさ　　？？？", POKEDEX_k, POKEDEX_g
+	db   "HT  ?′??″"
+	next "WT   ???lb@"
 	text_end
 
 PokedexText_Pokemon:
-	db "#" ; "Pokémon" (ポケモン)
+	db " <PK><MN>" ; "Pokémon" (ポケモン)
 	text_end

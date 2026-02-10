@@ -111,7 +111,7 @@ PokedexEntryPointers1_ENG::
 
 BulbasaurDexEntry_ENG:
 	db   "FarStringTest"
-	next "AAAAAAAAAAAAA"
+	next "AAAAAAAAAAAAAAAAAA"
 	next "scram."
 	
 	page "bebebebebebebe"

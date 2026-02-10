@@ -1384,13 +1384,13 @@ Pokedex_DexEntryScreen:
 	ld [wTempSpecies], a
 	call Pokedex_DisplayDexEntry
 
-	call WaitBGMap
-	call GetBaseData
-	hlcoord 1, 1
-	call PrepMonFrontpic
-
-	ld a, [wCurPartySpecies]
-	call PlayCry
+;	call WaitBGMap
+;	call GetBaseData
+;	hlcoord 1, 1
+;	call PrepMonFrontpic
+;
+;	ld a, [wCurPartySpecies]
+;	call PlayCry
 	call Pokedex_DexEntryInput
 	jr c, .loop
 
