@@ -77,26 +77,22 @@ _DisplayDexEntry:
 	ld a, [de]
 	and a
 	jr z, .skip_height
-
-	hlcoord 13, 6
-	lb bc, 1, 3
-	call PrintNumber
-
-	hlcoord 14, 6
-	ld a, [de]
-	cp 10
-	jr nc, .less_than_1_meter
-	ld [hl], '０'
-
-.less_than_1_meter
-; Shift last digit to the right and put decimal point in its place.
-	inc hl
-	ld a, [hli]
-	ld [hld], a
-	ld [hl], '．'
+	
+	hlcoord 12, 6
+	lb bc, 1, 2
+	call PrintNumber ; print feet (height)
+	ld a, '′'
+	ld [hl], a
+	inc de ; de = address of inches (height)
+	hlcoord 15, 6
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNumber ; print inches (height)
+	ld a, '″'
+	ld [hl], a
 
 .skip_height
 	inc de
+;	inc de
 	ld a, [de]
 	ld b, a
 	inc de
@@ -116,8 +112,8 @@ _DisplayDexEntry:
 	ld a, [de]
 	ld [hl], a
 	ld de, hPokedexTempWeight
-	hlcoord 12, 8
-	lb bc, 2, 4
+	hlcoord 11, 8
+	lb bc, 2, 5
 	call PrintNumber
 
 	hlcoord 14, 8

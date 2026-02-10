@@ -116,7 +116,7 @@ BulbasaurDexEntry_ENG:
 	
 	page "bebebebebebebe"
 	next "there are bees."
-	next "        stingy."
+	next "        stingy"
 	dex
 
 IvysaurDexEntry_ENG:

@@ -111,8 +111,8 @@ PokedexEntryPointers1::
 
 BulbasaurDexEntry:
 	db "DRILL@"
-	db 6
-	dw 2650
+	db 1,23
+	dw 4567
 
 IvysaurDexEntry:
 	db "たね@"
