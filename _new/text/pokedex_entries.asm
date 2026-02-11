@@ -119,320 +119,411 @@ BulbasaurDexEntry_ENG:
 	dex
 
 IvysaurDexEntry_ENG:
+	db   "It has a flower"
+	next "bud on its back."
+	next "It gradually grows"
+	
+	page "as it absorbs"
+	next "neutrients."
+	dex
 
 VenusaurDexEntry_ENG:
+	db   "To take good care"
+	next "of its large"
+	next "flower, it moves"
+	
+	page "towards the"
+	next "sunlight as if"
+	next "drawn to it."
+	dex
 	
 CharmanderDexEntry_ENG:
-	db "とかげ@"
-	db 6
-	dw 85
-	db   "あついものを　このむ　せいかく。"
-	next "しっぽの　ほのおは　こうふんすると"
-	next "おんどが　あがっていく。@"
+	db   "Obviously prefers"
+	next "hot places. When"
+	next "excited, the flame"
+	
+	page "on its tail grows"
+	next "hotter."
+	dex
 
 CharmeleonDexEntry_ENG:
-	db "かえん@"
-	db 11
-	dw 190
-	db   "もえる　シッポを　ふりまわすと"
-	next "まわりの　おんどが　どんどん"
-	next "あがって　あいてを　くるしめる。@"
+	db   "When it swings its"
+	next "burning tail, it"
+	next "elevates the"
+	
+	page "temerature to"
+	next "unbearably high"
+	next "levels."
+	dex
 
 CharizardDexEntry_ENG:
-	db "かえん@"
-	db 17
-	dw 905
-	db   "がんせきも　もえあがるような　"
-	next "こうねつの　ほのおを　はいて"
-	next "やまかじを　おこすことも　ある。@"
+	db   "Spits fire so"
+	next "intense it can"
+	next "melt boulders."
+	
+	page "Known to cause"
+	next "forest fires"
+	next "unintentionally."
+	dex
 
 SquirtleDexEntry_ENG:
-	db "かめのこ@"
-	db 5
-	dw 90
-	db   "うまれたあと　せなかが　ふくらんで"
-	next "かたい　こうらが　できる。くちから"
-	next "きょうりょくな　あわを　だす。@"
+	db   "After birth, its"
+	next "back swells and"
+	next "hardens into a"
+	
+	page "shell. Powerfully"
+	next "sprays foam from"
+	next "its mouth."
+	dex
 
 WartortleDexEntry_ENG:
-	db "かめ@"
-	db 10
-	dw 225
-	db   "しばしば　すいちゅうに　かくれ"
-	next "えものを　ねらう。はやく　およぐとき"
-	next "みみを　うごかして　バランスをとる。@"
+	db   "Often hides in"
+	next "water to stalk"
+	next "unwary prey. For"
+	
+	page "swimming fast, it"
+	next "moves its ears to"
+	next "maintain balance."
+	dex
 
 BlastoiseDexEntry_ENG:
-	db "こうら@"
-	db 16
-	dw 855
-	db   "おもたくて　カラが　かたいため"
-	next "のしかかられると　たいていの"
-	next "ポケモンは　きを　うしなってしまう。@"
+	db   "It has a hard and"
+	next "heavy shell. It"
+	next "crushes opponents,"
+	
+	page "making them lose"
+	next "their will to"
+	next "fight."
+	dex
 
 CaterpieDexEntry_ENG:
-	db "いもむし@"
-	db 3
-	dw 29
-	db   "みどりの　ひふに　おおわれている。"
-	next "だっぴして　せいちょうすると"
-	next "いとを　かけて　サナギに　かわる。@"
+	db   "It's covered with a" ; 's becomes one tile
+	next "green skin. When"
+	next "it grows, it sheds"
+	
+	page "the skin, covers"
+	next "with silk, and"
+	next "becomes a cocoon."
+	dex
 
 MetapodDexEntry_ENG:
-	db "さなぎ@"
-	db 7
-	dw 99
-	db   "うすい　カラに　つつまれているが"
-	next "なかみは　とても　やわらかく"
-	next "つよい　こうげきには　たえられない。@"
+	db   "It's encased in a" ; 's becomes one tile
+	next "thin shell and the"
+	next "body inside is"
+	
+	page "tender. It can't"
+	next "withstand a harsh"
+	next "attack."
+	dex
 
 ButterfreeDexEntry_ENG:
-	db "ちょうちょ@"
-	db 11
-	dw 320
-	db   "ハネは　みずを　はじく　りんぷんに"
-	next "まもられている。あめの　ひでも"
-	next "そらを　とぶことが　できる。@"
+	db   "The wings are"
+	next "protected by rain-"
+	next "repellent dust. As"
+	
+	page "a result, this"
+	next "#MON can fly"
+	next "even in rain."
+	dex
 
 WeedleDexEntry_ENG:
-	db "けむし@"
-	db 3
-	dw 32
-	db   "もりに　おおく　ハッパを　たべる。"
-	next "あたまに　するどい　ハリをもち"
-	next "さされると　どくに　おかされる。@"
+	db   "Often found in"
+	next "forests, eating"
+	next "leaves. It has a"
+	
+	page "sharp venomus"
+	next "stinger on its"
+	next "head."
+	dex
 
 KakunaDexEntry_ENG:
-	db "さなぎ@"
-	db 6
-	dw 100
-	db   "おとなの　からだを　つくるため"
-	next "カラのなかで　へんしんちゅう。"
-	next "ほとんど　うごけない。@"
+	db   "Stays inside its"
+	next "shell while"
+	next "creating an adult"
+	
+	page "body to transform"
+	next "into. It barely"
+	next "moves."
+	dex
 
-BeedrillDexEntry_ENG:
-	db "どくばち@"
-	db 10
-	dw 295
-	db   "しゅうだんで　あらわれることもある。"
-	next "もうスピードで　とびまわり"
-	next "おしりの　どくばりで　さしまくる。@"
+BeedrillDexEntry_ENG:	;	Simplified "all the while" to "while"
+	db   "May appear in a"
+	next "swarm. Flies at"
+	next "violent speeds,"
+	
+	page "while stabbing"
+	next "its toxic stinger"
+	next "on its rear."
+	dex
 
-PidgeyDexEntry_ENG:
-	db "ことり@"
-	db 3
-	dw 18
-	db   "もりや　はやしに　おおく　ぶんぷ。"
-	next "ちじょうに　おりてきたとき"
-	next "はばたいて　すなを　かけたりする。@"
+PidgeyDexEntry_ENG:	;	"scatter sand around" changed to "kick up sand".
+	db   "A common sight in"
+	next "forests and woods."
+	next "Even when on"
+	
+	page "ground level, it"
+	next "flaps its wings to"
+	next "kick up sand."
+	dex
 
-PidgeottoDexEntry_ENG:
-	db "とり@"
-	db 11
-	dw 300
-	db   "あしの　ツメが　はったつしている。"
-	next "エサの　タマタマを　つかんで"
-	next "１００キロさきの　す　まで　はこぶ。@"
+PidgeottoDexEntry_ENG:		;	Ommitted mention of Exeggcute for formatting.
+	db   "The claws on its"
+	next "feet are well"
+	next "developed. It can"
+	
+	page "carry prey to its"
+	next "nest over 60 miles"
+	next "away."
+	dex
 
-PidgeotDexEntry_ENG:
-	db "とり@"
-	db 15
-	dw 395
-	db   "うつくしい　ハネを　ひろげて"
-	next "あいてを　いかくする。"
-	next "マッハ２で　そらを　とびまわる。@"
+PidgeotDexEntry_ENG:	;	"intimidate" changed to "alarm"
+	db   "It spreads its"
+	next "gorgeous wings"
+	next "widely to"
+	
+	page "alarm enemies."
+	next "It races the skies"
+	next "at Mach-2 speed."
+	dex
 
 RattataDexEntry_ENG:
-	db "ねずみ@"
-	db 3
-	dw 35
-	db   "なんでも　かじって　こうげき。"
-	next "ちいさいうえに　うごきが　すばやく"
-	next "いろんな　ところに　しゅつぼつする。@"
+	db   "Bites anything"
+	next "when it attacks."
+	next "Small and very"
+	
+	page "quick, it is a"
+	next "common sight in"
+	next "many places."
+	dex
 
 RaticateDexEntry_ENG:
-	db "ねずみ@"
-	db 7
-	dw 185
-	db   "うしろあしの　ゆびは　３ぼんで"
-	next "ちいさな　みずかきが　ついている。"
-	next "かわを　およいで　わたる。@"
+	db   "Its rear feet have"
+	next "three toes each."
+	next "They are webbed,"
+	
+	page "enabling it to"
+	next "swim across"
+	next "rivers."
+	dex
 
 SpearowDexEntry_ENG:
-	db "ことり@"
-	db 3
-	dw 20
-	db   "くさむらの　むしなどを　たべる。"
-	next "はねが　みじかいために　いつも"
-	next "いそがしく　はばたいている。@"
+	db   "Eats bugs in"
+	next "grassy areas. It"
+	next "has to flap its"
+	
+	page "short wings at"
+	next "high speed to stay"
+	next "airborne."
+	dex
 
 FearowDexEntry_ENG:
-	db "くちばし@"
-	db 12
-	dw 380
-	db   "おおきな　つばさで　おおぞらを"
-	next "とびつづけることが　できる。"
-	next "１かいも　おりなくても　へいきだ。@"
+	db   "With its huge and"
+	next "magnificent wings,"
+	next "it can keep aloft"
+	
+	page "without ever"
+	next "having to land for"
+	next "rest."
+	dex
 
 EkansDexEntry_ENG:
-	db "へび@"
-	db 20
-	dw 69
-	db   "くさちに　おおく　かくれている。"
-	next "こどもの　アーボは　どくをもたない。"
-	next "かまれても　だいじょうぶだ。@"
+	db   "It usually hides"
+	next "in the grass. Baby"
+	next "EKANS have no"
+	
+	page "poison, so being"
+	next "bitten poses no"
+	next "threat."
+	dex
 
-ArbokDexEntry_ENG:
-	db "コブラ@"
-	db 35
-	dw 650
-	db   "おなかの　もようが　こわいかおに"
-	next "みえる。よわいてきは　そのもようを"
-	next "みただけで　にげだしてしまう。@"
+ArbokDexEntry_ENG:	;	"the pattern" simplified to "it"
+	db   "The pattern on its"
+	next "belly appears to"
+	next "be a frightening"
+	
+	page "face. Weak foes"
+	next "will flee just at"
+	next "the sight of it."
+	dex
 
 PikachuDexEntry_ENG:
-	db "ねずみ@"
-	db 4
-	dw 60
-	db   "ほっぺたの　りょうがわに"
-	next "ちいさい　でんきぶくろを　もっていて"
-	next "ピンチのときに　ほうでんする。@"
+	db   "It has small"
+	next "electric sacs on"
+	next "both of its cheeks"
+	
+	page "If threatened,"	;	slightly reworded from "If threatened, it looses electric charges from the sacs."
+	next "they lose its"
+	next "charge."
+	dex
 
-RaichuDexEntry_ENG:
-	db "ねずみ@"
-	db 8
-	dw 300
-	db   "でんげきは　１０まんボルトに"
-	next "たっする。シッポに　さわると"
-	next "インドぞうでも　きぜつする。@"
+RaichuDexEntry_ENG:		;	simplified second sentence
+	db   "Its electric"
+	next "charge reaches up"
+	next "to 100,000 volts."
+	
+	page "Touching its tail"
+	next "can cause even an"
+	next "elephant to faint."
+	dex
 
 SandshrewDexEntry_ENG:
-	db "ねずみ@"
-	db 6
-	dw 120
-	db   "みずけの　すくない　ばしょに"
-	next "ふかい　あなを　ほって　かくれる。"
-	next "えものを　ねらうときは　でてくる。@"
+	db   "Burrows deep"
+	next "underground in"
+	next "arid locations far"
+	
+	page "from water. It"
+	next "only emerges to"
+	next "hunt for food."
+	dex
 
 SandslashDexEntry_ENG:
-	db "ねずみ@"
-	db 10
-	dw 295
-	db   "せなかを　まるめると　トゲトゲの"
-	next "ボールみたいだ。そのまま　ころがって"
-	next "ぶつかってきたり　にげたりする。　@"
+	db   "Curls up deep into"
+	next "a spiny ball when"
+	next "threatened. It can"
+	
+	page "roll while curled"
+	next "up to attack or"
+	next "escape."
+	dex
 
-NidoranFDexEntry_ENG:
-	db "どくばり@"
-	db 4
-	dw 70
-	db   "ちいさくても　どくばりの　いりょくは"
-	next "きょうれつで　ちゅういが　ひつよう。"
-	next "メスのほうが　つのが　ちいさい。@"
+NidoranFDexEntry_ENG:	;	ommitted the part about the female's horn being smaller for space
+	db   "Though small, it"
+	next "must be treated"
+	next "with care"
+	
+	page "because of its"
+	next "powerfully toxic"
+	next "barbs."
+	dex
 
 NidorinaDexEntry_ENG:
-	db "どくばり@"
-	db 8
-	dw 200
-	db   "メスなので　ツノのそだちが　おそい。"
-	next "ひっかいたり　かみついたりと"
-	next "にくだんせんを　このむ。@"
+	db   "The female's horn"
+	next "develops slowly."
+	next "Prefers physical"
+	
+	page "attacks such as"
+	next "clawing and"
+	next "biting."
+	dex
 
-NidoqueenDexEntry_ENG:
-	db "ドリル@"
-	db 13
-	dw 600
-	db   "せなかに　はりのような　ウロコが"
-	next "びっしりと　はえている。"
-	next "こうふんすると　はりが　さかだつ。@"
+NidoqueenDexEntry_ENG:	;	reworded slightly
+	db   "Needle-like scales"
+	next "tightly grow on"
+	next "its back. If it"
+	
+	page "becomes excited,"
+	next "the needles"
+	next "bristle outwards."
+	dex
 
 NidoranMDexEntry_ENG:
-	db "どくばり@"
-	db 5
-	dw 90
-	db   "ながい　みみを　たてて　きけんを"
-	next "かんじとる。からだの　とげが"
-	next "おおきいほど　つよい　どくをだす。@"
+	db   "Stiffens its long"
+	next "ears to sense"
+	next "danger. The larger"
+	
+	page "its horns, the"
+	next "more powerful its"
+	next "secreted venom."
+	dex
 
 NidorinoDexEntry_ENG:
-	db "どくばり@"
-	db 9
-	dw 195
-	db   "すぐに　おこって　たたかおうとする。"
-	next "しかも　あたまの　ツノは　ささると"
-	next "きょうれつな　どくそをだす　しくみ。@"
+	db   "An aggressive"
+	next "#MON that is"
+	next "quick to attack."
+	
+	page "The horn on its"
+	next "head secretes a"
+	next "powerful venom."
+	dex
 
-NidokingDexEntry_ENG:
-	db "ドリル@"
-	db 14
-	dw 620
-	db   "ダイヤのように　かたい　ひふと"
-	next "ながく　のびた　ツノが　とくちょう。"
-	next "ツノに　どくがあるので　ちゅうい。@"
+NidokingDexEntry_ENG:	;	reworded slightly
+	db   "Known by its hard"
+	next "diamond-like hide"
+	next "and extended horn."
+	
+	page "Be careful with"
+	next "the horn as it"
+	next "contains venom."
+	dex
 
 ClefairyDexEntry_ENG:
-	db "ようせい@"
-	db 6
-	dw 75
-	db   "ふしぎで　かわいいので　おおくの"
-	next "ファンがいる。ただし　せいそくちが"
-	next "かぎられ　みつけるのが　たいへん。@"
+	db   "Its magical and"
+	next "cute appeal has"
+	next "many admirers. It"
+	
+	page "is rare and found"
+	next "only in certain"
+	next "areas."
+	dex
 
 ClefableDexEntry_ENG:
-	db "ようせい@"
-	db 13
-	dw 400
-	db   "みみが　よくて　１キロ　はなれた"
-	next "ところで　おとした　はりのおとを"
-	next "みごとに　ききわけられる。@"
+	db   "It has an acute"
+	next "sense of hearing."
+	next "It can easily hear"
+	
+	page "a pin being"
+	next "dropped nearly"
+	next "1,000 yards away."
+	dex
 
 VulpixDexEntry_ENG:
-	db "きつね@"
-	db 6
-	dw 99
-	db   "こどもだが　６ほんの　しっぽが"
-	next "うつくしい。せいちょうすると"
-	next "さらに　しっぽが　ふえる。@"
+	db   "While young, it"
+	next "has six gorgeous"
+	next "tails. When it"
+	
+	page "grows, several"
+	next "new tails are"
+	next "sprouted."
+	dex
 
 NinetalesDexEntry_ENG:
-	db "きつね@"
-	db 11
-	dw 199
-	db   "おうごんに　かがやく　たいもうと"
-	next "９ほんの　ながい　しっぽを　もつ。"
-	next "１０００ねん　いきると　いわれる。@"
+	db   "It has nine long"
+	next "tails and fur that"
+	next "gleams gold. It is"
+	
+	page "said to live for"
+	next "1,000 years."
+	dex
 
 JigglypuffDexEntry_ENG:
-	db "ふうせん@"
-	db 5
-	dw 55
-	db   "つぶらな　ひとみが　ゆれるとき"
-	next "ねむけを　もよおす　ふしぎで"
-	next "きもちのいい　うたを　うたう。@"
+	db   "When its huge eyes"
+	next "light up, it sings"
+	next "a mysteriously"
+	
+	page "soothing melody"
+	next "that lulls its"
+	next "enemies to sleep."
+	dex
 
-WigglytuffDexEntry_ENG:
-	db "ふうせん@"
-	db 10
-	dw 120
-	db   "キメこまかい　たいもうは"
-	next "しなやかで　さわると　きもちいい。"
-	next "けがわにすると　うれるという。@"
+WigglytuffDexEntry_ENG:	;	reworded slightly
+	db   "Its fine, detailed"
+	next "fur is supple"
+	next "and feels good to"
+	
+	page "the touch. Said to"
+	next "sell easily when"
+	next "turned into pelt."
+	dex
 
 ZubatDexEntry_ENG:
-	db "こうもり@"
-	db 8
-	dw 75
-	db   "くらい　ばしょに　しゅうだんで"
-	next "はっせいする。ちょうおんぱを　だして"
-	next "ターゲットに　ちかづいていく。@"
+	db   "Forms colonies in"
+	next "perpetually dark"
+	next "places. Uses"
+	
+	page "ultrasonic waves"
+	next "to identify and"
+	next "approach targets."
+	dex
 
 GolbatDexEntry_ENG:
-	db "こうもり@"
-	db 16
-	dw 550
-	db   "するどいキバで　かみついて"
-	next "いちどに　３００シーシーの"
-	next "ちを　すいとってしまう。@"
+	db   "It clamps down on"
+	next "its prey with"
+	next "needle-sharp fangs"
+	
+	page "and drains over 10"
+	next "ounces of blood in"
+	next "one gulp."
+	dex
 
 OddishDexEntry_ENG:
 	db "ざっそう@"
