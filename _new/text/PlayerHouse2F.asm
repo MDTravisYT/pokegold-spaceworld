@@ -103,7 +103,7 @@ _PlayerHouse2FTextString9:
 	para	"Some suspect that"
 	line	"PROF.OAK may have"
 	cont	"simply left for a"
-	cont	"new place to study,"
+	cont	"new place to study"
 	cont	"but we can't yet"
 	cont	"disprove that foul"
 	cont	"play may have been"
