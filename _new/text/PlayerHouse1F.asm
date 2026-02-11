@@ -10,7 +10,7 @@ _PlayerHouse1FTextString1:
 	
 	para "That's wonderful!"
 	line "I may not know too"
-	cont "much about #MON,"
-	cont "but I'll be"
+	cont "much about #-"
+	cont "MON, but I'll be"
 	cont "rooting for you!"
 	done
