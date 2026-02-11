@@ -156,10 +156,10 @@ ShowPokedexMenu:
 	lb bc, 1, 3
 	call PrintNumber
 
-	hlcoord 12, 12
+	hlcoord 15, 12
 	ld de, String_SEEN
 	call PlaceString
-	hlcoord 12, 15
+	hlcoord 15, 15
 	ld de, String_OWN
 	call PlaceString
 
@@ -168,13 +168,13 @@ ShowPokedexMenu:
 	ret
 
 String_SEEN:
-	db "みつけたかず@"
+	db "SEEN@"
 
 String_OWN:
-	db "つかまえたかず@"
+	db "OWN@"
 
 Pokedex_PlaceStartOrSelectString:
-	hlcoord 11, 9
+	hlcoord 15, 8
 	and a
 	jr z, .Select_SEARCH
 	cp $03
@@ -182,22 +182,32 @@ Pokedex_PlaceStartOrSelectString:
 	ret
 
 .Select_SEARCH:
-	ld de, String_SELECT_SEARCH
+	ld de, String_SELECT
+	call PlaceString
+	hlcoord 15, 9
+	ld de, String_SEARCH
 	call PlaceString
 	xor a
 	ret
 
 .Start_TYPE:
-	ld de, String_START_VARIANTS
+	ld de, String_START
+	call PlaceString
+	hlcoord 15, 9
+	ld de, String_VARIANTS
 	call PlaceString
 	ld a, $03
 	ret
 
-String_SELECT_SEARCH:
-	db "セレクト▶けんさく@"
+String_SELECT:
+	db "SEL▶@"
+String_SEARCH:
+	db "SRCH@"
 
-String_START_VARIANTS:
-	db "スタート▶しゅるい@"
+String_START:
+	db "STRT▶@"
+String_VARIANTS:
+	db "VARS@"
 
 Pokedex_ClearScreen:
 	ld hl, wTileMap
@@ -211,11 +221,28 @@ Pokedex_ClearScreen:
 	jr nz, .loop
 
 	hlcoord 0, 0
-	lb bc, 18, 11
+	lb bc, 18, 15
 	call Pokedex_PlaceBorder
-	hlcoord 11, 10
-	lb bc, 8, 9
+	hlcoord 14, 10
+	lb bc, 8, 6
 	call Pokedex_PlaceBorder
+	
+;	print window overlap graphic
+	hlcoord 14, 10
+	ld a, $23
+	ld de, SCREEN_WIDTH
+	ld [hl], a
+	add hl, de
+	ld a, $24
+	ld c, 6
+.next_tile
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .next_tile
+	ld a, $25
+	ld [hl], a
+	
 	ret
 
 Pokedex_Main:
@@ -878,12 +905,12 @@ Pokedex_PlaceBorder:
 Pokedex_PlaceButtons:
 ; Fill 6-by-6 tile area with gray/orange space.
 	push af
-	hlcoord 12, 2
+	hlcoord 15, 2
 	ld a, $10
-	ld de, SCREEN_WIDTH - 6
+	ld de, SCREEN_WIDTH - 5
 	ld b, 6
 .next_row
-	ld c, 6
+	ld c, 5
 .next_tile
 	ld [hli], a
 	dec c
@@ -907,22 +934,22 @@ Pokedex_PlaceButtons:
 
 PlaceArrowButtons:
 ; Up
-	hlcoord 17, 6
+	hlcoord 16, 6
 	ld a, $40
 	call .PutButton
 	
 ; Down
-	hlcoord 17, 2
+	hlcoord 16, 2
 	ld a, $42
 	call .PutButton
 
 ; Previous page
-	hlcoord 18, 4
+	hlcoord 17, 4
 	ld a, $44
 	call .PutButton
 
 ; Next page
-	hlcoord 16, 4
+	hlcoord 15, 4
 	ld a, $46
 	call .PutButton
 	ret
@@ -1311,19 +1338,19 @@ Pokedex_CursorControls:
 Pokedex_PressButtonSprites:
 	ld a, [wPokedexInputFlags]
 
-	hlcoord 17, 6
+	hlcoord 16, 6
 	bit PRESSED_DOWN_F, a
 	jr nz, .PressButton
 
-	hlcoord 17, 2
+	hlcoord 16, 2
 	bit PRESSED_UP_F, a
 	jr nz, .PressButton
 
-	hlcoord 18, 4
+	hlcoord 17, 4
 	bit PRESSED_RIGHT_F, a
 	jr nz, .PressButton
 
-	hlcoord 16, 4
+	hlcoord 15, 4
 	bit PRESSED_LEFT_F, a
 	jr nz, .PressButton
 	ret
