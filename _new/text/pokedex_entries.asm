@@ -119,21 +119,9 @@ BulbasaurDexEntry_ENG:
 	dex
 
 IvysaurDexEntry_ENG:
-	db "たね@"
-	db 10
-	dw 130
-	db   "せなかに　ハナのつぼみが　あり"
-	next "ようぶんを　きゅうしゅう　すると"
-	next "だんだん　そだってくる。@"
 
 VenusaurDexEntry_ENG:
-	db "たね@"
-	db 20
-	dw 1000
-	db   "おおきな　はなを　いじするため"
-	next "ひなたをみつけると　まるで"
-	next "ひきよせられるように　いどうする。@"
-
+	
 CharmanderDexEntry_ENG:
 	db "とかげ@"
 	db 6
@@ -955,106 +943,106 @@ PokedexEntryPointers2_ENG::
 	dw DragoniteDexEntry_ENG
 	dw MewtwoDexEntry_ENG
 	dw MewDexEntry_ENG
-	dw HappaDexEntry_ENG
-	dw HanamoguraDexEntry_ENG
-	dw HanaryuDexEntry_ENG
-	dw HonogumaDexEntry_ENG
-	dw VolbearDexEntry_ENG
-	dw DynabearDexEntry_ENG
-	dw KurusuDexEntry_ENG
-	dw AquaDexEntry_ENG
-	dw AquariaDexEntry_ENG
-	dw HohoDexEntry_ENG
-	dw BoboDexEntry_ENG
-	dw PachimeeDexEntry_ENG
-	dw MokokoDexEntry_ENG
-	dw DenryuDexEntry_ENG
-	dw MikonDexEntry_ENG
-	dw MonjaDexEntry_ENG
-	dw JaranraDexEntry_ENG
-	dw HaneeiDexEntry_ENG
-	dw PukuDexEntry_ENG
-	dw ShibirefuguDexEntry_ENG
-	dw PichuDexEntry_ENG
-	dw PyDexEntry_ENG
-	dw PupurinDexEntry_ENG
-	dw MizuuoDexEntry_ENG
-	dw NatyDexEntry_ENG
-	dw NatioDexEntry_ENG
-	dw GyopinDexEntry_ENG
-	dw MarilDexEntry_ENG
-	dw Manbo1DexEntry_ENG
-	dw IkariDexEntry_ENG
-	dw GrotessDexEntry_ENG
-	dw EksingDexEntry_ENG
-	dw ParaDexEntry_ENG
-	dw KokumoDexEntry_ENG
-	dw TwoheadDexEntry_ENG
-	dw YoroidoriDexEntry_ENG
-	dw AnimonDexEntry_ENG
-	dw HinazuDexEntry_ENG
-	dw SunnyDexEntry_ENG
-	dw PaonDexEntry_ENG
-	dw DonphanDexEntry_ENG
-	dw TwinzDexEntry_ENG
-	dw KirinrikiDexEntry_ENG
-	dw PainterDexEntry_ENG
-	dw KounyaDexEntry_ENG
-	dw RinrinDexEntry_ENG
-	dw BerurunDexEntry_ENG
-	dw NyorotonoDexEntry_ENG
-	dw YadokingDexEntry_ENG
-	dw AnnonDexEntry_ENG
-	dw RedibaDexEntry_ENG
-	dw MitsuboshiDexEntry_ENG
-	dw PuchicornDexEntry_ENG
-	dw EifieDexEntry_ENG
-	dw BlackyDexEntry_ENG
-	dw TurbanDexEntry_ENG
-	dw BetbabyDexEntry_ENG
-	dw TeppouoDexEntry_ENG
-	dw OkutankDexEntry_ENG
-	dw GonguDexEntry_ENG
-	dw KapoererDexEntry_ENG
-	dw PudieDexEntry_ENG
-	dw HanekoDexEntry_ENG
-	dw PoponekoDexEntry_ENG
-	dw WatanekoDexEntry_ENG
-	dw BaririnaDexEntry_ENG
-	dw LipDexEntry_ENG
-	dw NorowaraDexEntry_ENG ; should be ElebabyDexEntry_ENG
-	dw BoobyDexEntry_ENG
-	dw KireihanaDexEntry_ENG
-	dw TsubomittoDexEntry_ENG
-	dw MiltankDexEntry_ENG
-	dw BombseekerDexEntry_ENG
-	dw GiftDexEntry_ENG
-	dw KotoraDexEntry_ENG
-	dw RaitoraDexEntry_ENG
-	dw MadameDexEntry_ENG
-	dw NorowaraDexEntry_ENG
-	dw KyonpanDexEntry_ENG
-	dw YamikarasuDexEntry_ENG
-	dw HappiDexEntry_ENG
-	dw ScissorsDexEntry_ENG
-	dw PurakkusuDexEntry_ENG
-	dw DevilDexEntry_ENG
-	dw HelgaaDexEntry_ENG
-	dw WolfmanDexEntry_ENG
-	dw WarwolfDexEntry_ENG
-	dw Porygon2DexEntry_ENG
-	dw NameilDexEntry_ENG
-	dw HaganeilDexEntry_ENG
-	dw KingdraDexEntry_ENG
-	dw RaiDexEntry_ENG
-	dw EnDexEntry_ENG
-	dw SuiDexEntry_ENG
-	dw NyulaDexEntry_ENG
-	dw HououDexEntry_ENG
-	dw TogepyDexEntry_ENG
-	dw BuluDexEntry_ENG
-	dw TailDexEntry_ENG
-	dw LeafyDexEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
+	dw NihonMonEntry_ENG
 
 VoltorbDexEntry_ENG:
 	db "ボール@"
@@ -1472,702 +1460,10 @@ MewDexEntry_ENG:
 	next "いわれる。そのすがたを　みたものは"
 	next "ぜんこくでも　ほとんど　いない。@"
 
-HappaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HanamoguraDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HanaryuDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HonogumaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-VolbearDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-DynabearDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-KurusuDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-AquaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-AquariaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HohoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-BoboDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PachimeeDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-MokokoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-DenryuDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-MikonDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-MonjaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-JaranraDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HaneeiDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PukuDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-ShibirefuguDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PichuDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PyDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PupurinDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-MizuuoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-NatyDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-NatioDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-GyopinDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-MarilDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-Manbo1DexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-IkariDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-GrotessDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-EksingDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-ParaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-KokumoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-TwoheadDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-YoroidoriDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-AnimonDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HinazuDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-SunnyDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PaonDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-DonphanDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-TwinzDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-KirinrikiDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PainterDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-KounyaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-RinrinDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-BerurunDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-NyorotonoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-YadokingDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-AnnonDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-RedibaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-MitsuboshiDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PuchicornDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-EifieDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-BlackyDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-TurbanDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-BetbabyDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-TeppouoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-OkutankDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-GonguDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-KapoererDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PudieDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HanekoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PoponekoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-WatanekoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-BaririnaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-LipDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-ElebabyDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-BoobyDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-KireihanaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-TsubomittoDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-MiltankDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-BombseekerDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-GiftDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-KotoraDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-RaitoraDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-MadameDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-NorowaraDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-KyonpanDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-YamikarasuDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HappiDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-ScissorsDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-PurakkusuDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-DevilDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HelgaaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-WolfmanDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-WarwolfDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-Porygon2DexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-NameilDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HaganeilDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-KingdraDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-RaiDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-EnDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-SuiDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-NyulaDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-HououDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-TogepyDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-BuluDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-TailDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
-
-LeafyDexEntry_ENG:
-	db "？？？@"
-	db 0
-	dw 0
-	db   "はっけんされた　ばかりの　ポケモン"
-	next "げんざい　ちょうさちゅう。@"
+NihonMonEntry_ENG:
+	db   "A recently discov-"
+	next "-ered #MON."
+	
+	page "Currently under"
+	next "investigation."
+	dex

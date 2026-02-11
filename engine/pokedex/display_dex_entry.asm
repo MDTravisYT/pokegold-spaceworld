@@ -140,6 +140,11 @@ _DisplayDexEntry:
 
 	ld hl, PokedexEntryPointers1_ENG
 	ld a, [wTempSpecies]
+	cp DEX_VOLTORB
+	jr c, .got_dex_entries2
+	sub DEX_VOLTORB - 1
+	ld hl, PokedexEntryPointers2_ENG
+.got_dex_entries2
 	dec a
 	ld c, a
 	ld b, 0
