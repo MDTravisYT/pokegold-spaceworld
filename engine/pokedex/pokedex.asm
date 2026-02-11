@@ -444,7 +444,7 @@ Pokedex_InitAButtonMenu:
 	ld a, A_BUTTON_MENU_NO_UNOWN
 .DisplayButtons
 	call ShowPokedexMenu
-	depixel 4, 16, 4, 4
+	depixel 4, 15, 4, 4
 	ld a, SPRITE_ANIM_OBJ_POKEDEX_HAND_CURSOR
 	call InitSpriteAnimStruct
 	ld a, c
@@ -598,7 +598,7 @@ Pokedex_InitSelectButtonMenu:
 	ld a, SELECT_BUTTON_MENU
 	call ShowPokedexMenu
 
-	depixel 4, 16, 4, 4
+	depixel 4, 15, 4, 4
 	ld a, SPRITE_ANIM_OBJ_POKEDEX_HAND_CURSOR
 	call InitSpriteAnimStruct
 
@@ -941,43 +941,28 @@ PlaceArrowButtons:
 	ret
 
 PlaceOptionButtons_A:
-; DATA
-	hlcoord 12, 2
-	ld a, $5
-	call PutOptionButton
-; CRY
 	hlcoord 15, 2
-	ld a, $8
-	call PutOptionButton
-; AREA
-	hlcoord 12, 4
-	ld a, $b
-	call PutOptionButton
-; Notably uses the Select Button menu's BACK button, instead of とじる ("CLOSE"),
-; likely due to how it's split in the graphics data.
-	hlcoord 15, 4
-	ld a, $2a
-	call PutOptionButton
+	ld de, DexButtonsLayoutA
+	call PlaceString
 	ret
+	
+DexButtonsLayoutA:
+	db $05, $07, $08, $09, $06, $4E
+	db $05, $0A, $0B, $0C, $06, $4E
+	db $05, $0D, $0E, $0F, $06, $4E
+	db $05, $15, $16, $17, $06, $50
 
 PlaceOptionButtons_Select:
-; NUMBER
-	hlcoord 12, 2
-	ld a, $24
-	call PutOptionButton
-; ABCDE
 	hlcoord 15, 2
-	ld a, $27
-	call PutOptionButton
-; SEARCH
-	hlcoord 12, 4
-	ld a, $21
-	call PutOptionButton
-; BACK
-	hlcoord 15, 4
-	ld a, $2a
-	call PutOptionButton
+	ld de, DexButtonsLayoutB
+	call PlaceString
 	ret
+	
+DexButtonsLayoutB:
+	db $05, $20, $21, $22, $06, $4E
+	db $05, $18, $19, $1A, $06, $4E
+	db $1B, $1C, $1D, $1E, $1F, $4E
+	db $05, $15, $16, $17, $06, $50
 
 PutOptionButton:
 	ld [hli], a
@@ -1113,8 +1098,8 @@ Pokedex_HandCursorControls:
 	; x offset, y offset
 	db 0,     0
 	db 0,     8 * 2
-	db 8 * 3, 0
-	db 8 * 3, 8 * 2
+	db 0,     8 * 4
+	db 0,     8 * 6
 
 HandCursor_PressButton:
 	push hl
