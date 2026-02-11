@@ -229,18 +229,18 @@ Pokedex_ClearScreen:
 	
 ;	print window overlap graphic
 	hlcoord 14, 10
-	ld a, $23
+	ld a, $23	;	top tile
 	ld de, SCREEN_WIDTH
 	ld [hl], a
 	add hl, de
-	ld a, $24
-	ld c, 6
+	ld a, $24	;	middle tile
+	ld c, 6		;	size
 .next_tile
 	ld [hl], a
 	add hl, de
 	dec c
 	jr nz, .next_tile
-	ld a, $25
+	ld a, $25	;	bottom tile
 	ld [hl], a
 	
 	ret
@@ -720,7 +720,7 @@ Pokedex_PrintListing:
 	add hl, de
 	ld e, l
 	ld d, h
-	hlcoord 1, 2
+	hlcoord 1, 1
 	ld a, 8
 .loop
 	push af
@@ -739,6 +739,8 @@ Pokedex_PrintListing:
 	call Pokedex_PlaceDefaultStringIfNotSeen
 	jr c, .unidentified
 
+	ld  bc, SCREEN_WIDTH-1
+	add hl, bc
 	call Pokedex_PlaceCaughtSymbolIfCaught
 	push hl
 	call GetPokemonName
