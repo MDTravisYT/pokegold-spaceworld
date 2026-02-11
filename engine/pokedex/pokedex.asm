@@ -907,22 +907,22 @@ Pokedex_PlaceButtons:
 
 PlaceArrowButtons:
 ; Up
-	hlcoord 14, 6
+	hlcoord 17, 6
 	ld a, $40
 	call .PutButton
 	
 ; Down
-	hlcoord 14, 2
+	hlcoord 17, 2
 	ld a, $42
 	call .PutButton
 
 ; Previous page
-	hlcoord 16, 4
+	hlcoord 18, 4
 	ld a, $44
 	call .PutButton
 
 ; Next page
-	hlcoord 12, 4
+	hlcoord 16, 4
 	ld a, $46
 	call .PutButton
 	ret
@@ -1000,13 +1000,13 @@ Pokedex_HandCursorControls:
 	and D_DOWN
 	jr nz, .down
 
-	ld a, [de]
-	and D_LEFT
-	jr nz, .left
-
-	ld a, [de]
-	and D_RIGHT
-	jr nz, .right
+;	ld a, [de]
+;	and D_LEFT
+;	jr nz, .left
+;
+;	ld a, [de]
+;	and D_RIGHT
+;	jr nz, .right
 
 	ld a, [de]
 	and SELECT
@@ -1039,39 +1039,38 @@ Pokedex_HandCursorControls:
 
 .up
 	ld hl, wPokedexHandCursorPosIndex
-	ld a, [hl]
-	and $1
-	ret z
-
 	dec [hl]
+	ld a, [hl]
+	and %11
+	ld [hl], a
 	jr .GetPositionOffsets
 
 .down
 	ld hl, wPokedexHandCursorPosIndex
-	ld a, [hl]
-	and $1
-	ret nz
 	inc [hl]
-	jr .GetPositionOffsets
-
-.left
-	ld hl, wPokedexHandCursorPosIndex
 	ld a, [hl]
-	bit 1, a ; and %10
-	ret z
-
-	sub 2
+	and %11
 	ld [hl], a
-	jr .GetPositionOffsets
+;	jr .GetPositionOffsets
 
-.right
-	ld hl, wPokedexHandCursorPosIndex
-	ld a, [hl]
-	bit 1, a ; and %10
-	ret nz
+;.left
+;	ld hl, wPokedexHandCursorPosIndex
+;	ld a, [hl]
+;	bit 1, a ; and %10
+;	ret z
+;
+;	sub 2
+;	ld [hl], a
+;	jr .GetPositionOffsets
+;
+;.right
+;	ld hl, wPokedexHandCursorPosIndex
+;	ld a, [hl]
+;	bit 1, a ; and %10
+;	ret nz
 
-	add 2
-	ld [hl], a
+;	add 2
+;	ld [hl], a
 .GetPositionOffsets:
 	ld a, [wPokedexHandCursorPosIndex]
 	ld e, a
@@ -1124,10 +1123,10 @@ HandCursor_PressButton:
 	jp hl
 
 .MenuJumptable
-dw .Data, .Area, .Cry, .Back
+dw .Data, .Cry, .Area, .Back
 
 .SelectJumptable
-dw .Number, .Search, .ABC, .Back
+dw .Number, .ABC, .Search, .Back
 
 ; Unreferenced
 .Close:
@@ -1312,19 +1311,19 @@ Pokedex_CursorControls:
 Pokedex_PressButtonSprites:
 	ld a, [wPokedexInputFlags]
 
-	hlcoord 14, 6
+	hlcoord 17, 6
 	bit PRESSED_DOWN_F, a
 	jr nz, .PressButton
 
-	hlcoord 14, 2
+	hlcoord 17, 2
 	bit PRESSED_UP_F, a
 	jr nz, .PressButton
 
-	hlcoord 16, 4
+	hlcoord 18, 4
 	bit PRESSED_RIGHT_F, a
 	jr nz, .PressButton
 
-	hlcoord 12, 4
+	hlcoord 16, 4
 	bit PRESSED_LEFT_F, a
 	jr nz, .PressButton
 	ret
