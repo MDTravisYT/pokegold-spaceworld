@@ -202,12 +202,12 @@ Pokedex_PlaceStartOrSelectString:
 String_SELECT:
 	db "SEL▶@"
 String_SEARCH:
-	db "SRCH@"
+	db $26,$27,$28,$29,'@'
 
 String_START:
 	db "STRT▶@"
 String_VARIANTS:
-	db "VARS@"
+	db $2A,$2B,$2C,$2D,$2E,'@'
 
 Pokedex_ClearScreen:
 	ld hl, wTileMap
