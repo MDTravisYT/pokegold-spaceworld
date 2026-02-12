@@ -57,6 +57,28 @@ PlaceFarString::
 	pop af
 	call Bankswitch
 	ret
+	
+ContFromPage:
+	ld b, a
+	ldh a, [hROMBank]
+	push af
+
+	ld a, b
+	call Bankswitch
+.chk
+	inc de
+	ld a, [de]
+	cp "<PAGE>"
+	jr z, .chkend
+	jr .chk
+.chkend
+	inc de
+	call PlaceString
+
+	pop af
+	call Bankswitch
+	ret
+
 
 GetFarWord::
 ; retrieve a halfword from a:hl, and return it in hl.
@@ -78,48 +100,52 @@ GetFarWord::
 	ret
 	
 PageChar::
-	push de
-	ld a, '▼'
-	ldcoord_a 18, 16
-	call ProtectedWaitBGMap
-	call PageWaitAorB_BlinkCursor
-	hlcoord 1, 10
-	lb bc, 7, 18
-	call ClearBox
-	ld c, 20
-	call DelayFrames
-	pop de
+	ld b, h
+	ld c, l
 	pop hl
-	hlcoord 1, 11
-	push hl
-	jp NextChar
-	
-PageWaitAorB_BlinkCursor::	;	this is even more hacky than the rest of the stuff
-.loop
-	call PageBlinkCursor
-	call GetJoypadDebounced
-	ldh a, [hJoySum]
-	and (A_BUTTON | B_BUTTON)
-	ret nz
-	call UpdateTime
-	call UpdateTimeOfDayPalettes
-	ld a, $01
-	ldh [hBGMapMode], a
-	call DelayFrame
-	jr .loop
-
-PageBlinkCursor:
-; Show a blinking cursor in the lower right-hand
-; corner of the screen
-; Will toggle between cursor and blank every
-; 16 frames.
-	ldh a, [hVBlankCounter]
-	and $10
-	jr z, .cursor_off
-	ld a, '▼'
-	jr .save_cursor_state
-.cursor_off
-	ld a, '　'
-.save_cursor_state
-	ldcoord_a (SCREEN_WIDTH - 2), (SCREEN_HEIGHT - 2)
 	ret
+;	push de
+;	ld a, '▼'
+;	ldcoord_a 18, 16
+;	call ProtectedWaitBGMap
+;	call PageWaitAorB_BlinkCursor
+;	hlcoord 1, 10
+;	lb bc, 7, 18
+;	call ClearBox
+;	ld c, 20
+;	call DelayFrames
+;	pop de
+;	pop hl
+;	hlcoord 1, 11
+;	push hl
+;	jp NextChar
+;	
+;PageWaitAorB_BlinkCursor::	;	this is even more hacky than the rest of the stuff
+;.loop
+;	call PageBlinkCursor
+;	call GetJoypadDebounced
+;	ldh a, [hJoySum]
+;	and (A_BUTTON | B_BUTTON)
+;	ret nz
+;	call UpdateTime
+;	call UpdateTimeOfDayPalettes
+;	ld a, $01
+;	ldh [hBGMapMode], a
+;	call DelayFrame
+;	jr .loop
+;
+;PageBlinkCursor:
+;; Show a blinking cursor in the lower right-hand
+;; corner of the screen
+;; Will toggle between cursor and blank every
+;; 16 frames.
+;	ldh a, [hVBlankCounter]
+;	and $10
+;	jr z, .cursor_off
+;	ld a, '▼'
+;	jr .save_cursor_state
+;.cursor_off
+;	ld a, '　'
+;.save_cursor_state
+;	ldcoord_a (SCREEN_WIDTH - 2), (SCREEN_HEIGHT - 2)
+;	ret

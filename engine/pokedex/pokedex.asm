@@ -1405,7 +1405,7 @@ Pokedex_DexEntryScreen:
 ;	ld a, [wCurPartySpecies]
 ;	call PlayCry
 	call Pokedex_DexEntryInput
-	call Pokedex_DexEntryInput
+;	call Pokedex_DexEntryInput
 	jr c, .loop
 
 	call MaxVolume

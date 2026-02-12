@@ -135,21 +135,8 @@ _DisplayDexEntry:
 	pop af
 	ldh [hPokedexTempWeight], a
 .skip_weight	;	below handles dex entry!!
-;	pop de
-;	inc de
-
-	ld hl, PokedexEntryPointers1_ENG
-	ld a, [wTempSpecies]
-	cp DEX_VOLTORB
-	jr c, .got_dex_entries2
-	sub DEX_VOLTORB - 1
-	ld hl, PokedexEntryPointers2_ENG
-.got_dex_entries2
-	dec a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
+;	first page
+	call .find_blurb_pointer
 	ld a, BANK(PokedexEntryPointers1_ENG)
 	call GetFarWord
 	ld d, h
@@ -158,6 +145,32 @@ _DisplayDexEntry:
 	ld a, BANK(PokedexEntryPointers1_ENG)
 	hlcoord 1, 11
 	call PlaceFarString
+	
+	hlcoord 1, 10
+	lb bc, 7, 18
+	call ClearBox
+	
+;	second page
+	call .find_blurb_pointer
+	ld a, BANK(PokedexEntryPointers1_ENG)
+	call GetFarWord
+	ld d, h
+	ld e, l
+;	pop hl
+	ld a, BANK(PokedexEntryPointers1_ENG)
+	hlcoord 1, 11
+	call ContFromPage
+	
+	ret
+	
+.find_blurb_pointer
+	ld hl, PokedexEntryPointers1_ENG
+	ld a, [wTempSpecies]
+	cp DEX_VOLTORB
+	jr c, .got_dex_entries2
+	sub DEX_VOLTORB - 1
+	ld hl, PokedexEntryPointers2_ENG
+.got_dex_entries2
 	ret
 
 PokedexText_HeightWeight:
