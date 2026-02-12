@@ -286,7 +286,7 @@ wDexCurUnownIndex::
 wDexConvertedMonType:: db
 
 wDexSearchResultCount:: db
-wc5e3:: db
+wDexPage:: db
 wc5e4:: db
 wc5e5:: db
 wc5e6:: db

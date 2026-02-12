@@ -1420,6 +1420,11 @@ Pokedex_DexEntryInput:
 	ld a, [wDexListingScrollOffset]
 	ld [wDexTempListingScrollOffset], a
 .CheckInput:
+	ld hl, wDexPage
+	ld a, [hl]
+	cp a, 1
+	jp nz, .BlinkCursor
+.cursorRet
 	call Pokedex_CopyJoypadSum
 	ld hl, hJoyDown
 	ld a, [hl]
@@ -1537,6 +1542,22 @@ Pokedex_DexEntryInput:
 	call Pokedex_CheckSeen
 	pop bc
 	ret
+	
+.BlinkCursor:
+; Show a blinking cursor in the lower right-hand
+; corner of the screen
+; Will toggle between cursor and blank every
+; 16 frames.
+	ldh a, [hVBlankCounter]
+	and $10
+	jr z, .cursor_off
+	ld a, '▼'
+	jr .save_cursor_state
+.cursor_off
+	ld a, '　'
+.save_cursor_state
+	ldcoord_a (SCREEN_WIDTH - 2), (SCREEN_HEIGHT - 2)
+	jp .cursorRet
 
 Pokedex_DisplayDexEntry:
 	callfar _DisplayDexEntry

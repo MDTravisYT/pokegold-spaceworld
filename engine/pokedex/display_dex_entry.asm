@@ -136,6 +136,9 @@ _DisplayDexEntry:
 	ldh [hPokedexTempWeight], a
 .skip_weight	;	below handles dex entry!!
 ;	first page
+	ld de, wDexPage
+	ld a, 0
+	ld [de], a
 	call .find_blurb_pointer
 	ld a, BANK(PokedexEntryPointers1_ENG)
 	call GetFarWord
@@ -145,18 +148,24 @@ _DisplayDexEntry:
 	ld a, BANK(PokedexEntryPointers1_ENG)
 	hlcoord 1, 11
 	call PlaceFarString
+	ld a, '▼'
+	ldcoord_a 18, 16
+	callfar Pokedex_DexEntryInput
+
+;	second page
+	ld de, wDexPage
+	ld a, 1
+	ld [de], a
 	
 	hlcoord 1, 10
 	lb bc, 7, 18
 	call ClearBox
 	
-;	second page
 	call .find_blurb_pointer
 	ld a, BANK(PokedexEntryPointers1_ENG)
 	call GetFarWord
 	ld d, h
 	ld e, l
-;	pop hl
 	ld a, BANK(PokedexEntryPointers1_ENG)
 	hlcoord 1, 11
 	call ContFromPage
