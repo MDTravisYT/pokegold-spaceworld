@@ -3289,8 +3289,8 @@ BattleMenu_Pack:
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
-	hlcoord 2, 2
-	ld b, 8
+	hlcoord 2, 1
+	ld b, 9
 	ld c, 15
 	call DrawTextBox
 	call Call_DebugBackpackLoop

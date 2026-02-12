@@ -770,8 +770,8 @@ BallPocket:
 	call CopyMenuHeader
 	ld de, .BallHolderText
 	call DrawBackpackTitleRow
-	hlcoord 2, 2
-	ld b, 8
+	hlcoord 2, 1
+	ld b, 9
 	ld c, $F
 	call DrawTextBox
 	call ScrollingMenu

@@ -100,7 +100,7 @@ PageWaitAorB_BlinkCursor::	;	this is even more hacky than the rest of the stuff
 	call GetJoypadDebounced
 	ldh a, [hJoySum]
 	and (A_BUTTON | B_BUTTON)
-	jr nz, .ret
+	ret nz
 	ldh a, [hJoySum]
 	and (D_UP | D_DOWN)
 	jr nz, .switch
@@ -116,8 +116,6 @@ PageWaitAorB_BlinkCursor::	;	this is even more hacky than the rest of the stuff
 	call Bankswitch
 	call Pokedex_DexEntryInput.GotInput
 	jp   Pokedex_AButtonMenu.Data
-.ret
-	ret
 
 PageBlinkCursor:
 ; Show a blinking cursor in the lower right-hand
