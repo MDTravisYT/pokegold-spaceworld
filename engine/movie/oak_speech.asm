@@ -458,10 +458,10 @@ CopyNameDebug:
 	ret
 
 DebugPlayerName:
-	db "コージ@"
+	db "KOJI@"
 
 DebugRivalName:
-	db "レッド@"
+	db "RED@"
 
 ChoosePlayerName::
 	call PanPortraitRight

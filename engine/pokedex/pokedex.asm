@@ -1772,18 +1772,23 @@ _NewPokedexEntry:
 	call GetSGBLayout
 	pop af
 	ld [wTempSpecies], a
-	call Pokedex_DisplayDexEntry
 	call SetPalettes
-	call WaitBGMap
-	call GetBaseData
-	hlcoord 1, 1
-	call PrepMonFrontpic
-	ld a, [wCurPartySpecies]
-	call PlayCry
+	call Pokedex_DisplayDexEntry
+;	call WaitBGMap
+;	call GetBaseData
+;	hlcoord 1, 1
+;	call PrepMonFrontpic
+;	ld a, [wCurPartySpecies]
+;	call PlayCry
 .wait_for_input
 	call GetJoypadDebounced
 	ldh a, [hJoySum]
 	and A_BUTTON | B_BUTTON
 	jr z, .wait_for_input
+.wait_for_input2
+	call GetJoypadDebounced
+	ldh a, [hJoySum]
+	and A_BUTTON | B_BUTTON
+	jr z, .wait_for_input2
 	ret
 
