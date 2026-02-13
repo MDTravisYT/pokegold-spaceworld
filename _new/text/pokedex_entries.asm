@@ -349,11 +349,11 @@ ArbokDexEntry_ENG:	;	"the pattern" simplified to "it"
 PikachuDexEntry_ENG:
 	db   "It has small"
 	next "electric sacs on"
-	next "both of its cheeks"
+	next "its cheeks. If"	;	removed "both of its"
 	
-	page "If threatened,"	;	slightly reworded from "If threatened, it looses electric charges from the sacs."
-	next "they lose its"
-	next "charge."
+	page "threatened, they"	;	slightly reworded from "If threatened, it looses electric charges from the sacs."
+	next "lose their"
+	next "electric charges."
 	dex
 
 RaichuDexEntry_ENG:		;	simplified second sentence
@@ -535,20 +535,20 @@ OddishDexEntry_ENG:
 	next "sowing its seeds."
 	dex
 
-GloomDexEntry_ENG:
+GloomDexEntry_ENG:	;	distance > radius
 	db   "It pistils exude"
 	next "an incredibly foul"
 	next "odor. The horrid"
 	
 	page "stench can cause"
 	next "fainting at a"
-	next "distance of 1.25mi."
+	next "radius of 1.25mi."
 	dex
 
-VileplumeDexEntry_ENG:
+VileplumeDexEntry_ENG:	;	fiendishly > viciously
 	db   "Its petals are the"
 	next "largest in the"
-	next "world.It fiendishly"
+	next "world.It viciously"
 	
 	page "scatters allergy-"
 	next "causing pollen"
@@ -561,8 +561,8 @@ ParasDexEntry_ENG:
 	next "mushrooms called"
 	
 	page "tochukaso. The"
-	next "mushrooms grow with"
-	next "the bug host."
+	next "mushrooms grow"
+	next "with the bug host."
 	dex
 
 ParasectDexEntry_ENG:
@@ -616,17 +616,17 @@ DugtrioDexEntry_ENG:
 	dex
 
 MeowthDexEntry_ENG:
-	db   "Loves shiny things."
-	next "Frequently picks up"
-	next "money it finds"
+	db   "Loves shiny "
+	next "things. Frequently"
+	next "picks up money it"
 	
-	page "scattered on the"
-	next "floor."
+	page "finds scattered on"
+	next "the floor."
 	dex
 
 PersianDexEntry_ENG:
 	db   "Has a vicious"	;	simplified
-	next "temperament. Beware"
+	next "temperament.Beware"
 	next "if it raises its"
 	
 	page "tail straight up."
@@ -651,35 +651,37 @@ GolduckDexEntry_ENG:	;	removed "etc"
 	
 	page "swimmer. It can be"
 	next "seen swimming"
-	next "elegantly in lakes."
+	next "elegantly in lakes"
 	dex
 
-MankeyDexEntry_ENG:
+MankeyDexEntry_ENG:	;	reworded slightly
 	db   "Light and agile"
 	next "on its feet, and"
 	next "ferocious in"
 	
 	page "temperament."
-	next "seen swimming"
-	next "elegantly in lakes."
+	next "Flies into a"
+	next "frenzy when angry."
 	dex
 
 PrimeapeDexEntry_ENG:
 	db   "Always furious and"
 	next "tenacious to boot."
-	next "It will not abandon"
+	next "It will not"
 	
-	page "chasing its quarry"
-	next "until it is caught."
+	page "abandon chasing"
+	next "its quarry until"
+	next "it is caught."
 	dex
 
 GrowlitheDexEntry_ENG:
 	db   "Has a friendly"
-	next "personality, but it"
-	next "attacks those who"
+	next "personality, but"
+	next "it attacks those"
 	
-	page "carelessly approach"
-	next "its territory."
+	page "who carelessly"
+	next "approach its"
+	next "territory."
 	dex
 
 ArcanineDexEntry_ENG:
@@ -692,32 +694,34 @@ ArcanineDexEntry_ENG:
 	next "wings."
 	dex
 
-PoliwagDexEntry_ENG:
+PoliwagDexEntry_ENG:	;	removed "pattern"
 	db   "Has a thin smooth"
 	next "black skin. The"
-	next "inside of its belly"
+	next "inside of its"
 	
-	page "can be seen through"
-	next "the skin as a"
-	next "spiral pattern."
+	page "belly can be seen"
+	next "through the skin"
+	next "as a spiral."
 	dex
 
 PoliwhirlDexEntry_ENG:
 	db   "Capable of living"
-	next "in or out of water."
-	next "When out of water,"
+	next "in or out of"
+	next "water. When out of"
 	
-	page "it sweats to keep"
-	next "its body slimy."
+	page "water, it sweats"
+	next "to keep its body"
+	next "slimy."
 	dex
 
-PoliwrathDexEntry_ENG:
-	db   "An adept swimmer."
-	next "in or out of water."
-	next "When out of water,"
+PoliwrathDexEntry_ENG:	;	"and more" > "etc"
+	db   "An adept swimmer,"
+	next "it knows the front"
+	next "crawl, butterfly,"
 	
-	page "it sweats to keep"
-	next "its body slimy."
+	page "etc. It is faster"
+	next "than the best"
+	next "human swimmers."
 	dex
 
 AbraDexEntry_ENG:
@@ -725,8 +729,9 @@ AbraDexEntry_ENG:
 	next "hours a day. It"
 	next "uses a variety of"
 	
-	page "extrasensory powers"
-	next "even while asleep."
+	page "extrasensory"
+	next "powers even while"
+	next "asleep."
 	dex
 
 KadabraDexEntry_ENG:
@@ -735,18 +740,18 @@ KadabraDexEntry_ENG:
 	next "its body that"
 	
 	page "induce headaches"
-	next "just by being close"
-	next "by."
+	next "just by being"
+	next "close by."
 	dex
 
 AlakazamDexEntry_ENG:
 	db   "Its brain can"
 	next "outperform a"
-	next "its body that"
+	next "supercomputer. Its"
 	
-	page "induce headaches"
-	next "just by being close"
-	next "by."
+	page "intelligence"
+	next "quotient is said"
+	next "to be 5,000."
 	dex
 
 MachopDexEntry_ENG:		;	composed > made (is that good?)
@@ -759,8 +764,8 @@ MachopDexEntry_ENG:		;	composed > made (is that good?)
 	next "100 grown-ups."
 	dex
 
-MachokeDexEntry_ENG:
-	db   "Its formidable body"
+MachokeDexEntry_ENG:	;	formidable > terrific
+	db   "Its terrific body"
 	next "never gets tired."
 	next "Helps people by"
 	
@@ -778,19 +783,19 @@ MachampDexEntry_ENG:
 	next "just two seconds."
 	dex
 
-BellsproutDexEntry_ENG:
+BellsproutDexEntry_ENG:	;	"the bud" > "that", "rumored" > "said"
 	db   "Its bud looks like"
 	next "a human face."
-	next "Because of the bud,"
+	next "Because of that,"
 	
-	page "it is rumored to be"
-	next "a type of legendary"
+	page "it's said to be a"
+	next "type of legendary"
 	next "mandrake plant."
 	dex
 
 WeepinbellDexEntry_ENG:
-	db   "The leafy parts act"
-	next "as cutters for"
+	db   "The leafy parts"
+	next "act as cutters for"
 	next "slashing foes. It"
 	
 	page "spits a fluid that"
@@ -800,12 +805,12 @@ WeepinbellDexEntry_ENG:
 
 VictreebelDexEntry_ENG:
 	db   "A ferocious plant"
-	next "#MON often seeps"
-	next "in southern lands."
+	next "#MON often"
+	next "seeps in southern"
 	
-	page "Can melt anything"
-	next "with its dissolving"
-	next "fluid."
+	page "lands. Can melt"
+	next "anything with its"
+	next "dissolving fluid."
 	dex
 
 TentacoolDexEntry_ENG:
@@ -817,19 +822,19 @@ TentacoolDexEntry_ENG:
 	next "beams of light."
 	dex
 
-TentacruelDexEntry_ENG:
-	db   "It has 80 tentacles"
+TentacruelDexEntry_ENG:	;	simplified
+	db   "Has 80 tentacles"
 	next "that move about"
-	next "freely. They can"
+	next "freely. Can sting,"
 	
-	page "sting, causing"
-	next "poisoning and sharp"
+	page "causing poisoning"
+	next "and sharp,"
 	next "stabbing pain."
 	dex
 
 GeodudeDexEntry_ENG:
-	db   "Found in fields and"
-	next "mountains."
+	db   "Found in fields"
+	next "and mountains."
 	next "Mistaking them for"
 	
 	page "boulders, people"
@@ -850,11 +855,11 @@ GravelerDexEntry_ENG:
 GolemDexEntry_ENG:
 	db   "Its boulder-like"
 	next "body is extremely"
-	next "hard. It can easily"
+	next "hard. It can"
 	
-	page "withstand dynamite"
-	next "blasts without"
-	next "damage."
+	page "easily withstand"
+	next "dynamite blasts"
+	next "without damage."
 	dex
 
 PonytaDexEntry_ENG:
@@ -872,48 +877,49 @@ RapidashDexEntry_ENG:
 	next "top speed of 150"
 	next "miles per hour."
 	
-	page "It can race as fast"
+	page "Can race as fast"
 	next "as a bullet train"
 	next "while ablaze."
 	dex
 
 SlowpokeDexEntry_ENG:
-	db   "Incredibly slow and"
-	next "dopey. It takes 5"
-	next "seconds for it to"
+	db   "Incredibly slow"
+	next "and dopey. It"
+	next "takes 5 seconds"
 	
-	page "feel pain when"
-	next "under attack."
+	page "for it to feel"
+	next "pain when under"
+	next "attack."
 	dex
 
 SlowbroDexEntry_ENG:	;	simplified
 	db   "When SLOWPOKE went"
-	next "hunting in the sea,"
-	next "its tail was bitten"
+	next "hunting in the sea"
+	next "its tail was bit"
 	
-	page "by a SHELLDER. That"
-	next "made it evolve into"
-	next "SLOWBRO."
+	page "by a SHELLDER.That"
+	next "made it evolve"
+	next "into SLOWBRO."
 	dex
 
-MagnemiteDexEntry_ENG:	;	reworded slightly
+MagnemiteDexEntry_ENG:	;	reworded slightly, "and so on" > "etc", "discharges" > "fires"
 	db   "It moves while"
 	next "constantly"
 	next "hovering. It"
 	
-	page "discharges THUNDER"
-	next "WAVE and so on from"
-	next "units on its sides."
+	page "fires THUNDER WAVE"
+	next "etc, from units"
+	next "on its sides."
 	dex
 
-MagnetonDexEntry_ENG:
-	db   "A linked cluster of"
-	next "several MAGNEMITE."
-	next "It discharges"
+MagnetonDexEntry_ENG:	;	"discharges" > "fires"
+	db   "A linked cluster"
+	next "of several"
+	next "MAGNEMITE. It"
 	
-	page "powerful magnetic"
-	next "waves at high"
-	next "voltage."
+	page "fires powerful"
+	next "magnetic waves at"
+	next "high voltage."
 	dex
 
 FarfetchdDexEntry_ENG:
@@ -921,8 +927,8 @@ FarfetchdDexEntry_ENG:
 	next "about with a plant"
 	next "stalk clamped in"
 	
-	page "its beak. The stalk"
-	next "is used for"
+	page "its beak. The"
+	next "stalk is used for"
 	next "building its nest."
 	dex
 
@@ -949,19 +955,20 @@ DodrioDexEntry_ENG:
 SeelDexEntry_ENG:	;	simplified "Farenheit" to "F".
 	db   "Covered in light"
 	next "blue fur, its hide"
-	next "is thick and tough."
+	next "is thick and "
 	
-	page "It is active in"
-	next "bitter cold of"
+	page "tough. It's active"
+	next "in bitter cold of"
 	next "-40 degrees F."
 	dex
 
 DewgongDexEntry_ENG:
-	db   "Its body is covered"
-	next "with a pure white"
-	next "fur. The colder the"
+	db   "Its body is"
+	next "covered with a"
+	next "pure white fur."
 	
-	page "weather, the more"
+	page "The colder the"
+	next "weather, the more"
 	next "active it becomes."
 	dex
 
@@ -975,10 +982,10 @@ GrimerDexEntry_ENG:
 	next "filthy things."
 	dex
 
-MukDexEntry_ENG:	;	undetectable > invisible
+MukDexEntry_ENG:	;	undetectable > invisible, ground > land
 	db   "Usually invisible"
 	next "because it blends"
-	next "in with the ground."
+	next "in with the land."
 	
 	page "Touching it can"
 	next "cause terrible"
@@ -991,8 +998,8 @@ ShellderDexEntry_ENG:
 	next "harder than"
 	
 	page "diamond. Inside,"
-	next "however, it is very"
-	next "tender."
+	next "however, it is"
+	next "very tender."
 	dex
 
 CloysterDexEntry_ENG:	;	simplified
@@ -1002,35 +1009,36 @@ CloysterDexEntry_ENG:	;	simplified
 	
 	page "even with a bomb."
 	next "The shell opens"
-	next "only when attacking"
+	next "only when battling"
 	dex
 
-GastlyDexEntry_ENG:
-	db   "A being that exists"
-	next "as a thin gas. It"
-	next "can topple an"
+GastlyDexEntry_ENG:		;	simplified
+	db   "A being that"
+	next "exists as a thin"
+	next "gas. It can topple"
 	
-	page "Indian elephant by"
-	next "enveloping the prey"
-	next "in two seconds."
+	page "an elephant by"
+	next "enveloping the"
+	next "prey in 2 seconds."
 	dex
 
 HaunterDexEntry_ENG:
 	db   "If you get the"
 	next "feeling of being"
-	next "watched in darkness"
+	next "watched in"
 	
-	page "when nobody is"
-	next "around, HAUNTER is"
-	next "there."
+	page "darkness when"
+	next "nobody is around,"
+	next "HAUNTER is there."
 	dex
 
 GengarDexEntry_ENG:
-	db   "It's said to emerge"
-	next "from darkness to"
-	next "steal the lives of"
+	db   "It's said to"
+	next "emerge from"
+	next "darkness to steal"
 	
-	page "of those who become"
+	page "the lives of of"
+	next "those who become"
 	next "lost in mountains."
 	dex
 
@@ -1039,29 +1047,29 @@ OnixDexEntry_ENG:
 	next "stone portions of"
 	next "its body harden to"
 	
-	page "become similar to a"
-	next "diamond, but"
+	page "become similar to"
+	next "a diamond, but"
 	next "colored black."
 	dex
 
-DrowzeeDexEntry_ENG:
-	db   "A descendent of the"
-	next "legendary animal"
-	next "baku, which is said"
+DrowzeeDexEntry_ENG:	;	simplified
+	db   "A descendent of"
+	next "the legendary"
+	next "animal baku, which"
 	
-	page "to eat dreams. It"
-	next "is skilled at"
-	next "hypnotism."
+	page "is said to eat"
+	next "dreams. Skilled"
+	next "at hypnotism."
 	dex
 
 HypnoDexEntry_ENG:
-	db   "It carries a"
-	next "pendulum-like"
-	next "device. There once"
+	db   "Carries a pendulum"
+	next "-like device. "
+	next "There once was an"
 	
-	page "was an incident in"
-	next "which it took a"
-	next "child it hypnotized"
+	page "incident in which"
+	next "it took a child"
+	next "it hypnotized."
 	dex
 
 KrabbyDexEntry_ENG:
@@ -1241,11 +1249,11 @@ PokedexEntryPointers2_ENG::
 VoltorbDexEntry_ENG:
 	db   "Usually found in"
 	next "power plants."
-	next "Easily mistaken for"
+	next "Easily mistaken"
 	
-	page "a # BALL, they"
-	next "have zapped many"
-	next "people."
+	page "for a # BALL,"
+	next "they have zapped"
+	next "manypeople."
 	dex
 
 ElectrodeDexEntry_ENG:
@@ -1277,20 +1285,20 @@ ExeggutorDexEntry_ENG:
 	next "will of its own."
 	dex
 
-CuboneDexEntry_ENG:
+CuboneDexEntry_ENG:	;	lonesome > lonely
 	db   "It wears the skull"
 	next "of its dead mother"
 	next "on its head. When"
 	
-	page "it becomes lonesome"
+	page "it becomes lonely,"
 	next "it is said to cry"
 	next "very loudly."
 	dex
 
 MarowakDexEntry_ENG:
-	db   "It is small and was"
-	next "originally very"
-	next "weak. Its"
+	db   "It is small and"
+	next "was originally"
+	next "very weak. Its"
 	
 	page "temperament turned"
 	next "ferocious when it"
@@ -1303,28 +1311,28 @@ HitmonleeDexEntry_ENG:	;	opponents > foes
 	next "stretch. It can"
 	
 	page "easily kick foes"
-	next "up even when they're"	;	'r becomes one tile
-	next "far away."
+	next "up even when"
+	next "they're far away."
 	dex
 
-HitmonchanDexEntry_ENG:
+HitmonchanDexEntry_ENG:	;	simplified
 	db   "The spirit of a pro"
 	next "boxer has infused"
-	next "this #MON. It"
+	next "this #MON. Throws"
 	
-	page "throws punches that"
-	next "are faster than a"
+	page "punches that are"
+	next "faster than a "
 	next "bullet train."
 	dex
 
-LickitungDexEntry_ENG:	;	"can be moved" > "can move"
+LickitungDexEntry_ENG:	;	"It can be moved" > "Moves"
 	db   "It can extend its"
-	next "tounge to twice the"
-	next "length of its body."
+	next "tounge to twice"
+	next "the length of its"
 	
-	page "It can move like"
-	next "an arm for grabbing"
-	next "and attacking."
+	page "body. Moves like"
+	next "an arm for grabb-"
+	next "-ing and attacking"
 	dex
 
 KoffingDexEntry_ENG:	;	"nearby" > "near"
@@ -1334,33 +1342,33 @@ KoffingDexEntry_ENG:	;	"nearby" > "near"
 	
 	page "horribly toxic"
 	next "gases. It reeks"
-	next "just by being near."
+	next "just by being near"
 	dex
 
-WeezingDexEntry_ENG:
+WeezingDexEntry_ENG:	;	conjoined > merged
 	db   "Very rarely, a"
-	next "sudden mutation can"
-	next "result in two small"
+	next "sudden mutation"
+	next "can result in two"
 	
-	page "KOFFING twins"
-	next "becoming conjoined"
-	next "as a WEEZING."
+	page "small KOFFING"
+	next "twins becoming "
+	next "merged as WEEZING."
 	dex
 
 RhyhornDexEntry_ENG:
-	db   "Strong, but not too"
-	next "bright, this"
+	db   "Strong, but not"
+	next "too bright, this"
 	next "#MON may even"
 	
-	page "shatter a"
-	next "skyscraper with its"
+	page "shatter a sky-"
+	next "scraper with its"
 	next "charging TACKLEs."
 	dex
 
 RhydonDexEntry_ENG:
 	db   "Protected by an"
-	next "armor-like hide, it"
-	next "is capable of"
+	next "armor-like hide,"
+	next "it is capable of"
 	
 	page "living in molten"
 	next "lava of 3,600"
@@ -1388,12 +1396,12 @@ TangelaDexEntry_ENG:
 
 KangaskhanDexEntry_ENG:
 	db   "The infant rarely"
-	next "ventures out of its"
-	next "mother's protective"
+	next "ventures out of"
+	next "its mother's"
 	
-	page "pouch until it is"
-	next "at least 3 years"
-	next "old."
+	page "protective pouch"
+	next "until it is at"
+	next "least 3 years old."
 	dex
 
 HorseaDexEntry_ENG:
@@ -1401,48 +1409,49 @@ HorseaDexEntry_ENG:
 	next "using its tail"
 	next "wound up like a"
 	
-	page "coil. It sprays ink"
-	next "from its mouth."
+	page "coil. It sprays"
+	next "ink from its"
+	next "mouth."
 	dex
 
 SeadraDexEntry_ENG:
-	db   "Capable of swimming"
-	next "backwards by"
-	next "rapidly flapping"
+	db   "Capable of"
+	next "swimming backwards"
+	next "by rapidly"
 	
-	page "its wing-like"
-	next "pectoral fins and"
-	next "stout tail."
+	page "flapping its wing-"
+	next "like pectoral fins"
+	next "and stout tail."
 	dex
 
-GoldeenDexEntry_ENG:
+GoldeenDexEntry_ENG:	;	simplified
 	db   "Its dorsal and"
 	next "pectoral fins are"
 	next "strongly developed"
 	
-	page "like muscles. It"
-	next "can swim at a speed"
+	page "like muscles. Can"
+	next "swim at a speed"
 	next "of five knots."
 	dex
 
 SeakingDexEntry_ENG:	;	simplified
-	db   "It has a horn on"
-	next "its head that is"
-	next "sharp like a drill."
+	db   "Has a horn on its"
+	next "head that is sharp"
+	next "like a drill. It"
 	
-	page "It uses it to bore"
-	next "a hole in a boulder"
+	page "uses it to bore a"
+	next "hole in a boulder"
 	next "to make a nest."
 	dex
 
 StaryuDexEntry_ENG:
-	db   "It appears in large"
-	next "numbers by"
+	db   "It appears in"
+	next "large numbers by"
 	next "seahorses. At"
 	
 	page "night, its central"
-	next "core flashes with a"
-	next "red light."
+	next "core flashes with"
+	next "a red light."
 	dex
 
 StarmieDexEntry_ENG:
@@ -1460,57 +1469,56 @@ MrMimeDexEntry_ENG:
 	next "conning people. It"
 	next "is said to be able"
 	
-	page "to create walls out"
-	next "of thin air by"
+	page "to create walls"
+	next "out of thin air by"
 	next "miming."
 	dex
 
 ScytherDexEntry_ENG:	;	simplified
-	db   "It slashes prey"
-	next "using its sharp"
-	next "sickles, killing"
+	db   "Slashes prey using"
+	next "its sharp sickles,"
+	next "killing them. It's"
 	
-	page "them. It's observed"
-	next "that it rarely"
-	next "spread its wings."
+	page "observed that it"
+	next "rarely spread its"
+	next "wings to fly."
 	dex
 
-JynxDexEntry_ENG:
+JynxDexEntry_ENG:	;	simplified
 	db   "It seductively"
 	next "wiggles its hips"
-	next "as it walks. It can"
+	next "as it walks. Can"
 	
 	page "cause people to"
 	next "dance in unison"
 	next "with it."
 	dex
 
-ElectabuzzDexEntry_ENG:
-	db   "It loves to feed on"
-	next "strong electricity."
-	next "It occasionally"
+ElectabuzzDexEntry_ENG:	;	reworded slightly
+	db   "Loves to feed on"
+	next "strong electri-"
+	next "-city. Appears"
 	
-	page "appears around"
-	next "large power plants"
-	next "and so on."
+	page "around large power"
+	next "plants, and so on."
 	dex
 
 MagmarDexEntry_ENG:
 	db   "Found near the"
 	next "mouth of a volcano."
-	next "This fire-breather's"	;	's is one tile
+	next "This fire-"
 	
-	page "body temperature is"
-	next "nearly 2,200"
-	next "degrees Fahrenheit."
+	page "breather's body"
+	next "temperature nearly"
+	next "2,200 degrees F."
 	dex
 
 PinsirDexEntry_ENG:
-	db   "It's said that when"
+	db   "It's said that when"	;	's is one tile
 	next "it grips anything"
 	next "with its two long"
 	
-	page "horns, it won't let"
+	page "horns, it won't let"	;	't is one time
 	next "large power plants"
 	next "and so on."
 	dex
@@ -1551,8 +1559,8 @@ LaprasDexEntry_ENG:
 	next "almost to"
 	
 	page "extinction. It can"
-	next "ferry people across"
-	next "the water."
+	next "ferry people"
+	next "across the water."
 	dex
 
 DittoDexEntry_ENG:
@@ -1561,16 +1569,16 @@ DittoDexEntry_ENG:
 	next "code to instantly"
 	
 	page "transform itself"
-	next "into a duplicate of"
-	next "the enemy."
+	next "into a duplicate"
+	next "of the enemy."
 	dex
 
 EeveeDexEntry_ENG:
-	db   "Its genetic code is"
-	next "irregular. It may"
-	next "mutate if it is"
+	db   "Its genetic code"
+	next "is irregular. It"
+	next "may mutate if it"
 	
-	page "exposed to"
+	page "is exposed to"
 	next "radiation from"
 	next "elemnt STONEs."
 	dex
@@ -1578,11 +1586,11 @@ EeveeDexEntry_ENG:
 VaporeonDexEntry_ENG:
 	db   "Lives close to"
 	next "water. Its long"
-	next "tail is ridged with"
+	next "tail is ridged"
 	
-	page "a fin which is"
-	next "often mistaken for"
-	next "a mermaid's."
+	page "with a fin which"
+	next "is often mistaken"
+	next "for a mermaid's."
 	dex
 
 JolteonDexEntry_ENG:
@@ -1591,28 +1599,28 @@ JolteonDexEntry_ENG:
 	next "the atmosphere to"
 	
 	page "blast out"
-	next "10000-volt lignting"
-	next "bolts."
+	next "10000-volt"
+	next "lignting bolts."
 	dex
 
 FlareonDexEntry_ENG:	;	shortened
 	db   "Storing thermal"
-	next "energy in its body,"
+	next "energy in its body"
 	next "its temperature"
 	
 	page "could soar to over"
-	next "1000 degrees,making"
-	next "it dangerous."
+	next "1000 degrees, mak-"
+	next "-ing it dangerous."
 	dex
 
-PorygonDexEntry_ENG:
-	db   "Using the most"
-	next "advanced technology"
-	next "scientists finally"
+PorygonDexEntry_ENG:	;	reworded and simplified
+	db   "Scientists finally"
+	next "succeeded in maki-"
+	next "-ng the first art-"
 	
-	page "succeeded in making"
-	next "the first artific-"
-	next "-ial #MON."
+	page "-ificial #MON"
+	page "using advanced"
+	page "technology."
 	dex
 
 OmanyteDexEntry_ENG:
@@ -1645,24 +1653,24 @@ KabutoDexEntry_ENG:
 	next "with a hard shell."
 	dex
 
-KabutopsDexEntry_ENG:
+KabutopsDexEntry_ENG:	;	simplified
 	db   "It swims freely"
 	next "through water. It"
 	next "catches prey with"
 	
-	page "its scythe-like"
-	next "arms and drains the"
+	page "scythe-like arms"
+	next "and drains the"
 	next "victim's fluids."
 	dex
 
-AerodactylDexEntry_ENG:
+AerodactylDexEntry_ENG:	;	simplified
 	db   "It was regenerated"
 	next "from a dinosaur's"
-	next "genetic matter that"
+	next "genetic matter"
 	
-	page "was found in amber."
-	next "It flies with high-"
-	next "pitched cries."
+	page "that was found in"
+	next "amber. Flies with"
+	next "high-pitched cries"
 	dex
 
 SnorlaxDexEntry_ENG:	;	simplified
@@ -1670,9 +1678,9 @@ SnorlaxDexEntry_ENG:	;	simplified
 	next "unless it eats over"
 	next "880 pounds of food"
 	
-	page "every day. When it's"	;	's is one tile
-	next "done eating, it"
-	next "goes to sleep."
+	page "every day. When"
+	next "it's done eating,"
+	next "it goes to sleep."
 	dex
 
 ArticunoDexEntry_ENG:
@@ -1698,21 +1706,21 @@ ZapdosDexEntry_ENG:
 MoltresDexEntry_ENG:
 	db   "Known as the"
 	next "legendary bird of"
-	next "fire. Every flap of"
+	next "fire. Every flap"
 	
-	page "its wings creates a"
-	next "dazzling flash of"
-	next "flames."
+	page "of its wings"
+	next "creates a dazzling"
+	next "flash of flames."
 	dex
 
 DratiniDexEntry_ENG:
 	db   "Long considered a"
 	next "mythical #MON"
-	next "until recently when"
+	next "until recently"
 	
-	page "a small colony was"
-	next "found living"
-	next "underwater."
+	page "when a small"
+	next "colony was found"
+	next "living underwater."
 	dex
 
 DragonairDexEntry_ENG:	;	"when it does" > "doing so"
@@ -1726,8 +1734,8 @@ DragonairDexEntry_ENG:	;	"when it does" > "doing so"
 	dex
 
 DragoniteDexEntry_ENG:
-	db   "An extremely rarely"
-	next "seen marine"
+	db   "An extremely"
+	next "rarely seen marine"
 	next "#MON. Its"
 	
 	page "intelligence is"
@@ -1746,12 +1754,13 @@ MewtwoDexEntry_ENG:	;	recombined > rejoined
 	dex
 
 MewDexEntry_ENG:
-	db   "It's still called a"
-	next "mythical #MON."
+	db   "It's still called"
+	next "a mythical #MON."
 	next "Its shape was seen"
 	
-	page "by almost no one in"
-	next "the entire country."
+	page "by almost no one"
+	next "in the entire"
+	next "country."
 	dex
 
 NihonMonEntry_ENG:
