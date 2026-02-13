@@ -1261,8 +1261,8 @@ ElectrodeDexEntry_ENG:
 	next "energy under very"
 	next "high pressure. It"
 	
-	page "often explodes with"
-	next "little or no"
+	page "often explodes"
+	next "with little or no"
 	next "provocation."
 	dex
 
@@ -1278,8 +1278,8 @@ ExeggcuteDexEntry_ENG:
 
 ExeggutorDexEntry_ENG:
 	db   "It's called the"
-	next "''Walking Tropical"
-	next "Rainforest''. Each"
+	next "'Walking Tropical"
+	next "Rainforest'. Each"
 	
 	page "of the nuts has a"
 	next "will of its own."
@@ -1316,11 +1316,11 @@ HitmonleeDexEntry_ENG:	;	opponents > foes
 	dex
 
 HitmonchanDexEntry_ENG:	;	simplified
-	db   "The spirit of a pro"
-	next "boxer has infused"
-	next "this #MON. Throws"
+	db   "The spirit of a"
+	next "pro boxer has"
+	next "infused this #MON."
 	
-	page "punches that are"
+	page "Throws punches"
 	next "faster than a "
 	next "bullet train."
 	dex
@@ -1496,20 +1496,21 @@ JynxDexEntry_ENG:	;	simplified
 
 ElectabuzzDexEntry_ENG:	;	reworded slightly
 	db   "Loves to feed on"
-	next "strong electri-"
-	next "-city. Appears"
+	next "strong"
+	next "electricity."
 	
-	page "around large power"
+	page "Appears around"
+	next "large power"
 	next "plants, and so on."
 	dex
 
-MagmarDexEntry_ENG:
+MagmarDexEntry_ENG:	;	simplified
 	db   "Found near the"
-	next "mouth of a volcano."
-	next "This fire-"
+	next "mouth of a"
+	next "volcano.This fire-"
 	
 	page "breather's body"
-	next "temperature nearly"
+	next "temperature's near"
 	next "2,200 degrees F."
 	dex
 
@@ -1519,8 +1520,8 @@ PinsirDexEntry_ENG:
 	next "with its two long"
 	
 	page "horns, it won't let"	;	't is one time
-	next "large power plants"
-	next "and so on."
+	next "go until they're"
+	next "torn apart."
 	dex
 
 TaurosDexEntry_ENG:
@@ -1580,7 +1581,7 @@ EeveeDexEntry_ENG:
 	
 	page "is exposed to"
 	next "radiation from"
-	next "elemnt STONEs."
+	next "element STONEs."
 	dex
 
 VaporeonDexEntry_ENG:
@@ -1604,13 +1605,12 @@ JolteonDexEntry_ENG:
 	dex
 
 FlareonDexEntry_ENG:	;	shortened
-	db   "Storing thermal"
-	next "energy in its body"
-	next "its temperature"
+	db   "Its body"
+	next "temperature can"
+	next "rise to over 1000"
 	
-	page "could soar to over"
-	next "1000 degrees, mak-"
-	next "-ing it dangerous."
+	page "degrees, making it"
+	next "very dangerous."
 	dex
 
 PorygonDexEntry_ENG:	;	reworded and simplified
@@ -1619,8 +1619,8 @@ PorygonDexEntry_ENG:	;	reworded and simplified
 	next "-ng the first art-"
 	
 	page "-ificial #MON"
-	page "using advanced"
-	page "technology."
+	next "using advanced"
+	next "technology."
 	dex
 
 OmanyteDexEntry_ENG:
@@ -1674,9 +1674,9 @@ AerodactylDexEntry_ENG:	;	simplified
 	dex
 
 SnorlaxDexEntry_ENG:	;	simplified
-	db   "It is not satisfied"
-	next "unless it eats over"
-	next "880 pounds of food"
+	db   "It's not satisfied"
+	next "unless it eats"
+	next "over 880lb of food"
 	
 	page "every day. When"
 	next "it's done eating,"
@@ -1755,12 +1755,12 @@ MewtwoDexEntry_ENG:	;	recombined > rejoined
 
 MewDexEntry_ENG:
 	db   "It's still called"
-	next "a mythical #MON."
-	next "Its shape was seen"
+	next "a mythical "
+	next "#MON. Its shape"
 	
-	page "by almost no one"
-	next "in the entire"
-	next "country."
+	page "was seen by almost"
+	next "no one in the"
+	next "entire country."
 	dex
 
 NihonMonEntry_ENG:
