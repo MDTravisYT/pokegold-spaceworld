@@ -188,6 +188,11 @@ _DisplayDexEntry:
 	sub DEX_VOLTORB - 1
 	ld hl, PokedexEntryPointers2_ENG
 .got_dex_entries2
+	dec a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
 	ret
 
 PokedexText_HeightWeight:
