@@ -1239,204 +1239,251 @@ PokedexEntryPointers2_ENG::
 	dw NihonMonEntry_ENG
 
 VoltorbDexEntry_ENG:
-	db "ボール@"
-	db 5
-	dw 104
-	db   "はつでんしょなどに　あらわれる。"
-	next "モンスターボールと　まちがえて"
-	next "さわって　しびれるひとが　おおい。@"
+	db   "Usually found in"
+	next "power plants."
+	next "Easily mistaken for"
+	
+	page "a # BALL, they"
+	next "have zapped many"
+	next "people."
+	dex
 
 ElectrodeDexEntry_ENG:
-	db "ボール@"
-	db 12
-	dw 666
-	db   "ぼうだいな　エレクトン　エネルギーを"
-	next "ためこんでおり　ちょっとした"
-	next "しげきで　だいばくはつを　おこす。@"
+	db   "It stores electric"
+	next "energy under very"
+	next "high pressure. It"
+	
+	page "often explodes with"
+	next "little or no"
+	next "provocation."
+	dex
 
 ExeggcuteDexEntry_ENG:
-	db "たまご@"
-	db 4
-	dw 25
-	db   "たまごの　ようだが　じつは"
-	next "しょくぶつの　タネのような"
-	next "いきものだと　いうことが　わかった。@"
+	db   "They look like"
+	next "eggs, but in"
+	next "reality they're a"
+	
+	page "life-form more"
+	next "similar to plant"
+	next "seeds."
+	dex
 
 ExeggutorDexEntry_ENG:
-	db "やしのみ@"
-	db 20
-	dw 1200
-	db   "あるく　ねったいうりん。"
-	next "みの　ひとつひとつに"
-	next "それぞれ　いしを　もっている。@"
+	db   "It's called the"
+	next "''Walking Tropical"
+	next "Rainforest''. Each"
+	
+	page "of the nuts has a"
+	next "will of its own."
+	dex
 
 CuboneDexEntry_ENG:
-	db "こどく@"
-	db 4
-	dw 65
-	db   "しにわかれた　ははおやの　ほねを"
-	next "あたまに　かぶっている。さびしいとき"
-	next "おおごえで　なくという。@"
+	db   "It wears the skull"
+	next "of its dead mother"
+	next "on its head. When"
+	
+	page "it becomes lonesome"
+	next "it is said to cry"
+	next "very loudly."
+	dex
 
 MarowakDexEntry_ENG:
-	db "ほねずき@"
-	db 10
-	dw 450
-	db   "からだも　ちいさく　もともと　"
-	next "よわかった。ホネを　つかうようになり"
-	next "せいかくが　きょうぼうか　した。@"
+	db   "It is small and was"
+	next "originally very"
+	next "weak. Its"
+	
+	page "temperament turned"
+	next "ferocious when it"
+	next "began using bones."
+	dex
 
-HitmonleeDexEntry_ENG:
-	db "キック@"
-	db 15
-	dw 498
-	db   "あしが　じゆうに　のびちぢみする。"
-	next "あいてが　とおく　はなれていても"
-	next "かんたんに　けりあげてしまう。@"
+HitmonleeDexEntry_ENG:	;	opponents > foes
+	db   "Its legs freely"
+	next "contract and"
+	next "stretch. It can"
+	
+	page "easily kick foes"
+	next "up even when they're"	;	'r becomes one tile
+	next "far away."
+	dex
 
 HitmonchanDexEntry_ENG:
-	db "パンチ@"
-	db 14
-	dw 502
-	db   "プロボクサーの　たましいが"
-	next "のりうつった。パンチのスピードは"
-	next "しんかんせんよりも　はやい。@"
+	db   "The spirit of a pro"
+	next "boxer has infused"
+	next "this #MON. It"
+	
+	page "throws punches that"
+	next "are faster than a"
+	next "bullet train."
+	dex
 
-LickitungDexEntry_ENG:
-	db "なめまわし@"
-	db 12
-	dw 655
-	db   "ベロが　からだの　２ばいも　のびる。"
-	next "エサをとったり　こうげきをしたりと"
-	next "まるで　てのように　うごくのだ。@"
+LickitungDexEntry_ENG:	;	"can be moved" > "can move"
+	db   "It can extend its"
+	next "tounge to twice the"
+	next "length of its body."
+	
+	page "It can move like"
+	next "an arm for grabbing"
+	next "and attacking."
+	dex
 
-KoffingDexEntry_ENG:
-	db "どくガス@"
-	db 6
-	dw 10
-	db   "うすい　バルーンじょうの　からだに"
-	next "もうどくの　ガスが　つまっている。"
-	next "ちかくに　くるだけで　くさい。@"
+KoffingDexEntry_ENG:	;	"nearby" > "near"
+	db   "Its thin, balloon-"
+	next "like body is"
+	next "inflated by"
+	
+	page "horribly toxic"
+	next "gases. It reeks"
+	next "just by being near."
+	dex
 
 WeezingDexEntry_ENG:
-	db "どくガス@"
-	db 12
-	dw 95
-	db   "ごくまれに　とつぜんへんいで"
-	next "ふたごの　ちいさい　ドガースが"
-	next "れんけつしたまま　でることがある。@"
+	db   "Very rarely, a"
+	next "sudden mutation can"
+	next "result in two small"
+	
+	page "KOFFING twins"
+	next "becoming conjoined"
+	next "as a WEEZING."
+	dex
 
 RhyhornDexEntry_ENG:
-	db "とげとげ@"
-	db 10
-	dw 1150
-	db   "あたまは　わるいが　ちからが　つよく"
-	next "こうそうビルでも　たいあたりで"
-	next "コナゴナに　ふんさいしてしまう。@"
+	db   "Strong, but not too"
+	next "bright, this"
+	next "#MON may even"
+	
+	page "shatter a"
+	next "skyscraper with its"
+	next "charging TACKLEs."
+	dex
 
 RhydonDexEntry_ENG:
-	db "ドリル@"
-	db 19
-	dw 1200
-	db   "ぜんしんを　よろいのような　ひふで"
-	next "まもっている。２０００どの"
-	next "マグマの　なかでも　いきられる。@"
+	db   "Protected by an"
+	next "armor-like hide, it"
+	next "is capable of"
+	
+	page "living in molten"
+	next "lava of 3,600"
+	next "degrees."
+	dex
 
 ChanseyDexEntry_ENG:
-	db "たまご@"
-	db 11
-	dw 346
-	db   "せいそくすうが　すくない。"
-	next "つかまえた　ひとには　しあわせを"
-	next "もたらすと　いわれている。@"
+	db   "Its population is"
+	next "small. Said to"
+	next "bring good luck to"
+	
+	page "those who capture"
+	next "it."
+	dex
 
 TangelaDexEntry_ENG:
-	db "ツルじょう@"
-	db 10
-	dw 350
-	db   "ブルーの　つるしょくぶつが"
-	next "からみあい　しょうたいは　みえない。"
-	next "ちかずくものに　からみついてくる。@"
+	db   "Blue plant vines"
+	next "cloak the #MON's"
+	next "identity in a"
+	
+	page "tangled mass. It"
+	next "entangles anything"
+	next "that gets close."
+	dex
 
 KangaskhanDexEntry_ENG:
-	db "おやこ@"
-	db 22
-	dw 800
-	db   "こどもは　ははおやの　おなかにある"
-	next "ふくろから　ほとんど　でてこない。"
-	next "やく３ねんで　おやばなれする。@"
+	db   "The infant rarely"
+	next "ventures out of its"
+	next "mother's protective"
+	
+	page "pouch until it is"
+	next "at least 3 years"
+	next "old."
+	dex
 
 HorseaDexEntry_ENG:
-	db "ドラゴン@"
-	db 4
-	dw 80
-	db   "ぜんまいのように　クルクルまいた"
-	next "しっぽで　バランスをとる。"
-	next "スミを　はいて　こうげきする。@"
+	db   "It balances itself"
+	next "using its tail"
+	next "wound up like a"
+	
+	page "coil. It sprays ink"
+	next "from its mouth."
+	dex
 
 SeadraDexEntry_ENG:
-	db "ドラゴン@"
-	db 12
-	dw 250
-	db   "ハネと　しっぽを　すばやく　うごかし"
-	next "まえを　むいたまま　うしろへ"
-	next "およぐことも　できる　ポケモン。@"
+	db   "Capable of swimming"
+	next "backwards by"
+	next "rapidly flapping"
+	
+	page "its wing-like"
+	next "pectoral fins and"
+	next "stout tail."
+	dex
 
 GoldeenDexEntry_ENG:
-	db "きんぎょ@"
-	db 6
-	dw 150
-	db   "せビレ　むなビレが　きんにくのように"
-	next "はったつしており　すいちゅうを"
-	next "５ノットの　はやさで　およぐ。@"
+	db   "Its dorsal and"
+	next "pectoral fins are"
+	next "strongly developed"
+	
+	page "like muscles. It"
+	next "can swim at a speed"
+	next "of five knots."
+	dex
 
-SeakingDexEntry_ENG:
-	db "きんぎょ@"
-	db 13
-	dw 390
-	db   "ツノが　ドリルのように　とがっていて"
-	next "いわはだを　ツノで　くりぬき"
-	next "じぶんの　すを　つくっている。@"
+SeakingDexEntry_ENG:	;	simplified
+	db   "It has a horn on"
+	next "its head that is"
+	next "sharp like a drill."
+	
+	page "It uses it to bore"
+	next "a hole in a boulder"
+	next "to make a nest."
+	dex
 
 StaryuDexEntry_ENG:
-	db "ほしがた@"
-	db 8
-	dw 345
-	db   "うみべに　おおく　あらわれ"
-	next "よるになると　ちゅうしんが"
-	next "あかく　てんめつする。@"
+	db   "It appears in large"
+	next "numbers by"
+	next "seahorses. At"
+	
+	page "night, its central"
+	next "core flashes with a"
+	next "red light."
+	dex
 
 StarmieDexEntry_ENG:
-	db "なぞの@"
-	db 11
-	dw 800
-	db   "きかがくてきな　ボディーから"
-	next "うちゅうせいぶつ　ではないかと"
-	next "じもとでは　うたがわれている。@"
+	db   "This #MON has a"
+	next "geometric body."
+	next "Because of its"
+	
+	page "body, the locals"
+	next "suspect that it is"
+	next "an alien creature."
+	dex
 
 MrMimeDexEntry_ENG:
-	db "バリアー@"
-	db 13
-	dw 545
-	db   "ひとを　しんじこませるのが　うまい。"
-	next "パントマイムで　つくったカベが"
-	next "ほんとうに　あらわれるという。@"
+	db   "It is adept at"
+	next "conning people. It"
+	next "is said to be able"
+	
+	page "to create walls out"
+	next "of thin air by"
+	next "miming."
+	dex
 
-ScytherDexEntry_ENG:
-	db "かまきり@"
-	db 15
-	dw 560
-	db   "するどいカマで　えものを　きりさき"
-	next "いきのねを　とめる。ごくまれに"
-	next "ハネをつかって　とぶことがある。@"
+ScytherDexEntry_ENG:	;	simplified
+	db   "It slashes prey"
+	next "using its sharp"
+	next "sickles, killing"
+	
+	page "them. It's observed"
+	next "that it rarely"
+	next "spread its wings."
+	dex
 
 JynxDexEntry_ENG:
-	db "ひとがた@"
-	db 14
-	dw 406
-	db   "こしを　ふるように　あるいている。"
-	next "ゆだんをすると　おもわず　つられて"
-	next "おどってしまうという。@"
+	db   "It seductively"
+	next "wiggles its hips"
+	next "as it walks. It can"
+	
+	page "cause people to"
+	next "dance in unison"
+	next "with it."
+	dex
 
 ElectabuzzDexEntry_ENG:
 	db "でんげき@"
