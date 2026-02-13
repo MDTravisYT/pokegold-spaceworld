@@ -1486,220 +1486,273 @@ JynxDexEntry_ENG:
 	dex
 
 ElectabuzzDexEntry_ENG:
-	db "でんげき@"
-	db 11
-	dw 300
-	db   "つよい　でんきが　だいこうぶつで"
-	next "おおきな　はつでんしょ　などに　"
-	next "しばしば　あらわれる。@"
+	db   "It loves to feed on"
+	next "strong electricity."
+	next "It occasionally"
+	
+	page "appears around"
+	next "large power plants"
+	next "and so on."
+	dex
 
 MagmarDexEntry_ENG:
-	db "ひふき@"
-	db 13
-	dw 445
-	db   "かざんの　かこうちかくで"
-	next "みつかった。くちから　ほのおをはく。"
-	next "たいおんは　１２００ど　もある。@"
+	db   "Found near the"
+	next "mouth of a volcano."
+	next "This fire-breather's"	;	's is one tile
+	
+	page "body temperature is"
+	next "nearly 2,200"
+	next "degrees Fahrenheit."
+	dex
 
 PinsirDexEntry_ENG:
-	db "くわがた@"
-	db 15
-	dw 550
-	db   "２ほんの　ながいツノに"
-	next "はさまれたら　ちぎれるまで"
-	next "はなさないという。@"
+	db   "It's said that when"
+	next "it grips anything"
+	next "with its two long"
+	
+	page "horns, it won't let"
+	next "large power plants"
+	next "and so on."
+	dex
 
 TaurosDexEntry_ENG:
-	db "あばれうし@"
-	db 14
-	dw 884
-	db   "えものに　ねらいを　つけると"
-	next "しっぽで　からだを　たたきながら"
-	next "まっすぐ　つっこんでくる。@"
+	db   "When it targets an"
+	next "enemy, it charges"
+	next "furiously while"
+	
+	page "whipping its body"
+	next "with its long"
+	next "tails."
+	dex
 
-MagikarpDexEntry_ENG:
-	db "さかな@"
-	db 9
-	dw 100
-	db   "ちからも　スピードも　ほとんどダメ。"
-	next "せかいで　いちばん　よわくて"
-	next "なさけない　ポケモンだ。@"
+MagikarpDexEntry_ENG:	;	ommitted "in the world"
+	db   "It is virtually"
+	next "worthless in terms"
+	next "of both power and"
+	
+	page "speed. It is the"
+	next "most weak and"
+	next "pathetic #MON."
+	dex
 
-GyaradosDexEntry_ENG:
-	db "きょうあく@"
-	db 65
-	dw 2350
-	db   "ひじょうに　きょうぼうで"
-	next "くちからだす　はかいこうせんは"
-	next "すべてのものを　やきつくす。@"
+GyaradosDexEntry_ENG:	;	removed "totally"
+	db   "It's extremely"
+	next "aggressive. The"
+	next "HYPER BEAM it"
+	
+	page "shoots from its"
+	next "mouth incinerates"
+	next "all targets."
+	dex
 
 LaprasDexEntry_ENG:
-	db "のりもの@"
-	db 25
-	dw 2200
-	db   "かつて　たくさん　つかまえたため"
-	next "ぜつめつ　すんぜんに　なっている。"
-	next "ひとをのせて　すすむ。@"
+	db   "A #MON that has"
+	next "been overhunted"
+	next "almost to"
+	
+	page "extinction. It can"
+	next "ferry people across"
+	next "the water."
+	dex
 
 DittoDexEntry_ENG:
-	db "へんしん@"
-	db 3
-	dw 40
-	db   "さいぼうそしきを　いっしゅんで"
-	next "コピーして　あいて　そっくりに"
-	next "へんしんする　のうりょくがある。@"
+	db   "Capable of copying"
+	next "an enemy's genetic"
+	next "code to instantly"
+	
+	page "transform itself"
+	next "into a duplicate of"
+	next "the enemy."
+	dex
 
 EeveeDexEntry_ENG:
-	db "しんか@"
-	db 3
-	dw 65
-	db   "ふきそくな　いでんしを　もつ。"
-	next "いしからでる　ほうしゃせんによって"
-	next "からだが　とつぜんへんいを　おこす。@"
+	db   "Its genetic code is"
+	next "irregular. It may"
+	next "mutate if it is"
+	
+	page "exposed to"
+	next "radiation from"
+	next "elemnt STONEs."
+	dex
 
 VaporeonDexEntry_ENG:
-	db "あわはき@"
-	db 10
-	dw 290
-	db   "みずべに　すむが　しっぽには"
-	next "さかなのような　ひれが　のこっていて"
-	next "にんぎょと　まちがう　ひともいる。@"
+	db   "Lives close to"
+	next "water. Its long"
+	next "tail is ridged with"
+	
+	page "a fin which is"
+	next "often mistaken for"
+	next "a mermaid's."
+	dex
 
 JolteonDexEntry_ENG:
-	db "かみなり@"
-	db 8
-	dw 245
-	db   "くうきちゅうの　マイナスイオンを"
-	next "すいこんで　やく１００００ボルトの"
-	next "でんきを　はきだすことができる。@"
+	db   "It accumulates"
+	next "negative ions in"
+	next "the atmosphere to"
+	
+	page "blast out"
+	next "10000-volt lignting"
+	next "bolts."
+	dex
 
-FlareonDexEntry_ENG:
-	db "ほのお@"
-	db 9
-	dw 250
-	db   "からだに　ほのおを　ためてるとき"
-	next "たいおんが　１０００ど　いじょうに"
-	next "あがるので　ひじょうに　きけん。@"
+FlareonDexEntry_ENG:	;	shortened
+	db   "Storing thermal"
+	next "energy in its body,"
+	next "its temperature"
+	
+	page "could soar to over"
+	next "1000 degrees,making"
+	next "it dangerous."
+	dex
 
 PorygonDexEntry_ENG:
-	db "バーチャル@"
-	db 8
-	dw 365
-	db   "さいこうの　かがくりょくを　あつめ"
-	next "ついに　じんこうの　ポケモンを"
-	next "つくることに　せいこうした。@"
+	db   "Using the most"
+	next "advanced technology"
+	next "scientists finally"
+	
+	page "succeeded in making"
+	next "the first artific-"
+	next "-ial #MON."
+	dex
 
 OmanyteDexEntry_ENG:
-	db "うずまき@"
-	db 4
-	dw 75
-	db   "ぜつめつした　ポケモンだが　まれに"
-	next "かせきが　はっけんされ　そこから"
-	next "いきかえらせることが　できる。@"
+	db   "Although long"
+	next "extinct, in rare"
+	next "cases, it can be"
+	
+	page "genetically"
+	next "resurrected from"
+	next "fossils."
+	dex
 
 OmastarDexEntry_ENG:
-	db "うずまき@"
-	db 10
-	dw 350
-	db   "するどい　キバと　しょくしゅで"
-	next "えものに　かみついたら　さいご。"
-	next "たいえきを　すいだしてしまう。@"
+	db   "Once it attacks"
+	next "with its sharp"
+	next "fangs and"
+	
+	page "tentacles, it's"
+	next "over. It sucks out"
+	next "all bodily fluids."
+	dex
 
 KabutoDexEntry_ENG:
-	db "こうら@"
-	db 5
-	dw 115
-	db   "こだい　せいぶつの　かせきから"
-	next "さいせいしたポケモン。"
-	next "かたい　カラで　みを　まもっている。@"
+	db   "This #MON was"
+	next "regenerated from"
+	next "the fossil of an"
+	
+	page "ancient creature."
+	next "It protects itself"
+	next "with a hard shell."
+	dex
 
 KabutopsDexEntry_ENG:
-	db "こうら@"
-	db 13
-	dw 405
-	db   "すいちゅうを　じゆうに　およぎ"
-	next "するどい　カマで　えものを　とらえ"
-	next "たいえきを　すいとってしまう。@"
+	db   "It swims freely"
+	next "through water. It"
+	next "catches prey with"
+	
+	page "its scythe-like"
+	next "arms and drains the"
+	next "victim's fluids."
+	dex
 
 AerodactylDexEntry_ENG:
-	db "かせき@"
-	db 18
-	dw 590
-	db   "こはくに　のこされた　きょうりゅうの"
-	next "いでんしから　ふっかつさせた。"
-	next "たかいこえで　なきながら　とぶ。@"
+	db   "It was regenerated"
+	next "from a dinosaur's"
+	next "genetic matter that"
+	
+	page "was found in amber."
+	next "It flies with high-"
+	next "pitched cries."
+	dex
 
-SnorlaxDexEntry_ENG:
-	db "いねむり@"
-	db 21
-	dw 4600
-	db   "１にちに　たべものを　４００キロ"
-	next "たべないと　きが　すまない。"
-	next "たべおわると　ねむってしまう。@"
+SnorlaxDexEntry_ENG:	;	simplified
+	db   "It is not satisfied"
+	next "unless it eats over"
+	next "880 pounds of food"
+	
+	page "every day. When it's"	;	's is one tile
+	next "done eating, it"
+	next "goes to sleep."
+	dex
 
 ArticunoDexEntry_ENG:
-	db "れいとう@"
-	db 17
-	dw 554
-	db   "ゆきやまで　さむくて　しにそうなとき"
-	next "めのまえに　あらわれるといわれる"
-	next "でんせつの　れいとうポケモン。@"
+	db   "A legendary bird"
+	next "#MON that is"
+	next "said to appear to"
+	
+	page "doomed people who"
+	next "are lost in icy"
+	next "mountains."
+	dex
 
 ZapdosDexEntry_ENG:
-	db "でんげき@"
-	db 16
-	dw 526
-	db   "くもの　うえから　きょだいな"
-	next "いなづまを　おとしながら　あらわれる"
-	next "でんせつの　とりポケモンである。@"
+	db   "A legendary bird"
+	next "#MON that is"
+	next "said to appear"
+	
+	page "from clouds while"
+	next "dropping enormous"
+	next "lightning bolts."
+	dex
 
 MoltresDexEntry_ENG:
-	db "かえん@"
-	db 20
-	dw 600
-	db   "むかしから　ひのとりでんせつとして"
-	next "しられる。　はばたくたびに　はねが"
-	next "あかるく　もえあがり　うつくしい。@"
+	db   "Known as the"
+	next "legendary bird of"
+	next "fire. Every flap of"
+	
+	page "its wings creates a"
+	next "dazzling flash of"
+	next "flames."
+	dex
 
 DratiniDexEntry_ENG:
-	db "ドラゴン@"
-	db 18
-	dw 33
-	db   "ながいあいだ　まぼろしの　ポケモンと"
-	next "よばれた。わずかだが　すいちゅうに"
-	next "すんでいることが　わかった。@"
+	db   "Long considered a"
+	next "mythical #MON"
+	next "until recently when"
+	
+	page "a small colony was"
+	next "found living"
+	next "underwater."
+	dex
 
-DragonairDexEntry_ENG:
-	db "ドラゴン@"
-	db 40
-	dw 165
-	db   "ハネは　ないが　そらを　とべる。"
-	next "とぶとき　からだを　しなやかに"
-	next "くねらせて　とても　うつくしい。@"
+DragonairDexEntry_ENG:	;	"when it does" > "doing so"
+	db   "Although it has no"
+	next "wings, it can fly"
+	next "through the sky."
+	
+	page "Doing so, it wrig-"
+	next "-gles its flexible"
+	next "body beutifully."
+	dex
 
 DragoniteDexEntry_ENG:
-	db "ドラゴン@"
-	db 22
-	dw 2100
-	db   "すがたを　みたひとは　すくないが"
-	next "じつざいする　うみのけしん。ちのうも"
-	next "にんげんに　ひってき　するらしい。@"
+	db   "An extremely rarely"
+	next "seen marine"
+	next "#MON. Its"
+	
+	page "intelligence is"
+	next "said to match that"
+	next "of humans."
+	dex
 
-MewtwoDexEntry_ENG:
-	db "いでんし@"
-	db 20
-	dw 1220
-	db   "けんきゅうの　ために　いでんしを"
-	next "どんどん　くみかえていった　けっか"
-	next "きょうぼうな　ポケモンに　なった。@"
+MewtwoDexEntry_ENG:	;	recombined > rejoined
+	db   "A #MON of"
+	next "genetic code was"
+	next "regularly rejoined"
+	
+	page "for research."
+	next "It turned vicious"
+	next "as a result."
+	dex
 
 MewDexEntry_ENG:
-	db "しんしゅ@"
-	db 4
-	dw 40
-	db   "いまでも　まぼろしの　ポケモンと"
-	next "いわれる。そのすがたを　みたものは"
-	next "ぜんこくでも　ほとんど　いない。@"
+	db   "It's still called a"
+	next "mythical #MON."
+	next "Its shape was seen"
+	
+	page "by almost no one in"
+	next "the entire country."
+	dex
 
 NihonMonEntry_ENG:
 	db   "A recently discov-"
