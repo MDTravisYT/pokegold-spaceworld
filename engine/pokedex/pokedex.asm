@@ -1404,7 +1404,6 @@ Pokedex_DexEntryScreen:
 ;
 ;	ld a, [wCurPartySpecies]
 ;	call PlayCry
-	call Pokedex_DexEntryInput
 ;	call Pokedex_DexEntryInput
 	jr c, .loop
 
@@ -1422,8 +1421,8 @@ Pokedex_DexEntryInput:
 .CheckInput:
 	ld hl, wDexPage
 	ld a, [hl]
-	cp a, 1
-	jp nz, .BlinkCursor
+	cp a, 0
+	jp z, .BlinkCursor
 .cursorRet
 	call Pokedex_CopyJoypadSum
 	ld hl, hJoyDown
@@ -1524,6 +1523,9 @@ Pokedex_DexEntryInput:
 	jr z, .bottom_of_list
 
 .Scrolled:
+	ld de, wDexPage
+	ld a, 2
+	ld [de], a
 	scf
 	ret
 
