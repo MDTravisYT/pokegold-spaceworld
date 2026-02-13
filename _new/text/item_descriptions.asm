@@ -404,8 +404,8 @@ NuggetDescription_ENG:
 	next "Sell high.@"
 
 PokeDollDescription_ENG:
-	db   "Use to escape from a"
-	next "wild #MON.@"
+	db   "Use to escape from"
+	next "a wild #MON.@"
 
 FullHealDescription_ENG:
 	db   "Eliminates all"
@@ -532,8 +532,8 @@ ConfuseClawDescription_ENG:
 	next "battle. (HOLD)@"
 
 WisdomOrbDescription_ENG:
-	db   "Raises SPECIAL"
-	next "DEFENSE by 10.(HOLD)@"
+	db   "Raises SPECIAL DEF"
+	next "by 10.(HOLD)@"
 
 SteelShellDescription_ENG:
 	db   "Raises DEFENSE by"
@@ -640,8 +640,8 @@ StrangeWaterDescription_ENG:
 	next "moves. (HOLD)@"
 
 TwistedspoonDescription_ENG:
-	db   "Weakens psychic-type"
-	next "moves. (HOLD)@"
+	db   "Weakens psychic-"
+	next "type moves. (HOLD)@"
 
 AttackNeedleDescription_ENG:
 	db   "Powers up bug-type"
@@ -741,7 +741,7 @@ Item78Description_ENG:
 
 DetectOrbDescription_ENG:
 	db   "Raises evasion of"
-	next "foe's attacks (HOLD)@"
+	next "foe's attacks(HOLD)@"
 
 LongTongueDescription_ENG:
 	db   "Raises #MON"
@@ -843,8 +843,8 @@ LeftoversDescription_ENG:
 	next "per turn. (HOLD)@"
 
 IceWingDescription_ENG:
-	db   "Raises SPECIAL"
-	next "DEFENSE by 10.(HOLD)@"
+	db   "Raises SPECIAL DEF"
+	next "by 10.(HOLD)@"
 
 ThunderWingDescription_ENG:
 	db   "Raises SPEED"
@@ -852,7 +852,7 @@ ThunderWingDescription_ENG:
 
 FireWingDescription_ENG:
 	db   "Raises SPECIAL"
-	next "ATTACK by 10. (HOLD)@"
+	next "ATTACK by 10.(HOLD)@"
 
 Item96Description_ENG:
 	db   "？"
@@ -892,8 +892,8 @@ BallHolderDescription_ENG:
 	db   "Special item.@"
 
 BagDescription_ENG:
-	db   "A holder for regular"
-	next "items.@"
+	db   "A holder for"
+	next "regular items.@"
 
 ImportantBagDescription_ENG:
 	db   "A holder for"

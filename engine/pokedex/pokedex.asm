@@ -1377,6 +1377,9 @@ Pokedex_DexEntryScreen:
 	call LowVolume
 	call ClearSprites
 .loop
+	ld bc, wDexPage
+	ld a, 0
+	ld [bc], a
 	call WaitForAutoBgMapTransfer
 	ld a, [wUnownDex]
 	ld [wAnnonID], a
@@ -1419,11 +1422,7 @@ Pokedex_DexEntryInput:
 	ld a, [wDexListingScrollOffset]
 	ld [wDexTempListingScrollOffset], a
 .CheckInput:
-	ld hl, wDexPage
-	ld a, [hl]
-	cp a, 0
-	jp z, .BlinkCursor
-.cursorRet
+	call .BlinkCursor
 	call Pokedex_CopyJoypadSum
 	ld hl, hJoyDown
 	ld a, [hl]
@@ -1523,9 +1522,9 @@ Pokedex_DexEntryInput:
 	jr z, .bottom_of_list
 
 .Scrolled:
-	ld de, wDexPage
-	ld a, 2
-	ld [de], a
+	ld bc, wDexPage
+	or a, %10
+	ld [bc], a
 	scf
 	ret
 
@@ -1550,6 +1549,11 @@ Pokedex_DexEntryInput:
 ; corner of the screen
 ; Will toggle between cursor and blank every
 ; 16 frames.
+	ld hl, wDexPage
+	ld a, [hl]
+	and a, %1
+	cp a, 0
+	jp nz, .exitCursor
 	ldh a, [hVBlankCounter]
 	and $10
 	jr z, .cursor_off
@@ -1559,7 +1563,8 @@ Pokedex_DexEntryInput:
 	ld a, '　'
 .save_cursor_state
 	ldcoord_a (SCREEN_WIDTH - 2), (SCREEN_HEIGHT - 2)
-	jp .cursorRet
+.exitCursor
+	ret
 
 Pokedex_DisplayDexEntry:
 	callfar _DisplayDexEntry
@@ -1796,6 +1801,9 @@ _NewPokedexEntry:
 	pop af
 	ld [wTempSpecies], a
 	call SetPalettes
+	ld bc, wDexPage
+	ld a, %10000000
+	ld [bc], a
 	call Pokedex_DisplayDexEntry
 ;	call WaitBGMap
 ;	call GetBaseData
@@ -1804,14 +1812,10 @@ _NewPokedexEntry:
 ;	ld a, [wCurPartySpecies]
 ;	call PlayCry
 .wait_for_input
+	call Pokedex_DexEntryInput.BlinkCursor
 	call GetJoypadDebounced
 	ldh a, [hJoySum]
 	and A_BUTTON | B_BUTTON
 	jr z, .wait_for_input
-.wait_for_input2
-	call GetJoypadDebounced
-	ldh a, [hJoySum]
-	and A_BUTTON | B_BUTTON
-	jr z, .wait_for_input2
 	ret
 
