@@ -526,460 +526,563 @@ GolbatDexEntry_ENG:
 	dex
 
 OddishDexEntry_ENG:
-	db "ざっそう@"
-	db 5
-	dw 54
-	db   "ひるまは　かおを　じめんに　うめて"
-	next "あまり　うごかない。よるに　なると"
-	next "たねをまきながら　あるきまわる。@"
+	db   "During the day, it"
+	next "keeps its face"
+	next "buried in the"
+	
+	page "ground. At night,"
+	next "it wanders around"
+	next "sowing its seeds."
+	dex
 
 GloomDexEntry_ENG:
-	db "ざっそう@"
-	db 8
-	dw 86
-	db   "めしべが　はなつ　とてつもなく"
-	next "くさい　においは　２キロさきまで"
-	next "とどき　きを　うしなわせる。@"
+	db   "It pistils exude"
+	next "an incredibly foul"
+	next "odor. The horrid"
+	
+	page "stench can cause"
+	next "fainting at a"
+	next "distance of 1.25mi."
+	dex
 
 VileplumeDexEntry_ENG:
-	db "フラワー@"
-	db 12
-	dw 186
-	db   "せかいいち　おおきい　はなびらから"
-	next "アレルギーを　おこす　かふんを"
-	next "オニの　ように　ばらまく。@"
+	db   "Its petals are the"
+	next "largest in the"
+	next "world.It fiendishly"
+	
+	page "scatters allergy-"
+	next "causing pollen"
+	next "from its petals."
+	dex
 
 ParasDexEntry_ENG:
-	db "きのこ@"
-	db 3
-	dw 54
-	db   "むしの　せなかに　はえているのは"
-	next "とうちゅうかそう　という　キノコ。"
-	next "キノコは　そだって　おおきくなる。@"
+	db   "Growing out of the"
+	next "bug's back are"
+	next "mushrooms called"
+	
+	page "tochukaso. The"
+	next "mushrooms grow with"
+	next "the bug host."
+	dex
 
 ParasectDexEntry_ENG:
-	db "きのこ@"
-	db 10
-	dw 295
-	db   "キノコの　カサから　どくほうしを"
-	next "まきちらす。しかし　ちゅうごくでは"
-	next "このほうしを　かんぽうやくに　する。@"
+	db   "It scatters toxic"
+	next "spores from the"
+	next "mushrooms cap. In"
+	
+	page "China, the spores"
+	next "are used as herbal"
+	next "medicine."
+	dex
 
 VenonatDexEntry_ENG:
-	db "こんちゅう@"
-	db 10
-	dw 300
-	db   "おおきな　きのなかに　すみかをつくり"
-	next "ほかのむしなどを　たべてるらしい。"
-	next "よるは　あかりのそばに　やってくる。@"
+	db   "Lives in the tall"
+	next "trees where it"
+	next "seems to eat other"
+	
+	page "insects and such."
+	next "It is attracted by"
+	next "light at night."
+	dex
 
 VenomothDexEntry_ENG:
-	db "どくが@"
-	db 15
-	dw 125
-	db   "はねに　りんぷんが　ついていて"
-	next "ヒラヒラと　はばたくたびに"
-	next "もうどくの　こなを　ばらまく。@"
+	db   "The wings are"
+	next "covered with dust-"
+	next "like scales. Every"
+	
+	page "time it flaps its"
+	next "wings, it looses"
+	next "highly toxic dust."
+	dex
 
 DiglettDexEntry_ENG:
-	db "もぐら@"
-	db 2
-	dw 8
-	db   "ちか１メートルくらいを　ほりすすみ"
-	next "きのねっこなどを　かじって　いきる。"
-	next "たまに　ちじょうに　かおをだす。@"
+	db   "Lives about one"
+	next "yard underground"
+	next "where it feeds on"
+	
+	page "plant roots. It"
+	next "sometimes appears"
+	next "above ground."
+	dex
 
 DugtrioDexEntry_ENG:
-	db "もぐら@"
-	db 7
-	dw 333
-	db   "ちちゅうを　ほりすすんで"
-	next "ゆだんしている　ところを"
-	next "べつの　ばしょから　こうげきする。@"
+	db   "In battle, it digs"
+	next "through the ground"
+	next "and strikes the"
+	
+	page "unsuspecting foe"
+	next "from an unexpected"
+	next "direction."
+	dex
 
 MeowthDexEntry_ENG:
-	db "ばけねこ@"
-	db 4
-	dw 42
-	db   "ひかる　ものが　だいすきで"
-	next "あちこち　おちている　おかねを"
-	next "ひろって　くることも　おおい。@"
+	db   "Loves shiny things."
+	next "Frequently picks up"
+	next "money it finds"
+	
+	page "scattered on the"
+	next "floor."
+	dex
 
 PersianDexEntry_ENG:
-	db "シャムネコ@"
-	db 10
-	dw 320
-	db   "きしょうが　はげしく　しっぽを"
-	next "まっすぐ　たてたら　よう　ちゅうい。"
-	next "とびかかって　かみつく　まえぶれだ。@"
+	db   "Has a vicious"	;	simplified
+	next "temperament. Beware"
+	next "if it raises its"
+	
+	page "tail straight up."
+	next "It's a sign it'll"
+	next "pounce and bite."
+	dex
 
-PsyduckDexEntry_ENG:
-	db "あひる@"
-	db 8
-	dw 196
-	db   "いつも　ずつうに　なやまされている。"
-	next "この　ずつうが　はげしくなると"
-	next "ふしぎな　ちからを　つかいはじめる。@"
+PsyduckDexEntry_ENG:	;	simplified
+	db   "It is constantly"
+	next "wracked by a"
+	next "headache. When it"
+	
+	page "turns intense,"
+	next "it begins using"
+	next "mysterious powers."
+	dex
 
-GolduckDexEntry_ENG:
-	db "あひる@"
-	db 17
-	dw 766
-	db   "てのひらが　みずかきに　なっていて"
-	next "およぐのが　とくい。みずうみなどで"
-	next "ゆうがな　すがたが　みかけられる。@"
+GolduckDexEntry_ENG:	;	removed "etc"
+	db   "The forelegs are"
+	next "webbed, helping to"
+	next "make it an adept"
+	
+	page "swimmer. It can be"
+	next "seen swimming"
+	next "elegantly in lakes."
+	dex
 
 MankeyDexEntry_ENG:
-	db "ぶたざる@"
-	db 5
-	dw 280
-	db   "みのこなしが　かるく　きょうぼうな"
-	next "せいかく。おこって　あばれだすと"
-	next "てが　つけられなくなる。@"
+	db   "Light and agile"
+	next "on its feet, and"
+	next "ferocious in"
+	
+	page "temperament."
+	next "seen swimming"
+	next "elegantly in lakes."
+	dex
 
 PrimeapeDexEntry_ENG:
-	db "ぶたざる@"
-	db 10
-	dw 320
-	db   "なぜか　もうれつに　おこって"
-	next "にげても　にげても　どこまでも"
-	next "おいかけてくる　せいかくだ。@"
+	db   "Always furious and"
+	next "tenacious to boot."
+	next "It will not abandon"
+	
+	page "chasing its quarry"
+	next "until it is caught."
+	dex
 
 GrowlitheDexEntry_ENG:
-	db "こいぬ@"
-	db 7
-	dw 190
-	db   "ひとなつこい　せいかくだが　ひろい"
-	next "なわばりを　もっており　ゆだんして"
-	next "ちかずくと　こうげきされる。@"
+	db   "Has a friendly"
+	next "personality, but it"
+	next "attacks those who"
+	
+	page "carelessly approach"
+	next "its territory."
+	dex
 
 ArcanineDexEntry_ENG:
-	db "でんせつ@"
-	db 19
-	dw 1550
-	db   "むかしから　おおくの　ひとを"
-	next "とりこにした　うつくしい　ポケモン。"
-	next "とぶように　かろやかに　はしる。@"
+	db   "A #MON that has"
+	next "been admired since"
+	next "the past for its"
+	
+	page "beauty. It runs"
+	next "agilely as if on"
+	next "wings."
+	dex
 
 PoliwagDexEntry_ENG:
-	db "おたま@"
-	db 6
-	dw 124
-	db   "スベスベした　くろいひふは　うすい。"
-	next "おなかの　なかが　すけて"
-	next "うずまきじょうに　みえる。@"
+	db   "Has a thin smooth"
+	next "black skin. The"
+	next "inside of its belly"
+	
+	page "can be seen through"
+	next "the skin as a"
+	next "spiral pattern."
+	dex
 
 PoliwhirlDexEntry_ENG:
-	db "おたま@"
-	db 10
-	dw 200
-	db   "りくでも　すいちゅうでも　くらせる。"
-	next "ちじょうでは　いつも　あせをかき"
-	next "からだを　ぬめぬめ　させている。@"
+	db   "Capable of living"
+	next "in or out of water."
+	next "When out of water,"
+	
+	page "it sweats to keep"
+	next "its body slimy."
+	dex
 
 PoliwrathDexEntry_ENG:
-	db "おたま@"
-	db 13
-	dw 540
-	db   "クロールや　バタフライが　とくいで"
-	next "オリンピックの　せんしゅでも　"
-	next "ぐんぐんと　おいぬいていく。@"
+	db   "An adept swimmer."
+	next "in or out of water."
+	next "When out of water,"
+	
+	page "it sweats to keep"
+	next "its body slimy."
+	dex
 
 AbraDexEntry_ENG:
-	db "ねんりき@"
-	db 9
-	dw 195
-	db   "１にち　１８じかんは　ねている。"
-	next "ねむってる　あいだでも　さまざまな"
-	next "ちょうのうりょくを　つかう。@"
+	db   "It sleeps for 18"
+	next "hours a day. It"
+	next "uses a variety of"
+	
+	page "extrasensory powers"
+	next "even while asleep."
+	dex
 
 KadabraDexEntry_ENG:
-	db "ねんりき@"
-	db 13
-	dw 565
-	db   "からだから　とくべつな　アルファはが"
-	next "でていて　そばに　ちかよるだけで"
-	next "あたまが　いたくなってくる。@"
+	db   "It emits special"
+	next "alpha waves from"
+	next "its body that"
+	
+	page "induce headaches"
+	next "just by being close"
+	next "by."
+	dex
 
 AlakazamDexEntry_ENG:
-	db "ねんりき@"
-	db 15
-	dw 480
-	db   "スーパーコンピュータより　すばやく"
-	next "けいさんする　ずのうを　もつ。"
-	next "ちのうしすうは　だいたい５０００。@"
+	db   "Its brain can"
+	next "outperform a"
+	next "its body that"
+	
+	page "induce headaches"
+	next "just by being close"
+	next "by."
+	dex
 
-MachopDexEntry_ENG:
-	db "かいりき@"
-	db 8
-	dw 195
-	db   "ぜんしんが　きんにくで　できている。"
-	next "こどものようで　ありながら"
-	next "おとな　１００にんを　なげとばす。@"
+MachopDexEntry_ENG:		;	composed > made (is that good?)
+	db   "Its whole body is"
+	next "made of muscles."
+	next "Even though it"
+	
+	page "looks like a human"
+	next "child, it can hurl"
+	next "100 grown-ups."
+	dex
 
 MachokeDexEntry_ENG:
-	db "かいりき@"
-	db 15
-	dw 705
-	db   "つかれることのない　きょうじんな"
-	next "にくたい。すごくおもい　にもつを"
-	next "はこぶ　しごとなどを　てつだう。@"
+	db   "Its formidable body"
+	next "never gets tired."
+	next "Helps people by"
+	
+	page "doing work such as"
+	next "moving extremely"
+	next "heavy goods."
+	dex
 
 MachampDexEntry_ENG:
-	db "かいりき@"
-	db 16
-	dw 1300
-	db   "はったつした　４ほんの　うでは"
-	next "２びょうかんに　１０００ぱつの"
-	next "パンチを　くりだすことができる。@"
+	db   "Its four ruggedly"
+	next "developed arms can"
+	next "launch a flurry of"
+	
+	page "1,000 punches in"
+	next "just two seconds."
+	dex
 
 BellsproutDexEntry_ENG:
-	db "フラワー@"
-	db 7
-	dw 40
-	db   "ひとの　かおのような　ツボミから"
-	next "でんせつの　マンドラゴラの　いっしゅ"
-	next "ではないかと　ささやかれている。@"
+	db   "Its bud looks like"
+	next "a human face."
+	next "Because of the bud,"
+	
+	page "it is rumored to be"
+	next "a type of legendary"
+	next "mandrake plant."
+	dex
 
 WeepinbellDexEntry_ENG:
-	db "ハエとり@"
-	db 10
-	dw 64
-	db   "ハッパの　ぶぶんは　カッターになって"
-	next "あいてを　きりさく。くちからは"
-	next "なんでも　とかす　えきたいを　はく。@"
+	db   "The leafy parts act"
+	next "as cutters for"
+	next "slashing foes. It"
+	
+	page "spits a fluid that"
+	next "dissolves"
+	next "everything."
+	dex
 
 VictreebelDexEntry_ENG:
-	db "ハエとり@"
-	db 17
-	dw 155
-	db   "なんごくに　おおく　はっせいする"
-	next "きょうぼうな　しょくぶつ　ポケモン。"
-	next "ようかいえきで　なんでも　とかす。@"
+	db   "A ferocious plant"
+	next "#MON often seeps"
+	next "in southern lands."
+	
+	page "Can melt anything"
+	next "with its dissolving"
+	next "fluid."
+	dex
 
 TentacoolDexEntry_ENG:
-	db "くらげ@"
-	db 9
-	dw 455
-	db   "まるで　すいしょうのような"
-	next "めだまから　ふしぎな　ひかりの"
-	next "ビームを　はっしゃする。@"
+	db   "Its eyes are clear"
+	next "just like crystal."
+	next "From them, it"
+	
+	page "shoots mysterious"
+	next "beams of light."
+	dex
 
 TentacruelDexEntry_ENG:
-	db "くらげ@"
-	db 16
-	dw 550
-	db   "８０ぽん　の　しょくしゅが　じゆうに"
-	next "うごく。さされると　どくに　おかされ"
-	next "するどい　いたみが　はしる。@"
+	db   "It has 80 tentacles"
+	next "that move about"
+	next "freely. They can"
+	
+	page "sting, causing"
+	next "poisoning and sharp"
+	next "stabbing pain."
+	dex
 
 GeodudeDexEntry_ENG:
-	db "がんせき@"
-	db 4
-	dw 20
-	db   "そうげんや　やまに　せいそくする。"
-	next "いしころに　にていて　きがつかずに"
-	next "ふんだり　つまずいたり　してしまう。@"
+	db   "Found in fields and"
+	next "mountains."
+	next "Mistaking them for"
+	
+	page "boulders, people"
+	next "often step or trip"
+	next "on them."
+	dex
 
 GravelerDexEntry_ENG:
-	db "がんせき@"
-	db 10
-	dw 1050
-	db   "たかい　やまの　さかみちを"
-	next "ころがりながら　いどうするとき"
-	next "じゃまものは　おしつぶしていく。@"
+	db   "Moves by rolling"
+	next "down from high"
+	next "mountain roads."
+	
+	page "When it does, it"
+	next "squashes any"
+	next "obstacles."
+	dex
 
 GolemDexEntry_ENG:
-	db "メガトン@"
-	db 14
-	dw 3000
-	db   "がんせきのような　かたい　からだで"
-	next "できている。ダイナマイトで"
-	next "ばくはしても　ダメージを　うけない。@"
+	db   "Its boulder-like"
+	next "body is extremely"
+	next "hard. It can easily"
+	
+	page "withstand dynamite"
+	next "blasts without"
+	next "damage."
+	dex
 
 PonytaDexEntry_ENG:
-	db "ひのうま@"
-	db 10
-	dw 300
-	db   "からだが　かるく　あしの　ちからが"
-	next "ものすごい。１かいの　ジャンプで"
-	next "とうきょうタワーも　とびこえる。@"
+	db   "Its body is light,"
+	next "and its legs are"
+	next "incredibly"
+	
+	page "powerful. It can"
+	next "clear Tokyo Tower"
+	next "in one leap."
+	dex
 
 RapidashDexEntry_ENG:
-	db "ひのうま@"
-	db 17
-	dw 950
-	db   "じそくは　さいこう　２４０キロ。"
-	next "メラメラ　もえながら　しんかんせんと"
-	next "おなじ　スピードで　かけぬける。@"
+	db   "It can gallop at a"
+	next "top speed of 150"
+	next "miles per hour."
+	
+	page "It can race as fast"
+	next "as a bullet train"
+	next "while ablaze."
+	dex
 
 SlowpokeDexEntry_ENG:
-	db "まぬけ@"
-	db 12
-	dw 360
-	db   "うごきが　のろく　まぬけ。"
-	next "たたかれても　５びょう　たってから"
-	next "いたさを　かんじるほどだ。@"
+	db   "Incredibly slow and"
+	next "dopey. It takes 5"
+	next "seconds for it to"
+	
+	page "feel pain when"
+	next "under attack."
+	dex
 
-SlowbroDexEntry_ENG:
-	db "やどかり@"
-	db 16
-	dw 785
-	db   "ヤドンが　うみへ　エサを"
-	next "とりにいったとき　シェルダーに"
-	next "しっぽをかまれ　ヤドランになった。@"
+SlowbroDexEntry_ENG:	;	simplified
+	db   "When SLOWPOKE went"
+	next "hunting in the sea,"
+	next "its tail was bitten"
+	
+	page "by a SHELLDER. That"
+	next "made it evolve into"
+	next "SLOWBRO."
+	dex
 
-MagnemiteDexEntry_ENG:
-	db "じしゃく@"
-	db 3
-	dw 60
-	db   "くうちゅうに　ういたまま　いどうして"
-	next "さゆうの　ユニットから"
-	next "でんじはなどを　ほうしゃする。@"
+MagnemiteDexEntry_ENG:	;	reworded slightly
+	db   "It moves while"
+	next "constantly"
+	next "hovering. It"
+	
+	page "discharges THUNDER"
+	next "WAVE and so on from"
+	next "units on its sides."
+	dex
 
 MagnetonDexEntry_ENG:
-	db "じしゃく@"
-	db 10
-	dw 600
-	db   "ふくすうの　コイルが　れんけつして"
-	next "きょうりょくな　じりょくせんと"
-	next "こうでんあつを　ほうしゃする。@"
+	db   "A linked cluster of"
+	next "several MAGNEMITE."
+	next "It discharges"
+	
+	page "powerful magnetic"
+	next "waves at high"
+	next "voltage."
+	dex
 
 FarfetchdDexEntry_ENG:
-	db "かるがも@"
-	db 8
-	dw 150
-	db   "じぶんの　すを　つくるための"
-	next "しょくぶつの　クキを　１ぽん"
-	next "いつも　もって　あるいている。@"
+	db   "It always walks"
+	next "about with a plant"
+	next "stalk clamped in"
+	
+	page "its beak. The stalk"
+	next "is used for"
+	next "building its nest."
+	dex
 
 DoduoDexEntry_ENG:
-	db "ふたごどり@"
-	db 14
-	dw 392
-	db   "とぶのは　にがてだが　はしるのは　"
-	next "はやく　きょだいな　あしあとを"
-	next "のこして　だいちを　かけぬける。@"
+	db   "A bird that makes"
+	next "up for its poor"
+	next "flying with its"
+	
+	page "fast foot speed."
+	next "Leaves giant"
+	next "footprints."
+	dex
 
 DodrioDexEntry_ENG:
-	db "みつごどり@"
-	db 18
-	dw 852
-	db   "３つの　あたまで　こうどな"
-	next "さくせんを　あやつる。ねるときも"
-	next "どれか　１つは　おきているという。@"
+	db   "Uses its three"
+	next "brains to execute"
+	next "complex plans."
+	
+	page "While two heads"
+	next "sleep, one head"
+	next "stays awake."
+	dex
 
-SeelDexEntry_ENG:
-	db "あしか@"
-	db 11
-	dw 900
-	db   "みずいろの　たいもうに　おおわれた"
-	next "ひふは　ぶあつくて　じょうぶ。"
-	next "れいか４０ど　でも　かつどうできる。@"
+SeelDexEntry_ENG:	;	simplified "Farenheit" to "F".
+	db   "Covered in light"
+	next "blue fur, its hide"
+	next "is thick and tough."
+	
+	page "It is active in"
+	next "bitter cold of"
+	next "-40 degrees F."
+	dex
 
 DewgongDexEntry_ENG:
-	db "あしか@"
-	db 17
-	dw 1200
-	db   "ぜんしんが　まっしろな　けで"
-	next "おおわれている。さむさに　つよく"
-	next "むしろ　さむいほど　げんきになる。@"
+	db   "Its body is covered"
+	next "with a pure white"
+	next "fur. The colder the"
+	
+	page "weather, the more"
+	next "active it becomes."
+	dex
 
 GrimerDexEntry_ENG:
-	db "ヘドロ@"
-	db 9
-	dw 300
-	db   "つきからの　エックスせんをあびた"
-	next "ヘドロが　ベトベターにへんかした。"
-	next "きたないモノが　だいこうぶつ。@"
+	db   "Sludge exposed to"
+	next "X-rays from the"
+	next "moon transformed"
+	
+	page "into GRIMER. It"
+	next "loves feeding on"
+	next "filthy things."
+	dex
 
-MukDexEntry_ENG:
-	db "ヘドロ@"
-	db 12
-	dw 300
-	db   "ふだんは　じめんに　まざっていて"
-	next "わからない。からだに　さわると"
-	next "もうどくに　おかされる。@"
+MukDexEntry_ENG:	;	undetectable > invisible
+	db   "Usually invisible"
+	next "because it blends"
+	next "in with the ground."
+	
+	page "Touching it can"
+	next "cause terrible"
+	next "poisoning."
+	dex
 
 ShellderDexEntry_ENG:
-	db "２まいがい@"
-	db 3
-	dw 40
-	db   "ダイヤモンドよりも　かたいカラに"
-	next "おおわれている。しかし　なかは"
-	next "とても　やわらかい。@"
+	db   "It is encased in a"
+	next "shell that is"
+	next "harder than"
+	
+	page "diamond. Inside,"
+	next "however, it is very"
+	next "tender."
+	dex
 
-CloysterDexEntry_ENG:
-	db "２まいがい@"
-	db 15
-	dw 1325
-	db   "カラが　ひじょうに　かたく"
-	next "ナパームだんでも　こわせない。"
-	next "こうげきするときだけ　ひらく。@"
+CloysterDexEntry_ENG:	;	simplified
+	db   "Its shell is"
+	next "extremely hard. It"
+	next "can't be shattered,"
+	
+	page "even with a bomb."
+	next "The shell opens"
+	next "only when attacking"
+	dex
 
 GastlyDexEntry_ENG:
-	db "ガスじょう@"
-	db 13
-	dw 1
-	db   "うすい　ガスじょうの　せいめいたい。"
-	next "ガスに　つつまれると"
-	next "インドぞうも　２びょうで　たおれる。@"
+	db   "A being that exists"
+	next "as a thin gas. It"
+	next "can topple an"
+	
+	page "Indian elephant by"
+	next "enveloping the prey"
+	next "in two seconds."
+	dex
 
 HaunterDexEntry_ENG:
-	db "ガスじょう@"
-	db 16
-	dw 1
-	db   "くらやみで　だれもいないのに"
-	next "みられているような　きがしたら"
-	next "そこに　ゴーストが　いるのだ。@"
+	db   "If you get the"
+	next "feeling of being"
+	next "watched in darkness"
+	
+	page "when nobody is"
+	next "around, HAUNTER is"
+	next "there."
+	dex
 
 GengarDexEntry_ENG:
-	db "シャドー@"
-	db 15
-	dw 405
-	db   "やまで　そうなんしたとき"
-	next "いのちをうばいに　くらやみから"
-	next "あらわれることが　あるという。@"
+	db   "It's said to emerge"
+	next "from darkness to"
+	next "steal the lives of"
+	
+	page "of those who become"
+	next "lost in mountains."
+	dex
 
 OnixDexEntry_ENG:
-	db "いわへび@"
-	db 88
-	dw 2100
-	db   "せいちょうすると　からだの"
-	next "がんせきせいぶんが　へんかして"
-	next "くろい　ダイヤモンドのようになる。@"
+	db   "As it grows, the"
+	next "stone portions of"
+	next "its body harden to"
+	
+	page "become similar to a"
+	next "diamond, but"
+	next "colored black."
+	dex
 
 DrowzeeDexEntry_ENG:
-	db "さいみん@"
-	db 10
-	dw 324
-	db   "ユメをたべるという　でんせつの　"
-	next "いきもの　バクの　しそん。"
-	next "さいみんじゅつが　とくいだ。@"
+	db   "A descendent of the"
+	next "legendary animal"
+	next "baku, which is said"
+	
+	page "to eat dreams. It"
+	next "is skilled at"
+	next "hypnotism."
+	dex
 
 HypnoDexEntry_ENG:
-	db "さいみん@"
-	db 16
-	dw 756
-	db   "ふりこのようなものを　もちあるく。"
-	next "こどもに　さいみんじゅつを　かけて"
-	next "どこかへ　つれさるじけんが　あった。@"
+	db   "It carries a"
+	next "pendulum-like"
+	next "device. There once"
+	
+	page "was an incident in"
+	next "which it took a"
+	next "child it hypnotized"
+	dex
 
 KrabbyDexEntry_ENG:
-	db "さわがに@"
-	db 4
-	dw 65
-	db   "ハサミは　きょうりょくな　ぶきであり"
-	next "よこに　あるくとき　からだの"
-	next "バランスをとる　やくめも　はたす。@"
+	db   "Its pincers are"
+	next "not only powerful"
+	next "weapons, they are"
+	
+	page "used for balance"
+	next "when walking"
+	next "sideways."
+	dex
 
 KinglerDexEntry_ENG:
-	db "はさみ@"
-	db 13
-	dw 600
-	db   "ハサミは　１まんばりきの"
-	next "スーパーパワーを　ひめているのだが"
-	next "おおきすぎて　うまく　うごかない。@"
+	db   "The large pincer"
+	next "has 10000 hp of"
+	next "crushing power."
+	
+	page "However, its huge"
+	next "size makes it"
+	next "unwieldy to use."
+	dex
 
 PokedexEntryPointers2_ENG::
 	dw VoltorbDexEntry_ENG
