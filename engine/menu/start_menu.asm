@@ -2108,7 +2108,7 @@ DrawTrainerCardMainPage:
 	hlcoord 16, 10
 	ld de, TrainerCardDexEntriesText
 	call PlaceString
-	hlcoord 6, 2
+	hlcoord 7, 2
 	ld de, wPlayerName
 	call PlaceString
 	hlcoord 5, 4
@@ -2150,14 +2150,14 @@ DrawTrainerCardMainPage:
 	ret
 
 TrainerCardText:
-	db   "なまえ／"
+	db   "NAME/"
 	next ""
-	next "おこづかい"
+	next "MONEY"
 	next ""
-	next "#ずかん@"
+	next "#DEX@"
 
 TrainerCardDexEntriesText:
-	db "ひき@"
+	db "@"
 
 TrainerCardNameTiles:
 	db $0A, $0C, $0D, $0E, $0F, $FF
@@ -2172,16 +2172,19 @@ TrainerCardStatusTiles:
 	db $0A, $10, $11, $12, $13, $FF
 
 TrainerCardBadgesOutlineTiles:
-	db $03, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $02, $7F, $14, $15, $16, $17, $18, $19, $1A, $1B, $1C, $1D, $7F, $7F, $7F, $FE, $BA, $7F, $7F, $7F, $05, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $FF
+	db $03, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01 
+	db $02, $7F, "BADGES",                     $7F, $7F, $7F, $7F, $7F, $7F, $7F, $FE, $7F, $7F, $7F, $7F 
+	db $05, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01, $01 
+	db $FF
 
 TrainerCardBadgesTextTiles:
-	db $1E, $1F, $20, $7F, $7F, $7F, $7F, $1B, $1C, $1D, $FF
+	db $14, $18, $19, $7F, $7F, $7F, $7F, $14, $15, $16, $17, $FF
 
 DrawTrainerCaseBadgePage:
 	hlcoord 0, 0
 	ld d, $0E
 	call PlaceTrainerCardBGTile
-	hlcoord 5, 2
+	hlcoord 3, 2
 	ld de, TrainerCardLeagueBadgesTextTiles
 	call PlaceString
 	hlcoord 1, 0
@@ -2193,7 +2196,7 @@ DrawTrainerCaseBadgePage:
 	ret
 
 TrainerCardLeagueBadgesTextTiles:
-	db "#リーグバッジ@"
+	db "LEAGUE BADGES@"
 
 TrainerCardBadgesTiles:
 	db $0A, $0B, $0C, $0D, $0E, $FF
