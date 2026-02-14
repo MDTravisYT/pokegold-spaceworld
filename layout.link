@@ -987,6 +987,7 @@ ROMX $3f
 	"engine/menu/debug_menu.asm@Subgame Menu"
 	
 ROMX $40
+	"_new/credits.asm"
 	"_new/text/battle.asm"
 	"_new/text/oak_speech.asm"
 	"_new/text/PlayerHouse2F.asm"

@@ -10,6 +10,7 @@ SECTION "engine/menu/debug_menu.asm", ROMX
 	const DEBUGMENU_SUBGAME
 	const DEBUGMENU_POKEDEX
 	const DEBUGMENU_TRAINERGEAR
+	const DEBUGMENU_CREDITS
 
 DebugMenu::
 	call ClearTileMap
@@ -38,10 +39,11 @@ DebugJumpTable::
 	dw DebugMenuOptionSubGames
 	dw DebugMenuOptionMonsterTest
 	dw DebugMenuOptionName
+	dw DebugMenuOptionCredits
 
 DebugMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 5, 2, SCREEN_WIDTH - 7, SCREEN_HEIGHT - 1
+	menu_coords 4, 1, SCREEN_WIDTH - 5, SCREEN_HEIGHT
 	dw .MenuData
 	db 1 ; default option
 
@@ -53,22 +55,28 @@ DebugMenuHeader:
 	dw .Strings
 
 .Strings
-	db "ファイト@"
-	db "フィールド@"
-	db "サウンド@"
-	db "サブゲーム@"
-	db "モンスター@"
-	db "なまえ@"
+	db "FIGHT@"
+	db "FIELD@"
+	db "SOUND@"
+	db "MINIGAME@"
+	db "#DEX@"
+	db "TOOLGEAR@"
+	db "CREDITS@"
 
 DebugMenuItems:
-	db 6 ; items
+	db 7 ; items
 	db DEBUGMENU_FIGHT
 	db DEBUGMENU_FIELD
 	db DEBUGMENU_SOUNDTEST
 	db DEBUGMENU_SUBGAME
 	db DEBUGMENU_POKEDEX
 	db DEBUGMENU_TRAINERGEAR
+	db DEBUGMENU_CREDITS
 	db -1
+
+DebugMenuOptionCredits:
+	callfar TranslationCredits
+	jp DebugMenu
 
 DebugMenuOptionField::
 	ld hl, wDebugFlags

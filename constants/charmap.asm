@@ -396,6 +396,7 @@
 	charmap ".",         $e8
 	
 	charmap "¥",         $f0
+	charmap "/",         $f3
 	charmap ",",         $f4
 	charmap "0", $f6
 	charmap "1", $f7
