@@ -989,6 +989,7 @@ ROMX $3f
 ROMX $40
 	"_new/credits.asm"
 	"_new/text/battle.asm"
+	"_new/text/breeder.asm"
 	"_new/text/oak_speech.asm"
 	"_new/text/PlayerHouse2F.asm"
 	"_new/text/PlayerHouse1F.asm"

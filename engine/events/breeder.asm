@@ -177,73 +177,104 @@ _Breeder::
 	ld [wBreedingCompatibility], a
 	ret
 
-.IntroText:
-	text "わたしは　こずくりやさん"
-	line "さて　どうする？"
-	done
+.IntroText:	;	03:7c19
+	text_far _BreederIntroText
+	text_end
+rept $8
+	nop
+endr
 
-.MenuHeader:
+.MenuHeader:	;	03:7c30
 	db MENU_BACKUP_TILES
 	menu_coords 13, 4, 19, 11
 	dw .MenuData
 	db 1
 
-.MenuData:
+.MenuData:	;	03:7c38
 	db STATICMENU_CURSOR
 	db 3
-	db "あずける@"	; Deposit
-	db "ひきとる@"	; Withdraw
-	db "やめる@"	; Cancel
+	db "DEPOSIT@"	; Deposit
+	db "WITHDRAW@"	; Withdraw
+	db "CANCEL@"	; Cancel
 
-.DepositedText:
-	text "あずけた！"
-	prompt
+.DepositedText:	;	03:7c48
+	text_far _BreederDepositedText
+	text_end
+rept $2
+	nop
+endr
 
-.AlreadyHasTwoPokemonText:
-	text "すでに　２ひきの#を"
-	line "あずかっています"
-	prompt
+.AlreadyHasTwoPokemonText:	;	03:7c4f
+	text_far _BreederAlreadyHasTwoPokemonText
+	text_end
+rept $10
+	nop
+endr
 
-.CheckOnPokemonText:
-	text "こずくりを　ちゅうししますか？"
-	done
+.CheckOnPokemonText:	;	03:7c64
+	text_far _BreederCheckOnPokemonText
+	text_end
+rept $C
+	nop
+endr
 
-.DoesntHavePokemonText:
-	text "#は　いっぴきも"
-	line "あずかってませんが"
-	prompt
+.DoesntHavePokemonText:	;	03:7c75
+	text_far _BreederDoesntHavePokemonText
+	text_end
+rept $F
+	nop
+endr
 
-.WithdrawnText:
-	text "ひきとった！"
-	prompt
+.WithdrawnText:	;	03:7c89
+	text_far _BreederWithdrawnText
+	text_end
+rept $3
+	nop
+endr
 
-.BoxAndPartyFullText:
-	text "てもちも　マサキの　<PC>も"
-	line "#で　いっぱいのようです"
-	prompt
+.BoxAndPartyFullText:	;	03:7c91
+	text_far _BreederBoxAndPartyFullText
+	text_end
+rept $16
+	nop
+endr
 
-.LetsMakeBabiesText:
-	text "それでは　こづくりします！"
-	prompt
+.LetsMakeBabiesText:	;	03:7cac
+	text_far _BreederLetsMakeBabiesText
+	text_end
+rept $A
+	nop
+endr
 
-.SeemToGetAlongText:
-	text "あいしょうが　いいようです"
-	prompt
+.SeemToGetAlongText:	;	03:7cbb
+	text_far _BreederSeemToGetAlongText
+	text_end
+rept $A
+	nop
+endr
 
-.DontSeemToGetAlongText:
-	text "あいしょうが　わるいようです"
-	prompt
+.DontSeemToGetAlongText:	;	03:7cca
+	text_far _BreederDontSeemToGetAlongText
+	text_end
+rept $B
+	nop
+endr
 
-.GendersDontMatchText:
-	text "せいべつが　あわないようです"
-	prompt
+.GendersDontMatchText:	;	03:7cda
+	text_far _BreederGendersDontMatchText
+	text_end
+rept $B
+	nop
+endr
 
-.NoEggYetText:
-	text "ざんねんながら　まだ　うまれて"
-	line "こないようです"
-	prompt
+.NoEggYetText:	;	03:7cea
+	text_far _BreederNoEggYetText
+	text_end
+rept $14
+	nop
+endr
 
-.AskGiveEgg:
+.AskGiveEgg:	;	03:7d03
 	ld hl, .EggLaidText
 	call PrintText
 	call YesNoBox
@@ -262,10 +293,12 @@ _Breeder::
 	predef GiveEgg
 	jp .Exit
 
-.EggLaidText:
-	text "タマゴが　うまれました！"
-	line "ひきとりますか？"
-	done
+.EggLaidText:	;	03:7d2e
+	text_far _BreederEggLaidText
+	text_end
+rept $12
+	nop
+endr
 
-Stub_MailEffect::
+Stub_MailEffect::	;	03:7d45
 	ret
