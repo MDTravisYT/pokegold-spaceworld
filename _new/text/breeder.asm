@@ -9,12 +9,12 @@ _BreederIntroText:
 
 _BreederDepositedText:
 	text "Deposited!"
-	done
+	prompt
 
 _BreederAlreadyHasTwoPokemonText:
 	text "I already care for"
 	line "two #MON."
-	done
+	prompt
 
 _BreederCheckOnPokemonText:
 	text "Would you like to"
@@ -24,40 +24,40 @@ _BreederCheckOnPokemonText:
 _BreederDoesntHavePokemonText:
 	text "I don't have a"
 	line "single #MON."
-	done
+	prompt
 
 _BreederWithdrawnText:
 	text "Withdrawn!"
-	done
+	prompt
 
 _BreederBoxAndPartyFullText:
 	text "BILL'S <PC> is"
 	line "full of #MON."
-	done
+	prompt
 
 _BreederLetsMakeBabiesText:
 	text "Let's make babies!"
-	done
+	prompt
 
 _BreederSeemToGetAlongText:
 	text "The two seem to"
 	line "get along."
-	done
+	prompt
 
 _BreederDontSeemToGetAlongText:
 	text "The don't two seem"
 	line "to get along."
-	done
+	prompt
 
 _BreederGendersDontMatchText:
 	text "Their genders"
 	line "don't match."
-	done
+	prompt
 
 _BreederNoEggYetText:
 	text "Unfortunately, no"
 	line "egg was laid yet."
-	done
+	prompt
 
 _BreederEggLaidText:
 	text "An egg has been"
