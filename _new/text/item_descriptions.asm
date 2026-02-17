@@ -781,7 +781,7 @@ WetHornDescription_ENG:
 
 SkateboardDescription_ENG:
 	db   "Move at 2x speed."
-	next "Can't use indoors.@"
+	next "Can use indoors.@"
 
 CrimsonJewelDescription_ENG:
 	db   "Red gem. Sell high.@"
