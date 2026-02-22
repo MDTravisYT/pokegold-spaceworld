@@ -16,6 +16,8 @@ TranslationCredits:
 	call .string
 	ld de, CreditsText4
 	call .string
+	ld de, CreditsText5
+	call .string
 	ld a, MUSIC_TITLE
 	ld [wMusicFadeID], a
 	ld hl, wMusicFade
@@ -91,4 +93,13 @@ CreditsText4:
 	next "- TCRF community    "
 	db   "- pret community    "
 	db   "- Public bugtesters "
+	db   "@"
+CreditsText5:
+	db   "Find a bug?"
+	next "  Bad translation?"
+	next "    Typo?"
+	next "Report it to:       "
+	db   "github.com/         "
+	db   "MDTravisYT/pokegold-"
+	db   "spaceworld/issues"
 	db   "@"

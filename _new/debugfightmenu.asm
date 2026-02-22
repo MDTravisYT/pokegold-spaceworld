@@ -1,1015 +1,887 @@
-if DEF(UNFINISHED_BROKEN_DONT_ENABLE)
-Functionfdb66:
-	ld   a,$01
-	ld   ($ff00+hInMenu),a
-	ld   a,$80
-	ld   (wBadges),a
-	ld   hl,wNumBagItems
-	ld   de,DebugFightFunc5C29
-DebugFightFunc5B75:
-	ld   a,(de)
-	cp   a,$FF
-	jr   z,DebugFightFunc5B8A
-	inc  de
-	ld   (wCurItem),a
-	ld   a,(de)
-	inc  de
-	ld   (wItemQuantity),a
-	push de
-	call ReceiveItem
-	pop  de
-	jr   DebugFightFunc5B75:
-DebugFightFunc5B8A:
-	call LoadFontsBattleExtra
-	call ClearTileMap
-	call ClearSprites
-	ld   hl,wShadowOAMEnd
-	ld   b,$01
-	ld   c,$12
-	call DrawTextBox
-	ld   hl,w_C2BA
-	ld   de,DebugFightFunc6169
-	call PlaceString
-	ld   hl,w_C2F4
-	ld   de,DebugFightFunc6172
-	call PlaceString
-	ld   hl,w_C319
-	ld   de,DebugFightFunc6181
-	call PlaceString
-	xor  a
-	ld   (wCurPartyMon),a
-	ld   (wEnemyMon),a
-	ld   (wEnemyMonLevel),a
-	ld   (wBattleMonStructEnd),a
-	ld   (w_D900),a
-	ld   b,a
-	ld   c,a
-	ld   hl,wOTPartySpecies
-	call DebugFightFunc5C20
-	ld   hl,wPartyCount
-	call DebugFightFunc5C20
-	ld   de,wPartySpecies
-	ld   hl,w_C31C
-DebugFightFunc5BDC:
-	push hl
-	push bc
-	dec  hl
-	ld   a,ED
-	ld   (hl),a
-	ld   bc,$000B
-	add  hl,bc
-	ld   a,7F
-	ld   (hl),a
-	push de
-	pop  de
-	pop  bc
-	pop  hl
-DebugFightFunc5BED:
-	push bc
-	push de
-	call DelayFrame
-	call GetJoypadDebounced
-	pop  de
-	pop  bc
-	ld   a,($ff00+hJoySum)
-	bit  0,a
-	jp   nz,DebugFightFunc5C36
-	bit  1,a
-	jp   nz,DebugFightFunc5C75
-	bit  3,a
-	jp   nz,DebugFightFunc5DA7
-	bit  4,a
-	jp   nz,DebugFightFunc5CC6
-	bit  6,a
-	jp   nz,DebugFightFunc5C82
-	bit  7,a
-	jp   nz,DebugFightFunc5CA5
-	bit  2,a
-	ld   a,04
-	jp   nz,Predef
-	jr   DebugFightFunc5BED
-DebugFightFunc5C20:
-	xor  a
-	ldi  (hl),a
-	ldi  (hl),a
-	ldi  (hl),a
-	ldi  (hl),a
-	ldi  (hl),a
-	ldi  (hl),a
-	ld   (hl),a
-	ret
-DebugFightFunc5C29:
-	ld   bc,$0263
-	ld   h,e
-	inc  b
-	ld   h,e
-	dec  b
-	ld   h,e
-	ld   c,63
-	jr   z,DebugFightFunc5C98
-	rst  38
-DebugFightFunc5C36:
-	inc  b
-	ld   a,b
-	cp   a,$FE
-	jr   c,DebugFightFunc5C3E
-	xor  a
-	ld   b,a
-DebugFightFunc5C3E:
-	ld   (de),a
-	ld   (wNamedObjectIndexBuffer),a
-	push bc
-	push hl
-	push de
-	ld   bc,$8103
-	call PrintNumber
-	inc  hl
-	push hl
-	ld   de,DebugFightFunc61ED
-	call PlaceString
-	ld   bc,hFFEC
-	add  hl,bc
-	ld   de,DebugFightFunc61ED
-	call PlaceString
-	pop  hl
-	ld   a,(wNamedObjectIndexBuffer)
-	and  a
-	jr   nz,DebugFightFunc5C69
-	ld   de,DebugFightFunc61F3
-	jr   DebugFightFunc5C6C
-DebugFightFunc5C69:
-	call GetPokemonName
-DebugFightFunc5C6C:
-	call PlaceString
-	pop  de
-	pop  hl
-	pop  bc
-	jp   DebugFightFunc5BED
-DebugFightFunc5C75:
-	dec  b
-	ld   a,b
-	cp   a,$FE
-	jp   c,DebugFightFunc5C3E
-	ld   a,$FD
-	ld   b,a
-	jp   DebugFightFunc5C3E
-DebugFightFunc5C82:
-	ld   a,(wCurPartyMon)
-	dec  a
-	cp   a,$FF
-	jp   z,DebugFightFunc5BED
-	ld   (wCurPartyMon),a
-	dec  de
-	dec  hl
-	ld   a,$7F
-	ld   (hl),a
-	push bc
-	ld   bc,hSerialReceive
-	add  hl,bc
-DebugFightFunc5C98:
-	pop  bc
-	ld   a,$ED
-	ld   (hl),a
-	inc  hl
-	push hl
-	call DebugFightFunc5D8C
-	pop  hl
-	jp   DebugFightFunc5BED
-DebugFightFunc5CA5:
-	ld   a,(wCurPartyMon)
-	inc  a
-	cp   a,$06
-	jp   nc,DebugFightFunc5BED
-	ld   (wCurPartyMon),a
-	inc  de
-	dec  hl
-	ld   a,$7F
-	ld   (hl),a
-	ld   bc,$0028
-	add  hl,bc
-	ld   a,$ED
-	ld   (hl),a
-	inc  hl
-	push hl
-	call DebugFightFunc5D8C
-	pop  hl
-	jp   DebugFightFunc5BED
-DebugFightFunc5CC6:
-	push hl
-	push bc
-	dec  hl
-	ld   a,$7F
-	ld   (hl),a
-	ld   bc,$000B
-	add  hl,bc
-	ld   a,$ED
-	ld   (hl),a
-	pop  bc
-	pop  hl
-DebugFightFunc5CD5:
-	push bc
- 	push de
- 	call DelayFrame
- 	call GetJoypadDebounced
- 	pop  de
- 	pop  bc
- 	ld   a,($ff00+hJoySum)
- 	bit  0,a
- 	jp   nz,DebugFightFunc5D01
- 	bit  1,a
- 	jp   nz,DebugFightFunc5D2A
- 	bit  3,a
- 	jp   nz,DebugFightFunc5DA7
- 	bit  5,a
- 	jp   nz,DebugFightFunc5BDC
- 	bit  6,a
- 	jp   nz,DebugFightFunc5D3A
- 	bit  7,a
- 	jp   nz,DebugFightFunc5D63
- 	jr   DebugFightFunc5CD5
-DebugFightFunc5D01:
-	inc  c
-	ld   a,c
-	cp   a,$65
-	jr   c,DebugFightFunc5D0A
-	ld   a,$01
-	ld   c,a
-DebugFightFunc5D0A:
-	ld   a,(wCurPartyMon)
-	push de
-	ld   de,wOTPartySpecies
-	add  e
-	ld   e,a
-	jr   nc,DebugFightFunc5D16
-	inc  d
-DebugFightFunc5D16:
-	ld   a,c
-	ld   (de),a
-	push bc
-	push hl
-	ld   bc,$000B
-	add  hl,bc
-	ld   bc,$8103
-	call PrintNumber
-	pop  hl
-	pop  bc
-	pop  de
-	jp   DebugFightFunc5CD5
-DebugFightFunc5D2A:
-	dec  c
-	ld   a,c
-	cp   a,$65
-	jr   nc,DebugFightFunc5D34
-	and  a
-	jp   nz,DebugFightFunc5D0A
-DebugFightFunc5D34:
-	ld   a,$64
-	ld   c,a
-	jp   DebugFightFunc5D0A
-DebugFightFunc5D3A:
-	ld   a,(wCurPartyMon)
-	dec  a
-	cp   a,$FF
-	jp   z,DebugFightFunc5CD5
-	ld   (wCurPartyMon),a
-	dec  de
-	push hl
-	ld   bc,$000A
-	add  hl,bc
-	ld   a,$7F
-	ld   (hl),a
-	pop  hl
-	ld   bc,hSerialReceive
-	add  hl,bc
-	push hl
-	ld   bc,$000A
-	add  hl,bc
-	ld   a,$ED
-	ld   (hl),a
-	call DebugFightFunc5D8C
-	pop  hl
-	jp   DebugFightFunc5CD5
-DebugFightFunc5D63:
-	ld   a,(wCurPartyMon)
-	inc  a
-	cp   a,$06
-	jp   nc,DebugFightFunc5CD5
-	ld   (wCurPartyMon),a
-	inc  de
-	push hl
-	ld   bc,$000A
-	add  hl,bc
-	ld   a,7F
-	ld   (hl),a
-	pop  hl
-	ld   bc,$0028
-	add  hl,bc
-	push hl
-	ld   bc,$000A
-	add  hl,bc
-	ld   a,$ED
-	ld   (hl),a
-	call DebugFightFunc5D8C
-	pop  hl
-	jp   DebugFightFunc5CD5
-DebugFightFunc5D8C:
-	ld   hl,wPartySpecies
-	ld   a,(wCurPartyMon)
-	add  l
-	ld   l,a
-	jr   nc,DebugFightFunc5D97
-	inc  h
-DebugFightFunc5D97:
-	ld   a,(hl)
-	ld   b,a
-	ld   hl,wOTPartySpecies
-	ld   a,(wCurPartyMon)
-	add  l
-	ld   l,a
-	jr   nc,DebugFightFunc5DA4
-	inc  h
-DebugFightFunc5DA4:
-	ld   a,(hl)
-	ld   c,a
-	ret
-DebugFightFunc5DA7:
-	ld   hl,wPartyCount
-	ld   de,wOTPartyCount
-	xor  a
-	ld   (hl),a
-	inc  hl
-	ldi  a,(hl)
-	ld   b,a
-	ld   c,$06
-	xor  a
-	ld   (wBattleMode),a
-DebugFightFunc5DB8:
-	ld   a,b
-	ld   (wCurPartySpecies),a
-	ld   a,(hl)
-	ld   b,a
-	inc  de
-	ld   a,(de)
-	and  a
-	jr   z,DebugFightFunc5DDB
-	ld   (wCurPartyLevel),a
-	xor  a
-	ld   (wMonType),a
-	ld   a,(wCurPartySpecies)
-	and  a
-	jr   z,DebugFightFunc5DDB
-	push hl
-	push de
-	push bc
-	ld   a,$10
-	call Predef
-	pop  bc
-	pop  de
-	pop  hl
-DebugFightFunc5DDB:
-	inc  hl
-	dec  c
-	jr   nz,DebugFightFunc5DB8
-	ld   b,$07
-	ld   hl,wPartySpecies
-	ld   de,wOTPartyCount
-DebugFightFunc5DE7:
-	inc  de
-	dec  b
-	jp   z,DebugFightFunctionfdb66
-	ldi  a,(hl)
-	and  a
-	jr   z,DebugFightFunc5DE7
-	ld   a,(de)
-	and  a
-	jr   z,DebugFightFunc5DE7
-	ld   hl,w_C2DC
-	ld   b,$0F
-	ld   c,$14
-	call ClearBox
-	ld   hl,w_C2DC
-	ld   b,$0F
-	ld   c,$14
-	call ClearBox
-	ld   hl,w_C2DC
-	ld   b,$0F
-	ld   c,$14
-	call ClearBox
-	ld   c,$14
-	call DelayFrames
-	ld   a,$01
-	ld   (wBattleMode),a
-	ld   de,DebugFightFunc61F9
-	ld   a,(w_D900)
-	cp   a,$65
-	jr   c,DebugFightFunc5E2E
-	ld   a,$02
-	ld   (wBattleMode),a
-	ld   de,DebugFightFunc6203
-DebugFightFunc5E2E:
-	ld   hl,w_C2F1
-	call PlaceString
-	ld   hl,w_C319
-	ld   de,DebugFightFunc620D
-	call PlaceString
-	ld   a,(wEnemyMon)
-	ld   b,a
-	ld   a,(wBattleMode)
-	dec  a
-	jr   z,DebugFightFunc5E78
-	ld   a,(wBattleMonStructEnd)
-	ld   (wNamedObjectIndexBuffer),a
-	ld   b,a
-	ld   de,wNamedObjectIndexBuffer
-	ld   hl,DebugFightFuncC341
-	push bc
-	ld   bc,$8103
-	call PrintNumber
-	ld   hl,DebugFightFuncC345
-	ld   de,DebugFightFunc6233
-	call PlaceString
-	ld   hl,DebugFightFunc4B78
-	ld   a,0E
-	call FarCall_hl
-	ld   hl,DebugFightFuncC345
-	ld   de,wOTClassName
-	call PlaceString
-	pop  bc
-	jr   DebugFightFunc5E9D
-DebugFightFunc5E78:
-	ld   a,b
-	and  a
-	jr   z,DebugFightFunc5E9D
-	ld   de,wNamedObjectIndexBuffer
-	ld   (de),a
-	ld   hl,DebugFightFuncC341
-	push bc
-	ld   bc,$8103
-	call PrintNumber
-	ld   hl,DebugFightFuncC345
-	ld   de,DebugFightFunc6233
-	call PlaceString
-	call GetPokemonName
-	ld   hl,DebugFightFuncC345
-	call PlaceString
-	pop  bc
-DebugFightFunc5E9D:
-	ld   a,(wEnemyMonLevel)
-	ld   c,a
-	ld   de,wNamedObjectIndexBuffer
-	ld   (de),a
-	ld   hl,w_C350
-	push bc
-	ld   bc,$8103
-	call PrintNumber
-	pop  bc
-DebugFightFunc5EB0:
-	ld   a,$7F
-	ld   (w_C340),a
-	ld   (w_C34F),a
-	ld   a,$ED
-	ld   (w_C2F0),a
-DebugFightFunc5EBD:
-	push bc
-	call DelayFrame
-	call GetJoypadDebounced
-	pop  bc
-	ld   a,(ff00+hJoySum)
-	bit  0,a
-	jp   nz,DebugFightFunc5ED8
-	bit  3,a
-	jp   nz,DebugFightFunc6056
-	bit  7,a
-	jp   nz,DebugFightFunc5F1F
-	jr   DebugFightFunc5EBD
-DebugFightFunc5ED8:
-	ld   hl,DebugFightFuncC341
-	ld   de,DebugFightFunc6220
-	call PlaceString
-	ld   hl,w_C331
-	ld   de,DebugFightFunc6233
-	call PlaceString
-	xor  a
-	ld   b,a
-	ld   c,a
-	ld   a,(wBattleMode)
-	dec  a
-	jr   nz,DebugFightFunc5F09
-	ld   a,$02
-	ld   (wBattleMode),a
-	ld   a,$7F
-	ld   (w_C2E0),a
-	ld   hl,w_C2F1
-	ld   de,DebugFightFunc6203
-	call PlaceString
-	jp   DebugFightFunc5EBD
-DebugFightFunc5F09:
-	ld   a,$01
-	ld   (wBattleMode),a
-	ld   a,$7F
-	ld   (C2DD),a
-	ld   hl,w_C2F1
-	ld   de,DebugFightFunc61F9
-	call PlaceString
-	jp   DebugFightFunc5EBD
-DebugFightFunc5F1F:
-	ld   a,$ED
- 	ld   (w_C340),a
- 	ld   a,$7F
- 	ld   (w_C34F),a
- 	ld   (w_C2F0),a
-DebugFightFunc5F2C:
-	push bc
-	call DelayFrame
-	call GetJoypadDebounced
-	pop  bc
-	ld   a,(ff00+hJoySum)
-	bit  0,a
-	jp   nz,DebugFightFunc5F51
-	bit  1,a
-	jp   nz,DebugFightFunc5FC5
-	bit  3,a
-	jp   nz,DebugFightFunc6056
-	bit  4,a
-	jp   nz,DebugFightFunc5FFD
-	bit  6,a
-	jp   nz,DebugFightFunc5EB0
-	jr   DebugFightFunc5F2C
-DebugFightFunc5F51:
-	push bc
-	ld   hl,w_C331
-	ld   de,DebugFightFunc6233
-	call PlaceString
-	ld   hl,DebugFightFuncC345
-	ld   de,DebugFightFunc6233
-	call PlaceString
-	pop  bc
-	ld   a,(wBattleMode)
-	dec  a
-	jr   z,DebugFightFunc5F9F
-	inc  b
-	ld   a,b
-	cp   a,$3E
-	jr   c,DebugFightFunc5F73
-	ld   b,$01
-DebugFightFunc5F73:
-	ld   a,b
-	ld   (wNamedObjectIndexBuffer),a
-	ld   de,wNamedObjectIndexBuffer
-	ld   hl,DebugFightFuncC341
-	push bc
-	ld   bc,$8103
-	call PrintNumber
-	ld   a,(wNamedObjectIndexBuffer)
-	ld   (wBattleMonStructEnd),a
-	ld   hl,DebugFightFunc4B78
-	ld   a,$0E
-	call FarCall_hl
-	ld   hl,DebugFightFuncC345
-	ld   de,wOTClassName
-	call PlaceString
-	pop  bc
-	jp   DebugFightFunc5F2C
-DebugFightFunc5F9F:
-	inc  b
-	ld   a,b
-	cp   a,$FE
-	jr   c,DebugFightFunc5FA7
-	ld   b,01
-DebugFightFunc5FA7:
-	ld   a,b
-	ld   (wNamedObjectIndexBuffer),a
-	ld   de,wNamedObjectIndexBuffer
-	ld   hl,DebugFightFuncC341
-	push bc
-	ld   bc,$8103
-	call PrintNumber
-	call GetPokemonName
-	ld   hl,DebugFightFuncC345
-	call PlaceString
-	pop  bc
-	jp   DebugFightFunc5F2C
-DebugFightFunc5FC5:
-	push bc
-	ld   hl,w_C331
-	ld   de,DebugFightFunc6233
-	call PlaceString
-	ld   hl,DebugFightFuncC345
-	ld   de,DebugFightFunc6233
-	call PlaceString
-	pop  bc
-	ld   a,(wBattleMode)
-	dec  a
-	jr   z,DebugFightFunc5FEE
-	dec  b
-	ld   a,b
-	cp   a,$3E
-	jr   nc,DebugFightFunc5FE9
-	and  a
-	jp   nz,DebugFightFunc5F73
-DebugFightFunc5FE9:
-	ld   b,$3D
-	jp   DebugFightFunc5F73
-DebugFightFunc5FEE:
-	dec  b
-	ld   a,b
-	cp   a,$FE
-	jr   nc,DebugFightFunc5FF8
-	and  a
-	jp   nz,DebugFightFunc5FA7
-DebugFightFunc5FF8:
-	ld   b,$FD
-	jp   DebugFightFunc5FA7
-DebugFightFunc5FFD:
-	ld   a,$7F
-	ld   (w_C340),a
-	ld   a,$ED
-	ld   (w_C34F),a
-DebugFightFunc6007:
-	push bc
-	call DelayFrame
-	call GetJoypadDebounced
-	pop  bc
-	ld   a,($ff00+hJoySum)
-	bit  0,a
-	jp   nz,DebugFightFunc602C
-	bit  1,a
-	jp   nz,DebugFightFunc6047
-	bit  3,a
-	jp   nz,DebugFightFunc6056
-	bit  5,a
-	jp   nz,DebugFightFunc5F1F
-	bit  6,a
-	jp   nz,DebugFightFunc5EB0
-	jr   DebugFightFunc6007
-DebugFightFunc602C:
-	inc  c
-	ld   a,c
-	cp   a,$65
-	jr   c,DebugFightFunc6034
-	ld   c,$01
-DebugFightFunc6034:
-	ld   hl,w_C350
-	ld   a,c
-	ld   de,wCurPartyLevel
-	ld   (de),a
-	push bc
-	ld   bc,$8103
-	call PrintNumber
-	pop  bc
-	jp   DebugFightFunc6007
-DebugFightFunc6047:
-	dec  c
-	ld   a,c
-	cp   a,$65
-	jr   nc,DebugFightFunc6051
-	and  a
-	jp   nz,DebugFightFunc6034
-DebugFightFunc6051:
-	ld   c,$64
-	jp   DebugFightFunc6034
-DebugFightFunc6056:
-	ld   a,b
-	and  a
-	jp   z,DebugFightFunc5EB0
-	ld   a,c
-	and  a
-	jp   z,DebugFightFunc5EB0
-	ld   a,(wBattleMode)
-	dec  a
-	jr   z,DebugFightFunc6070
-	ld   a,b
-	ld   (wOtherTrainerClass),a
-	ld   a,c
-	ld   (wOtherTrainerID),a
-	jr   DebugFightFunc6078
-DebugFightFunc6070:
-	ld   a,c
-	ld   (wCurPartyLevel),a
-	ld   a,b
-	ld   (wTempWildMonSpecies),a
-DebugFightFunc6078:
-	call SetPalettes
-	ld   a,$80
-	ld   (wBadges),a
-	ld   hl,DebugFightFunc623E
-	ld   de,wGameData
-	ld   bc,$0006
-	call CopyBytes
-	ld   a,$25
-	call Predef
-	ld   a,$01
-	ld   ($ff00+hBGMapMode),a
-	xor  a
-	ld   (wNumFleeAttempts),a
-	ld   hl,wAttackMissed
-	ld   bc,$0005
-	call ByteFill
-	ld   hl,wPlayerSubStatus5
-	ld   bc,$0005
-	call ByteFill
-	call LoadFont
-	call LoadFontsBattleExtra
-	call ClearTileMap
-	call ClearSprites
-	ld   a,E4
-	ld   ($ff00+47),a 	 ;bg pal
-	ld   ($ff00+48),a 	 ;obj pal
-	ld   ($ff00+49),a 	 ;obj pal
-	ld   hl,wShadowOAMEnd
-	ld   b,$01
-	ld   c,$12
-	call DrawTextBox
-	ld   hl,w_C2BA
-	ld   de,DebugFightFunc6169
-	call PlaceString
-	ld   hl,w_C2F4
-	ld   de,DebugFightFunc6172
-	call PlaceString
-	ld   hl,w_C319
-	ld   de,DebugFightFunc6181
-	call PlaceString
-	ld   de,wPartyCount
-	xor  a
-	ld   (de),a
-	ld   (wCurPartyMon),a
-	inc  de
-	ld   hl,w_C31C
-	push de
-	push hl
-DebugFightFunc60F2:
-	ld   a,(wCurPartyMon)
-	ld   de,wPartySpecies
-	add  e
-	ld   e,a
-	jr   nc,DebugFightFunc60FD
-	inc  d
-DebugFightFunc60FD:
-	ld   a,(de)
-	cp   a,$FF
-	jp   z,DebugFightFunc6158
-	ld   (wNamedObjectIndexBuffer),a
-	push hl
-	ld   bc,$8103
-	call PrintNumber
-	inc  hl
-	ld   de,DebugFightFunc61ED
-	call PlaceString
-	call GetPokemonName
-	call PlaceString
-	pop  hl
-	push hl
-	ld   bc,$000B
-	add  hl,bc
-	push hl
-	ld   a,(wCurPartyMon)
-	ld   hl,wPartyMon1Level
-	ld   bc,$0030
-	call AddNTimes
-	ld   d,h
-	ld   e,l
-	ld   a,(de)
-	ld   (wCurPartyLevel),a
-	pop  hl
-	ld   bc,$8103
-	call PrintNumber
-	ld   a,(wCurPartyMon)
-	ld   de,wOTPartySpecies
-	add  e
-	ld   e,a
-	jr   nc,DebugFightFunc6145
-	inc  d
-DebugFightFunc6145:
-	ld   a,(wCurPartyLevel)
-	ld   (de),a
-	pop  hl
-	ld   a,(wCurPartyMon)
-	inc  a
-	ld   (wCurPartyMon),a
-	ld   bc,$0028
-	add  hl,bc
-	jp   DebugFightFunc60F2
-DebugFightFunc6158:
-	pop  hl
-	pop  de
-	ld   a,(wPartyMon1)
-	ld   b,a
-	ld   a,(wPartyMon1Level)
-	ld   c,a
-	xor  a
-	ld   (wCurPartyMon),a
-	jp   DebugFightFunc5BDC
-DebugFightFunc6169:	;	data likely starts here. turn it back into hex.
-	sub  d
-	adc  h
-	sub  e
-	ld   a,a
-	sbc  e
-	jp   hl
-	add  c
-	sub  e
-	ld   d,b
-DebugFightFunc6172:
-	ld   (hl),h
-	ld   a,($ff00+c)
-	ld   a,a
-	ld   a,a
-	push bc
-	rst  08
-	or   h
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	and  a
-	dec  a
-	and  (hl)
-	ld   d,b
-DebugFightFunc6181:
-	rst  30
-	ld   a,(ff00+c)
-	undefined opcode
-	or   a,F6
-	or   a,7F
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	ld   a,a
-	ld   a,a
-	or   a,F6
-	or   a,4E
-	ld   hl,sp-0E
-	ld   a,a
-	or   a,F6
-	or   a,7F
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	ld   a,a
-	ld   a,a
-	or   a,F6
-	or   a,4E
-	ld   sp,hl
-	ld   a,(ff00+c)
-	ld   a,a
-	or   a,F6
-	or   a,7F
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	ld   a,a
-	ld   a,a
-	or   a,F6
-	or   a,4E
-	ld   a,(7FF2)
-	or   a,F6
-	or   a,7F
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	ld   a,a
-	ld   a,a
-	or   a,F6
-	or   a,4E
-	ei
-	ld   a,(ff00+c)
-	ld   a,a
-	or   a,F6
-	or   a,7F
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	ld   a,a
-	ld   a,a
-	or   a,F6
-	or   a,4E
-	undefined opcode
-	ld   a,(ff00+c)
-	ld   a,a
-	or   a,F6
-	or   a,7F
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	ld   a,a
-	ld   a,a
-	or   a,F6
-	or   a,50
-DebugFightFunc61ED:
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   d,b
-DebugFightFunc61F3:
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	ld   d,b
-DebugFightFunc61F9:
-	xor  c
-	add  c
-	and  (hl)
-	inc  de
-	and  c
-	xor  e
-	adc  h
-	adc  a
-	undefined opcode
-	ld   d,b
-DebugFightFunc6203:
-	ld   (de),a
-	or   b
-	undefined opcode
-	and  l
-	undefined opcode
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   d,b
-DebugFightFunc620D:
-	ld   (hl),h
-	ld   a,(ff00+c)
-	ld   a,a
-	ld   a,a
-	push bc
-	rst  08
-	or   h
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	and  a
-	dec  a
-	and  (hl)
-	ld   c,(hl)
-DebugFightFunc6220:
-	or   a,F6
-	or   a,7F
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	undefined opcode
-	ld   a,a
-	or   a,F6
-	or   a,50
-DebugFightFunc6233:
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   a,a
-	ld   d,b
-DebugFightFunc623E:
-	add  hl,bc
-	undefined opcode
-	and  (hl)
-	inc  de
-	ld   d,b
-	ld   d,b
-	inc  bc
-	ld   h,e
-	inc  b
-	ld   h,e
-	dec  bc
-	ld   h,e
-	<corrupted stop>
-	ld   de,1263
-	ld   h,e
-	inc  de
-	ld   h,e
-	inc  d
-	ld   h,e
-	rst  38
-endc
+INCLUDE "constants.asm"
+
+SECTION "_new/debugfightmenu.asm", ROMX
+
+DEF _RAM_C2DC_ = $C2DC
+DEF _RAM_C2DD_ = $C2DD
+DEF _RAM_C2E0_ = $C2E0
+DEF _RAM_C2F0_ = $C2F0
+DEF _RAM_C340_ = $C340
+DEF _RAM_C34F_ = $C34F
+
+Functionfdb66:	
+		ld a, $01
+		ldh [hInMenu], a	; hInMenu = $FFA5
+		ld a, $80
+		ld [wBadges], a	; wBadges = $D163
+		ld hl, wItems	; wItems = $D19E
+		ld de, _DATA_FDC29_
+_LABEL_FDB75_:	
+		ld a, [de]
+		cp $FF
+		jr z, _LABEL_FDB8A_
+		inc de
+		ld [wCurItem], a	; wCurItem = $CD76
+		ld a, [de]
+		inc de
+		ld [wItemQuantity], a	; wItemQuantity = $CD7D
+		push de
+		call ReceiveItem
+		pop de
+		jr _LABEL_FDB75_
+	
+_LABEL_FDB8A_:	
+		call LoadFontsBattleExtra
+		call ClearTileMap
+		call ClearSprites
+		ld hl, wShadowOAMEnd	; wShadowOAMEnd = $C2A0
+		ld b, $01
+		ld c, $12
+		call DrawTextBox
+		ld hl, $C2BA
+		ld de, _DATA_FE169_
+		call PlaceString
+		ld hl, $C2F4
+		ld de, _DATA_FE172_
+		call PlaceString
+		ld hl, $C319
+		ld de, _DATA_FE181_
+		call PlaceString
+		xor a
+		ld [wCurPartyMon], a	; wCurPartyMon = $CD79
+		ld [wEnemyMon], a	; wEnemyMon = $CDD9
+		ld [wEnemyMonLevel], a	; wEnemyMonLevel = $CDE6
+		ld [wBattleMonStructEnd], a	; wBattleMonStructEnd = $CA22
+		ld [wOTPlayerName + 2], a	; wOTPlayerName + 2 = $D900
+		ld b, a
+		ld c, a
+		ld hl, wOTPartySpecies	; wOTPartySpecies = $D914
+		call _LABEL_FDC20_
+		ld hl, wGameData2End	; wGameData2End = $D6AA
+		call _LABEL_FDC20_
+		ld de, wPartySpecies	; wPartySpecies = $D6AB
+		ld hl, $C31C
+_LABEL_FDBDC_:	
+		push hl
+		push bc
+		dec hl
+		ld a, $ED
+		ld [hl], a
+		ld bc, $000B
+		add hl, bc
+		ld a, $7F
+		ld [hl], a
+		push de
+		pop de
+		pop bc
+		pop hl
+_LABEL_FDBED_:	
+		push bc
+		push de
+		call DelayFrame
+		call GetJoypadDebounced
+		pop de
+		pop bc
+		ldh a, [hJoySum]	; hJoySum = $FFA4
+		bit 0, a
+		jp nz, _LABEL_FDC36_
+		bit 1, a
+		jp nz, _LABEL_FDC75_
+		bit 3, a
+		jp nz, _LABEL_FDDA7_
+		bit 4, a
+		jp nz, _LABEL_FDCC6_
+		bit 6, a
+		jp nz, _LABEL_FDC82_
+		bit 7, a
+		jp nz, _LABEL_FDCA5_
+		bit 2, a
+		ld a, $04
+		jp nz, Predef
+		jr _LABEL_FDBED_
+	
+_LABEL_FDC20_:	
+		xor a
+		ldi [hl], a
+		ldi [hl], a
+		ldi [hl], a
+		ldi [hl], a
+		ldi [hl], a
+		ldi [hl], a
+		ld [hl], a
+		ret
+	
+; Data from FDC29 to FDC35 (13 bytes)	
+_DATA_FDC29_:	
+	db $01, $63, $02, $63, $04, $63, $05, $63, $0E, $63, $28, $63, $FF
+	
+_LABEL_FDC36_:	
+		inc b
+		ld a, b
+		cp $FE
+		jr c, _LABEL_FDC3E_
+		xor a
+		ld b, a
+_LABEL_FDC3E_:	
+		ld [de], a
+		ld [wApplyStatLevelMultipliersToEnemy], a	; wApplyStatLevelMultipliersToEnemy = $CE37
+		push bc
+		push hl
+		push de
+		ld bc, $8103
+		call PrintNumber
+		inc hl
+		push hl
+		ld de, _DATA_FE1ED_
+		call PlaceString
+		ld bc, hFFEC	; hFFEC = $FFEC
+		add hl, bc
+		ld de, _DATA_FE1ED_
+		call PlaceString
+		pop hl
+		ld a, [wApplyStatLevelMultipliersToEnemy]	; wApplyStatLevelMultipliersToEnemy = $CE37
+		and a
+		jr nz, _LABEL_FDC69_
+		ld de, _DATA_FE1F3_
+		jr _LABEL_FDC6C_
+	
+_LABEL_FDC69_:	
+		call GetPokemonName
+_LABEL_FDC6C_:	
+		call PlaceString
+		pop de
+		pop hl
+		pop bc
+		jp _LABEL_FDBED_
+	
+_LABEL_FDC75_:	
+		dec b
+		ld a, b
+		cp $FE
+		jp c, _LABEL_FDC3E_
+		ld a, $FD
+		ld b, a
+		jp _LABEL_FDC3E_
+	
+_LABEL_FDC82_:	
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		dec a
+		cp $FF
+		jp z, _LABEL_FDBED_
+		ld [wCurPartyMon], a	; wCurPartyMon = $CD79
+		dec de
+		dec hl
+		ld a, $7F
+		ld [hl], a
+		push bc
+		ld bc, hSerialReceive	; hSerialReceive = $FFD8
+		add hl, bc
+		pop bc
+		ld a, $ED
+		ld [hl], a
+		inc hl
+		push hl
+		call _LABEL_FDD8C_
+		pop hl
+		jp _LABEL_FDBED_
+	
+_LABEL_FDCA5_:	
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		inc a
+		cp $06
+		jp nc, _LABEL_FDBED_
+		ld [wCurPartyMon], a	; wCurPartyMon = $CD79
+		inc de
+		dec hl
+		ld a, $7F
+		ld [hl], a
+		ld bc, $0028
+		add hl, bc
+		ld a, $ED
+		ld [hl], a
+		inc hl
+		push hl
+		call _LABEL_FDD8C_
+		pop hl
+		jp _LABEL_FDBED_
+	
+_LABEL_FDCC6_:	
+		push hl
+		push bc
+		dec hl
+		ld a, $7F
+		ld [hl], a
+		ld bc, $000B
+		add hl, bc
+		ld a, $ED
+		ld [hl], a
+		pop bc
+		pop hl
+_LABEL_FDCD5_:	
+		push bc
+		push de
+		call DelayFrame
+		call GetJoypadDebounced
+		pop de
+		pop bc
+		ldh a, [hJoySum]	; hJoySum = $FFA4
+		bit 0, a
+		jp nz, _LABEL_FDD01_
+		bit 1, a
+		jp nz, _LABEL_FDD2A_
+		bit 3, a
+		jp nz, _LABEL_FDDA7_
+		bit 5, a
+		jp nz, _LABEL_FDBDC_
+		bit 6, a
+		jp nz, _LABEL_FDD3A_
+		bit 7, a
+		jp nz, _LABEL_FDD63_
+		jr _LABEL_FDCD5_
+	
+_LABEL_FDD01_:	
+		inc c
+		ld a, c
+		cp $65
+		jr c, _LABEL_FDD0A_
+		ld a, $01
+		ld c, a
+_LABEL_FDD0A_:	
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		push de
+		ld de, wOTPartySpecies	; wOTPartySpecies = $D914
+		add e
+		ld e, a
+		jr nc, _LABEL_FDD16_
+		inc d
+_LABEL_FDD16_:	
+		ld a, c
+		ld [de], a
+		push bc
+		push hl
+		ld bc, $000B
+		add hl, bc
+		ld bc, $8103
+		call PrintNumber
+		pop hl
+		pop bc
+		pop de
+		jp _LABEL_FDCD5_
+	
+_LABEL_FDD2A_:	
+		dec c
+		ld a, c
+		cp $65
+		jr nc, _LABEL_FDD34_
+		and a
+		jp nz, _LABEL_FDD0A_
+_LABEL_FDD34_:	
+		ld a, $64
+		ld c, a
+		jp _LABEL_FDD0A_
+	
+_LABEL_FDD3A_:	
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		dec a
+		cp $FF
+		jp z, _LABEL_FDCD5_
+		ld [wCurPartyMon], a	; wCurPartyMon = $CD79
+		dec de
+		push hl
+		ld bc, $000A
+		add hl, bc
+		ld a, $7F
+		ld [hl], a
+		pop hl
+		ld bc, hSerialReceive	; hSerialReceive = $FFD8
+		add hl, bc
+		push hl
+		ld bc, $000A
+		add hl, bc
+		ld a, $ED
+		ld [hl], a
+		call _LABEL_FDD8C_
+		pop hl
+		jp _LABEL_FDCD5_
+	
+_LABEL_FDD63_:	
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		inc a
+		cp $06
+		jp nc, _LABEL_FDCD5_
+		ld [wCurPartyMon], a	; wCurPartyMon = $CD79
+		inc de
+		push hl
+		ld bc, $000A
+		add hl, bc
+		ld a, $7F
+		ld [hl], a
+		pop hl
+		ld bc, $0028
+		add hl, bc
+		push hl
+		ld bc, $000A
+		add hl, bc
+		ld a, $ED
+		ld [hl], a
+		call _LABEL_FDD8C_
+		pop hl
+		jp _LABEL_FDCD5_
+	
+_LABEL_FDD8C_:	
+		ld hl, wPartySpecies	; wPartySpecies = $D6AB
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		add l
+		ld l, a
+		jr nc, _LABEL_FDD97_
+		inc h
+_LABEL_FDD97_:	
+		ld a, [hl]
+		ld b, a
+		ld hl, wOTPartySpecies	; wOTPartySpecies = $D914
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		add l
+		ld l, a
+		jr nc, _LABEL_FDDA4_
+		inc h
+_LABEL_FDDA4_:	
+		ld a, [hl]
+		ld c, a
+		ret
+	
+_LABEL_FDDA7_:	
+		ld hl, wGameData2End	; wGameData2End = $D6AA
+		ld de, wOTPartyCount	; wOTPartyCount = $D913
+		xor a
+		ld [hl], a
+		inc hl
+		ldi a, [hl]
+		ld b, a
+		ld c, $06
+		xor a
+		ld [wBattleMode], a	; wBattleMode = $CE00
+_LABEL_FDDB8_:	
+		ld a, b
+		ld [wCurPartySpecies], a	; wCurPartySpecies = $CD78
+		ld a, [hl]
+		ld b, a
+		inc de
+		ld a, [de]
+		and a
+		jr z, _LABEL_FDDDB_
+		ld [wCurPartyLevel], a	; wCurPartyLevel = $CDBB
+		xor a
+		ld [wMonType], a	; wMonType = $CB5A
+		ld a, [wCurPartySpecies]	; wCurPartySpecies = $CD78
+		and a
+		jr z, _LABEL_FDDDB_
+		push hl
+		push de
+		push bc
+		ld a, $10
+		call Predef
+		pop bc
+		pop de
+		pop hl
+_LABEL_FDDDB_:	
+		inc hl
+		dec c
+		jr nz, _LABEL_FDDB8_
+		ld b, $07
+		ld hl, wPartySpecies	; wPartySpecies = $D6AB
+		ld de, wOTPartyCount	; wOTPartyCount = $D913
+_LABEL_FDDE7_:	
+		inc de
+		dec b
+		jp z, Functionfdb66
+		ldi a, [hl]
+		and a
+		jr z, _LABEL_FDDE7_
+		ld a, [de]
+		and a
+		jr z, _LABEL_FDDE7_
+		ld hl, _RAM_C2DC_
+		ld b, $0F
+		ld c, $14
+		call ClearBox
+		ld hl, _RAM_C2DC_
+		ld b, $0F
+		ld c, $14
+		call ClearBox
+		ld hl, _RAM_C2DC_
+		ld b, $0F
+		ld c, $14
+		call ClearBox
+		ld c, $14
+		call DelayFrames
+		ld a, $01
+		ld [wBattleMode], a	; wBattleMode = $CE00
+		ld de, _DATA_FE1F9_
+		ld a, [wOTPlayerName + 2]	; wOTPlayerName + 2 = $D900
+		cp $65
+		jr c, _LABEL_FDE2E_
+		ld a, $02
+		ld [wBattleMode], a	; wBattleMode = $CE00
+		ld de, _DATA_FE203_
+_LABEL_FDE2E_:	
+		ld hl, $C2F1
+		call PlaceString
+		ld hl, $C319
+		ld de, _DATA_FE20D_
+		call PlaceString
+		ld a, [wEnemyMon]	; wEnemyMon = $CDD9
+		ld b, a
+		ld a, [wBattleMode]	; wBattleMode = $CE00
+		dec a
+		jr z, _LABEL_FDE78_
+		ld a, [wBattleMonStructEnd]	; wBattleMonStructEnd = $CA22
+		ld [wApplyStatLevelMultipliersToEnemy], a	; wApplyStatLevelMultipliersToEnemy = $CE37
+		ld b, a
+		ld de, wApplyStatLevelMultipliersToEnemy	; wApplyStatLevelMultipliersToEnemy = $CE37
+		ld hl, $C341
+		push bc
+		ld bc, $8103
+		call PrintNumber
+		ld hl, $C345
+		ld de, _DATA_FE233_
+		call PlaceString
+		ld hl, $4B78
+		ld a, $0E
+		call FarCall_hl
+		ld hl, $C345
+		ld de, wOTClassName	; wOTClassName = $CA2B
+		call PlaceString
+		pop bc
+		jr _LABEL_FDE9D_
+	
+_LABEL_FDE78_:	
+		ld a, b
+		and a
+		jr z, _LABEL_FDE9D_
+		ld de, wApplyStatLevelMultipliersToEnemy	; wApplyStatLevelMultipliersToEnemy = $CE37
+		ld [de], a
+		ld hl, $C341
+		push bc
+		ld bc, $8103
+		call PrintNumber
+		ld hl, $C345
+		ld de, _DATA_FE233_
+		call PlaceString
+		call GetPokemonName
+		ld hl, $C345
+		call PlaceString
+		pop bc
+_LABEL_FDE9D_:	
+		ld a, [wEnemyMonLevel]	; wEnemyMonLevel = $CDE6
+		ld c, a
+		ld de, wApplyStatLevelMultipliersToEnemy	; wApplyStatLevelMultipliersToEnemy = $CE37
+		ld [de], a
+		ld hl, $C350
+		push bc
+		ld bc, $8103
+		call PrintNumber
+		pop bc
+_LABEL_FDEB0_:	
+		ld a, $7F
+		ld [_RAM_C340_], a
+		ld [_RAM_C34F_], a
+		ld a, $ED
+		ld [_RAM_C2F0_], a
+_LABEL_FDEBD_:	
+		push bc
+		call DelayFrame
+		call GetJoypadDebounced
+		pop bc
+		ldh a, [hJoySum]	; hJoySum = $FFA4
+		bit 0, a
+		jp nz, _LABEL_FDED8_
+		bit 3, a
+		jp nz, _LABEL_FE056_
+		bit 7, a
+		jp nz, _LABEL_FDF1F_
+		jr _LABEL_FDEBD_
+	
+_LABEL_FDED8_:	
+		ld hl, $C341
+		ld de, _DATA_FE220_
+		call PlaceString
+		ld hl, $C331
+		ld de, _DATA_FE233_
+		call PlaceString
+		xor a
+		ld b, a
+		ld c, a
+		ld a, [wBattleMode]	; wBattleMode = $CE00
+		dec a
+		jr nz, _LABEL_FDF09_
+		ld a, $02
+		ld [wBattleMode], a	; wBattleMode = $CE00
+		ld a, $7F
+		ld [_RAM_C2E0_], a
+		ld hl, $C2F1
+		ld de, _DATA_FE203_
+		call PlaceString
+		jp _LABEL_FDEBD_
+	
+_LABEL_FDF09_:	
+		ld a, $01
+		ld [wBattleMode], a	; wBattleMode = $CE00
+		ld a, $7F
+		ld [_RAM_C2DD_], a
+		ld hl, $C2F1
+		ld de, _DATA_FE1F9_
+		call PlaceString
+		jp _LABEL_FDEBD_
+	
+_LABEL_FDF1F_:	
+		ld a, $ED
+		ld [_RAM_C340_], a
+		ld a, $7F
+		ld [_RAM_C34F_], a
+		ld [_RAM_C2F0_], a
+_LABEL_FDF2C_:	
+		push bc
+		call DelayFrame
+		call GetJoypadDebounced
+		pop bc
+		ldh a, [hJoySum]	; hJoySum = $FFA4
+		bit 0, a
+		jp nz, _LABEL_FDF51_
+		bit 1, a
+		jp nz, _LABEL_FDFC5_
+		bit 3, a
+		jp nz, _LABEL_FE056_
+		bit 4, a
+		jp nz, _LABEL_FDFFD_
+		bit 6, a
+		jp nz, _LABEL_FDEB0_
+		jr _LABEL_FDF2C_
+	
+_LABEL_FDF51_:	
+		push bc
+		ld hl, $C331
+		ld de, _DATA_FE233_
+		call PlaceString
+		ld hl, $C345
+		ld de, _DATA_FE233_
+		call PlaceString
+		pop bc
+		ld a, [wBattleMode]	; wBattleMode = $CE00
+		dec a
+		jr z, _LABEL_FDF9F_
+		inc b
+		ld a, b
+		cp $3E
+		jr c, _LABEL_FDF73_
+		ld b, $01
+_LABEL_FDF73_:	
+		ld a, b
+		ld [wApplyStatLevelMultipliersToEnemy], a	; wApplyStatLevelMultipliersToEnemy = $CE37
+		ld de, wApplyStatLevelMultipliersToEnemy	; wApplyStatLevelMultipliersToEnemy = $CE37
+		ld hl, $C341
+		push bc
+		ld bc, $8103
+		call PrintNumber
+		ld a, [wApplyStatLevelMultipliersToEnemy]	; wApplyStatLevelMultipliersToEnemy = $CE37
+		ld [wBattleMonStructEnd], a	; wBattleMonStructEnd = $CA22
+		ld hl, $4B78
+		ld a, $0E
+		call FarCall_hl
+		ld hl, $C345
+		ld de, wOTClassName	; wOTClassName = $CA2B
+		call PlaceString
+		pop bc
+		jp _LABEL_FDF2C_
+	
+_LABEL_FDF9F_:	
+		inc b
+		ld a, b
+		cp $FE
+		jr c, _LABEL_FDFA7_
+		ld b, $01
+_LABEL_FDFA7_:	
+		ld a, b
+		ld [wApplyStatLevelMultipliersToEnemy], a	; wApplyStatLevelMultipliersToEnemy = $CE37
+		ld de, wApplyStatLevelMultipliersToEnemy	; wApplyStatLevelMultipliersToEnemy = $CE37
+		ld hl, $C341
+		push bc
+		ld bc, $8103
+		call PrintNumber
+		call GetPokemonName
+		ld hl, $C345
+		call PlaceString
+		pop bc
+		jp _LABEL_FDF2C_
+	
+_LABEL_FDFC5_:	
+		push bc
+		ld hl, $C331
+		ld de, _DATA_FE233_
+		call PlaceString
+		ld hl, $C345
+		ld de, _DATA_FE233_
+		call PlaceString
+		pop bc
+		ld a, [wBattleMode]	; wBattleMode = $CE00
+		dec a
+		jr z, _LABEL_FDFEE_
+		dec b
+		ld a, b
+		cp $3E
+		jr nc, _LABEL_FDFE9_
+		and a
+		jp nz, _LABEL_FDF73_
+_LABEL_FDFE9_:	
+		ld b, $3D
+		jp _LABEL_FDF73_
+	
+_LABEL_FDFEE_:	
+		dec b
+		ld a, b
+		cp $FE
+		jr nc, _LABEL_FDFF8_
+		and a
+		jp nz, _LABEL_FDFA7_
+_LABEL_FDFF8_:	
+		ld b, $FD
+		jp _LABEL_FDFA7_
+	
+_LABEL_FDFFD_:	
+		ld a, $7F
+		ld [_RAM_C340_], a
+		ld a, $ED
+		ld [_RAM_C34F_], a
+_LABEL_FE007_:	
+		push bc
+		call DelayFrame
+		call GetJoypadDebounced
+		pop bc
+		ldh a, [hJoySum]	; hJoySum = $FFA4
+		bit 0, a
+		jp nz, _LABEL_FE02C_
+		bit 1, a
+		jp nz, _LABEL_FE047_
+		bit 3, a
+		jp nz, _LABEL_FE056_
+		bit 5, a
+		jp nz, _LABEL_FDF1F_
+		bit 6, a
+		jp nz, _LABEL_FDEB0_
+		jr _LABEL_FE007_
+	
+_LABEL_FE02C_:	
+		inc c
+		ld a, c
+		cp $65
+		jr c, _LABEL_FE034_
+		ld c, $01
+_LABEL_FE034_:	
+		ld hl, $C350
+		ld a, c
+		ld de, wCurPartyLevel	; wCurPartyLevel = $CDBB
+		ld [de], a
+		push bc
+		ld bc, $8103
+		call PrintNumber
+		pop bc
+		jp _LABEL_FE007_
+	
+_LABEL_FE047_:	
+		dec c
+		ld a, c
+		cp $65
+		jr nc, _LABEL_FE051_
+		and a
+		jp nz, _LABEL_FE034_
+_LABEL_FE051_:	
+		ld c, $64
+		jp _LABEL_FE034_
+	
+_LABEL_FE056_:	
+		ld a, b
+		and a
+		jp z, _LABEL_FDEB0_
+		ld a, c
+		and a
+		jp z, _LABEL_FDEB0_
+		ld a, [wBattleMode]	; wBattleMode = $CE00
+		dec a
+		jr z, _LABEL_FE070_
+		ld a, b
+		ld [wOtherTrainerClass], a	; wOtherTrainerClass = $CE02
+		ld a, c
+		ld [wOtherTrainerID], a	; wOtherTrainerID = $CE05
+		jr _LABEL_FE078_
+	
+_LABEL_FE070_:	
+		ld a, c
+		ld [wCurPartyLevel], a	; wCurPartyLevel = $CDBB
+		ld a, b
+		ld [wTempWildMonSpecies], a	; wTempWildMonSpecies = $CE01
+_LABEL_FE078_:	
+		call SetPalettes
+		ld a, $80
+		ld [wBadges], a	; wBadges = $D163
+		ld hl, _DATA_FE23E_
+		ld de, wGameData	; wGameData = $CE67
+		ld bc, $0006
+		call CopyBytes
+		ld a, $25
+		call Predef
+		ld a, $01
+		ldh [hBGMapMode], a	; hBGMapMode = $FFDE
+		xor a
+		ld [wNumFleeAttempts], a	; wNumFleeAttempts = $CE39
+		ld hl, wPlayerSubStatus1	; wPlayerSubStatus1 = $CA3B
+		ld bc, $0005
+		call ByteFill
+		ld hl, wEnemySubStatus1	; wEnemySubStatus1 = $CA40
+		ld bc, $0005
+		call ByteFill
+		call LoadFont
+		call LoadFontsBattleExtra
+		call ClearTileMap
+		call ClearSprites
+		ld a, $E4
+		ldh [rBGP], a
+		ldh [rOBP0], a
+		ldh [rOBP1], a
+		ld hl, wShadowOAMEnd	; wShadowOAMEnd = $C2A0
+		ld b, $01
+		ld c, $12
+		call DrawTextBox
+		ld hl, $C2BA
+		ld de, _DATA_FE169_
+		call PlaceString
+		ld hl, $C2F4
+		ld de, _DATA_FE172_
+		call PlaceString
+		ld hl, $C319
+		ld de, _DATA_FE181_
+		call PlaceString
+		ld de, wGameData2End	; wGameData2End = $D6AA
+		xor a
+		ld [de], a
+		ld [wCurPartyMon], a	; wCurPartyMon = $CD79
+		inc de
+		ld hl, $C31C
+		push de
+		push hl
+_LABEL_FE0F2_:	
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		ld de, wPartySpecies	; wPartySpecies = $D6AB
+		add e
+		ld e, a
+		jr nc, _LABEL_FE0FD_
+		inc d
+_LABEL_FE0FD_:	
+		ld a, [de]
+		cp $FF
+		jp z, _LABEL_FE158_
+		ld [wApplyStatLevelMultipliersToEnemy], a	; wApplyStatLevelMultipliersToEnemy = $CE37
+		push hl
+		ld bc, $8103
+		call PrintNumber
+		inc hl
+		ld de, _DATA_FE1ED_
+		call PlaceString
+		call GetPokemonName
+		call PlaceString
+		pop hl
+		push hl
+		ld bc, $000B
+		add hl, bc
+		push hl
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		ld hl, wPartyMon1Level	; wPartyMon1Level = $D6D1
+		ld bc, $0030
+		call AddNTimes
+		ld d, h
+		ld e, l
+		ld a, [de]
+		ld [wCurPartyLevel], a	; wCurPartyLevel = $CDBB
+		pop hl
+		ld bc, $8103
+		call PrintNumber
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		ld de, wOTPartySpecies	; wOTPartySpecies = $D914
+		add e
+		ld e, a
+		jr nc, _LABEL_FE145_
+		inc d
+_LABEL_FE145_:	
+		ld a, [wCurPartyLevel]	; wCurPartyLevel = $CDBB
+		ld [de], a
+		pop hl
+		ld a, [wCurPartyMon]	; wCurPartyMon = $CD79
+		inc a
+		ld [wCurPartyMon], a	; wCurPartyMon = $CD79
+		ld bc, $0028
+		add hl, bc
+		jp _LABEL_FE0F2_
+	
+_LABEL_FE158_:	
+		pop hl
+		pop de
+		ld a, [wPartyMon1]	; wPartyMon1 = $D6B2
+		ld b, a
+		ld a, [wPartyMon1Level]	; wPartyMon1Level = $D6D1
+		ld c, a
+		xor a
+		ld [wCurPartyMon], a	; wCurPartyMon = $CD79
+		jp _LABEL_FDBDC_
+	
+; Data from FE169 to FE171 (9 bytes)	
+_DATA_FE169_:	
+	db $92, $8C, $93, $7F, $9B, $E9, $81, $93, $50
+	
+; Data from FE172 to FE180 (15 bytes)	
+_DATA_FE172_:	
+	db $74, $F2, $7F, $7F, $C5, $CF, $B4, $7F, $7F, $7F, $7F, $A7, $3D, $A6, $50
+	
+; Data from FE181 to FE1EC (108 bytes)	
+_DATA_FE181_:	
+	db $F7, $F2, $ED, $F6, $F6, $F6, $7F, $E3, $E3, $E3, $E3, $E3, $7F, $7F, $F6, $F6
+	db $F6, $4E, $F8, $F2, $7F, $F6, $F6, $F6, $7F, $E3, $E3, $E3, $E3, $E3, $7F, $7F
+	db $F6, $F6, $F6, $4E, $F9, $F2, $7F, $F6, $F6, $F6, $7F, $E3, $E3, $E3, $E3, $E3
+	db $7F, $7F, $F6, $F6, $F6, $4E, $FA, $F2, $7F, $F6, $F6, $F6, $7F, $E3, $E3, $E3
+	db $E3, $E3, $7F, $7F, $F6, $F6, $F6, $4E, $FB, $F2, $7F, $F6, $F6, $F6, $7F, $E3
+	db $E3, $E3, $E3, $E3, $7F, $7F, $F6, $F6, $F6, $4E, $FC, $F2, $7F, $F6, $F6, $F6
+	db $7F, $E3, $E3, $E3, $E3, $E3, $7F, $7F, $F6, $F6, $F6, $50
+	
+; Data from FE1ED to FE1F2 (6 bytes)	
+_DATA_FE1ED_:	
+	db $7F, $7F, $7F, $7F, $7F, $50
+	
+; Data from FE1F3 to FE1F8 (6 bytes)	
+_DATA_FE1F3_:	
+	db $E3, $E3, $E3, $E3, $E3, $50
+	
+; Data from FE1F9 to FE202 (10 bytes)	
+_DATA_FE1F9_:	
+	db $A9, $81, $A6, $13, $A1, $AB, $8C, $8F, $E3, $50
+	
+; Data from FE203 to FE20C (10 bytes)	
+_DATA_FE203_:	
+	db $12, $B0, $E3, $A5, $E3, $7F, $7F, $7F, $7F, $50
+	
+; Data from FE20D to FE21F (19 bytes)	
+_DATA_FE20D_:	
+	db $74, $F2, $7F, $7F, $C5, $CF, $B4, $7F, $7F, $7F, $7F, $7F, $7F, $7F, $7F, $A7
+	db $3D, $A6, $4E
+	
+; Data from FE220 to FE232 (19 bytes)	
+_DATA_FE220_:	
+	db $F6, $F6, $F6, $7F
+	ds 10, $E3
+	db $7F, $F6, $F6, $F6, $50
+	
+; Data from FE233 to FE23D (11 bytes)	
+_DATA_FE233_:	
+	ds 10, $7F
+	db $50
+	
+; Data from FE23E to FE254 (23 bytes)	
+_DATA_FE23E_:	
+	db $09, $E3, $A6, $13, $50, $50, $03, $63, $04, $63, $0B, $63, $10, $63, $11, $63
+	db $12, $63, $13, $63, $14, $63, $FF
