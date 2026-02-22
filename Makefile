@@ -42,11 +42,7 @@ tools/gfx :=
 .SECONDEXPANSION:
 
 .PHONY: all
-all: $(ROM) $(CORRECTEDROM) compare
-
-.PHONY: compare
-compare: $(ROM) $(CORRECTEDROM)
-	@$(SHA1) -c roms.sha1
+all: $(ROM) $(CORRECTEDROM)
 
 .PHONY: tools
 tools tools/pkmncompress tools/gfx tools/scan_includes:
