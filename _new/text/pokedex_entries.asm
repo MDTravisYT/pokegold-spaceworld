@@ -1317,8 +1317,8 @@ HitmonleeDexEntry_ENG:	;	opponents > foes
 
 HitmonchanDexEntry_ENG:	;	simplified
 	db   "The spirit of a"
-	next "pro boxer has"
-	next "infused this #MON."
+	next "pro boxer infused"
+	next "this #MON."
 	
 	page "Throws punches"
 	next "faster than a "
