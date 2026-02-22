@@ -162,103 +162,103 @@ PokemonNames_ENG::
 	monname "DRAGONITE"
 	monname "MEWTWO"
 	monname "MEW"
-	monname "ハッパ" ; 	CHIKORITA
-	monname "ハナモグラ" ;	BAYLEEF
-	monname "ハナリュウ" ;	MEGANIUM
-	monname "ホノオグマ" ;	CUBBURN
-	monname "ボルベアー" ;	FLAMBEAR
-	monname "ダイナベア" ;	BRUINUS
-	monname "クルス" ;	PALSSIO
-	monname "アクア" ;	PRESSIO
-	monname "アクエリア" ;	DONMARIN
-	monname "ホーホー" ;	HOOTHOOT
-	monname "ボーボー" ;	NOCTOWL
-	monname "パチメエ" ;	MAREEP
-	monname "モココ" ; 	FLAAFFY
-	monname "デンリュウ" ;	AMPHAROS
-	monname "ミコン" ; 	VULPIII
-	monname "モンジャ" ;	BURGELA
-	monname "ジャランラ" ;	JUNGELA
-	monname "ハネエイ" ;	MANTINE
-	monname "プクー" ; 	QWILFISH
-	monname "シビレフグ" ;	KAZAPPELIN
-	monname "ピチュー" ; 	PICHU
-	monname "ピィ" ; 	CLEFFA
-	monname "ププリン" ;	IGGLYBUFF
-	monname "ミズウオ" ;	QUAGSIRE
-	monname "ネイティ" ;	NATU
-	monname "ネイティオ" ;	XATU
-	monname "ギョピン" ;	ORFRY
-	monname "マリル" ;	MARILL
-	monname "マンボー１" ;	MOLAMBINO
-	monname "イカリ" ; 	ANGORE
-	monname "グロテス" ;	LURREEL
-	monname "エクシング" ;	CROBAT
-	monname "パラ" ; 	PARASPOR
-	monname "コクモ" ; 	SPINARAK
-	monname "ツーヘッド" ;	ARIADOS
-	monname "ヨロイドリ" ;	SKARMORY
-	monname "アニモン" ;	MIMMEO
-	monname "ヒナーズ" ;	DODAERIE
-	monname "サニー" ; 	SUNFLORA
-	monname "パオン" ;	PHANPY
-	monname "ドンファン" ;	DONPHAN
-	monname "ツインズ" ;	BIPULLA
-	monname "キリンリキ" ;	GIRAFARIG
-	monname "ペインター" ;	SMEARGLE
-	monname "コーニャ" ; 	COINPUR
-	monname "リンリン" ;	MOIBELLE
-	monname "ベルルン" ;	BELLEDAM
-	monname "ニョロトノ" ; 	POLITOED
-	monname "ヤドキング" ;	SLOWKING
-	monname "アンノーン" ;	UNOWN
-	monname "レディバ" ;	LEDYBA
-	monname "ミツボシ" ;	LEDIAN
-	monname "プチコーン" ;	KOLTA
-	monname "エーフィ" ; 	ESPEON
-	monname "ブラッキー" ;	UMBREON
-	monname "ターバン" ;	DISTURBAN
-	monname "ベトベビー" ;	SMUJJ
-	monname "テッポウオ" ;	REMORAID
-	monname "オクタン" ;	OCTILLERY
-	monname "ゴング" ;	TYROGUE
-	monname "カポエラー" ;	HITMONTOP
-	monname "プディ" ; 	PUPPERON
-	monname "ハネコ" ;	HOPPIP
-	monname "ポポネコ" ;	SKIPLOOM
-	monname "ワタネコ" ;	JUMPLUFF
-	monname "バリリーナ" ;	MIME JR.
-	monname "リップ" ; 	SMOOCHUM
-	monname "エレベビー" ;	ELEKID
-	monname "ブビィ" ; 	MAGBY
-	monname "キレイハナ" ;	BELLOSSOM
-	monname "ツボミット" ;	BELLIGNAN
-	monname "ミルタンク" ;	MILTANK
-	monname "ボムシカー" ;	GRENMAR
-	monname "ギフト" ; 	DELIBIRD
-	monname "コトラ" ; 	TYKER
-	monname "ライトラ" ; 	STRAIGAR
-	monname "マダーム" ;	LUXWAN
-	monname "ノロワラ" ; 	STROMEN
-	monname "キョンパン" ;	PHANDARIN
-	monname "ヤミカラス" ;	MURKROW
-	monname "ハッピー" ; 	BLISSEY
-	monname "シザース" ;	SCIZOR
-	monname "プラックス" ;	TRICULES
-	monname "デビル" ;	HOUNDOUR
-	monname "ヘルガー" ;	HOUNDOOM
-	monname "ウルフマン" ;	WARFURS
-	monname "ワーウルフ" ;	WEARLYCAN
-	monname "ポリゴン２" ;	PORYGON2
-	monname "ナメール" ;	LICKILICKY
-	monname "ハガネール" ;	STEELIX
-	monname "キングドラ" ;	KINGDRA
-	monname "ライ" ; 	RAIKOU
-	monname "エン" ; 	ENTEI
-	monname "スイ" ; 	SUICUNE
-	monname "ニューラ" ; 	SNEASEL
-	monname "ホウオウ" ;	HO-OH
-	monname "トゲピー" ; 	TANGELA
-	monname "ブルー" ; 	SNUBBULL
-	monname "テイル" ;	AIPOM
-	monname "リーフィ" ; 	LEAFEON
+	monname "HAPPA"			
+	monname "HANAMOGURA"	
+	monname "HANARYUU"		
+	monname "HONOOGUMA"		
+	monname "BORUBEAA"		
+	monname "DAINABEA"		
+	monname "KURUSU"		
+	monname "AKUA"			
+	monname "AKUERIA"		
+	monname "HOOHOO"		
+	monname "BOOBOO"		
+	monname "PACHIMEE"		
+	monname "MOKOKO"		
+	monname "DENRYUU"		
+	monname "MIKON"			
+	monname "MONJA"			
+	monname "JARANRA"		
+	monname "HANEEI"		
+	monname "PUKUU"			
+	monname "SIBIREFUGU"	
+	monname "PICHU"			
+	monname "PII"			
+	monname "PUPURIN"		
+	monname "MIZUUO"		
+	monname "NEITI"			
+	monname "NEITIO"		
+	monname "GYOPIN"		
+	monname "MARILL"		
+	monname "MANBOO1"		
+	monname "IKARI"			
+	monname "GUROTESU"		
+	monname "EKUSHINGU"		
+	monname "PARA"			
+	monname "KOKUMO"		
+	monname "TSUUHEDDO"		
+	monname "YORIDORI"		
+	monname "ANIMON"		
+	monname "HINAAZU"		
+	monname "SANII"			
+	monname "PAON"			
+	monname "DONPHAN"		
+	monname "TSUINZU"		
+	monname "KIRINRIKI"		
+	monname "DOOBURU"		
+	monname "KOONYA"		
+	monname "RINRIN"		
+	monname "BERURUN"		
+	monname "NYOROTONO"		
+	monname "YADOKINGU"		
+	monname "UNOWN"			
+	monname "LEDYBA"		
+	monname "MITSUBOSHI"	
+	monname "PUCHIKOON"		
+	monname "EEFI"			
+	monname "BURAKKII"		
+	monname "TAABAN"		
+	monname "BETOBEBII"		
+	monname "TEPPOUO"		
+	monname "OKTUTANK"		
+	monname "GONGU"			
+	monname "KAPOERAA"		
+	monname "PUDI"			
+	monname "HANEKO"		
+	monname "POPONEKO"		
+	monname "WATANEKO"		
+	monname "BARIRIINA"		
+	monname "RIPPU"			
+	monname "ELEBEBII"		
+	monname "BUBII"			
+	monname "KIREIHANA"		
+	monname "TSUBOMITTO"	
+	monname "MILTANK"		
+	monname "BOMUSHIKAA"	
+	monname "GIFUTO"		
+	monname "KOTORA"		
+	monname "RAITORA"		
+	monname "MADAAMU"		
+	monname "NOROWARA"		
+	monname "KYONPAN"			
+	monname "YAMIKARASU"		
+	monname "HAPPII"		
+	monname "SHIZAASU"			
+	monname "PULAKKUSU"			
+	monname "DEBIRU"		
+	monname "HELUGAA"			
+	monname "URUFUMAN"			
+	monname "WAAURUFU"		
+	monname "PORYGON2"		
+	monname "NAMEERU"		
+	monname "HAGANEERU"			
+	monname "KINGDRA"		
+	monname "RAI"		
+	monname "EN"			
+	monname "SUI"			
+	monname "NYUURA"			
+	monname "HO-OH"			
+	monname "TOGEPI"			
+	monname "BURUU"			
+	monname "TEIRU"			
+	monname "LIIFI"			
