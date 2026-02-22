@@ -3031,7 +3031,7 @@ UpdatePlayerHUD:
 	hlcoord 18, 9
 	ld [hl], $73
 	ld de, wBattleMonNickname
-	hlcoord 10, 8
+	hlcoord 10, 7
 	call CenterMonName
 	call PlaceString
 
@@ -3051,6 +3051,7 @@ UpdatePlayerHUD:
 	call GetBaseData
 
 	pop hl
+	hlcoord 14, 8
 	push hl
 	inc hl
 	ld de, wTempMonStatus
@@ -3111,18 +3112,19 @@ UpdatePlayerHUD:
 UpdateEnemyHUD:
 	xor a
 	ldh [hBGMapMode], a
-	hlcoord 1, 0
-	lb bc, 4, 11
+	hlcoord 0, 0
+	lb bc, 4, 12
 	call ClearBox
 	callfar DrawEnemyHUDBorder
 
 	ld de, wEnemyMonNickname
-	hlcoord 2, 1
+	hlcoord 1, 0
 	call CenterMonName
 	call PlaceString
 
 	ld h, b
 	ld l, c
+	hlcoord 4, 1
 	push hl
 	inc hl
 	ld de, wEnemyMonStatus
