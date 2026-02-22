@@ -832,56 +832,51 @@ _LABEL_FE158_:
 		jp _LABEL_FDBDC_
 	
 ; Data from FE169 to FE171 (9 bytes)	
-_DATA_FE169_:	
-	db $92, $8C, $93, $7F, $9B, $E9, $81, $93, $50
-	
-; Data from FE172 to FE180 (15 bytes)	
-_DATA_FE172_:	
-	db $74, $F2, $7F, $7F, $C5, $CF, $B4, $7F, $7F, $7F, $7F, $A7, $3D, $A6, $50
-	
-; Data from FE181 to FE1EC (108 bytes)	
-_DATA_FE181_:	
-	db $F7, $F2, $ED, $F6, $F6, $F6, $7F, $E3, $E3, $E3, $E3, $E3, $7F, $7F, $F6, $F6
-	db $F6, $4E, $F8, $F2, $7F, $F6, $F6, $F6, $7F, $E3, $E3, $E3, $E3, $E3, $7F, $7F
-	db $F6, $F6, $F6, $4E, $F9, $F2, $7F, $F6, $F6, $F6, $7F, $E3, $E3, $E3, $E3, $E3
-	db $7F, $7F, $F6, $F6, $F6, $4E, $FA, $F2, $7F, $F6, $F6, $F6, $7F, $E3, $E3, $E3
-	db $E3, $E3, $7F, $7F, $F6, $F6, $F6, $4E, $FB, $F2, $7F, $F6, $F6, $F6, $7F, $E3
-	db $E3, $E3, $E3, $E3, $7F, $7F, $F6, $F6, $F6, $4E, $FC, $F2, $7F, $F6, $F6, $F6
-	db $7F, $E3, $E3, $E3, $E3, $E3, $7F, $7F, $F6, $F6, $F6, $50
-	
-; Data from FE1ED to FE1F2 (6 bytes)	
-_DATA_FE1ED_:	
-	db $7F, $7F, $7F, $7F, $7F, $50
-	
-; Data from FE1F3 to FE1F8 (6 bytes)	
-_DATA_FE1F3_:	
-	db $E3, $E3, $E3, $E3, $E3, $50
-	
-; Data from FE1F9 to FE202 (10 bytes)	
-_DATA_FE1F9_:	
-	db $A9, $81, $A6, $13, $A1, $AB, $8C, $8F, $E3, $50
-	
-; Data from FE203 to FE20C (10 bytes)	
-_DATA_FE203_:	
-	db $12, $B0, $E3, $A5, $E3, $7F, $7F, $7F, $7F, $50
-	
-; Data from FE20D to FE21F (19 bytes)	
-_DATA_FE20D_:	
-	db $74, $F2, $7F, $7F, $C5, $CF, $B4, $7F, $7F, $7F, $7F, $7F, $7F, $7F, $7F, $A7
-	db $3D, $A6, $4E
-	
-; Data from FE220 to FE232 (19 bytes)	
-_DATA_FE220_:	
-	db $F6, $F6, $F6, $7F
-	ds 10, $E3
-	db $7F, $F6, $F6, $F6, $50
-	
-; Data from FE233 to FE23D (11 bytes)	
-_DATA_FE233_:	
-	ds 10, $7F
-	db $50
-	
-; Data from FE23E to FE254 (23 bytes)	
-_DATA_FE23E_:	
+_DATA_FE169_:
+	db "テスト　ファイト@"	;	TEST FIGHT
+
+; Data from FE172 to FE180 (15 bytes)
+_DATA_FE172_:
+	db "№．　　なまえ　　　　レべル@"	;	NAME LEVEL
+
+; Data from FE181 to FE1EC (108 bytes)
+_DATA_FE181_:
+	db   "１．▶０００　ーーーーー　　０００"
+	next "２．　０００　ーーーーー　　０００"
+	next "３．　０００　ーーーーー　　０００"
+	next "４．　０００　ーーーーー　　０００"
+	next "５．　０００　ーーーーー　　０００"
+	next "６．　０００　ーーーーー　　０００@"
+
+; Data from FE1ED to FE1F2 (6 bytes)
+_DATA_FE1ED_:
+	db "　　　　　@"
+
+; Data from FE1F3 to FE1F8 (6 bytes)
+_DATA_FE1F3_:
+	db "ーーーーー@"
+
+; Data from FE1F9 to FE202 (10 bytes)
+_DATA_FE1F9_:
+	db "ワイルドモンスター@"
+
+; Data from FE203 to FE20C (10 bytes)
+_DATA_FE203_:
+	db "ディーラー　　　　@"
+
+; Data from FE20D to FE21F (19 bytes)
+_DATA_FE20D_:
+	db "№．　　なまえ　　　　　　　　レべル<NEXT>"
+
+; Data from FE220 to FE232 (19 bytes)
+_DATA_FE220_:
+	db "０００　ーーーーーーーーーー　０００@"
+
+; Data from FE233 to FE23D (11 bytes)
+_DATA_FE233_:
+	db "　　　　　　　　　　@"
+
+; Data from FE23E to FE254 (23 bytes)
+_DATA_FE23E_:
 	db $09, $E3, $A6, $13, $50, $50, $03, $63, $04, $63, $0B, $63, $10, $63, $11, $63
 	db $12, $63, $13, $63, $14, $63, $FF
