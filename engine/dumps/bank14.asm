@@ -153,106 +153,106 @@ GetTypeName::
 
 SECTION "engine/dumps/bank14.asm@GetTrainerClassName_Old", ROMX
 
-GetTrainerClassName_Old::
-; Seemingly unreferenced.
-; Loads a name to wStringBuffer1 from a partial list of Trainer classes leftover from Red/Green.
-	ld hl, .name_table
-	ld a, [wTrainerClass]
-	dec a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, wStringBuffer1
-.copy_byte
-	ld a, [hli]
-	ld [de], a
-	inc de
-	cp '@'
-	jr nz, .copy_byte
-	ret
-
-.name_table:
-	dw .youngster, .bug_catcher, .lass, wOTClassName
-	dw .jr_trainer_male, .jr_trainer_female, .pokemaniac, .super_nerd
-	dw wOTClassName, wOTClassName, .burglar, .engineer
-	dw .jack, wOTClassName, .swimmer, wOTClassName
-	dw wOTClassName, .beauty, wOTClassName, .rocker
-	dw .juggler, wOTClassName, wOTClassName, .blackbelt
-	dw wOTClassName, .prof_oak, .chief, .scientist
-	dw wOTClassName, .rocket, .cooltrainer_male, .cooltrainer_female
-	dw wOTClassName, wOTClassName, wOTClassName, wOTClassName
-	dw wOTClassName, wOTClassName, wOTClassName, wOTClassName
-	dw wOTClassName, wOTClassName, wOTClassName, wOTClassName
-	dw wOTClassName, wOTClassName, wOTClassName
-
-
-.youngster
-	db "たんパン@"
-
-.bug_catcher
-	db "むしとり@"
-
-.lass
-	db "ミニスカ@"
-
-.jr_trainer_male
-	db "ボーイ@"
-
-.jr_trainer_female
-	db "ガール@"
-
-.pokemaniac
-	db "マニア@"
-
-.super_nerd
-	db "りかけい@"
-
-.burglar
-	db "どろぼう@"
-
-.engineer
-	db "オヤジ@"
-
-.jack
-; Removed trainer class from original game, whose name string didn't make it to Gen I but somehow ended up in Gen II.
-	db "ジャック@"
-
-.swimmer
-	db "かいパン@"
-
-.beauty
-	db "おねえさん@"
-
-.rocker
-	db "グループ@"
-
-.juggler
-	db "ジャグラー@"
-
-.blackbelt
-	db "からて@"
-
-.prof_oak
-	db "オーキド@"
-
-.chief
-	db "チーフ@"
-
-.scientist
-	db "けんきゅういん@"
-
-.rocket
-	db "だんいん@"
-
-.cooltrainer_male
-	db "エリート♂@"
-
-.cooltrainer_female
-	db "エリート♀@"
+;GetTrainerClassName_Old::
+;; Seemingly unreferenced.
+;; Loads a name to wStringBuffer1 from a partial list of Trainer classes leftover from Red/Green.
+;	ld hl, .name_table
+;	ld a, [wTrainerClass]
+;	dec a
+;	ld c, a
+;	ld b, 0
+;	add hl, bc
+;	add hl, bc
+;	ld a, [hli]
+;	ld h, [hl]
+;	ld l, a
+;	ld de, wStringBuffer1
+;.copy_byte
+;	ld a, [hli]
+;	ld [de], a
+;	inc de
+;	cp '@'
+;	jr nz, .copy_byte
+;	ret
+;
+;.name_table:
+;	dw .youngster, .bug_catcher, .lass, wOTClassName
+;	dw .jr_trainer_male, .jr_trainer_female, .pokemaniac, .super_nerd
+;	dw wOTClassName, wOTClassName, .burglar, .engineer
+;	dw .jack, wOTClassName, .swimmer, wOTClassName
+;	dw wOTClassName, .beauty, wOTClassName, .rocker
+;	dw .juggler, wOTClassName, wOTClassName, .blackbelt
+;	dw wOTClassName, .prof_oak, .chief, .scientist
+;	dw wOTClassName, .rocket, .cooltrainer_male, .cooltrainer_female
+;	dw wOTClassName, wOTClassName, wOTClassName, wOTClassName
+;	dw wOTClassName, wOTClassName, wOTClassName, wOTClassName
+;	dw wOTClassName, wOTClassName, wOTClassName, wOTClassName
+;	dw wOTClassName, wOTClassName, wOTClassName
+;
+;
+;.youngster
+;	db "たんパン@"
+;
+;.bug_catcher
+;	db "むしとり@"
+;
+;.lass
+;	db "ミニスカ@"
+;
+;.jr_trainer_male
+;	db "ボーイ@"
+;
+;.jr_trainer_female
+;	db "ガール@"
+;
+;.pokemaniac
+;	db "マニア@"
+;
+;.super_nerd
+;	db "りかけい@"
+;
+;.burglar
+;	db "どろぼう@"
+;
+;.engineer
+;	db "オヤジ@"
+;
+;.jack
+;; Removed trainer class from original game, whose name string didn't make it to Gen I but somehow ended up in Gen II.
+;	db "ジャック@"
+;
+;.swimmer
+;	db "かいパン@"
+;
+;.beauty
+;	db "おねえさん@"
+;
+;.rocker
+;	db "グループ@"
+;
+;.juggler
+;	db "ジャグラー@"
+;
+;.blackbelt
+;	db "からて@"
+;
+;.prof_oak
+;	db "オーキド@"
+;
+;.chief
+;	db "チーフ@"
+;
+;.scientist
+;	db "けんきゅういん@"
+;
+;.rocket
+;	db "だんいん@"
+;
+;.cooltrainer_male
+;	db "エリート♂@"
+;
+;.cooltrainer_female
+;	db "エリート♀@"
 
 DrawPlayerHP::
 	ld a, 1

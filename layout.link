@@ -319,9 +319,9 @@ ROMX $14
 	"engine/dumps/bank14.asm@CopyMonToTempMon"
 	org $40dd
 	"data/types/names.asm"
-	org $4162
+;	org $4162
 	"engine/dumps/bank14.asm@GetTrainerClassName_Old"
-	org $4756
+;	org $4756
 	"engine/dumps/bank14.asm@Party Menu Routines"
 	org $4f10
 	"data/pokemon/base_stats.asm"
