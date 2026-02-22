@@ -30,7 +30,7 @@ GetName::
 	ld a, [wCurSpecies]
 	ld [wNamedObjectIndexBuffer], a
 	call GetPokemonName
-	ld hl, MON_NAME_LENGTH
+	ld hl, NEW_MON_NAME_LENGTH
 	add hl, de
 	ld e, l
 	ld d, h
@@ -94,25 +94,23 @@ GetPokemonName:
 	ldh a, [hROMBank]
 	push af
 	push hl
-	ld a, BANK(PokemonNames)
+	ld a, BANK(PokemonNames_ENG)
 	call Bankswitch
 
 	; Each name is five characters
 	ld a, [wNamedObjectIndexBuffer]
 	dec a
-	ld hl, PokemonNames
-	ld e, a
-	ld d, 0
-rept 5
-	add hl, de
-endr
+	ld hl, PokemonNames_ENG
+	ld c, NEW_MON_NAME_LENGTH - 1
+	ld b, 0
+	call AddNTimes
 
 	; Terminator
 	ld de, wStringBuffer1
 	push de
-	ld bc, MON_NAME_LENGTH - 1
+	ld bc, NEW_MON_NAME_LENGTH - 1
 	call CopyBytes
-	ld hl, wStringBuffer1 + MON_NAME_LENGTH - 1
+	ld hl, wStringBuffer1 + NEW_MON_NAME_LENGTH - 1
 	ld [hl], '@'
 	pop de
 	pop hl
@@ -255,7 +253,7 @@ GetNick:
 	call SkipNames
 	ld de, wStringBuffer1
 	push de
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 	pop de
 	callfar CorrectNickErrors

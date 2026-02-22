@@ -124,7 +124,7 @@ PlaceDetailedBoxMonView::
 	call GetPokemonName
 	pop hl
 	call PlaceString
-	ld de, MON_NAME_LENGTH
+	ld de, NEW_MON_NAME_LENGTH
 	add hl, de
 	push hl
 
@@ -133,7 +133,7 @@ PlaceDetailedBoxMonView::
 	call GetNick
 	pop hl
 	call PlaceString
-	ld de, MON_NAME_LENGTH
+	ld de, NEW_MON_NAME_LENGTH
 	add hl, de
 	push hl
 

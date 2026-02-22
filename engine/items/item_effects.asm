@@ -516,7 +516,7 @@ PokeBallEffect:
 	ld a, [wPartyCount]
 	dec a
 	ld hl, wPartyMonNicknames
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call AddNTimes
 
 	ld d, h
@@ -534,7 +534,7 @@ PokeBallEffect:
 	cp '@' ; Did we just leave the name empty?
 	jr nz, .return_from_capture
 	ld hl, wStringBuffer1
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 	jr .return_from_capture
 
@@ -559,7 +559,7 @@ PokeBallEffect:
 	jr nz, .done_with_nickname_pc
 
 	ld hl, wStringBuffer1
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 .done_with_nickname_pc

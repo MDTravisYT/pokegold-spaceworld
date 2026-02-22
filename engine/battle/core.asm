@@ -2552,7 +2552,7 @@ LoadBattleMonFromParty:	;	0f:522c
 	call SkipNames
 
 	ld de, wBattleMonNickname
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 	ld hl, wBattleMonStats
@@ -2610,7 +2610,7 @@ LoadEnemyMonFromParty:
 	call SkipNames
 
 	ld de, wEnemyMonNickname
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 	ld hl, wEnemyMonStats
@@ -4658,7 +4658,7 @@ LoadEnemyMon:
 ; Update enemy nickname
 	ld hl, wStringBuffer1
 	ld de, wEnemyMonNickname
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 ; Saw this mon

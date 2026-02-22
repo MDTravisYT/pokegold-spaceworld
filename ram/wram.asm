@@ -86,7 +86,7 @@ wMusicInitEnd::
 wPartyMonNicknames::
 ; wPartyMon1Nickname - wPartyMon6Nickname
 for n, 1, PARTY_LENGTH + 1
-wPartyMon{d:n}Nickname:: ds 10
+wPartyMon{d:n}Nickname:: ds NEW_MON_NAME_LENGTH
 endr
 wPartyMonNicknamesEnd::
 
@@ -1041,9 +1041,9 @@ wccf4:: ds 1
 
 SECTION "CD11", WRAM0[$CD11]
 
-wMonOrItemNameBuffer:: ds MON_NAME_LENGTH
+wMonOrItemNameBuffer:: ds NEW_MON_NAME_LENGTH
 
-	ds MON_NAME_LENGTH
+	ds NEW_MON_NAME_LENGTH
 
 wTMHMMoveNameBackup:: ds 8
 
@@ -1811,7 +1811,7 @@ wAnnonID:: ds 1
 
 ; Buffer used for withdrawing Breeder Pokémon, as well as checking gender.
 
-wBufferMonNickname:: ds 10
+wBufferMonNickname:: ds NEW_MON_NAME_LENGTH
 wBufferMonOT:: ds PLAYER_NAME_LENGTH
 wBufferMon:: box_struct wBufferMon
 
@@ -1872,7 +1872,7 @@ endr
 wOTPartyMonNicknames::
 ; wOTPartyMon1Nickname - wOTPartyMon6Nickname
 for n, 1, PARTY_LENGTH + 1
-wOTPartyMon{d:n}Nickname:: ds 10
+wOTPartyMon{d:n}Nickname:: ds NEW_MON_NAME_LENGTH
 endr
 wOTPartyDataEnd::
 ENDU

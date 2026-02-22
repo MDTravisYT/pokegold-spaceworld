@@ -7,7 +7,7 @@ SECTION "engine/pokemon/correct_nick_errors.asm", ROMX
 CorrectNickErrors:
 	push bc
 	push de
-	ld b, MON_NAME_LENGTH
+	ld b, NEW_MON_NAME_LENGTH
 .checkchar
 	ld a, [de]
 	cp '@'

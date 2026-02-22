@@ -1006,6 +1006,7 @@ ROMX $40
 	"_new/text/ShizukanaOka.asm"
 	
 ROMX $41
+	"_new/text/pokemon_names.asm"
 	"_new/text/class_names.asm"
 	"_new/text/move_names.asm"
 	"_new/text/item_names.asm"

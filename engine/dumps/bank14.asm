@@ -734,7 +734,7 @@ Function50562::
 
 	ld de, wStringBuffer1
 	push de
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 	pop de

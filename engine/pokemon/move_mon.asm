@@ -65,7 +65,7 @@ TryAddMonToParty::
 	ld d, h
 	ld e, l
 	ld hl, wStringBuffer1
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 .skipnickname
@@ -373,7 +373,7 @@ AddTempmonToParty:
 	ld hl, wOTPartyMonOT
 	ld a, [wCurPartyMon]
 	call SkipNames
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 	ld hl, wPartyMonNicknames
@@ -385,7 +385,7 @@ AddTempmonToParty:
 	ld hl, wOTPartyMonNicknames
 	ld a, [wCurPartyMon]
 	call SkipNames
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 	ld a, [wCurPartySpecies]
@@ -549,7 +549,7 @@ SendGetMonIntoFromBox::
 	ld a, [wCurPartyMon]
 	call SkipNames
 .okay12
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 	pop hl
 
@@ -644,7 +644,7 @@ RetrieveBreedmonOrBuffermon:
 	ld hl, wPartyMonNicknames
 	ld a, [wPartyCount]
 	dec a
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call AddNTimes
 	push hl
 	ld h, d
@@ -703,7 +703,7 @@ RetrieveBreedmonOrBuffermon:
 .party_full
 	ld hl, wBoxMonNicknames
 	ld a, [wBoxCount]
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call AddNTimes
 	push hl
 	ld h, d
@@ -738,7 +738,7 @@ RetrieveBreedmonOrBuffermon:
 	ret z
 	ld hl, wBreedMon2Nickname
 	ld de, wBreedMon1Nickname
-	ld bc, MON_NAME_LENGTH + PLAYER_NAME_LENGTH + BOXMON_STRUCT_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH + PLAYER_NAME_LENGTH + BOXMON_STRUCT_LENGTH
 	call CopyBytes
 	and a
 	ret
@@ -751,7 +751,7 @@ DepositBreedmonOrBuffermon::
 
 	ld hl, wBreedMon1Nickname
 	ld de, wBreedMon2Nickname
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 	ld hl, wBreedMon1OT
@@ -768,7 +768,7 @@ DepositBreedmonOrBuffermon::
 .buffer_mon
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call AddNTimes
 	call CopyBytes
 
@@ -852,12 +852,12 @@ SendMonIntoBox::
 	jr z, .copy_nickname
 
 	ld hl, wBoxMonNicknames
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	dec a
 	call AddNTimes
 	push hl
 
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	add hl, bc
 	ld d, h
 	ld e, l
@@ -869,12 +869,12 @@ SendMonIntoBox::
 .shift_loop_mon_name
 	push bc
 	push hl
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 	pop hl
 	ld d, h
 	ld e, l
-	ld bc, -(MON_NAME_LENGTH)
+	ld bc, -(NEW_MON_NAME_LENGTH)
 	add hl, bc
 	pop bc
 	dec b
@@ -886,7 +886,7 @@ SendMonIntoBox::
 	call GetPokemonName
 	ld de, wBoxMonNicknames
 	ld hl, wStringBuffer1
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 
 	ld a, [wBoxCount]
@@ -1016,7 +1016,7 @@ GiveEgg::
 	dec a
 	ld h, d
 	ld l, e
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call AddNTimes
 
 ; Print "EGG" as its name
@@ -1079,7 +1079,7 @@ RemoveMonFromPartyOrBox:
 	; Shift the OT names
 	ld d, h
 	ld e, l
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	add hl, bc
 	ld bc, wPartyMonNicknames
 	ld a, [wPokemonWithdrawDepositParameter]
@@ -1120,12 +1120,12 @@ RemoveMonFromPartyOrBox:
 	jr z, .party5
 	ld hl, wBoxMonNicknames
 .party5
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	ld a, [wCurPartyMon]
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	add hl, bc
 	ld bc, wPartyMonNicknamesEnd
 	ld a, [wPokemonWithdrawDepositParameter]
@@ -1384,7 +1384,7 @@ GivePoke::
 	ld hl, wPartyMonNicknames
 	ld a, [wPartyCount]
 	dec a
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call AddNTimes
 
 	ld d, h
@@ -1441,7 +1441,7 @@ GivePoke::
 	jr nz, .not_empty
 
 	ld hl, wStringBuffer1
-	ld bc, MON_NAME_LENGTH
+	ld bc, NEW_MON_NAME_LENGTH
 	call CopyBytes
 .not_empty
 	call ClearBGPalettes
