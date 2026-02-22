@@ -584,9 +584,7 @@ _LABEL_FDF73_:
 		call PrintNumber
 		ld a, [wApplyStatLevelMultipliersToEnemy]	; wApplyStatLevelMultipliersToEnemy = $CE37
 		ld [wBattleMonStructEnd], a	; wBattleMonStructEnd = $CA22
-		ld hl, $4B78
-		ld a, $0E
-		call FarCall_hl
+		farcall GetOTName
 		ld hl, $C345
 		ld de, wOTClassName	; wOTClassName = $CA2B
 		call PlaceString
