@@ -1665,11 +1665,11 @@ GetMonBackpic::
 ListMoves::
 	ld de, wListMoves_MoveIndicesBuffer
 	ld b, $00
-.asm_50c03
+.moves_loop
 	ld a, [de]
 	inc de
 	and a
-	jr z, .asm_50c36
+	jr z, .no_more_moves
 	push de
 	push hl
 	push hl
@@ -1695,12 +1695,12 @@ ListMoves::
 	pop de
 	ld a, b
 	cp $04
-	jr z, .asm_50c47
-	jr .asm_50c03
+	jr z, .done
+	jr .moves_loop
 
-.asm_50c36
+.no_more_moves
 	ld a, b
-.asm_50c37
+.nonmove_loop
 	push af
 	ld [hl], $e3
 	ld a, [wHPBarMaxHP]
@@ -1710,8 +1710,8 @@ ListMoves::
 	pop af
 	inc a
 	cp $04
-	jr nz, .asm_50c37
-.asm_50c47
+	jr nz, .nonmove_loop
+.done
 	ret
 
 Function50c48::

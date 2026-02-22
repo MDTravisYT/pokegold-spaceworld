@@ -3666,37 +3666,38 @@ MoveSelectionScreen::
 	call CopyBytes
 	xor a
 	ldh [hBGMapMode], a
-	hlcoord 0, 17 - (NUM_MOVES * 2) - 1
-	ld b, 8
-	ld c, 8
+	hlcoord 4, 17 - NUM_MOVES - 1
+	ld b, 4
+	ld c, 14
 	ld a, [wMoveSelectionMenuType]
-	cp 2
+	cp $2
 	jr nz, .got_dims
-	hlcoord 10, 17 - (NUM_MOVES * 2) - 1
-	ld b, 8
-	ld c, 8
+	hlcoord 4, 17 - NUM_MOVES - 1 - 4
+	ld b, 4
+	ld c, 14
 
 .got_dims
 	call DrawTextBox
-	hlcoord 2, 17 - (NUM_MOVES * 2) + 1
+	hlcoord 6, 17 - NUM_MOVES
 	ld a, [wMoveSelectionMenuType]
-	cp 2
+	cp $2
 	jr nz, .got_start_coord
-	hlcoord 12, 17 - (NUM_MOVES * 2) + 1
+	hlcoord 6, 17 - NUM_MOVES - 4
 
 .got_start_coord
-	ld a, SCREEN_WIDTH * 2
-	ld [wHPBarMaxHP], a
+	ld a, SCREEN_WIDTH
+	ld [wListMovesLineSpacing], a
 	predef ListMoves
 
-	ld b, 1
+	ld b, 5
 	ld a, [wMoveSelectionMenuType]
-	cp 2
+	cp $2
+	ld a, 17 - NUM_MOVES
 	jr nz, .got_default_coord
-	ld b, 11
+	ld b, 5
+	ld a, 17 - NUM_MOVES - 4
 
 .got_default_coord
-	ld a, 17 - (NUM_MOVES * 2) + 1
 	ld [w2DMenuCursorInitY], a
 	ld a, b
 	ld [w2DMenuCursorInitX], a
@@ -3745,7 +3746,7 @@ MoveSelectionScreen::
 	ld [w2DMenuFlags1], a
 	xor a
 	ld [w2DMenuFlags2], a
-	ld a, $20
+	ld a, $10
 	ld [w2DMenuCursorOffsets], a
 
 .menu_loop
@@ -3769,9 +3770,9 @@ MoveSelectionScreen::
 	ld a, [wSelectedSwapPosition]
 	and a
 	jr z, .interpret_joypad
-	hlcoord 1, 18 - (NUM_MOVES * 2)
+	hlcoord 5, 13
+	ld bc, SCREEN_WIDTH
 	dec a
-	ld bc, SCREEN_WIDTH * 2
 	call AddNTimes
 	ld [hl], '▷'
 
@@ -4106,8 +4107,8 @@ MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
 
-	hlcoord 9, 12
-	ld b, 4
+	hlcoord 0, 8
+	ld b, 3
 	ld c, 9
 	call DrawTextBox
 
@@ -4122,7 +4123,7 @@ MoveInfoBox:
 	cp b
 	jr nz, .not_disabled
 
-	hlcoord 10, 15
+	hlcoord 1, 10
 	ld de, .Disabled
 	call PlaceString
 	jr .done
@@ -4155,20 +4156,18 @@ MoveInfoBox:
 	ld a, [hl]
 	and PP_MASK
 	ld [wStringBuffer1], a
-	hlcoord 10, 15
+	hlcoord 1, 9
 	ld de, .Type
 	call PlaceString
 
-	hlcoord 16, 13
+	hlcoord 7, 11
 	ld [hl], '／'
-	hlcoord 14, 16
-	ld [hl], '／'
-	hlcoord 14, 13
+	hlcoord 5, 11
 	ld de, wStringBuffer1
 	lb bc, 1, 2
 	call PrintNumber
 
-	hlcoord 17, 13
+	hlcoord 8, 11
 	ld de, wTempPP
 	lb bc, 1, 2
 	call PrintNumber
@@ -4176,7 +4175,7 @@ MoveInfoBox:
 	callfar UpdateMoveData
 	ld a, [wPlayerMoveStruct]
 	ld b, a
-	hlcoord 15, 16
+	hlcoord 2, 10
 	predef PrintMoveType
 
 .done
