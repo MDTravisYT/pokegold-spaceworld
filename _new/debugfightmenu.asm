@@ -38,7 +38,7 @@ _LABEL_FDB8A_:
 		ld b, $01
 		ld c, $12
 		call DrawTextBox
-		ld hl, $C2BA
+		hlcoord 5,1
 		ld de, _DATA_FE169_
 		call PlaceString
 		ld hl, $C2F4
@@ -833,11 +833,11 @@ _LABEL_FE158_:
 	
 ; Data from FE169 to FE171 (9 bytes)	
 _DATA_FE169_:
-	db "テスト　ファイト@"	;	TEST FIGHT
+	db "TEST FIGHT@"	;	TEST FIGHT
 
 ; Data from FE172 to FE180 (15 bytes)
 _DATA_FE172_:
-	db "№．　　なまえ　　　　レべル@"	;	NAME LEVEL
+	db "№．　　NAME　　　LEVEL@"	;	NAME LEVEL
 
 ; Data from FE181 to FE1EC (108 bytes)
 _DATA_FE181_:
@@ -858,15 +858,15 @@ _DATA_FE1F3_:
 
 ; Data from FE1F9 to FE202 (10 bytes)
 _DATA_FE1F9_:
-	db "ワイルドモンスター@"
+	db "WILD #MON@"
 
 ; Data from FE203 to FE20C (10 bytes)
 _DATA_FE203_:
-	db "ディーラー　　　　@"
+	db "DEALER      @"
 
 ; Data from FE20D to FE21F (19 bytes)
 _DATA_FE20D_:
-	db "№．　　なまえ　　　　　　　　レべル<NEXT>"
+	db "№．　　NAME　　　　　　LEVEL<NEXT>"
 
 ; Data from FE220 to FE232 (19 bytes)
 _DATA_FE220_:
