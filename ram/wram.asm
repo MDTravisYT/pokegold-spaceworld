@@ -83,8 +83,12 @@ wSFXDuration:: db
 
 wMusicInitEnd::
 
-wStringBuffer1:: ds STRING_BUFFER_LENGTH+8
-wStringBuffer2:: ds STRING_BUFFER_LENGTH+8
+wPartyMonNicknames::
+; wPartyMon1Nickname - wPartyMon6Nickname
+for n, 1, PARTY_LENGTH + 1
+wPartyMon{d:n}Nickname:: ds 10
+endr
+wPartyMonNicknamesEnd::
 
 SECTION "OAM Buffer", WRAM0
 
@@ -801,8 +805,13 @@ wScreenSave::
 	ds 6 * 5
 
 SECTION "CBB2", WRAM0[$CBB2]
+UNION
 wToolgearBuffer::
 	ds $40
+NEXTU
+wStringBuffer1:: ds STRING_BUFFER_LENGTH+6
+wStringBuffer2:: ds STRING_BUFFER_LENGTH+6
+ENDU
 
 SECTION "CBF2", WRAM0[$CBF2]
 
@@ -1780,12 +1789,13 @@ for n, 1, PARTY_LENGTH + 1
 wPartyMon{d:n}OT:: ds PLAYER_NAME_LENGTH
 endr
 
-wPartyMonNicknames::
-; wPartyMon1Nickname - wPartyMon6Nickname
-for n, 1, PARTY_LENGTH + 1
-wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
-endr
-wPartyMonNicknamesEnd::
+;wPartyMonNicknames::
+;; wPartyMon1Nickname - wPartyMon6Nickname
+;for n, 1, PARTY_LENGTH + 1
+;wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
+;endr
+;wPartyMonNicknamesEnd::
+	ds 24	;	blank
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
@@ -1801,7 +1811,7 @@ wAnnonID:: ds 1
 
 ; Buffer used for withdrawing Breeder Pokémon, as well as checking gender.
 
-wBufferMonNickname:: ds MON_NAME_LENGTH
+wBufferMonNickname:: ds 10
 wBufferMonOT:: ds PLAYER_NAME_LENGTH
 wBufferMon:: box_struct wBufferMon
 
@@ -1862,7 +1872,7 @@ endr
 wOTPartyMonNicknames::
 ; wOTPartyMon1Nickname - wOTPartyMon6Nickname
 for n, 1, PARTY_LENGTH + 1
-wOTPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
+wOTPartyMon{d:n}Nickname:: ds 10
 endr
 wOTPartyDataEnd::
 ENDU
