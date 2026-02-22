@@ -483,8 +483,8 @@ wBattle::
 wEnemyMoveStruct:: move_struct wEnemyMoveStruct
 wPlayerMoveStruct:: move_struct wPlayerMoveStruct
 
-wEnemyMonNickname:: ds 6
-wBattleMonNickname:: ds 6
+wEnemyMonNickname:: ds NEW_MON_NAME_LENGTH
+wBattleMonNickname:: ds NEW_MON_NAME_LENGTH
 
 UNION
 ; battle mon
