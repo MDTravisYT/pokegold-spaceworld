@@ -1004,6 +1004,7 @@ ROMX $40
 	"_new/text/SilentHill.asm"
 	"_new/text/SilentHillPokecenter.asm"
 	"_new/text/ShizukanaOka.asm"
+	"_new/text/pokecenter_pc.asm"
 	
 ROMX $41
 	"_new/text/pokemon_names.asm"

@@ -125,23 +125,14 @@ PC_Demo:
 	call TextboxWaitPressAorB_BlinkCursor
 	ret
 
-.SkarmoryText:
-	text "ポケモン　ジャーナル　ホームページ"
-	line "<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>"
+.SkarmoryText:	;	4884
+	text_far _SkarmoryText
+	text_end
+rept $93
+	nop
+endr
 
-	para "しんポケモン　はっけん！！"
-	line "めいめい　ヨロイドリ"
-	cont "はがねの　ように"
-	cont "かたい　つばさが　とくちょう"
-
-	para "ひこうタイプ　だけではなく"
-	line "あたらしく　メタルタイプ　としても"
-	cont "ぶんるい　されることが　けってい"
-	cont "これからの　けんきゅうが　またれる"
-	cont "<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>"
-	done
-
-BillsPC:
+BillsPC:	;	491c
 	callfar _BillsPC
 	and a
 	ret

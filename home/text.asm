@@ -279,7 +279,7 @@ asm_0fbb:
 	jr PlaceCommandCharacter
 
 .asm_0fc4:
-	ld de, EnemyText
+	ld de, EnemyText_ENG
 	call PlaceString
 	ld h, b
 	ld l, c
