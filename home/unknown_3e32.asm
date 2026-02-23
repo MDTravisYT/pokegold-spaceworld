@@ -68,7 +68,7 @@ ContFromPage:
 .chk
 	inc de
 	ld a, [de]
-	cp "<PAGE>"
+	cp $37	;	"<PAGE>"
 	jr z, .chkend
 	jr .chk
 .chkend

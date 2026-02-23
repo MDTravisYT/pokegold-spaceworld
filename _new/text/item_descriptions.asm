@@ -313,7 +313,7 @@ ParlyzHealDescription_ENG:
 
 FullRestoreDescription_ENG:
 	db   "Fully restores HP"
-	next "& status.@"
+	next "and status.@"
 
 MaxPotionDescription_ENG:
 	db   "Fully restores"
