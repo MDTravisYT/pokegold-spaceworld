@@ -280,4 +280,6 @@ hBattleTurn:: db
 
 hCurMapTextSubroutinePtr:: dw
 
+hUILayoutFlags:: db
+
 	; TODO

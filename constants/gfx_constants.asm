@@ -45,3 +45,9 @@ DEF SPRITEOAMSTRUCT_LENGTH EQU const_value
 DEF NUM_SPRITE_OAM_STRUCTS EQU 40 ; see wShadowOAM
 
 DEF OAM_YCOORD_HIDDEN EQU 160 ; hides an OAM offscreen
+
+; hUILayoutFlags
+	const_def
+	const BIT_PARTY_MENU_HP_BAR   ; 0
+	const BIT_DOUBLE_SPACED_MENU  ; 1
+	const BIT_SINGLE_SPACED_LINES ; 2

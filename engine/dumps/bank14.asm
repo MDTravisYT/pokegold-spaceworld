@@ -316,7 +316,14 @@ DrawHP:
 	pop hl
 
 ; Print HP
+	ldh a, [hUILayoutFlags]
+	bit BIT_PARTY_MENU_HP_BAR, a
+	jr z, .printFractionBelowBar
+	ld bc, $9 ; right of bar
+	jr .printFraction
+.printFractionBelowBar
 	bccoord 1, 1, 0
+.printFraction
 	add hl, bc
 	ld de, wTempMonHP
 	ld a, [wMonType]
@@ -1151,7 +1158,7 @@ InitPartyMenuLayout::
 	callfar LoadOverworldMonIcon
 	call PartyMenu_ClearCursor
 	callfar InitPartyMenuPalettes
-	hlcoord 3, 1
+	hlcoord 3, 0
 	ld de, wPartySpecies
 	ld a, [wCurPartyMon]
 	push af
@@ -1268,17 +1275,23 @@ PlacePartyMember::
 	cp PARTYMENUACTION_GIVE_MON_FEMALE
 	jp z, .PlacePartyMonGender
 	push hl
-	ld bc, -15
+	ld bc, 14
 	add hl, bc
 	ld de, wTempMonStatus
 	call PlaceStatusString
 	pop hl
 	push hl
-	ld bc, -12
+	ld bc, SCREEN_WIDTH + 1 ; down 1 row and right 1 column
+	ldh a, [hUILayoutFlags]
+	set BIT_PARTY_MENU_HP_BAR, a
+	ldh [hUILayoutFlags], a
 	add hl, bc
 	ld b, 0
 	call DrawEnemyHP
 	push de
+	ldh a, [hUILayoutFlags]
+	res BIT_PARTY_MENU_HP_BAR, a
+	ldh [hUILayoutFlags], a
 	call SetPartyHPBarPalette
 	pop de
 	pop hl
@@ -1295,12 +1308,12 @@ PlacePartyMember::
 	ld de, .string_not_able
 .able
 	push hl
-	ld bc, 9
+	ld bc, SCREEN_WIDTH + 9 
 	add hl, bc
 	call PlaceString
 	pop hl
 .PrintLevel
-	ld bc, 5
+	ld bc, 10
 	add hl, bc
 	push de
 	call PrintLevel
@@ -1468,33 +1481,31 @@ PrintPartyMenuText::
 	dw ChooseSecondMonString
 
 ChooseAMonString:
-	text "#を　えらんで　ください"
+	text "Choose a #MON."
 	done
 
 UseOnWhichPKMNString:
-	text "どの#に　つかいますか？"
+	text "Use on which <PK><MN>?"
 	done
 
 WhichPKMNString:
-	text "どの#を　だしますか？"
+	text "Which <PK><MN>?"
 	done
 
 TeachWhichPKMNString:
-	text "どの#に　おしえますか？"
+	text "Teach which <PK><MN>?"
 	done
 
 MoveToWhereString:
-	text "どこに　いどうしますか？"
+	text "Move to where?"
 	done
 
 ChooseFirstMonString:
-	text "１ぴきめの　#を"
-	line "えらんで　ください"
+	text "Choose 1st #MON."
 	done
 
 ChooseSecondMonString:
-	text "２ひきめの　#を"
-	line "えらんで　ください"
+	text "Choose 2nd #MON."
 	done
 
 RecoveredSomeHPText:

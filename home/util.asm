@@ -50,10 +50,10 @@ Function33ef::
 	jp CopyBytes
 
 SkipNames::
-; Returns hl + a * 6
+; Returns hl + a * NEW_MON_NAME_LENGTH
 	and a
 	ret z
-	ld bc, 6
+	ld bc, NEW_MON_NAME_LENGTH
 .loop:
 	add hl, bc
 	dec a
