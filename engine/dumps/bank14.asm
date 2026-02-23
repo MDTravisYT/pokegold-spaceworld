@@ -1323,10 +1323,10 @@ PlacePartyMember::
 	ret
 
 .string_able:
-	db "おぼえられる@" ; "ABLE"
+	db "ABLE@" ; "ABLE"
 
 .string_not_able:
-	db "おぼえられない@" ; "NOT ABLE"
+	db "NOT ABLE@" ; "NOT ABLE"
 
 .PlacePartyMonEvoStoneCompatibility:
 	push hl
@@ -1383,9 +1383,9 @@ PlacePartyMember::
 	jr .PrintLevel
 
 .string_can_use
-	db "つかえる@" ; "ABLE"
+	db "ABLE@" ; "ABLE"
 .string_cant_use
-	db "つかえない@" ; "NOT ABLE"
+	db "NOT ABLE@" ; "NOT ABLE"
 
 .PlacePartyMonGender
 	xor a
@@ -1405,10 +1405,10 @@ PlacePartyMember::
 	jp .PrintLevel
 
 .male
-	db "オス@"
+	db "MALE@"
 
 .female
-	db "メス@"
+	db "FEMALE@"
 
 PrintPartyText_GetSGBLayout::
 	ld b, SGB_PARTY_MENU

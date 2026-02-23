@@ -40,13 +40,13 @@ Unreferenced_FieldMoveMenu:
 DEF NUM_MONMENUVALUES EQU const_value - 1
 
 MonMenuOptionStrings:
-	db "つよさをみる@" ; Stats
-	db "ならびかえ@"   ; Switch
-	db "そうび@"      ; Item
-	db "キャンセル@"   ; Cancel
-	db "もちわざ@"     ; Moves
-	db "メール@"      ; Mail
-	db "エラー！@"     ; Error!
+	db "STATS@" ; Stats
+	db "SWITCH@"   ; Switch
+	db "ITEM@"      ; Item
+	db "CANCEL@"   ; Cancel
+	db "MOVES@"     ; Moves
+	db "MAIL@"      ; Mail
+	db "ERROR!@"     ; Error!
 
 Unreferenced_FieldMoveList:
 	db MOVE_UPROOT, MONMENUITEM_CUT

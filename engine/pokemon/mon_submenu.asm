@@ -285,6 +285,6 @@ BattleMonMenu:
 .MenuText:
 	db (STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING)
 	db 3
-	db "とりかえる@"   ; Switch
-	db "つよさをみる@" ; Stats
-	db "キャンセル@"   ; Cancel
+	db "SWITCH@"   ; Switch
+	db "STATS@" ; Stats
+	db "CANCEL@"   ; Cancel
