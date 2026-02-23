@@ -71,8 +71,8 @@ CreditsText2:
 	db   "TRANSLATIONS:"
 	next "- tcrf.net          "
 	db   "- mauvesea          "
-	db   "- youtu.be/         "
-	db   "    F4yIjpSaHgo"
+;	db   "- youtu.be/         "
+;	db   "    F4yIjpSaHgo"
 	db   "@"
 CreditsText3:
 	db   "DISASSEMBLY         "
