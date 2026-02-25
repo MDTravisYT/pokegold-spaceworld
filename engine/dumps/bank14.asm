@@ -425,7 +425,7 @@ StatsScreen_Exit:
 	ldh [hMapAnims], a
 	ret
 
-StatsScreen_LoadPageJumptable
+StatsScreen_LoadPageJumptable:
 	dw StatsScreen_InitUpperHalf, LoadGreenPage, LoadBluePage
 
 StatsScreen_InitUpperHalf::
@@ -439,7 +439,7 @@ StatsScreen_InitUpperHalf::
 	and a
 	jr nz, LoadPinkPage
 	push bc
-	hlcoord 1, 0
+	hlcoord 8, 0
 	ld [hl], $74
 	inc hl
 	ld [hl], $f2
@@ -448,14 +448,14 @@ StatsScreen_InitUpperHalf::
 	ld de, wMoveGrammar
 	ld bc, $8103
 	call PrintNumber
-	hlcoord 1, 8
+	hlcoord 14, 0
 	call PrintLevel
 
 	ld hl, NicknamePointers
 	call GetNicknamePointer
 	ld d, h
 	ld e, l
-	hlcoord 1, 10
+	hlcoord 8, 2
 	call PlaceString
 	push bc
 	call GetGender
@@ -465,47 +465,41 @@ StatsScreen_InitUpperHalf::
 .got_gender
 	pop hl
 	ld [hl], a
-	hlcoord 1, 12
+	hlcoord 9, 4
 	ld a, '／'
 	ld [hli], a
 	ld a, [wMonHIndex]
 	ld [wMoveGrammar], a
 	call GetPokemonName
 	call PlaceString
-	hlcoord 7, 0		;	made into a subroutine in final game (StatsScreen_PlaceVerticalDivider)
-	ld bc, SCREEN_WIDTH
-	ld d, SCREEN_HEIGHT
 
-.place_vertical_divider
-	ld a, $31
-	ld [hl], a
-	add hl, bc
-	dec d
-	jr nz, .place_vertical_divider
+	hlcoord 0, 7
+	ld b, SCREEN_WIDTH
+	ld a, $62 ; horizontal divider (empty HP/exp bar)
+.loop
+	ld [hli], a
+	dec b
+	jr nz, .loop
 
 	inc a
-	hlcoord 2, 16		;	made into a subroutine in final game (StatsScreen_PlacePageSwitchArrows)
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
-	ld [hl], a
+	hlcoord 12, 6		;	made into a subroutine in final game (StatsScreen_PlacePageSwitchArrows)
+	ld [hl], $32
+	hlcoord 19, 6
+	ld [hl], $35
 	pop bc
 LoadPinkPage:
 	push bc
 	ld b, 1
 	call StatsScreen_LoadPageIndicators
-	hlcoord 8, 0
-	ld bc, TextCommands
+	hlcoord 0, 8
+	lb bc, 10, 20
 	call ClearBox
 
-	hlcoord 10, 1
+	hlcoord 0, 9
 	ld b, 0
 	call DrawPlayerHP
 
-	hlcoord 18, 1
+	hlcoord 8, 9
 	ld [hl], $41
 
 	ld hl, wCurHPPal
@@ -513,11 +507,11 @@ LoadPinkPage:
 	ld b, SGB_STATS_SCREEN_HP_PALS
 	call GetSGBLayout
 
-	hlcoord 9, 4
+	hlcoord 0, 12
 	ld de, StatusText_StatusType
 	call PlaceString
 
-	hlcoord 15, 4
+	hlcoord 6, 13
 	ld a, [wMonType]
 	cp 2
 	jr z, .StatusOK
@@ -528,15 +522,33 @@ LoadPinkPage:
 .StatusOK
 	ld de, StatusText_OK
 	call z, PlaceString
-	hlcoord 14, 6
+	hlcoord 1, 15
 	call PrintMonTypes
 
-	hlcoord 8, 10
-	ld b, 6
-	ld c, 10
-	call DrawTextBox
+;	hlcoord 8, 10
+;	ld b, 6
+;	ld c, 10
+;	call DrawTextBox
 
-	hlcoord 10, 10
+	ld bc, 9
+	decoord 0, 16
+	hlcoord 0, 17
+	call CopyBytes
+	ld a, ' '
+	ld bc, 9
+	hlcoord 0, 17
+	call ByteFill
+	hlcoord 9, 8
+	ld de, SCREEN_WIDTH
+	ld b, 10
+	ld a, $31 ; vertical divider
+.vertical_divider
+	ld [hl], a
+	add hl, de
+	dec b
+	jr nz, .vertical_divider
+	hlcoord 10, 9
+	
 	ld de, StatusText_ExpPoints
 	call PlaceString
 
@@ -548,39 +560,39 @@ LoadPinkPage:
 	inc a
 	ld [wTempMonLevel], a
 .got_level
-	hlcoord 16, 14
+	hlcoord 17, 14
 	call PrintLevel
 
 	pop af
 	ld [wTempMonLevel], a
 	ld de, wTempMonExp
-	hlcoord 12, 11
+	hlcoord 13, 10
 	ld bc, $0307
 	call PrintNumber
 
 	call .CalcExpToNextLevel
 	ld de, wExpToNextLevel
-	hlcoord 10, 13
+	hlcoord 13, 13
 	ld bc, $0307
 	call PrintNumber
 
-	hlcoord 9, 13
+	hlcoord 10, 12
 	ld de, StatusText_LevelUp
 	call PlaceString
 
-	hlcoord 17, 13
+	hlcoord 14, 14
 	ld de, StatusText_To
 	call PlaceString
 
 	ld a, [wTempMonLevel]
 	ld b, a
 	ld de, wTempMonExp + 2
-	hlcoord 10, 16
+	hlcoord 11, 16
 	predef CalcAndPlaceExpBar
 
-	hlcoord 9, 16
+	hlcoord 10, 16
 	ld [hl], $40
-	hlcoord 18, 16
+	hlcoord 19, 16
 	ld [hl], $41
 	call WaitBGMap
 
@@ -595,7 +607,7 @@ LoadPinkPage:
 	ld hl, wTempMonDVs
 	call GetUnownLetter
 
-	hlcoord 0, 1
+	hlcoord 0, 0
 	call PrepMonFrontpic
 	ld a, [wCurPartySpecies]
 	call PlayCry		;	this could've been a jp...
@@ -635,23 +647,23 @@ NicknamePointers:
 	dw wPartyMonNicknames, wOTPartyMonNicknames, wBoxMonNicknames, wBufferMonNickname
 
 StatusText_StatusType:
-	db   "じょうたい／"
-	next "タイプ／@"
+	db   "STATUS/"
+	next "TYPE/@"
 
 StatusText_OK:
-	db "ふつう@"
+	db "OK@"
 
 StatusText_ExpPoints:
-	db "　けいけんち　@"
+	db "EXP POINTS@"
 
 StatusText_LevelUp:
 ; This string and the one below are used to present the
 ; remaining amount of EXP to level up in a grammatical manner.
 ; Equivalent to the English version's "LEVEL UP - <amount> to :L<level>".
-	db "あと@"
+	db "LEVEL UP@"
 
 StatusText_To:
-	db "で@"
+	db "TO@"
 
 LoadGreenPage::
 	call WaitBGMap
@@ -660,11 +672,11 @@ LoadGreenPage::
 	ld b, 2
 	call StatsScreen_LoadPageIndicators
 
-	hlcoord 8, 0
-	ld bc, TextCommands
+	hlcoord 0, 8
+	lb bc, 10, 20
 	call ClearBox
 
-	hlcoord 8, 1
+	hlcoord 0, 8
 	ld de, .Item
 	call PlaceString
 
@@ -675,7 +687,7 @@ LoadGreenPage::
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
 .got_item_name
-	hlcoord 11, 2
+	hlcoord 6, 8
 	call PlaceString
 
 	ld hl, wTempMonMoves
@@ -683,22 +695,22 @@ LoadGreenPage::
 	ld bc, $0004
 	call CopyBytes
 
-	hlcoord 8, 4
-	ld b, 12
-	ld c, 10
-	call DrawTextBox
+;	hlcoord 8, 4
+;	ld b, 12
+;	ld c, 10
+;	call DrawTextBox
 
-	hlcoord 11, 4
+	hlcoord 0, 10
 	ld de, .Moves
 	call PlaceString
 
-	hlcoord 9, 6
-	ld a, $3c
+	hlcoord 8, 10
+	ld a, SCREEN_WIDTH*2
 	ld [wcdc3], a
 	call ListMoves
 
-	hlcoord 11, 7
-	ld a, $3c
+	hlcoord 12, 11
+	ld a, SCREEN_WIDTH*2
 	ld [wcdc3], a
 	call ListMovePP
 
@@ -708,13 +720,13 @@ LoadGreenPage::
 	ret
 
 .Item
-	db "そうび@"
+	db "ITEM@"
 
 .NoItem
-	db "なし@"
+	db "---@"
 
 .Moves
-	db "　もちわざ　@"
+	db "MOVE@"
 
 LoadBluePage::
 	call WaitBGMap
@@ -723,15 +735,18 @@ LoadBluePage::
 	ld b, 3
 	call StatsScreen_LoadPageIndicators
 
-	hlcoord 8, 0
-	ld bc, TextCommands
+	hlcoord 0, 8
+	lb bc, 10, 20
 	call ClearBox
 
-	hlcoord 9, 1
-	ld de, .IDNo_OT
+	hlcoord 0, 9		;	became .PlaceOTInfo subroutine in final
+	ld de, .IDNoString
+	call PlaceString
+	hlcoord 0, 12
+	ld de, .OTString
 	call PlaceString
 
-	hlcoord 12, 1
+	hlcoord 2, 10
 	ld de, wTempMonID
 	ld bc, $8205
 	call PrintNumber
@@ -746,27 +761,49 @@ LoadBluePage::
 
 	pop de
 	callfar CorrectNickErrors
-	hlcoord 12, 3
+	push de
+
+; Adjust coordinate of OT name based on index of nickname terminator
+	lb bc, 0, -1
+.loop
+	inc c
+	ld a, [de]
+	inc de
+	cp '@'
+	jr nz, .loop
+; remove left padding if name was 8-10 chars (somehow?)
+	ld a, NAME_LENGTH - 1
+	sub c
+	cp NAME_LENGTH - PLAYER_NAME_LENGTH
+; otherwise, use 2 spaces of left padding
+	jr c, .ok
+	ld a, NAME_LENGTH - PLAYER_NAME_LENGTH - 1
+.ok
+	ld c, a
+	hlcoord 0, 13
+	add hl, bc
+; that's finally over ... place string, quit forever
+	pop de
 	call PlaceString
 
 	ld d, 0
 	call PrintTempMonStats
-	hlcoord 10, 6
-	ld de, .Parameters
-	call PlaceString
+;	hlcoord 10, 6			;	this is commented out in the final
+;	ld de, .Parameters		;	...and here too since i can't make room for it :p
+;	call PlaceString
 
 	call WaitBGMap
 	ld a, 1
 	ldh [hBGMapMode], a
 	ret
 
-.IDNo_OT
-	db   "<ID>№／"
-	next "おや／"
-	next "@"
+.IDNoString:
+	db	"<ID>№.@"
+.OTString:
+	db	"OT/@"
 
-.Parameters
-	db "　パラメータ　@"
+;.Parameters
+;	db	"PARAMETERS@"
 
 .OTPointers
 	dw wPartyMonOTs
@@ -775,23 +812,23 @@ LoadBluePage::
 	dw wBufferMonOT
 
 StatsScreen_LoadPageIndicators::
-	hlcoord 1, 14
+	hlcoord 13, 5
 	ld a, $36
 	call .load_square
-	hlcoord 3, 14
+	hlcoord 15, 5
 	ld a, $36
 	call .load_square
-	hlcoord 5, 14
+	hlcoord 17, 5
 	ld a, $36
 	call .load_square
 	ld a, b
 	cp 2
 	ld a, $3a
-	hlcoord 3, 14
+	hlcoord 15, 5
 	jr c, .load_square
-	hlcoord 5, 14
+	hlcoord 17, 5
 	jr z, .load_square
-	hlcoord 1, 14
+	hlcoord 13, 5
 .load_square
 	ld [hli], a
 	inc a
@@ -828,12 +865,17 @@ PrintTempMonStats::
 	and a
 	jr nz, .level_up_screen
 
-	hlcoord 8, 6
+	hlcoord 10, 8
+	ld de, SCREEN_WIDTH
 	ld b, 10
-	ld c, 10
-	call DrawTextBox
+	ld a, $31 ; vertical divider
+.vertical_divider
+	ld [hl], a
+	add hl, de
+	dec b
+	jr nz, .vertical_divider
 
-	hlcoord 9, 8
+	hlcoord 11, 8
 	lb bc, 0, 6
 	jr .next
 
@@ -854,6 +896,8 @@ PrintTempMonStats::
 
 	pop hl
 	pop bc
+	add hl, bc
+	ld bc, SCREEN_WIDTH
 	add hl, bc
 	ld de, wTempMonAttack
 	lb bc, 2, 3
@@ -881,11 +925,11 @@ PrintTempMonStats::
 	ret
 
 .StatNames:
-	db   "こうげき" ; "ATTACK"
-	next "ぼうぎょ" ; "DEFENSE"
-	next "とくこう" ; "SPCL.ATK"
-	next "とくぼう" ; "SPCL.DEF"
-	next "すばやさ" ; "SPEED"
+	db   "ATTACK" ; "ATTACK"
+	next "DEFENSE" ; "DEFENSE"
+	next "SPCL.ATK" ; "SPCL.ATK"
+	next "SPCL.DEF" ; "SPCL.DEF"
+	next "SPEED" ; "SPEED"
 	next "@"
 
 GetGender::
