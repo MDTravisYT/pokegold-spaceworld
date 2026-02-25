@@ -1,4 +1,4 @@
-ROM := pokegold-spaceworld.gb
+ROM := pokegold97-english.gb
 BASEROM := baserom.gb
 
 DIRS := home engine data gfx audio maps scripts ram slack _new
@@ -74,7 +74,7 @@ rgbdscheck.o: rgbdscheck.asm
 RGBLINKFLAGS += -d
 
 $(ROM): RGBFIXFLAGS += -f hg -k 01 -l 0x33 -m 0x10 -p 0 -r 3
-$(ROM): poke%-spaceworld.gb: layout.link $(OBJS) | $(BASEROM)
+$(ROM): poke%97-english.gb: layout.link $(OBJS) | $(BASEROM)
 	$(RGBLINK) $(RGBLINKFLAGS) -l layout.link -n $(@:.gb=.sym) -m $(@:.gb=.map) -O $(BASEROM) -o $@ $(filter-out $<, $^)
 	$(RGBFIX) $(RGBFIXFLAGS) -t "POKEMON2$(shell echo $* | cut -d _ -f 1 | tr '[:lower:]' '[:upper:]')" $@
 

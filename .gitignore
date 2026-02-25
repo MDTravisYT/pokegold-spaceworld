@@ -27,3 +27,4 @@ __pycache__
 # macos files
 .DS_STORE
 /*.ss1
+/_new/*.DMG

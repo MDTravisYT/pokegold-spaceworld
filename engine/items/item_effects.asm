@@ -1244,12 +1244,18 @@ HealHP_SFX_GFX:
 	call WaitPlaySFX
 	pop de
 	ld a, [wCurPartyMon]
-	hlcoord 11, 0
+	hlcoord 4, 2
 	ld bc, SCREEN_WIDTH * 2
 	call AddNTimes
+	ldh a, [hUILayoutFlags]
+	set BIT_PARTY_MENU_HP_BAR, a
+	ldh [hUILayoutFlags], a
 	ld a, $2
 	ld [wWhichHPBar], a
 	predef UpdateHPBar
+	ldh a, [hUILayoutFlags]
+	res BIT_PARTY_MENU_HP_BAR, a
+	ldh [hUILayoutFlags], a
 	ret
 
 UseItem_SelectMon:
@@ -1749,23 +1755,23 @@ ENDM
 	dbmapcoord 25, 10 ; one space West of Snorlax
 	db -1 ; end
 
-.PlayedFluteText:
-	text "#のふえを　ふいた！"
-
-	para "うーん！"
-	line "すばらしい　ねいろだ！"
-	prompt
+.PlayedFluteText:	;	MDT: commented because this is normally unreachable anyway
+;	text "#のふえを　ふいた！"
+;
+;	para "うーん！"
+;	line "すばらしい　ねいろだ！"
+;	prompt
 
 .FluteWakeUpText:
-	text "すべての　#が"
-	line "めを　さました！"
-	prompt
+;	text "すべての　#が"
+;	line "めを　さました！"
+;	prompt
 
 .PlayedTheFlute:
-	text "<PLAYER>は"
-	line "#のふえを　ふいてみた！@"
-	text_waitbutton
-	start_asm
+;	text "<PLAYER>は"
+;	line "#のふえを　ふいてみた！@"
+;	text_waitbutton
+;	start_asm
 	ld a, [wBattleMode]
 	and a
 	jr nz, .battle

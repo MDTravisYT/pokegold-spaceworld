@@ -1158,7 +1158,7 @@ InitPartyMenuLayout::
 	callfar LoadOverworldMonIcon
 	call PartyMenu_ClearCursor
 	callfar InitPartyMenuPalettes
-	hlcoord 3, 0
+	hlcoord 3, 1
 	ld de, wPartySpecies
 	ld a, [wCurPartyMon]
 	push af

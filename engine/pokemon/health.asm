@@ -308,7 +308,14 @@ UpdateHPBar_PrintHPNumber:
 	ld a, [wHPBarOldHP + 1]
 	ld [wHPBarTempHP], a
 	push hl
+	ldh a, [hUILayoutFlags]
+	bit BIT_PARTY_MENU_HP_BAR, a
+	jr z, .hpBelowBar
+	ld de, $9
+	jr .next
+.hpBelowBar
 	ld de, SCREEN_WIDTH + 1
+.next
 	add hl, de
 	push hl
 	ld a, '　'
