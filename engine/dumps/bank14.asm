@@ -881,12 +881,12 @@ PrintTempMonStats::
 
 .level_up_screen
 	hlcoord 9, 0
-	ld b, 10
-	ld c, 9
+	ld b, 10	;	height
+	ld c, 9		;	width
 	call DrawTextBox
 
-	hlcoord 11, 2
-	lb bc, 0, 4
+	hlcoord 11, 1
+	ld bc, 4
 
 .next
 	push bc
@@ -1554,60 +1554,61 @@ ChooseSecondMonString:
 
 RecoveredSomeHPText:
 	text_from_ram wStringBuffer1
-	text "の　たいりょくが"
-	line "@"
+	text_start
+	line "recovered @"
 	deciram wHPBarHPDifference, 2, 3
-	text "　かいふくした"
+	text "HP!"
 	done
 
 CuredOfPoisonText:
 	text_from_ram wStringBuffer1
-	text "の　どくは"
-	line "きれい　さっぱり　なくなった！"
+	text "'s"
+	line "cured of poison."
 	done
 
 RidOfParalysisText:
 	text_from_ram wStringBuffer1
-	text "の　からだの"
-	line "しびれが　とれた"
+	text "'s"
+	line "rid of paralysis."
 	done
 
 BurnWasHealedText:
 	text_from_ram wStringBuffer1
-	text "の"
-	line "やけどが　なおった"
+	text "'s"
+	line "burn was healed."
 	done
 
 _WasDefrostedText:
 	text_from_ram wStringBuffer1
-	text "の　からだの"
-	line "こおりが　とけた"
+	text_start
+	line "was defrosted."
 	done
 
 _WokeUpText:
 	text_from_ram wStringBuffer1
-	text "は"
-	line "めを　さました"
+	text_start
+	line "woke up."
 	done
 
 HealthReturnedText:
 	text_from_ram wStringBuffer1
-	text "は"
-	line "けんこうになった！"
+	text "'s"
+	line "health returned."
 	done
 
 RevitalizedText:
 	text_from_ram wStringBuffer1
-	text "は"
-	line "げんきを　とりもどした！"
+	text_start
+	line "is revitalized."
 	done
 
 _GrewToLevelText:
 	text_from_ram wStringBuffer1
-	text "の　レベルが@"
+	text " grew to"
+	line "level @"
 	deciram wCurPartyLevel, 1, 3
-	text "になった@"
-	sound_dex_fanfare_50_79
+	text "!@"
+	sound_dex_fanfare_50_79 ; plays SFX_DEX_FANFARE_50_79, identical to SFX_LEVEL_UP
 	text_waitbutton
 	text_end
 	

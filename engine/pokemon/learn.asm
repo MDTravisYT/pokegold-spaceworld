@@ -9,7 +9,7 @@ LearnMove::
 	call GetNick
 	ld hl, wStringBuffer1
 	ld de, wMonOrItemNameBuffer
-	ld bc, NEW_MON_NAME_LENGTH
+	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 
 .loop
@@ -119,18 +119,18 @@ ForgetMove::
 	push hl
 	ld hl, MoveAskForgetText
 	call PrintText
-	hlcoord 10, 8
+	hlcoord 5, 2
 	ld b, NUM_MOVES * 2
 	ld c, MOVE_NAME_LENGTH
 	call DrawTextBox
-	hlcoord 12, 10
+	hlcoord 5 + 2, 2 + 2
 	ld a, SCREEN_WIDTH * 2
 	ld [wListMovesLineSpacing], a
 	predef ListMoves
 	; w2DMenuData
-	ld a, 10
+	ld a, 4
 	ld [w2DMenuCursorInitY], a
-	ld a, 11
+	ld a, 6
 	ld [w2DMenuCursorInitX], a
 	ld a, [wNumMoves]
 	inc a
@@ -183,56 +183,27 @@ ForgetMove::
 	ret
 
 LearnedMoveText:
-	text_from_ram wMonOrItemNameBuffer
-	text "は　あたらしく"
-	line "@"
-	text_from_ram wStringBuffer2
-	text "を　おぼえた！@"
-	sound_dex_fanfare_50_79
-	text_waitbutton
+	text_far _LearnedMoveText
 	text_end
 
 MoveAskForgetText:
-	text "どの　わざを"
-	next "わすれさせたい？"
-	done
+	text_far _MoveAskForgetText
+	text_end
 
 StopLearningMoveText:
-	text "それでは<⋯⋯>　@"
-	text_from_ram wStringBuffer2
-	text "を"
-	line "おぼえるのを　あきらめますか？"
-	done
+	text_far _StopLearningMoveText
+	text_end
 
 DidNotLearnMoveText:
-	text_from_ram wMonOrItemNameBuffer
-	text "は　@"
-	text_from_ram wStringBuffer2
-	text "を"
-	line "おぼえずに　おわった！"
-	prompt
+	text_far _DidNotLearnMoveText
+	text_end
 
 AskForgetMoveText:
-	text_from_ram wMonOrItemNameBuffer
-	text "は　あたらしく"
-	line "@"
-	text_from_ram wStringBuffer2
-	text "を　おぼえたい<⋯⋯>！"
-
-	para "しかし　@"
-	text_from_ram wMonOrItemNameBuffer
-	text "は　わざを　４つ"
-	line "おぼえるので　せいいっぱいだ！"
-
-	para "@"
-	text_from_ram wStringBuffer2
-	text "の　かわりに"
-	line "ほかの　わざを　わすれさせますか？"
-	done
+	text_far _AskForgetMoveText
+	text_end
 
 Text_1_2_and_Poof:
-	text "１　２の　<⋯⋯>@"
-	text_exit
+	text_far Text_MoveForgetCount ; 1, 2 and…
 	start_asm
 	push de
 	ld de, SFX_SWITCH_POKEMON
@@ -242,21 +213,9 @@ Text_1_2_and_Poof:
 	ret
 
 MoveForgotText:
-	text "　ポカン！@"
-	text_exit
-	text_start
-
-	para "@"
-	text_from_ram wMonOrItemNameBuffer
-	text "は　@"
-	text_from_ram wStringBuffer1
-	text "の"
-	line "つかいかたを　きれいに　わすれた！"
-
-	para "そして<⋯⋯>！"
-	prompt
+	text_far _MoveForgotText
+	text_end
 
 MoveCantForgetHMText:
-	text "それは　たいせつなわざです"
-	line "わすれさせることは　できません！"
-	prompt
+	text_far _MoveCantForgetHMText
+	text_end

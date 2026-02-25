@@ -215,3 +215,82 @@ _ItemGotOffText::
 	text_from_ram wStringBuffer2
 	text "."
 	prompt
+
+_LearnedMoveText::
+	text_from_ram wMonOrItemNameBuffer
+	text " learned"
+	line "@"
+	text_from_ram wStringBuffer2
+	text "!@"
+	sound_dex_fanfare_50_79
+	text_waitbutton
+	text_end
+
+_MoveAskForgetText::
+	text "Which move should"
+	next "be forgotten?"
+	done
+
+_StopLearningMoveText::
+	text "Stop learning"
+	line "@"
+	text_from_ram wStringBuffer2
+	text "?"
+	done
+
+_DidNotLearnMoveText::
+	text_from_ram wMonOrItemNameBuffer
+	text_start
+	line "did not learn"
+	cont "@"
+	text_from_ram wStringBuffer2
+	text "."
+	prompt
+
+_AskForgetMoveText::
+	text_from_ram wMonOrItemNameBuffer
+	text " is"
+	line "trying to learn"
+	cont "@"
+	text_from_ram wStringBuffer2
+	text "."
+
+	para "But @"
+	text_from_ram wMonOrItemNameBuffer
+	text_start
+	line "can't learn more"
+	cont "than four moves."
+
+	para "Delete an older"
+	line "move to make room"
+	cont "for @"
+	text_from_ram wStringBuffer2
+	text "?"
+	done
+
+Text_MoveForgetCount::
+	text "1, 2 and…@"
+	text_exit
+	text_end
+
+	text_end ; unreferenced
+
+_MoveForgotText::
+	text " Poof!@"
+	text_exit
+	text_start
+
+	para "@"
+	text_from_ram wMonOrItemNameBuffer
+	text " forgot"
+	line "@"
+	text_from_ram wStringBuffer1
+	text "."
+
+	para "And…"
+	prompt
+
+_MoveCantForgetHMText::
+	text "HM moves can't be"
+	line "forgotten now."
+	prompt
