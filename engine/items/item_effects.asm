@@ -599,63 +599,70 @@ Unreferenced_BallMissedText:
 	line "うまく　あたらなかった！" ; "(MON)!"
 	prompt
 
-BallBrokeFreeText:
-	text "だめだ！　#が" ; "Oh no! The (MON)"
-	line "ボールから　でてしまった！" ; "broke free!"
-	prompt
-
-BallAppearedCaughtText:
-	text "ああ！" ; "Aww! It appeared"
-	line "つかまえたと　おもったのに！" ; "to be caught!"
-	prompt
-
-BallAlmostHadItText:
-	text "ざんねん！" ; "Aargh!"
-	line "もうすこしで　つかまえられたのに！" ; "Almost had it!"
-	prompt
-
-BallSoCloseText:
-	text "おしい！" ; "Shoot! It was so"
-	line "あと　ちょっとの　ところだったのに！" ; "close too!"
-	prompt
-
-Text_GotchaMonWasCaught:
-	text "やったー！" ; "Gotcha!"
-	line "@"
-	text_from_ram wEnemyMonNickname
-	text "を　つかまえたぞ！@" ; "(MON) was caught!"
-	sound_caught_mon
-	text_waitbutton
+BallBrokeFreeText:	;	03:6ba3
+	text_far _BallBrokeFreeText
 	text_end
+;rept $7D
+;	nop
+;endr
 
-BallSentToBillsPCText:
-	text_from_ram wBoxMonNicknames
-	text "は　マサキの　ところへ" ; "was transferred to"
-	line "てんそうされた！" ; "BILL's PC!"
-	prompt
-
-BallSentToSomeonesPCText:
-	text_from_ram wBoxMonNicknames
-	text "は　だれかの　<PC>に" ; "was transferred to"
-	line "てんそうされた！" ; "Someone's PC!"
-	prompt
-
-NewDexDataText_CaughtMon:
-	text_from_ram wEnemyMonNickname
-	text "の　データが　あたらしく" ; "New Dex data will"
-	line "#ずかんに　セーブされます！@" ; "be added for (MON)!"
-	sound_slot_machine_start
-	text_waitbutton
+BallAppearedCaughtText:	;	03:6bba
+	text_far _BallAppearedCaughtText
 	text_end
+;rept $7D
+;	nop
+;endr
 
-AskGiveNicknameText_CaughtMon:
-	text "つかまえた　@"
-	text_from_ram wStringBuffer1
-	text "に"
-	line "なまえを　つけますか"
-	done
+BallAlmostHadItText:	;	03:6bce
+	text_far _BallAlmostHadItText
+	text_end
+;rept $7D
+;	nop
+;endr
 
-ReturnToBattle_UseBall:
+BallSoCloseText:	;	03:6be7
+	text_far _BallSoCloseText
+	text_end
+;rept $7D
+;	nop
+;endr
+
+Text_GotchaMonWasCaught:	;	03:6c00
+	text_far Text_BallCaught
+	text_end
+;rept $7D
+;	nop
+;endr
+
+BallSentToBillsPCText:	;	03:6c19
+	text_far _BallSentToPCText
+	text_end
+;rept $7D
+;	nop
+;endr
+
+BallSentToSomeonesPCText:	;	03:6c32
+	text_far _BallSentToSomeonePCText
+	text_end
+;rept $7D
+;	nop
+;endr
+
+NewDexDataText_CaughtMon:	;	03:6c49
+	text_far _NewDexDataText
+	text_end
+;rept $7D
+;	nop
+;endr
+
+AskGiveNicknameText_CaughtMon:	;	03:6c6c
+	text_far _AskGiveNicknameText
+	text_end
+;rept $7D
+;	nop
+;endr
+
+ReturnToBattle_UseBall:	;	03:6c85
 	call ClearPalettes
 	callfar Call_LoadBattleFontsHPBar
 	call GetMemSGBLayout
@@ -844,16 +851,18 @@ RareCandy_StatBooster_ExitMenu:
 	jp ReloadFontAndTileset
 
 ItemStatRoseText:
-	text_from_ram wStringBuffer1 ; "(MON)'s"
-	text "の　@"
-	text_from_ram wStringBuffer2 ; "(STAT) rose."
-	text "の"
-	line "きそ　ポイントが　あがった！"
-	prompt
+	text_far _ItemStatRoseText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 ItemWontHaveEffectText:
-	text "つかっても　こうかが　ないよ" ; "It won't have any effect."
-	prompt
+	text_far _VitaminNoEffectText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 StatStrings:
 	dw .health
@@ -862,11 +871,11 @@ StatStrings:
 	dw .speed
 	dw .special
 
-.health: db "たいりょく@" ; "HEALTH"
-.attack: db "こうげきりょく@" ; "ATTACK"
-.defense: db "ぼうぎょりょく@" ; "DEFENSE"
-.speed: db "すばやさ@" ; "SPEED"
-.special: db "とくしゅのうりょく@" ; "SPECIAL"
+.health: db "HEALTH@" ; "HEALTH"
+.attack: db "ATTACK@" ; "ATTACK"
+.defense: db "DEFENSE@" ; "DEFENSE"
+.speed: db "SPEED@" ; "SPEED"
+.special: db "SPECIAL@" ; "SPECIAL"
 
 GetStatExpRelativePointer:
 	ld a, [wCurItem]
@@ -1573,9 +1582,11 @@ SoftboiledFunction:
 	jp .loop
 
 .ItemCantUseOnMonText:
-	text "その#には　"
-	line "つかえません"
-	done
+	text_far _ItemCantUseOnMonText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 EscapeRopeEffect:
 	xor a
@@ -1796,11 +1807,11 @@ CoinCaseEffect:
 	ret
 
 CoinCaseCountText:
-	text "あなたの　コイン"
-	line "@"
-	deciram wCoins, 2, 4
-	text "まい"
-	prompt
+	text_far _CoinCaseNumCoinsText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 ; These rod effects haven't been touched since Generation I... like, at all.
 ; The only change was in FishingInit_Old to force the water check to always fail.
@@ -2086,31 +2097,39 @@ PPRestoreItem_Cancel:
 	ret
 
 RaiseThePPOfWhichMoveText:
-	text "どのわざの"
-	line "ポイントをふやす？"
-	done
+	text_far _RaisePPWhichTechniqueText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 RestoreThePPOfWhichMoveText:
-	text "どのわざを"
-	line "かいふくする？"
-	done
+	text_far _RestorePPWhichTechniqueText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 PPIsMaxedOutText:
-	text_from_ram wStringBuffer2
-	text "は　これいじょう"
-	line "ふやすことが　できません"
-	prompt
+	text_far _PPMaxedOutText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 PPsIncreasedText:
-	text_from_ram wStringBuffer2
-	text "の"
-	line "わざポイントが　ふえた！"
-	prompt
+	text_far _PPIncreasedText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 PPRestoredText:
-	text "わざポイントが"
-	line "かいふくした！"
-	prompt
+	text_far _PPRestoredText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 TMHolderEffect:
 	ld a, [wBattleMode]
@@ -2221,35 +2240,32 @@ AskTeachTMHM_Old:
 	jp UseDisposableItem
 
 .BootedTMText:
-	text "<TM>を　きどうした！"
-	prompt
+	text_far _BootedUpTMText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 .BootedHMText:
-	text "ひでんマシンを　きどうした！"
+	text_far _BootedUpHMText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 .ContainedMoveText:
-	text "なかには　@"
-	text_from_ram wStringBuffer2
-	text "が"
-	line "きろくされていた！"
-
-	para "@"
-	text_from_ram wStringBuffer2
-	text "を"
-	line "#に　おぼえさせますか？"
-	done
+	text_far _TeachMachineMoveText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 .TMHMNotCompatibleText:
-	text_from_ram wStringBuffer1
-	text "と　@"
-	text_from_ram wStringBuffer2
-	text "は"
-	line "あいしょうが　わるかった！"
-
-	para "@"
-	text_from_ram wStringBuffer2
-	text "は　おぼえられない！"
-	prompt
+	text_far _MonCannotLearnMachineMoveText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 UseItemText:
 	ld hl, ItemUsedText
@@ -2315,65 +2331,80 @@ CantUseItemMessage:
 	jp PrintText
 
 ItemOakWarningText:
-	text "オーキドの　ことば<⋯⋯>"
-	line "<PLAYER>よ！　こういうものには"
-	cont "つかいどきが　あるのじゃ！"
-	prompt
+	text_far _ItemUseNotTimeText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 ItemBelongsToSomeoneElseText:
-	text "たいせつな　あずかりものです！"
-	next "つかうことは　できません！"
-	prompt
+	text_far _ItemUseNotYoursToUseText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 ItemWontHaveAnyEffectText:
-	text "つかっても　こうかがないよ"
-	prompt
+	text_far _ItemUseNoEffectText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 BallBlockedText:
-	text "<TRAINER>に　ボールを　はじかれた！"
-	prompt
+	text_far _ThrowBallAtTrainerMonText1
+	text_end
+;rept $7D
+;	nop
+;endr
 
 BallDontBeAThiefText:
-	text "ひとの　ものを　とったら　どろぼう！"
-	prompt
+	text_far _ThrowBallAtTrainerMonText2
+	text_end
+;rept $7D
+;	nop
+;endr
 
 NoCyclingText:
-	text "ここでは　じてんしゃに"
-	next "のることは　できません"
-	prompt
-
+	text_far _NoCyclingAllowedHereText
+	text_end
+;rept $7D
+;	nop
+;endr
 ItemCantGetOnText:
-	text "ここでは@"
-	text_from_ram wStringBuffer1
-	text "に"
-	line "のることは　できません"
-	prompt
+	text_far _ItemCantGetOnText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 BallBoxFullText:
-	text "ボックスに　あずけている　#が"
-	line "いっぱいなので　つかえません！"
-	prompt
+	text_far _BoxFullCannotThrowBallText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 ItemUsedText:
-	text "<PLAYER>は@"
-	text_low
-	text_from_ram wStringBuffer2
-	text "を　つかった！"
-	done
+	text_far _ItemUsedText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 ItemGotOnText:
-	text "<PLAYER>は@"
-	text_low
-	text_from_ram wStringBuffer2
-	text "に　のった"
-	prompt
+	text_far _ItemGotOnText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 ItemGotOffText:
-	text "<PLAYER>は@"
-	text_low
-	text_from_ram wStringBuffer2
-	text "から　おりた"
-	prompt
+	text_far _ItemGotOffText
+	text_end
+;rept $7D
+;	nop
+;endr
 
 ApplyPPUp:
 	ld a, MON_MOVES
