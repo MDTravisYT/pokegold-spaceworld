@@ -377,37 +377,37 @@ StatsScreenMain::
 	ldh [hMapAnims], a
 	ld c, 1
 	ld b, 0
-	ld hl, Function50340
-.asm_502fc
+	ld hl, StatsScreen_InitUpperHalf
+StatsScreen_LoadPage:
 	push bc
-	ld de, .asm_50302
+	ld de, .done_loading
 	push de
 	jp hl
 
-.asm_50302
+.done_loading
 	pop bc
-.asm_50303
+.joypad_loop
 	call GetJoypadDebounced
 	ldh a, [hJoySum]
 	and (D_LEFT | D_RIGHT | B_BUTTON | A_BUTTON)
-	jr z, .asm_50303
+	jr z, .joypad_loop
 	bit B_BUTTON_F, a
-	jr nz, .asm_50333
+	jr nz, StatsScreen_Exit
 	bit D_LEFT_F, a
-	jr nz, .asm_5031e
+	jr nz, .d_left
 	inc c
 	ld a, 3
 	cp c
-	jr nc, .asm_50323
+	jr nc, StatsScreen_JumpToLoadPageFunction
 	ld c, 1
-	jr .asm_50323
+	jr StatsScreen_JumpToLoadPageFunction
 
-.asm_5031e
+.d_left
 	dec c
-	jr nz, .asm_50323
+	jr nz, StatsScreen_JumpToLoadPageFunction
 	ld c, 3
-.asm_50323
-	ld hl, .data_5033a
+StatsScreen_JumpToLoadPageFunction:
+	ld hl, StatsScreen_LoadPageJumptable
 	dec c
 	ld b, 0
 	add hl, bc
@@ -417,18 +417,18 @@ StatsScreenMain::
 	ld l, a
 	inc c
 	ld b, 1
-	jr .asm_502fc
+	jr StatsScreen_LoadPage
 
-.asm_50333
+StatsScreen_Exit:
 	call ClearBGPalettes
 	pop af
 	ldh [hMapAnims], a
 	ret
 
-.data_5033a
-	dw Function50340, Function504e5, Function50562
+StatsScreen_LoadPageJumptable
+	dw StatsScreen_InitUpperHalf, LoadGreenPage, LoadBluePage
 
-Function50340::
+StatsScreen_InitUpperHalf::
 	call WaitBGMap
 	xor a
 	ldh [hBGMapMode], a
@@ -437,7 +437,7 @@ Function50340::
 	ld [wCurSpecies], a
 	ld a, b
 	and a
-	jr nz, .asm_503b3
+	jr nz, LoadPinkPage
 	push bc
 	hlcoord 1, 0
 	ld [hl], $74
@@ -460,9 +460,9 @@ Function50340::
 	push bc
 	call GetGender
 	ld a, '♂'
-	jr c, .asm_50384
+	jr c, .got_gender
 	ld a, '♀'
-.asm_50384
+.got_gender
 	pop hl
 	ld [hl], a
 	hlcoord 1, 12
@@ -472,7 +472,7 @@ Function50340::
 	ld [wMoveGrammar], a
 	call GetPokemonName
 	call PlaceString
-	hlcoord 7, 0
+	hlcoord 7, 0		;	made into a subroutine in final game (StatsScreen_PlaceVerticalDivider)
 	ld bc, SCREEN_WIDTH
 	ld d, SCREEN_HEIGHT
 
@@ -484,7 +484,7 @@ Function50340::
 	jr nz, .place_vertical_divider
 
 	inc a
-	hlcoord 2, 16
+	hlcoord 2, 16		;	made into a subroutine in final game (StatsScreen_PlacePageSwitchArrows)
 	ld [hli], a
 	inc a
 	ld [hli], a
@@ -493,10 +493,10 @@ Function50340::
 	inc a
 	ld [hl], a
 	pop bc
-.asm_503b3
+LoadPinkPage:
 	push bc
 	ld b, 1
-	call Function505d9
+	call StatsScreen_LoadPageIndicators
 	hlcoord 8, 0
 	ld bc, TextCommands
 	call ClearBox
@@ -520,12 +520,12 @@ Function50340::
 	hlcoord 15, 4
 	ld a, [wMonType]
 	cp 2
-	jr z, .asm_503f5
+	jr z, .StatusOK
 	push hl
 	ld de, wTempMonStatus
 	call PlaceStatusString
 	pop hl
-.asm_503f5
+.StatusOK
 	ld de, StatusText_OK
 	call z, PlaceString
 	hlcoord 14, 6
@@ -543,11 +543,11 @@ Function50340::
 	ld a, [wTempMonLevel]
 	push af
 	cp 100
-	jr z, .asm_50420
+	jr z, .got_level
 
 	inc a
 	ld [wTempMonLevel], a
-.asm_50420
+.got_level
 	hlcoord 16, 14
 	call PrintLevel
 
@@ -565,11 +565,11 @@ Function50340::
 	call PrintNumber
 
 	hlcoord 9, 13
-	ld de, StatusText_Ato
+	ld de, StatusText_LevelUp
 	call PlaceString
 
 	hlcoord 17, 13
-	ld de, StatusText_De
+	ld de, StatusText_To
 	call PlaceString
 
 	ld a, [wTempMonLevel]
@@ -591,14 +591,14 @@ Function50340::
 	and a
 	ret nz
 
-	call SetPalettes
+	call SetPalettes	;	made into a subroutine in final game (StatsScreen_PlaceFrontpic)
 	ld hl, wTempMonDVs
 	call GetUnownLetter
 
 	hlcoord 0, 1
 	call PrepMonFrontpic
 	ld a, [wCurPartySpecies]
-	call PlayCry
+	call PlayCry		;	this could've been a jp...
 	ret
 
 .CalcExpToNextLevel::
@@ -644,21 +644,21 @@ StatusText_OK:
 StatusText_ExpPoints:
 	db "　けいけんち　@"
 
-StatusText_Ato:
+StatusText_LevelUp:
 ; This string and the one below are used to present the
 ; remaining amount of EXP to level up in a grammatical manner.
 ; Equivalent to the English version's "LEVEL UP - <amount> to :L<level>".
 	db "あと@"
 
-StatusText_De:
+StatusText_To:
 	db "で@"
 
-Function504e5::
+LoadGreenPage::
 	call WaitBGMap
 	xor a
 	ldh [hBGMapMode], a
 	ld b, 2
-	call Function505d9
+	call StatsScreen_LoadPageIndicators
 
 	hlcoord 8, 0
 	ld bc, TextCommands
@@ -671,10 +671,10 @@ Function504e5::
 	ld a, [wTempMonItem]
 	and a
 	ld de, .NoItem
-	jr z, .asm_50511
+	jr z, .got_item_name
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
-.asm_50511
+.got_item_name
 	hlcoord 11, 2
 	call PlaceString
 
@@ -716,12 +716,12 @@ Function504e5::
 .Moves
 	db "　もちわざ　@"
 
-Function50562::
+LoadBluePage::
 	call WaitBGMap
 	xor a
 	ldh [hBGMapMode], a
 	ld b, 3
-	call Function505d9
+	call StatsScreen_LoadPageIndicators
 
 	hlcoord 8, 0
 	ld bc, TextCommands
@@ -774,7 +774,7 @@ Function50562::
 	dw wBoxMonOTs
 	dw wBufferMonOT
 
-Function505d9::
+StatsScreen_LoadPageIndicators::
 	hlcoord 1, 14
 	ld a, $36
 	call .load_square
