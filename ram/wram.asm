@@ -809,8 +809,8 @@ UNION
 wToolgearBuffer::
 	ds $40
 NEXTU
-wStringBuffer1:: ds STRING_BUFFER_LENGTH+6
-wStringBuffer2:: ds STRING_BUFFER_LENGTH+6
+wStringBuffer1:: ds STRING_BUFFER_LENGTH+8
+wStringBuffer2:: ds STRING_BUFFER_LENGTH+8
 ENDU
 
 SECTION "CBF2", WRAM0[$CBF2]
