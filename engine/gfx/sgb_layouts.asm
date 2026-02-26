@@ -396,14 +396,28 @@ Function9543:
 	ld a, [wMapGroup]
 	ld e, a
 	ld d, $00
-	ld hl, Data954f
+	ld hl, MapGroupPalettes
 	add hl, de
 	ld a, [hl]
 	ret
 
-Data954f:
-	db $01, $07, $0c, $03, $08, $06, $0b, $04
-	db $05, $0a, $02, $03, $02, $02, $09, $01
+MapGroupPalettes:
+	db PAL_TOWN_NORTH ; ???
+	db PAL_TOWN_SILENTHILL ; Silent Hill
+	db PAL_TOWN_OLDCITY ; Old City
+	db PAL_TOWN_WEST ; West
+	db PAL_TOWN_HAITEKU ; Haiteku
+	db PAL_TOWN_FONTO ; Fonto
+	db PAL_TOWN_BAADON ; Baadon
+	db PAL_TOWN_NEWTYPE ; Newtype
+	db PAL_TOWN_SUGAR ; Sugar
+	db PAL_TOWN_BULL ; Bull
+	db PAL_TOWN_STAND ; Stand
+	db PAL_TOWN_WEST ; Kanto
+	db PAL_TOWN_STAND ; Prince
+	db PAL_TOWN_STAND ; Mt.Fuji
+	db PAL_TOWN_SOUTH ; South
+	db PAL_TOWN_NORTH ; North
 
 _LoadSGBLayout_ReturnFromJumpTable:
 	push de
