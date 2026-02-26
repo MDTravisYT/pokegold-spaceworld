@@ -1,9 +1,9 @@
 StatNames:
 ; entries correspond to stat ids
-	db "こうげきりょく@"  ; ATTACK
-	db "ぼうぎょりょく@"  ; DEFENSE
-	db "すばやさ@"       ; SPEED
-	db "とくしゅこうげき@" ; SP.ATK
-	db "とくしゅぼうぎょ@" ; SP.DEF
-	db "めいちゅうりつ@"  ; ACCURACY
-	db "かいひりつ@"     ; EVASION
+	db "ATTACK@"  ; ATTACK
+	db "DEFENSE@"  ; DEFENSE
+	db "SPEED@"       ; SPEED
+	db "SP.ATK@" ; SP.ATK
+	db "SP.DEF@" ; SP.DEF
+	db "ACCURACY@"  ; ACCURACY
+	db "EVASION@"     ; EVASION
