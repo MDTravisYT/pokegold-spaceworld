@@ -311,7 +311,7 @@ Pokedex_RunJumptable:
 	dw Pokedex_Exit
 
 .Init:
-	depixel 4, 6, 4, 0
+	depixel 4, 5, 4, 0
 	ld a, SPRITE_ANIM_OBJ_POKEDEX_CURSOR
 	call InitSpriteAnimStruct
 

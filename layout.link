@@ -391,9 +391,9 @@ ROMX $23
 	"engine/dumps/bank23.asm@EnterMapAnim_Old"
 	org $4cfd
 	"engine/dumps/bank23.asm@ClearSpriteAnims"
-	org $60cc
+;	org $60cc
 	"gfx.asm@Pokemon Party Sprites"
-	org $70cc
+;	org $70cc
 	"engine/gfx/mon_icons.asm"
 
 ROMX $24

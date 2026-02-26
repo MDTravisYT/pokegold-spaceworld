@@ -376,17 +376,27 @@ db 27
 	dbsprite -1, -1,  7,  7, $00, 0
 
 .OAMData_PokedexCursor:
-	db 10
+	db 20
 	dbsprite  0, -1,  0,  0, $00, 0
 	dbsprite  1, -1,  0,  0, $01, 0
 	dbsprite  2, -1,  0,  0, $01, 0
 	dbsprite  3, -1,  0,  0, $01, 0
-	dbsprite  4, -1,  0,  0, $00, 0 | X_FLIP
+	dbsprite  4, -1,  0,  0, $01, 0
+	dbsprite  5, -1,  0,  0, $01, 0
+	dbsprite  6, -1,  0,  0, $01, 0
+	dbsprite  7, -1,  0,  0, $01, 0
+	dbsprite  8, -1,  0,  0, $01, 0
+	dbsprite  9, -1,  0,  0, $00, 0 | X_FLIP
 	dbsprite  0,  0,  0,  0, $00, 0 | Y_FLIP
 	dbsprite  1,  0,  0,  0, $01, 0 | Y_FLIP
 	dbsprite  2,  0,  0,  0, $01, 0 | Y_FLIP
 	dbsprite  3,  0,  0,  0, $01, 0 | Y_FLIP
-	dbsprite  4,  0,  0,  0, $00, 0 | X_FLIP | Y_FLIP
+	dbsprite  4,  0,  0,  0, $01, 0 | Y_FLIP
+	dbsprite  5,  0,  0,  0, $01, 0 | Y_FLIP
+	dbsprite  6,  0,  0,  0, $01, 0 | Y_FLIP
+	dbsprite  7,  0,  0,  0, $01, 0 | Y_FLIP
+	dbsprite  8,  0,  0,  0, $01, 0 | Y_FLIP
+	dbsprite  9,  0,  0,  0, $00, 0 | X_FLIP | Y_FLIP
 
 .OAMData_PokedexSlowpoke1:
 	db 15
