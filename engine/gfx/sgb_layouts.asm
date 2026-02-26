@@ -408,8 +408,22 @@ Function9543:
 	ret
 
 Data954f:
-	db $01, $07, $0c, $03, $08, $06, $0b, $04
-	db $05, $0a, $02, $03, $02, $02, $09, $01
+	db PAL_TOWN_NORTH	;	???
+	db PAL_TOWN_SILENT	;	silent
+	db PAL_TOWN_OLD		;	old
+	db PAL_TOWN_WEST	;	west
+	db PAL_TOWN_HITECH	;	hitech
+	db PAL_TOWN_FONT	;	font
+	db PAL_TOWN_BIRDON	;	birdon
+	db PAL_TOWN_NEWTYPE	;	newtype
+	db PAL_TOWN_SUGAR	;	sugar
+	db PAL_TOWN_BULL	;	bull
+	db PAL_TOWN_STAND	;	stand
+	db PAL_TOWN_WEST	;	kanto
+	db PAL_TOWN_STAND	;	prince
+	db PAL_TOWN_STAND	;	fuji
+	db PAL_TOWN_SOUTH	;	south
+	db PAL_TOWN_NORTH	;	north
 
 _LoadSGBLayout_ReturnFromJumpTable:
 	push de
