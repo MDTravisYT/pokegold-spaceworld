@@ -4,10 +4,9 @@ This is a work-in-progress English translation of the Pokémon Gold and Pokémon
 
 Based on the following translations:
  - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Text
- - https://www.youtube.com/watch?v=F4yIjpSaHgo
  - Additional translations provided by [@mauvesea](https://github.com/mauvesea/)
  
-For safety reasons, all `text_far` calls and code modifications are padded back to the original length they were in the original ROM. This is due to the disassembly not yet being completed, which can cause shifting around things to get dangerous.
+For safety reasons, most `text_far` calls and code modifications are padded back to the original length they were in the original ROM. This is due to the disassembly not yet being completed, which can cause shifting around things to get dangerous.
 
 Big thanks to [@Narishma-gb](https://github.com/Narishma-gb/) for their disassemblies of the Japanese versions of the retail games. I wouldn't have been able to know where to look for various things without them.
 

@@ -147,6 +147,7 @@ MainMenu::
 	call LoadFont
 	call ClearWindowData
 	call CheckIfSaveFileExists
+	
 	ld hl, wSaveFileExists
 	bit 0, [hl]
 	jr nz, .setMenuContinue
@@ -162,7 +163,12 @@ MainMenu::
 	ld a, M_SET_TIME
 	jr .triggerMenu
 .setMenuPlay
+if DEF(STORY)
+	ld a, M_NEW_GAME
+else
 	ld a, M_PLAY_GAME
+endc
+
 .triggerMenu
 	ld [wWhichIndexSet], a
 	ld hl, MainMenuHeader
@@ -220,9 +226,8 @@ ContinueMenu:
 	db -1
 
 PlayPokemonMenu:
-	db 2
+	db 1
 	db PLAY_POKEMON
-	db NEW_GAME
 	db OPTION
 	db -1
 
