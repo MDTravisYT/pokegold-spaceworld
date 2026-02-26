@@ -2230,7 +2230,7 @@ InitObjectSprites:
 	ld hl, OBJECT_SPRITE_Y_OFFSET
 	add hl, bc
 	add [hl]
-	add 16
+	add 12
 	ldh [hCurSpriteYPixel], a
 	ld hl, OBJECT_FACING
 	add hl, bc

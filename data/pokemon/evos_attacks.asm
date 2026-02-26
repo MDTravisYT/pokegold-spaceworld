@@ -3286,14 +3286,5 @@ TailEvosAttacks:
 
 LeafyEvosAttacks:
 	db 0 ; no more evolutions
-	db  1, MOVE_TACKLE
-	db  7, MOVE_SAND_ATTACK
-	db 14, MOVE_QUICK_ATTACK
-	db 21, MOVE_TAIL_WHIP
-	db 28, MOVE_ABSORB
-	db 35, MOVE_RAZOR_LEAF
-	db 42, MOVE_GROWTH
-	db 49, MOVE_MORNING_SUN
-	db 56, MOVE_WRAP
-	db 63, MOVE_SOLARBEAM
+	db 1, MOVE_RAZOR_LEAF
 	db 0 ; no more level-up moves

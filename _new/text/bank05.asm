@@ -65,6 +65,6 @@ _SilentHillHouseTVMorningText:	;	translated by Discord user @mauvesea
 	done
 	
 _GameOverText:
-	text "Do your best next"
-	line "time around!!"
+	text "Haven't you ever"
+	line "heard of dodging?"
 	done

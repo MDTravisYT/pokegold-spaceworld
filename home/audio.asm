@@ -231,18 +231,13 @@ PlayMapMusic::
 	ret
 
 SpecialMapMusic::
-	ld a, [wPlayerState]
-	and a
-	jr z, .normal
-	cp PLAYER_SKATE
-	jr z, .skateboard
-	ld de, MUSIC_BICYCLE
-	scf
-	ret
-
-.skateboard
-	ld de, MUSIC_NONE
-	scf
+;	ld a, [wPlayerState]
+;	and a
+;	jr z, .normal
+;	cp PLAYER_SKATE
+;	jr z, .skateboard
+;	ld de, MUSIC_BICYCLE
+;	scf
 	ret
 
 .normal
@@ -252,6 +247,9 @@ SpecialMapMusic::
 GetMapMusic::
 	call SpecialMapMusic
 	ret c
+	ld a, [wMapGroup]
+	cp 16
+	jp z, .skateboard
 	ld a, [wMapPermissions]
 	cp TOWN
 	jr z, .not_route
@@ -262,4 +260,8 @@ GetMapMusic::
 
 .not_route
 	ld de, MUSIC_VIRIDIAN_CITY
+	ret
+
+.skateboard
+	ld de, MUSIC_NONE
 	ret

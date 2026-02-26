@@ -33,7 +33,7 @@ SpawnPoints:
 
 ; Hidden warps (do not appear in debug menu normally)
 
-	db GROUP_POWER_PLANT_1, MAP_POWER_PLANT_1, $06, $06
+	db GROUP_POWER_PLANT_1, MAP_POWER_PLANT_1, $04, $04
 	db GROUP_POWER_PLANT_2, MAP_POWER_PLANT_2, $06, $06
 	db GROUP_POWER_PLANT_3, MAP_POWER_PLANT_3, $04, $10
 	db GROUP_POWER_PLANT_4, MAP_POWER_PLANT_4, $06, $06

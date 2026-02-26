@@ -21,6 +21,9 @@ DemoStart::
 	jp IntroCleanup
 
 GameStart::
+	call SetPlayerNamesDebug
+	call GiveRandomJohto
+	jp IntroCleanup
 	ld de, OakPic
 	lb bc, BANK(OakPic), $00
 	call IntroDisplayPicCenteredOrUpperRight

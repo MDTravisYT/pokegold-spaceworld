@@ -402,12 +402,12 @@ Function9543:
 	ld a, [wMapGroup]
 	ld e, a
 	ld d, $00
-	ld hl, Data954f
+	ld hl, MapGroupPalettes
 	add hl, de
 	ld a, [hl]
 	ret
 
-Data954f:
+MapGroupPalettes:
 	db PAL_TOWN_NORTH	;	???
 	db PAL_TOWN_SILENT	;	silent
 	db PAL_TOWN_OLD		;	old
@@ -424,6 +424,7 @@ Data954f:
 	db PAL_TOWN_STAND	;	fuji
 	db PAL_TOWN_SOUTH	;	south
 	db PAL_TOWN_NORTH	;	north
+	db PAL_TOWN_OLD	;	the extra map group
 
 _LoadSGBLayout_ReturnFromJumpTable:
 	push de

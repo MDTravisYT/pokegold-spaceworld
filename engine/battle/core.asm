@@ -6730,11 +6730,21 @@ BattleStartMessage:
 	ld hl, HookedPokemonAttackedText
 
 .PrintBattleStartText:
+
+	cp 251
+	jp z, .skipwildmontxt
+	ld hl, .OtherAppeartxt
+
+.skipwildmontxt:
 	push hl
 	callfar BattleStart_TrainerHuds
 	pop hl
 	call PrintText
 	ret
+
+.OtherAppeartxt:
+	text "You know him."
+	prompt
 
 WildPokemonAppearedText:	;	0f:7596
 	text_far _WildPokemonAppearedText

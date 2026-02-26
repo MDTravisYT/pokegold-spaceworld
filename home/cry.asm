@@ -16,6 +16,8 @@ PlayCry::
 	ld [wCryTracks], a
 	pop af
 _PlayCry:
+	cp 251
+	ret z
 	push hl
 	push de
 	push bc

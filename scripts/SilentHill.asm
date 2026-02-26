@@ -90,19 +90,31 @@ SilentHillScript2:
 	call SetObjectFacing
 	ld hl, SilentHillTextRival1
 	call OpenTextbox
-	ld hl, SilentHillTextRival2
-	call OpenTextbox
+;	ld hl, SilentHillTextRival2
+;	call OpenTextbox
 	ld hl, wJoypadFlags
 	set 4, [hl]
-	ld a, 2
-	ld hl, SilentHillMovement2
-	call LoadMovementDataPointer
+;	ld a, 2
+;	ld hl, SilentHillMovement2
+;	call LoadMovementDataPointer
 	ld hl, wOverworldFlags
 	set 7, [hl]
 	ld a, MAPSTATUS_EVENT_RUNNING
 	call SetMapStatus
 	ld a, 2
 	ld [wMapScriptNumber], a
+	call ClearSprites
+	call ClearBGPalettes
+	call ClearTileMap
+	ld de, MUSIC_NONE
+	call PlayMusic
+	ld de, SFX_INTRO_CRASH_RG
+	call PlaySFX
+	ld a, 18
+	ld [wDefaultSpawnPoint], a
+	ld a, MAPSETUP_TELEPORT
+	ldh [hMapEntryMethod], a
+	call UnfreezeAllObjects
 	ret
 
 SilentHillMovement2:
@@ -398,7 +410,7 @@ SilentHill_TextPointers::	;	36:78d5
 SilentHillTextRival1:	;	36:78dd
 	text_far _SilentHillTextRival1
 	text_end
-rept $8C
+rept $8E
 	nop
 endr
 

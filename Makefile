@@ -93,7 +93,7 @@ include slack/slack.mk
 
 ### Catch-all build target rules
 
-RGBASMFLAGS += -E -i $(BUILD)/ -DGOLD
+RGBASMFLAGS += -E -i $(BUILD)/ -DGOLD -DSTORY
 
 $(BUILD)/%.o: $(BUILD)/%.asm | $$(dir $$@) rgbdscheck.o
 	$(RGBASM) $(RGBASMFLAGS) $(OUTPUT_OPTION) $<

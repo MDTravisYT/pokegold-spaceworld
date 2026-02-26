@@ -25,25 +25,25 @@ _SilentHillTextString5:
 	done
 	
 _SilentHillTextRival1:
-	text "<RIVAL>: Hey,"
-	line "there's something"
-	cont "I've gotta brag"
-	cont "to you about!"
-	
-	para "I got an e-mail"
-	line "from PROF.OAK!"
-	
-	para "Yeah, the world"
-	line "famous one!"
-	
-	para "Wha-? Y-You too?!"
-	line "Man, that's no fun!"
-	
-	para "...Hmph! Alright"
-	line "huh, then..."
-	
-	para "What do you call"
-	line "your mommie?!"
+	text "HEY CHECK THIS OUT"
+;	line "there's something"
+;	cont "I've gotta brag"
+;	cont "to you about!"
+;	
+;	para "I got an e-mail"
+;	line "from PROF.OAK!"
+;	
+;	para "Yeah, the world"
+;	line "famous one!"
+;	
+;	para "Wha-? Y-You too?!"
+;	line "Man, that's no fun!"
+;	
+;	para "...Hmph! Alright"
+;	line "huh, then..."
+;	
+;	para "What do you call"
+;	line "your mommie?!"
 	done
 	
 _SilentHillTextRival2:

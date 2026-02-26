@@ -280,8 +280,8 @@ ENDM
 	endgroup
 
 	newgroup  MISC                                     ; 16
-	map_const POWER_PLANT_1,                    10,  9 ;  1
-	map_const POWER_PLANT_2,                    10,  9 ;  2
+	map_const POWER_PLANT_1,                    12,  4 ;  1
+	map_const POWER_PLANT_2,                     5,  5 ;  2
 	map_const POWER_PLANT_3,                    15, 18 ;  3
 	map_const POWER_PLANT_4,                    15, 18 ;  4
 	map_const RUINS_OF_ALPH_ENTRANCE,           10,  9 ;  5

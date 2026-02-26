@@ -8,6 +8,8 @@ PowerPlant1_MapEvents::
 	dw $0 ; unknown
 
 	def_warp_events
+	warp_event  21,  3, POWER_PLANT_2, 1, 0
+	warp_event  22,  3, POWER_PLANT_2, 1, 0
 
 	def_bg_events
 

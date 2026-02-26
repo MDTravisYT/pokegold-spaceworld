@@ -261,4 +261,4 @@ PokemonNames_ENG::
 	monname "TOGEPI"			
 	monname "BURUU"			
 	monname "TEIRU"			
-	monname "LIIFI"			
+	monname ""			

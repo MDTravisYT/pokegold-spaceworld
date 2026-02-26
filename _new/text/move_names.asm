@@ -77,7 +77,7 @@ MoveNames_ENG::
 	db	"MEGA_DRAIN@"
 	db	"LEECH_SEED@"
 	db	"GROWTH@"
-	db	"RAZOR_LEAF@"
+	db	"FREND PELLET@"
 	db	"SOLARBEAM@"
 	db	"POISONPOWDER@"
 	db	"STUN_SPORE@"
