@@ -18,8 +18,10 @@ _HookedPokemonAttackedText::
 
 _WantsToBattleText::
 	text_from_ram wOTClassName
-	text " wants"
-	line "to fight!"
+	text " @"
+	text_from_ram wStringBuffer1
+	text_start
+	line "wants to fight!"
 	prompt
 
 _WildPokemonFledText::
