@@ -73,6 +73,7 @@ CreditsText2:
 	db   "- mauvesea          "
 ;	db   "- youtu.be/         "
 ;	db   "    F4yIjpSaHgo"
+	db   "- GlitterBerri      "
 	db   "@"
 CreditsText3:
 	db   "DISASSEMBLY         "
