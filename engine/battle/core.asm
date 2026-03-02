@@ -3945,11 +3945,11 @@ endr
 	jp MoveSelectionScreen
 
 .DrawDebugMoveSelection:
-	hlcoord 10, 16
-	lb bc, 2, 10
+	hlcoord 0, 11
+	lb bc, 1, 15
 	call ClearBox
 
-	hlcoord 10, 17
+	hlcoord 0, 11
 	ld de, wPlayerDebugSelectedMove
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNumber
@@ -3962,7 +3962,7 @@ endr
 
 	ld [wNamedObjectIndexBuffer], a
 	call GetMoveName
-	hlcoord 13, 17
+	hlcoord 3, 11
 	jp PlaceString
 
 .CheckPlayerHasUsableMoves:
