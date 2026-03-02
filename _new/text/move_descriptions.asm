@@ -256,998 +256,1005 @@ MoveDescriptions_ENG::
 	dw BounceDescription_ENG
 
 PoundDescription_ENG:
-	db   "てや　しっぽなどを　つかい"
-	next "てきを　はたいて　こうげき@"
+	db   "Pounds with fore-"
+	next "legs or tail.@"
 
 KarateChopDescription_ENG:
-	db   "チョップで　てきを　こうげき"
-	next "クリティカルヒットが　でやすい@"
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 DoubleslapDescription_ENG:
-	db   "てきを　おうふくビンタで"
-	next "２ー５かい　れんぞくで　こうげき@"
+	db   "Repeatedly slaps"
+	next "2-5 times.@"
 
 CometPunchDescription_ENG:
-	db   "てきを　れんぞくで　なぐりつけ"
-	next "２ー５かい　れんぞくで　こうげき@"
+	db   "Repeatedly punches"
+	next "2-5 times.@"
 
 MegaPunchDescription_ENG:
-	db   "ものすごい　ちからをこめた　パンチで"
-	next "てきを　なぐって　こうげき@"
+	db   "A powerful punch"
+	next "thrown very hard.@"
 
 PayDayDescription_ENG:
-	db   "こばんをなげて　てきを　こうげき"
-	next "せんとうごに　おかねが　てにはいる@"
+	db   "Throws coins. Gets"
+	next "them back later.@"
 
 FirePunchDescription_ENG:
-	db   "ほのおをこめた　パンチで　こうげき"
-	next "てきを　やけどさせることがある@"
+	db   "A fiery punch. May"
+	next "cause a burn.@"
 
 IcePunchDescription_ENG:
-	db   "れいきをこめた　パンチで　こうげき"
-	next "てきを　こおらせることがある@"
+	db   "An icy punch. May"
+	next "cause freezing.@"
 
 ThunderpunchDescription_ENG:
-	db   "でんげきをこめた　パンチで　こうげき"
-	next "てきを　マヒさせることがある@"
+	db   "An electric punch."
+	next "It may paralyze.@"
 
 ScratchDescription_ENG:
-	db   "するどいツメを　つかい"
-	next "てきを　ひっかいて　こうげき@"
+	db   "Scratches with"
+	next "sharp claws.@"
 
 VicegripDescription_ENG:
-	db   "おおきなハサミを　つかい"
-	next "てきを　はさんで　こうげき@"
+	db   "Grips with power-"
+	next "ful pincers.@"
 
 GuillotineDescription_ENG:
-	db   "おおきなハサミを　つかって"
-	next "てきを　はさみ　せんとうふのうにする@"
+	db   "A one-hit KO,"
+	next "pincer attack.@"
 
 RazorWindDescription_ENG:
-	db   "１ターンめで　かぜのやいばを　つくり"
-	next "つぎのターンで　てきを　こうげき@"
+	db   "1st turn: Prepare"
+	next "2nd turn: Attack@"
 
 SwordsDanceDescription_ENG:
-	db   "たたかいの　おどりを　おどって"
-	next "こうげきを　グーンとあげる@"
+	db   "A dance that in-"
+	next "creases ATTACK.@"
 
 CutDescription_ENG:
-	db   "するどいカマや　ツメなどを　つかって"
-	next "てきを　きりつけて　こうげき@"
+	db   "Cuts using claws,"
+	next "scythes, etc.@"
 
 GustDescription_ENG:
-	db   "つばさで　つよいかぜを　おこし"
-	next "それを　てきにぶつけて　こうげき@"
+	db   "Whips up a strong"
+	next "gust of wind.@"
 
 WingAttackDescription_ENG:
-	db   "つばさを　おおきく　ひろげて"
-	next "そのまま　てきに　たいあたりする@"
+	db   "Strikes the target"
+	next "with wings.@"
 
 WhirlwindDescription_ENG:
-	db   "つよいかぜで　てきを　ふきとばす"
-	next "ふきとばすと　せんとうは　おわる@"
+	db   "Blows away the foe"
+	next "& ends battle.@"
 
 FlyDescription_ENG:
-	db   "１ターンめで　そらに　とびたって"
-	next "つぎのターンで　てきを　こうげき@"
+	db   "1st turn: Fly"
+	next "2nd turn: Attack@"
 
 BindDescription_ENG:
-	db   "２ー５ターンのあいだ　ながいからだや"
-	next "つるを　つかって　てきを　しめつける@"
+	db   "Binds the target"
+	next "for 2-5 turns.@"
 
 SlamDescription_ENG:
-	db   "ながいシッポや　ツルなどを"
-	next "てきに　たたきつけて　こうげき@"
+	db   "Slams the foe with"
+	next "a tail, vine, etc.@"
 
 VineWhipDescription_ENG:
-	db   "ムチのように　ほそながい　つるを　"
-	next "てきに　たたきつけて　こうげき@"
+	db   "Whips the foe with"
+	next "slender vines.@"
 
 StompDescription_ENG:
-	db   "おおきなあしで　ふみつけて　こうげき"
-	next "てきを　ひるませることがある@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 DoubleKickDescription_ENG:
-	db   "２ほんの　あしをつかって　てきを"
-	next "２かい　れんぞくで　こうげき@"
+	db   "A double kicking"
+	next "attack.@"
 
 MegaKickDescription_ENG:
-	db   "ものすごい　ちからをこめた　キックで"
-	next "てきを　けっとばして　こうげき@"
+	db   "A powerful kicking"
+	next "attack.@"
 
 JumpKickDescription_ENG:
-	db   "ジャンプした　いきおいで　キックを"
-	next "くりだす　はずすと　ダメージをうける@"
+	db   "May miss, damaging"
+	next "the user.@"
 
 RollingKickDescription_ENG:
-	db   "からだを　すばやく　１かいてんさせ"
-	next "そのいきおいで　キックを　くりだす@"
+	db   "A fast, spinning"
+	next "kick.@"
 
 SandAttackDescription_ENG:
-	db   "てきの　かおなどに　すなをかけて　"
-	next "めいちゅうりつを　さげさせる@"
+	db   "Reduces accuracy"
+	next "by throwing sand.@"
 
 HeadbuttDescription_ENG:
-	db   "あたまから　つっこんで　こうげき"
-	next "てきを　ひるませることがある@"
+	db   "An attack that may"
+	next "make foe flinch.@"
 
 HornAttackDescription_ENG:
-	db   "とがった　ツノを　つかい"
-	next "てきを　つついて　こうげき@"
+	db   "An attack using a"
+	next "horn to jab.@"
 
 FuryAttackDescription_ENG:
-	db   "とがった　ツノを　つかい"
-	next "２ー５かい　れんぞくで　こうげき@"
+	db   "Jabs the target"
+	next "2-5 times.@"
 
 HornDrillDescription_ENG:
-	db   "ツノを　ドリルのように　かいてんさせ"
-	next "てきを　つつき　せんとうふのうにする@"
+	db   "A one-hit KO,"
+	next "drill attack.@"
 
 TackleDescription_ENG:
-	db   "AAAAAAAAAAA"
-	next "てきに　たいあたりして　こうげき@"
+	db   "A full-body charge"
+	next "attack.@"
 
 BodySlamDescription_ENG:
-	db   "からだごと　たおれこんで　こうげき"
-	next "てきを　マヒさせることがある@"
+	db   "An attack that may"
+	next "cause paralysis.@"
 
 WrapDescription_ENG:
-	db   "２ー５ターンのあいだ　ながいからだや"
-	next "ツルをつかって　てきを　しめつける@"
+	db   "Squeezes the foe"
+	next "for 2-5 turns.@"
 
 TakeDownDescription_ENG:
-	db   "いきおいをつけて　てきに　たいあたり"
-	next "じぶんもすこし　ダメージをうける@"
+	db   "A tackle that also"
+	next "hurts the user.@"
 
 ThrashDescription_ENG:
-	db   "２ー３ターンのあいだ　あばれつづける"
-	next "あばれたあとは　こんらんしてしまう@"
+	db   "Works 2-3 turns"
+	next "and confuses user.@"
 
 DoubleEdgeDescription_ENG:
-	db   "いのちをかけて　てきに　たいあたり"
-	next "じぶんもすこし　ダメージをうける@"
+	db   "A tackle that also"
+	next "hurts the user.@"
 
 TailWhipDescription_ENG:
-	db   "てきに　しっぽをふって　ゆだんさせて"
-	next "ぼうぎょを　さげさせる@"
+	db   "Lowers the foe's"
+	next "DEFENSE.@"
 
 PoisonStingDescription_ENG:
-	db   "どくのある　ハリや　ツノで　こうげき"
-	next "てきに　どくをあたえることがある@"
+	db   "An attack that may"
+	next "poison the target.@"
 
 TwineedleDescription_ENG:
-	db   "りょうての　ハリを　つかって"
-	next "てきを　２かい　れんぞくで　こうげき@"
+	db   "Jabs the foe twice"
+	next "using stingers.@"
 
 PinMissileDescription_ENG:
-	db   "するどいハリを　てきに　はっしゃして"
-	next "２ー５かい　れんぞくで　こうげき@"
+	db   "Fires pins that"
+	next "strike 2-5 times.@"
 
 LeerDescription_ENG:
-	db   "てきを　にらんで　おびえさせて　"
-	next "ぼうぎょを　さげさせる@"
+	db   "Reduces the foe's"
+	next "DEFENSE.@"
 
 BiteDescription_ENG:
-	db   "するどい　はで　かみついて　こうげき"
-	next "てきを　ひるませることがある@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 GrowlDescription_ENG:
-	db   "かわいくないて　てきを　ゆだんさせて"
-	next "こうげきを　さげさせる@"
+	db   "Reduces the foe's"
+	next "ATTACK.@"
 
 RoarDescription_ENG:
-	db   "ほえて　てきを　にげださせる"
-	next "てきが　にげると　せんとうは　おわる@"
+	db   "Scares wild foes"
+	next "to end battle.@"
 
 SingDescription_ENG:
-	db   "ここちよい　うたごえで"
-	next "てきを　ふかいねむりへと　さそう@"
+	db   "May cause the foe"
+	next "to fall asleep.@"
 
 SupersonicDescription_ENG:
-	db   "からだから　かいおんぱを　はっして"
-	next "てきを　こんらんさせることがある　@"
+	db   "Sound waves that"
+	next "cause confusion.@"
 
 SonicboomDescription_ENG:
-	db   "しょうげきはで　てきを　こうげき"
-	next "２０の　きまったダメージを　あたえる@"
+	db   "Always inflicts"
+	next "20HP damage.@"
 
 DisableDescription_ENG:
-	db   "ちょうのうりょくで　てきの　うごきを"
-	next "とめて　わざを　１つ　つかえなくする@"
+	db   "Disables the foe's"
+	next "most recent move.@"
 
 AcidDescription_ENG:
-	db   "つよいさんで　てきの　ひふを　とかす"
-	next "ぼうぎょを　さげることがある@"
+	db   "An attack that may"
+	next "lower DEFENSE.@"
 
 EmberDescription_ENG:
-	db   "ちいさな　ほのおで　こうげき"
-	next "てきを　やけどさせることがある@"
+	db   "An attack that may"
+	next "inflict a burn.@"
 
 FlamethrowerDescription_ENG:
-	db   "すごい　ほのおで　こうげき"
-	next "てきを　やけどさせることがある@"
+	db   "An attack that may"
+	next "inflict a burn.@"
 
 MistDescription_ENG:
-	db   "しろいきりで　からだを　おおい"
-	next "のうりょくを　さげられないようにする@"
+	db   "Prevents stat"
+	next "reduction.@"
 
 WaterGunDescription_ENG:
-	db   "みずを　はっしゃして"
-	next "てきを　こうげき@"
+	db   "Squirts water to"
+	next "attack.@"
 
 HydroPumpDescription_ENG:
-	db   "みずを　ものすごい　いきおいで"
-	next "はっしゃして　てきを　こうげき@"
+	db   "A powerful water-"
+	next "type attack.@"
 
 SurfDescription_ENG:
-	db   "みずに　なみを　おこし　それを"
-	next "ものすごい　ちからで　たたきつける@"
+	db   "A strong water-"
+	next "type attack.@"
 
 IceBeamDescription_ENG:
-	db   "れいきを　はっしゃして　こうげき"
-	next "てきを　こおらせることがある@"
+	db   "An attack that may"
+	next "freeze the foe.@"
 
 BlizzardDescription_ENG:
-	db   "ゆきを　つよいかぜにのせて　こうげき"
-	next "てきを　こおらせることがある@"
+	db   "An attack that may"
+	next "freeze the foe.@"
 
 PsybeamDescription_ENG:
-	db   "ふしぎな　ひかりを　はっしゃする"
-	next "てきを　こんらんさせることがある@"
+	db   "An attack that may"
+	next "confuse the foe.@"
 
 BubblebeamDescription_ENG:
-	db   "みずを　いきおいよく　はっしゃする"
-	next "てきの　すばやさを　さげることがある@"
+	db   "An attack that may"
+	next "lower SPEED.@"
 
 AuroraBeamDescription_ENG:
-	db   "にじいろの　ひかりを　はっしゃする"
-	next "こうげきを　さげることがある@"
+	db   "An attack that may"
+	next "lower ATTACK.@"
 
 HyperBeamDescription_ENG:
-	db   "ダメージは　おおきいが　つかうと"
-	next "つぎのターン　うごけなくなってしまう@"
+	db   "1st turn: Attack"
+	next "2nd turn: Rest@"
 
 PeckDescription_ENG:
-	db   "ながい　くちばしを　つかって　"
-	next "てきを　つついて　こうげき@"
+	db   "Pecks the foe with"
+	next "its long beak.@"
 
 DrillPeckDescription_ENG:
-	db   "くちばしを　ちゅうしんに　からだを"
-	next "かいてんさせて　てきに　とっしんする@"
+	db   "A strong, spin-"
+	next "ning-peck attack.@"
 
 SubmissionDescription_ENG:
-	db   "じぶんごと　じめんに　たたきつける"
-	next "じぶんにも　すこしダメージ@"
+	db   "An attack that al-"
+	next "so hurts the user.@"
 
 LowKickDescription_ENG:
-	db   "タイミングよく　あしを　ひっかける"
-	next "てきを　ひるませることがある@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 CounterDescription_ENG:
-	db   "てきからうけた　ぶつりこうげきの"
-	next "ダメージを　ばいにしてかえす@"
+	db   "Returns a physical"
+	next "blow double.@"
 
 SeismicTossDescription_ENG:
-	db   "いんりょくを　りようして　なげる"
-	next "レベルぶんの　ダメージを　あたえる@"
+	db   "The user's level"
+	next "equals damage HP.@"
 
 StrengthDescription_ENG:
-	db   "ぜんしんに　すごいちからを　ためて"
-	next "てきを　こうげき@"
+	db   "A powerful physi-"
+	next "cal attack.@"
 
 AbsorbDescription_ENG:
-	db   "てきに　あたえた　ダメージの"
-	next "はんぶん　たいりょくを　かいふくする@"
+	db   "Steals 1/2 of the"
+	next "damage inflicted.@"
 
 MegaDrainDescription_ENG:
-	db   "てきに　あたえた　ダメージの"
-	next "はんぶん　たいりょくを　かいふくする@"
+	db   "Steals 1/2 of the"
+	next "damage inflicted.@"
 
 LeechSeedDescription_ENG:
-	db   "てきの　からだに　タネをうえて"
-	next "ターンごとに　たいりょくを　すいとる@"
+	db   "Steals HP from the"
+	next "foe on every turn.@"
 
 GrowthDescription_ENG:
-	db   "いっきに　からだを　せいちょうさせて"
-	next "とくしゅこうげきを　あげる@"
+	db   "Raises the SPCL."
+	next "ATK rating.@"
 
 RazorLeafDescription_ENG:
-	db   "はっぱで　てきを　きりつける"
-	next "クリティカルヒットが　でやすい@"
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 SolarbeamDescription_ENG:
-	db   "１ターンめで　ひかりを　きゅうしゅう"
-	next "つぎのターンで　てきを　こうげき@"
+	db   "1st turn: Prepare"
+	next "2nd turn: Attack@"
 
 PoisonpowderDescription_ENG:
-	db   "どくそを　ふくんだ　こなを　ふりまき"
-	next "てきに　どくをあたえる@"
+	db   "A move that may"
+	next "poison the foe.@"
 
 StunSporeDescription_ENG:
-	db   "しびれる　こなを　ふりまき"
-	next "てきを　マヒさせてしまう@"
+	db   "Strews powder. May"
+	next "paralyze the foe.@"
 
 SleepPowderDescription_ENG:
-	db   "ねむくなる　こなを　ふりまき"
-	next "てきを　ねむらせてしまう@"
+	db   "May cause the foe"
+	next "to fall asleep.@"
 
 PetalDanceDescription_ENG:
-	db   "２ー３ターンのあいだ　あばれつづける"
-	next "あばれたあとは　こんらんしてしまう@"
+	db   "Works 2-3 turns"
+	next "and confuses user.@"
 
 StringShotDescription_ENG:
-	db   "いとを　てきの　からだに　まきつけ"
-	next "すばやさを　さげさせる@"
+	db   "A move that lowers"
+	next "the foe's SPEED.@"
 
 DragonRageDescription_ENG:
-	db   "しょうげきはで　てきを　こうげき"
-	next "４０の　きまったダメージを　あたえる@"
+	db   "Always inflicts"
+	next "40HP damage.@"
 
 FireSpinDescription_ENG:
-	db   "２ー５ターンのあいだ　てきを"
-	next "ほのおの　ちゅうしんに　とじこめる@"
+	db   "Traps foe in fire"
+	next "for 2-5 turns.@"
 
 ThundershockDescription_ENG:
-	db   "でんげきを　あびせて　こうげき"
-	next "てきを　マヒさせることがある@"
+	db   "An attack that may"
+	next "cause paralysis.@"
 
 ThunderboltDescription_ENG:
-	db   "つよいでんげきを　あびせて　こうげき"
-	next "てきを　マヒさせることがある@"
+	db   "An attack that may"
+	next "cause paralysis.@"
 
 ThunderWaveDescription_ENG:
-	db   "よわいでんげきを　てきに　ぶつけて"
-	next "マヒさせてしまう@"
+	db   "Weak jolt that"
+	next "causes paralysis.@"
 
 ThunderDescription_ENG:
-	db   "てきに　むかって　かみなりを　おとす"
-	next "マヒさせることがある@"
+	db   "An attack that may"
+	next "cause paralysis.@"
 
 RockThrowDescription_ENG:
-	db   "ちいさな　いわを　なげつけて"
-	next "てきを　こうげき@"
+	db   "Drops rocks on the"
+	next "enemy.@"
 
 EarthquakeDescription_ENG:
-	db   "じめんを　ゆらして　こうげき"
-	next "とんでる　てきいがいに　だいダメージ@"
+	db   "Tough but useless"
+	next "vs. flying foes.@"
 
 FissureDescription_ENG:
-	db   "じわれを　おこして　てきを　のみこむ"
-	next "のみこまれると　せんとうふのうになる@"
+	db   "A ground-type,"
+	next "one-hit KO attack.@"
 
 DigDescription_ENG:
-	db   "１ターンめで　じめんに　もぐり"
-	next "つぎのターンで　てきを　こうげき@"
+	db   "1st turn: Burrow"
+	next "2nd turn: Attack@"
 
 ToxicDescription_ENG:
-	db   "じょじょに　ダメージがふえる　どくを"
-	next "てきに　あたえる@"
+	db   "A poison move with"
+	next "increasing damage.@"
 
 ConfusionDescription_ENG:
-	db   "ちょうのうりょくで　こうげき"
-	next "てきを　こんらんさせることがある@"
+	db   "An attack that may"
+	next "cause confusion.@"
 
 PsychicMDescription_ENG:
-	db   "つよいねんりきで　てきを　こうげき"
-	next "とくしゅぼうぎょを　さげることがある@"
+	db   "An attack that may"
+	next "lower SPCL.DEF.@"
 
 HypnosisDescription_ENG:
-	db   "てきに　あんじを　かけて"
-	next "ふかい　ねむりへと　さそう@"
+	db   "May put the foe to"
+	next "sleep.@"
 
 MeditateDescription_ENG:
-	db   "ヨガのポーズで　ねむった　ちからを"
-	next "ひきだし　こうげきを　あげる@"
+	db   "Raises the user's"
+	next "ATTACK.@"
 
 AgilityDescription_ENG:
-	db   "ちからを　ぬいて　からだを　かるくし"
-	next "すばやさを　グーンとあげる@"
+	db   "Sharply increases"
+	next "the user's SPEED.@"
 
 QuickAttackDescription_ENG:
-	db   "ものすごい　はやさで　うごいて　"
-	next "かならず　せんせいこうげきする@"
+	db   "Moves very fast to"
+	next "strike first.@"
 
 RageDescription_ENG:
-	db   "こうげきされるたびに　いかりで"
-	next "こうげきが　あがっていく@"
+	db   "Raises ATTACK if"
+	next "the user is hit.@"
 
 TeleportDescription_ENG:
-	db   "ちょうのうりょくを　つかって"
-	next "せんとうから　だっしゅつする@"
+	db   "A move for fleeing"
+	next "from battle.@"
 
 NightShadeDescription_ENG:
-	db   "てきに　おそろしい　まぼろしを　みせ"
-	next "レベルぶんの　ダメージを　あたえる@"
+	db   "The user's level"
+	next "equals damage HP.@"
 
 MimicDescription_ENG:
-	db   "てきが　つかった　わざが　"
-	next "そのときだけ　じぶんの　わざになる@"
+	db   "Copies a move used"
+	next "by the foe.@"
 
 ScreechDescription_ENG:
-	db   "いやなおとを　だして　てきの"
-	next "ぼうぎょを　ガクッとさげさせる@"
+	db   "Sharply reduces"
+	next "the foe's DEFENSE.@"
 
 DoubleTeamDescription_ENG:
-	db   "ぶんしんで　てきを　まどわせ"
-	next "めいちゅうりつを　さげさせる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 RecoverDescription_ENG:
-	db   "キズついた　からだを　たいりょくの"
-	next "はんぶんだけ　かいふくする@"
+	db   "Restores HP by 1/2"
+	next "the max HP.@"
 
 HardenDescription_ENG:
-	db   "ぜんしんに　ちからをこめ　かたくなり"
-	next "ぼうぎょを　あげる@"
+	db   "Raises the user's"
+	next "DEFENSE.@"
 
 MinimizeDescription_ENG:
-	db   "からだを　ちぢめて　ちいさくなり"
-	next "てきの　めいちゅうりつを　さげさせる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 SmokescreenDescription_ENG:
-	db   "けむりや　スミなどで　てきの　"
-	next "めいちゅうりつを　さげさせる@"
+	db   "Lowers the foe's"
+	next "accuracy.@"
 
 ConfuseRayDescription_ENG:
-	db   "あやしいひかりで　てきを　まどわし"
-	next "こんらんさせてしまう@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 WithdrawDescription_ENG:
-	db   "かたいからに　もぐりこんで"
-	next "ぼうぎょを　あげる@"
+	db   "Heightens the"
+	next "user's DEFENSE.@"
 
 DefenseCurlDescription_ENG:
-	db   "からだを　まるめて　きゅうしょを"
-	next "かくし　ぼうぎょを　あげる@"
+	db   "Heightens the"
+	next "user's DEFENSE.@"
 
 BarrierDescription_ENG:
-	db   "めのまえに　かべを　つくりだし"
-	next "ぼうぎょを　グーンとあげる@"
+	db   "Sharply increases"
+	next "user's DEFENSE.@"
 
 LightScreenDescription_ENG:
-	db   "ひかりのかべを　つくり　とくしゅ"
-	next "こうげきの　ダメージを　よわめる@"
+	db   "Ups SPCL.DEF with"
+	next "a wall of light.@"
 
 HazeDescription_ENG:
-	db   "くろいきりが　からだを　おおい"
-	next "からだの　いじょうを　もとにもどす@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 ReflectDescription_ENG:
-	db   "ひかりのかべを　つくり　ぶつり"
-	next "こうげきの　ダメージを　よわめる@"
+	db   "Raises DEFENSE"
+	next "with a barrier.@"
 
 FocusEnergyDescription_ENG:
-	db   "こうげきに　きあいを　こめて"
-	next "クリティカルヒットを　でやすくする@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 BideDescription_ENG:
-	db   "２ー３ターン　こうげきに　たえて"
-	next "うけたダメージを　ばいにしてかえす@"
+	db   "Waits 2-3 turns &"
+	next "hits back double.@"
 
 MetronomeDescription_ENG:
-	db   "ゆびを　ふって　のうを　しげきして"
-	next "いろんな　ワザを　ランダムでくりだす@"
+	db   "Randomly uses any"
+	next "#MON move.@"
 
 MirrorMoveDescription_ENG:
-	db   "てきの　わざを　まねして　"
-	next "おなじわざで　てきを　こうげき@"
+	db   "Counters with the"
+	next "same move.@"
 
 SelfdestructDescription_ENG:
-	db   "てきに　だいダメージを　あたえるが"
-	next "つかうと　せんとうふのうに　なる@"
+	db   "Powerful but makes"
+	next "the user faint.@"
 
 EggBombDescription_ENG:
-	db   "タマゴを　おもいっきり　なげつけて"
-	next "てきを　こうげき@"
+	db   "Eggs are hurled at"
+	next "the foe.@"
 
 LickDescription_ENG:
-	db   "ながいしたで　なめまわして　こうげき"
-	next "てきを　マヒさせることがある@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 SmogDescription_ENG:
-	db   "はいきガスを　ふきかけて　こうげき"
-	next "てきに　どくをあたえることがある@"
+	db   "An attack that may"
+	next "poison the foe.@"
 
 SludgeDescription_ENG:
-	db   "ヘドロを　なげつけて　こうげき"
-	next "てきに　どくをあたえることがある@"
+	db   "An attack that may"
+	next "poison the foe.@"
 
 BoneClubDescription_ENG:
-	db   "てにもった　ホネで　てきを　こうげき"
-	next "てきを　ひるませることがある@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 FireBlastDescription_ENG:
-	db   "だいの　もじが　すべてを　やきつくす"
-	next "てきを　やけどさせることがある@"
+	db   "An attack that"
+	next "may cause a burn.@"
 
 WaterfallDescription_ENG:
-	db   "たきを　さかのぼるような　いきおいで"
-	next "てきに　とっしんする@"
+	db   "An aquatic charge"
+	next "attack.@"
 
 ClampDescription_ENG:
-	db   "２ー５ターンのあいだ　てきを"
-	next "からに　はさみこんでしまう　@"
+	db   "Traps the foe for"
+	next "2-5 turns.@"
 
 SwiftDescription_ENG:
-	db   "ぜったいに　よけられない　ほしがたの"
-	next "こうせんを　むすうに　はっしゃする@"
+	db   "An attack that"
+	next "never misses.@"
 
 SkullBashDescription_ENG:
-	db   "１ターンめで　あたまを　ひっこめて"
-	next "つぎのターンで　てきを　こうげき@"
+	db   "1st turn: Prepare"
+	next "2nd turn: Attack@"
 
 SpikeCannonDescription_ENG:
-	db   "するどいハリを　てきに　はっしゃして"
-	next "２ー５かい　れんぞくで　こうげき@"
+	db   "Fires spikes to"
+	next "hit 2-5 times.@"
 
 ConstrictDescription_ENG:
-	db   "２ー５ターンのあいだ　ながいからだや"
-	next "ツルをつかって　てきを　しめつける@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 AmnesiaDescription_ENG:
-	db   "いっしゅん　なにかを　わすれることで"
-	next "とくしゅぼうぎょを　グーンとあげる@"
+	db   "Sharply raises the"
+	next "user's SPCL.DEF.@"
 
 KinesisDescription_ENG:
-	db   "てきの　めを　スプーンに　むけさせて"
-	next "めいちゅうりつを　さげさせる@"
+	db   "Reduces the foe's"
+	next "accuracy.@"
 
 SoftboiledDescription_ENG:
-	db   "キズついた　からだを　たいりょくの"
-	next "はんぶんだけ　かいふくする@"
+	db   "Restores HP by 1/2"
+	next "the user's max HP.@"
 
 HiJumpKickDescription_ENG:
-	db   "ジャンプした　いきおいで　ひざげりを"
-	next "くりだす　はずすと　ダメージをうける@"
+	db   "May miss and hurt"
+	next "the user.@"
 
 GlareDescription_ENG:
-	db   "おなかの　もようで　てきを　いかくし"
-	next "おびえさせて　マヒさせてしまう@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 DreamEaterDescription_ENG:
-	db   "てきに　あたえた　ダメージの"
-	next "はんぶん　たいりょくを　かいふくする@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 PoisonGasDescription_ENG:
-	db   "どくガスを　てきに　ふきかけて"
-	next "どくをあたえる@"
+	db   "A move that may"
+	next "poison the foe.@"
 
 BarrageDescription_ENG:
-	db   "まるいものを　てきに　なげつけて"
-	next "２ー５かい　れんぞくで　こうげき@"
+	db   "Throws orbs to hit"
+	next "2-5 times.@"
 
 LeechLifeDescription_ENG:
-	db   "てきに　あたえた　ダメージの"
-	next "はんぶん　たいりょくを　かいふくする@"
+	db   "Steals 1/2 of the"
+	next "damage inflicted.@"
 
 LovelyKissDescription_ENG:
-	db   "こわい　かおで　キスを　せまる"
-	next "キスされると　ねむってしまう@"
+	db   "May cause the foe"
+	next "to fall asleep.@"
 
 SkyAttackDescription_ENG:
-	db   "１ターンめで　じゃくてんを　さがし"
-	next "つぎのターンで　てきを　こうげき@"
+	db   "1st turn: Prepare"
+	next "2nd turn: Attack@"
 
 TransformDescription_ENG:
-	db   "てきの　ポケモンと　おなじ　すがたに"
-	next "さいぼうを　へんかさせ　へんしんする@"
+	db   "The user assumes"
+	next "the foe's guise.@"
 
 BubbleDescription_ENG:
-	db   "あわを　ふきかけて　こうげき"
-	next "てきの　すばやさを　さげることがある@"
+	db   "An attack that may"
+	next "reduce SPEED.@"
 
 DizzyPunchDescription_ENG:
-	db   "おやこどうじに　パンチで　こうげき"
-	next "てきを　こんらんさせることがある@"
+	db   "An attack that may"
+	next "cause confusion.@"
 
 SporeDescription_ENG:
-	db   "さいみんこうかのある　ほうしを"
-	next "ふりまき　てきを　ねむらせる@"
+	db   "A move that"
+	next "induces sleep.@"
 
 FlashDescription_ENG:
-	db   "つよい　ひかりで　めを　くらませて"
-	next "てきの　めいちゅうりつを　さげさせる@"
+	db   "Blinds the foe to"
+	next "reduce accuracy.@"
 
 PsywaveDescription_ENG:
-	db   "てきに　１ーレベル×１．５の"
-	next "ダメージを　ランダムで　あたえる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 SplashDescription_ENG:
-	db   "はねるだけで　なにもおこらない⋯@"
+	db   "Has no effect"
+	next "whatsoever.@"
 
 AcidArmorDescription_ENG:
-	db   "からだを　えきじょうに　へんかさせて"
-	next "ぼうぎょを　グーンとあげる@"
+	db   "Sharply raises the"
+	next "user's DEFENSE.@"
 
 CrabhammerDescription_ENG:
-	db   "ハサミを　てきに　たたきつける"
-	next "クリティカルヒットが　でやすい@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 ExplosionDescription_ENG:
-	db   "てきに　だいダメージを　あたえるが"
-	next "つかうと　せんとうふのうに　なる@"
+	db   "Very powerful but"
+	next "makes user faint.@"
 
 FurySwipesDescription_ENG:
-	db   "てきを　するどいツメで　ひっかいて"
-	next "２ー５かい　れんぞくで　こうげき@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 BonemerangDescription_ENG:
-	db   "ホネを　なげつけて　いきと　かえりで"
-	next "２かい　れんぞくで　こうげき@"
+	db   "An attack that"
+	next "strikes twice.@"
 
 RestDescription_ENG:
-	db   "２ターン　ねむって　たいりょくと"
-	next "からだのいじょうを　かいふくする@"
+	db   "Sleep for 2 turns"
+	next "to fully recover.@"
 
 RockSlideDescription_ENG:
-	db   "おおきな　いわを　なげつける"
-	next "てきを　ひるませることがある@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 HyperFangDescription_ENG:
-	db   "するどいまえばで　てきを　こうげき"
-	next "ひるませることがある@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 SharpenDescription_ENG:
-	db   "ポリゴンを　へらし　カクカクになって"
-	next "こうげきを　あげる@"
+	db   "A move that raises"
+	next "the user's ATTACK.@"
 
 ConversionDescription_ENG:
-	db   "じぶんに　テクスチャーを　はりつけて"
-	next "てきと　おなじ　ぞくせいに　かわる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 TriAttackDescription_ENG:
-	db   "３しゅるいの　こうせんを"
-	next "１つにまとめて　てきに　はっしゃする@"
+	db   "Fires three kinds"
+	next "of beams at once.@"
 
 SuperFangDescription_ENG:
-	db   "するどいまえばで　こうげきして"
-	next "てきの　たいりょくを　はんぶんにする@"
+	db   "Cuts the foe's HP"
+	next "by 1/2.@"
 
 SlashDescription_ENG:
-	db   "するどいカマや　ツメなどで　こうげき"
-	next "クリティカルヒットが　でやすい@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 SubstituteDescription_ENG:
-	db   "たいりょくの　４ぶんの１を　つかって"
-	next "じぶんの　ぶんしんをだす@"
+	db   "Makes a decoy with"
+	next "1/4 user's max HP.@"
 
 StruggleDescription_ENG:
-	db   "わざポイントがなくなると　でるわざ"
-	next "じぶんもすこし　ダメージをうける@"
+	db   "Used only if all"
+	next "PP are exhausted.@"
 
 SketchDescription_ENG:
-	db   "てきが　つかったわざを　スケッチして"
-	next "そのわざを　じぶんのものに　する@"
+	db   "Copies the foe's"
+	next "move permanently.@"
 
 TripleKickDescription_ENG:
-	db   "てきを　３かい　れんぞくで　こうげき"
-	next "あてるたびに　ダメージが　あがる@"
+	db   "Hits three times"
+	next "with rising power.@"
 
 ThiefDescription_ENG:
-	db   "こうげきの　さいちゅうに　すきをみて"
-	next "てきが　もっている　どうぐを　ぬすむ@"
+	db   "An attack that may"
+	next "steal a held item.@"
 
 SpiderWebDescription_ENG:
-	db   "ネバネバとした　いとを　からませて"
-	next "てきを　にげられなく　してしまう@"
+	db   "Prevents fleeing"
+	next "or switching.@"
 
 MindReaderDescription_ENG:
-	db   "てきの　うごきを　こころで　かんじて"
-	next "つぎの　こうげきを　かならず　あてる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 NightmareDescription_ENG:
-	db   "てきが　ねてるあいだ　たいりょくを"
-	next "まいターン　８ぶんの１　へらしていく@"
+	db   "A sleeper loses"
+	next "1/4 HP every turn.@"
 
 FlameWheelDescription_ENG:
-	db   "ほのおを　まとって　とっしんする"
-	next "てきを　やけどさせることがある@"
+	db   "An attack that may"
+	next "cause a burn.@"
 
 SnoreDescription_ENG:
-	db   "ねているときだけ　つかえる　わざ"
-	next "すごいいびきで　てきを　こうげき@"
+	db   "An attack useable"
+	next "only while asleep.@"
 
 NailDownDescription_ENG:
-	db   "じぶんを　こうげきすることで　てきに"
-	next "まいターン　ダメージを　あたえる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 FlailDescription_ENG:
-	db   "たいりょくが　すくないほど"
-	next "てきに　おおきなダメージを　あたえる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 Conversion2Description_ENG:
-	db   "てきに　テクスチャーを　はりつけて"
-	next "ぞくせいを　ランダムでかえてしまう@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 CoinHurlDescription_ENG:
-	db   "おかねを　つかって　てきを　こうげき"
-	next "かいぬしが　リッチなほど　つよいワザ@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 CottonSporeDescription_ENG:
-	db   "ほうしを　まとわりつかせ　てきにの"
-	next "ぼうぎょを　ガクッとさげさせる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 ReversalDescription_ENG:
-	db   "たいりょくが　すくないほど"
-	next "てきに　おおきなダメージを　あたえる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 SpiteDescription_ENG:
-	db   "さいごに　うけた　わざを　うらんで　"
-	next "その　わざポイントを　へらしてしまう@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 PowderSnowDescription_ENG:
-	db   "ゆきを　かぜにのせて　こうげき"
-	next "てきを　こおらせることがある@"
+	db   "An attack that may"
+	next "cause freezing.@"
 
 ProtectDescription_ENG:
-	db   "つぎのターンの　こうげきを　うけない@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 MachPunchDescription_ENG:
-	db   "ものすごいはやさで　パンチをくりだし"
-	next "かならず　せんせいこうげきする@"
+	db   "A fast punch that"
+	next "lands first.@"
 
 ScaryFaceDescription_ENG:
-	db   "こわいかおで　てきを　おびえさせて　"
-	next "ぼうぎょを　ガクッとさげさせる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 FaintAttackDescription_ENG:
-	db   "てきを　ゆだんさせて　ちかづき"
-	next "よけられない　こうげきを　くりだす@"
+	db   "An attack that"
+	next "never misses.@"
 
 SweetKissDescription_ENG:
-	db   "かわいい　かおで　キスを　せまる"
-	next "キスされると　こんらんしてしまう@"
+	db   "A move that causes"
+	next "confusion.@"
 
 BellyDrumDescription_ENG:
-	db   "おなかを　たたいて　てきを　いかく"
-	next "こうげきを　グーンとあげる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 SludgeBombDescription_ENG:
-	db   "ヘドロを　なげつけて　こうげき"
-	next "てきに　どくをあたえることがある@"
+	db   "An attack that may"
+	next "poison the foe.@"
 
 MudSlapDescription_ENG:
-	db   "てきの　かおなどに　ドロをかけて　"
-	next "めいちゅうりつを　さげさせる@"
+	db   "Reduces the foe's"
+	next "accuracy.@"
 
 OctazookaDescription_ENG:
-	db   "すみの　かたまりを　はっしゃして"
-	next "めいちゅうりつを　さげさせる　@"
+	db   "An attack that may"
+	next "reduce accuracy.@"
 
 SpikesDescription_ENG:
-	db   "てきが　にげるときに　わなを　しかけ"
-	next "こうたいした　てきを　こうげきする@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 ZapCannonDescription_ENG:
-	db   "あたりにくいが　ダメージは　おおきい"
-	next "あたれば　かならず　マヒさせる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 ForesightDescription_ENG:
-	db   "ゴーストタイプの　てきに　"
-	next "ノーマルタイプの　わざが　あたる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 DestinyBondDescription_ENG:
-	db   "このわざの　あとに　たおされると"
-	next "てきも　せんとうふのうになる@"
+	db   "The foe faints if"
+	next "the user does.@"
 
 PerishSongDescription_ENG:
-	db   "きいた　ポケモンは　３ターンごに"
-	next "せんとうふのうに　なってしまう@"
+	db   "Both user and foe"
+	next "faint in 3 turns.@"
 
 SynchronizeDescription_ENG:
-	db   "シンクロじょうたいに　なると　てきも"
-	next "おなじ　ダメージを　うけるようになる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 DetectDescription_ENG:
-	db   "てきの　うごきを　みきることで"
-	next "つぎの　こうげきを　かならずあてる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 BoneLockDescription_ENG:
-	db   "てにもった　ホネで　２ー５かい　"
-	next "れんぞくで　てきを　こうげきする@"
+	db   "An attack that"
+	next "hits 2-5 times.@"
 
 LockOnDescription_ENG:
-	db   "てきに　しょうじゅんを　あわせて"
-	next "つぎの　こうげきを　かならずあてる@"
+	db   "Ensures the next"
+	next "attack will hit.@"
 
 OutrageDescription_ENG:
-	db   "２ー３ターンのあいだ　あばれつづける"
-	next "あばれたあとは　こんらんしてしまう@"
+	db   "Works 2-3 turns"
+	next "and confuses user.@"
 
 SandstormDescription_ENG:
-	db   "すなあらしを　はっせいさせて"
-	next "まいターン　ダメージを　あたえる@"
+	db   "Inflicts damage"
+	next "every turn.@"
 
 GigaDrainDescription_ENG:
-	db   "てきに　あたえた　ダメージの"
-	next "はんぶん　たいりょくを　かいふくする@"
+	db   "Steals 1/2 of the"
+	next "damage inflicted.@"
 
 EndureDescription_ENG:
-	db   "つぎのターンで　こうげきを　うけても"
-	next "かららず　たいりょくが　１のこる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 CharmDescription_ENG:
-	db   "かわいくあまえて　てきを　ゆだんさせ"
-	next "こうげきを　ガクッとさげさせる　@"
+	db   "Sharply lowers the"
+	next "foe's ATTACK.@"
 
 RolloutDescription_ENG:
-	db   "５ターンのあいだ　てきを　こうげき"
-	next "あてるたびに　ダメージが　あがる@"
+	db   "Attacks 5 turns"
+	next "with rising power.@"
 
 FalseSwipeDescription_ENG:
-	db   "かならず　たいりょくが　１のこるよう"
-	next "てかげんして　こうげき@"
+	db   "Leaves the foe"
+	next "with at least 1HP.@"
 
 SwaggerDescription_ENG:
-	db   "てきを　おこらせて　こんらんさせるが"
-	next "こうげきも　グーンと　あげてしまう@"
+	db   "Causes confusion"
+	next "and raises ATTACK.@"
 
 MilkDrinkDescription_ENG:
-	db   "キズついた　からだを　たいりょくの"
-	next "はんぶんだけ　かいふくする@"
+	db   "Restores HP by 1/2"
+	next "the max HP.@"
 
 SparkDescription_ENG:
-	db   "でんきを　まとって　とっしんする"
-	next "てきを　マヒさせることがある@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 FuryCutterDescription_ENG:
-	db   "するどいカマや　ツメなどで　てきを"
-	next "２かい　れんぞくで　こうげき@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 SteelWingDescription_ENG:
-	db   "つばさを　おおきく　ひろげて"
-	next "そのまま　てきに　たいあたりする@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 StalkerDescription_ENG:
-	db   "てきを　じーっと　みていると　なぜか"
-	next "てきは　にげられなく　なってしまう@"
+	db   "Prevents fleeing"
+	next "or switching.@"
 
 AttractDescription_ENG:
-	db   "オスなら　メスに　メスなら　オスに"
-	next "こうげきが　できなくなってしまう@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 SleepTalkDescription_ENG:
-	db   "ねているときだけ　つかえる　わざ"
-	next "ランダムで　じぶんのわざを　くりだす@"
+	db   "Randomly attacks"
+	next "while asleep.@"
 
 BellChimeDescription_ENG:
-	db   "ここちよい　すずのねを　きかせて"
-	next "すべての　じょうたいを　かいふくする@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 ReturnDescription_ENG:
-	db   "よくしてくれる　かいぬしの　ために"
-	next "ぜんりょくで　てきを　こうげき@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 PresentDescription_ENG:
-	db   "てきに　ばくだんを　プレゼントする"
-	next "たまに　かいふくしてしまうことがある@"
+	db   "A bomb that may"
+	next "restore HP.@"
 
 FrustrationDescription_ENG:
-	db   "むごい　しうちの　うさばらしに　"
-	next "てきを　ぜんりょくで　こうげき@"
+	db   "An attack based on"
+	next "lack of loyalty.@"
 
 SafeguardDescription_ENG:
-	db   "ふしぎな　ちからで　まもられて"
-	next "とくしゅ　じょうたいに　ならなくなる@"
+	db   "Prevents all"
+	next "status problems.@"
 
 PainSplitDescription_ENG:
-	db   "てきと　じぶんの　たいりょくを"
-	next "たして　それを　なかよく　わける@"
+	db   "Adds user & foe's"
+	next "HPs. Shares total.@"
 
 SacredFireDescription_ENG:
-	db   "しんぴてきな　ほのおで　こうげき"
-	next "てきを　ひるませることがある@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 MagnitudeDescription_ENG:
-	db   "じめんを　ゆらして　てきを　こうげき"
-	next "ダメージは　ランダムで　かわる@"
+	db   "A ground attack"
+	next "with random power.@"
 
 DynamicpunchDescription_ENG:
-	db   "あたりにくいが　ダメージは　おおきい"
-	next "あたれば　かならず　こんらんさせる@"
+	db   "An attack that"
+	next "always confuses.@"
 
 MegaphoneDescription_ENG:
-	db   "すごいおとで　てきの　きをちらせて　"
-	next "とくしゅこうげきを　さげさせる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 DragonbreathDescription_ENG:
-	db   "くちから　ものすごい　いきをはいて"
-	next "てきを　こうげき@"
+	db   "A strong breath"
+	next "attack.@"
 
 BatonPassDescription_ENG:
-	db   "ついかこうかを　のこしたまま"
-	next "ほかの　ポケモンと　いれかわる@"
+	db   "Switches while"
+	next "keeping effects.@"
 
 EncoreDescription_ENG:
-	db   "てきが　さいごに　つかった　わざを"
-	next "２ー５かい　れんぞくで　ださせる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 PursuitDescription_ENG:
-	db   "てきが　にげるときに　つかうと"
-	next "だいダメージを　あたえることができる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 RapidSpinDescription_ENG:
-	db   "からだを　はやく　かいてんさせて"
-	next "てきを　こうげき@"
+	db   "A high-speed"
+	next "spinning attack.@"
 
 TemptDescription_ENG:
-	db   "てきに　エサをなげて　きを　そらせて"
-	next "てきの　かいひりつを　さげさせる@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 IronTailDescription_ENG:
-	db   "かたい　シッポで　てきを　こうげき"
-	next "てきの　ぼうぎょを　さげることがある@"
+	db   "An attack that may"
+	next "reduce DEFENSE.@"
 
 RockHeadDescription_ENG:
-	db   "かたい　あたまで　てきを　こうげき"
-	next "てきを　ひるませることがある@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 VitalThrowDescription_ENG:
-	db   "こうげきを　うけずに　こうげきできる"
-	next "はずれると　だいダメージを　うける@"
+	db   "DEV NOTE: TODO"
+	next "UNTRANSLATED@"
 
 MorningSunDescription_ENG:
-	db   "たいりょくを　かいふくする"
-	next "じかんで　かいふくりょうが　かわる@"
+	db   "Restores HP"
+	next "(varies by time).@"
 
 SynthesisDescription_ENG:
-	db   "たいりょくを　かいふくする"
-	next "じかんで　かいふくりょうが　かわる@"
+	db   "Restores HP"
+	next "(varies by time).@"
 
 MoonlightDescription_ENG:
-	db   "たいりょくを　かいふくする"
-	next "じかんで　かいふくりょうが　かわる@"
+	db   "Restores HP"
+	next "(varies by time).@"
 
 HiddenPowerDescription_ENG:
-	db   "ポケモンによって　てきに　あたえる"
-	next "ダメージの　りょうが　へんかする@"
+	db   "The power varies"
+	next "with the #MON.@"
 
 CrossCutterDescription_ENG:
-	db   "ハサミを　こうさ　させて　こうげき"
-	next "クリティカルヒットが　でやすい@"
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 TwisterDescription_ENG:
-	db   "ものすごい　かぜを　おこして"
-	next "てきを　こうげき@"
+	db   "Whips up a tornado"
+	next "to attack.@"
 
 RainDanceDescription_ENG:
-	db   "５ターンのあいだ　みずタイプの"
-	next "わざの　いりょくが　あがる@"
+	db   "Boosts water-type"
+	next "moves for 5 turns.@"
 
 SunnyDayDescription_ENG:
-	db   "５ターンのあいだ　ほのおタイプの"
-	next "わざの　いりょくが　あがる@"
+	db   "Boosts fire-type"
+	next "moves for 5 turns.@"
 
 F2Description_ENG:
-	db   "コメントさくせいちゅう@"
+	db   "Comment being"	;	not a dev note, actual description
+	next "written."
 
 F3Description_ENG:
-	db   "コメントさくせいちゅう@"
+	db   "Comment being"	;	not a dev note, actual description
+	next "written."
 
 F4Description_ENG:
-	db   "コメントさくせいちゅう@"
+	db   "Comment being"	;	not a dev note, actual description
+	next "written."
 
 UprootDescription_ENG:
-	db   "てきを　つかんで　ほうりなげて"
-	next "だいダメージを　あたえる@"
+	db   "Heavily strikes"
+	next "enemy by throwing.@"
 
 WindRideDescription_ENG:
-	db   "かぜと　ともに　てきに　たいあたり"
-	next "クリティカルヒットが　でやすい@"
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 WaterSportDescription_ENG:
-	db   "コメントさくせいちゅう@"
+	db   "Comment being"	;	not a dev note, actual description
+	next "written."
 
 StrongArmDescription_ENG:
-	db   "ふとい　うでで　てきを　こうげき"
-	next "こうげきが　あがることがある@"
+	db   "A move that may"
+	next "increase ATTACK.@"
 
 BrightMossDescription_ENG:
-	db   "あたりを　あかるくして"
-	next "わざの　めいちゅうりつを　あげる@"
+	db   "Lights up area and"
+	next "raises ACCURACY.@"
 
 WhirlpoolDescription_ENG:
-	db   "２ー５ターンのあいだ　てきを"
-	next "うずの　ちゅうしんに　とじこめる@"
+	db   "Traps the foe for"
+	next "2-5 turns.@"
 
 BounceDescription_ENG:
-	db   "はねるだけで　なにもおこらない⋯@"
+	db   "Has no effect"
+	next "whatsoever.@"
