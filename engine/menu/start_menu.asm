@@ -1614,8 +1614,12 @@ PartySelectionInputs:
 	jp PartySelectionInputs
 
 .DrawMovePokeText
+	ld a, ' '
 	hlcoord 1, 11
-	lb bc, 6, $12
+	ld bc, 5
+	call ByteFill
+	hlcoord 1, 12
+	lb bc, 5, SCREEN_WIDTH - 2
 	call ClearBox
 	hlcoord 1, 12
 	ld de, PartyMoveText
@@ -1735,7 +1739,7 @@ PartyPokeDivider:
 	db "ーーー@"
 
 PartyMoveText:
-	db "どこに いどうしますか？@"
+	db "Where?@"
 
 CheckRegisteredItem:
 	call .RegisteredItem
