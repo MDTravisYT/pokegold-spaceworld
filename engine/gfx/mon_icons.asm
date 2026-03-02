@@ -113,7 +113,7 @@ MoveList_InitAnimatedMonIcon:
 	ld [wCurIcon], a
 	call GetMemIconGFX
 	ld d, 3 * TILE_WIDTH + 2 ; depixel 3, 3, 2, 0
-	ld e, 3 * TILE_WIDTH
+	ld e, 4 * TILE_WIDTH + 4
 	ld a, [wCurIcon]
 	call _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID

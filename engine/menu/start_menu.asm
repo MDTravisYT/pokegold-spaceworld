@@ -1483,22 +1483,31 @@ PokeSummary:
 	ld e, MONICON_MOVES
 	call FarCall_hl
 	hlcoord 0, 1
-	ld b, 8
-	ld c, $12
+	ld b, 9
+	ld c, 18
 	call DrawTextBox
-	hlcoord 1, 1
-	lb bc, 2, $12
+	hlcoord 0, 11
+	ld b, 5
+	ld c, 18
+	call DrawTextBox
+	hlcoord 2, 0
+	lb bc, 2, 3
 	call ClearBox
-	hlcoord 3, 1
-	predef PlacePartyMember
+	xor a
+	ld [wMonType], a
+	ld hl, wPartyMonNicknames
+	ld a, [wCurPartyMon]
+	call GetNick
+	hlcoord 5, 1
+	call PlaceString
+	push bc
+	farcall CopyMonToTempMon
+	pop hl
+	call PrintLevel
 	ld hl, wPlayerHPPal
 	call SetHPPal
 	ld b, $0E
 	call GetSGBLayout
-	hlcoord 11, 0
-	lb bc, 1, 9
-	call ClearBox
-	hlcoord 16, 0
 	ld a, [wCurPartyMon]
 	and a
 	jr z, .FirstPokeChosen
@@ -1525,20 +1534,20 @@ SummaryDrawPoke:
 	ld de, wListMoves_MoveIndicesBuffer
 	ld bc, $0004
 	call CopyBytes
-	ld a, $28
-	ld [wHPBarMaxHP], a
+	ld a, SCREEN_WIDTH * 2
+	ld [wListMovesLineSpacing], a
 	hlcoord 2, 3
 	predef ListMoves
-	hlcoord 11, 3
+	hlcoord 10, 4
 	predef ListMovePP
 	call WaitBGMap
 	call SetPalettes
 	ld a, [wNumMoves]
 	inc a
 	ld [w2DMenuNumRows], a
-	hlcoord 0, 10
-	ld b, 6
-	ld c, $12
+	hlcoord 0, 11
+	ld b, 5
+	ld c, 18
 	call DrawTextBox
 	ld hl, w2DMenuFlags1
 	set 6, [hl]
@@ -1565,18 +1574,21 @@ PartySelectionInputs:
 	add hl, bc
 	ld a, [hl]
 	ld [wCurSpecies], a
-	hlcoord 1, 11
-	lb bc, $06, $12
-	call ClearBox
 	hlcoord 1, 12
-	ld a, [wSelectedSwapPosition]
-	and a
-	jr nz, .DrawMovePokeText
-	ld de, PartyTypeText
+	lb bc, 5, 18
+	call ClearBox
+	hlcoord 0, 10
+	ld de, String_MoveType_Top
+	call PlaceString
+	hlcoord 0, 11
+	ld de, String_MoveType_Bottom
+	call PlaceString
+	hlcoord 11, 12
+	ld de, String_MoveAtk
 	call PlaceString
 	ld a, [wCurSpecies]
 	ld b, a
-	hlcoord 5, 12
+	hlcoord 2, 12
 	predef PrintMoveType
 	ld a, [wCurSpecies]
 	dec a
@@ -1712,8 +1724,12 @@ PartyMenuAttributes:
 	dn 2, 0
 	db $F3
 
-PartyTypeText:
-	db "タイプ／     いりょく／@"
+String_MoveType_Top:
+	db "┌─────┐@"
+String_MoveType_Bottom:
+	db "│TYPE/└@"
+String_MoveAtk:
+	db "ATTK/@"
 
 PartyPokeDivider:
 	db "ーーー@"
