@@ -228,7 +228,7 @@ PokemonNames_ENG::
 	monname "POPONEKO"		
 	monname "WATANEKO"		
 	monname "BARIRIINA"		
-	monname "RIPPU"			
+	monname "LIPPU"			
 	monname "ELEBEBII"		
 	monname "BUBII"			
 	monname "KIREIHANA"		
