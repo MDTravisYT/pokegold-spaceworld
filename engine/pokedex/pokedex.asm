@@ -191,9 +191,10 @@ Pokedex_PlaceStartOrSelectString:
 	ret
 
 .Start_TYPE:
+	hlcoord 15, 0
 	ld de, String_START
 	call PlaceString
-	hlcoord 15, 9
+	hlcoord 15, 1
 	ld de, String_VARIANTS
 	call PlaceString
 	ld a, $03

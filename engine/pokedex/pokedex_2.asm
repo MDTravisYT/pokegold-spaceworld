@@ -796,15 +796,15 @@ Pokedex_InitUnownMode:
 	lb bc, 9, 9
 	call Pokedex_PlaceBorder
 
-	hlcoord 4, 1
+	hlcoord 3, 1
 	ld de, .UnownVariantsString
 	call PlaceString
 	
-	hlcoord 13, 4
+	hlcoord 12, 4
 	ld de, .VariantsDiscoveredString
 	call PlaceString
 
-	hlcoord 13, 4
+	hlcoord 12, 4
 	ld de, wDexUnownCount
 	lb bc, 1, 2
 	call PrintNumber
@@ -822,11 +822,11 @@ Pokedex_InitUnownMode:
 	ret
 
 .UnownVariantsString:
-	db "アンノーン　の　しゅるい@"
+	db "UNOWN VARIANTS@"
 
 .VariantsDiscoveredString:
-	db   "　　しゅるい"
-	next "　はっけん！@"
+	db   "   VAR."
+	next " FOUND!@"
 
 
 PrintUnownList:
@@ -868,7 +868,7 @@ PrintUnownListEntry:
 	ret
 
 .UnownString:
-	db "アンノーン@"
+	db "UNOWN@"
 
 Pokedex_UnownModeHandleDPadInput:
 	ld hl, hJoySum
