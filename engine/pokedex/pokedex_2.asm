@@ -284,61 +284,77 @@ Pokedex_DisplayTypeSearch:
 	or b
 	jr nz, .fill_screen
 
-	hlcoord 1, 0
-	lb bc, 2, 10
-	call ClearBox
-
-	hlcoord 13, 0
-	lb bc, 2, 6
-	call ClearBox
+;	hlcoord 1, 0
+;	lb bc, 2, 10
+;	call ClearBox
+;
+;	hlcoord 13, 0
+;	lb bc, 2, 6
+;	call ClearBox
 
 	hlcoord 0, 2
-	lb bc, 16, 12
+	lb bc, 16, 11
 	call Pokedex_PlaceBorder
 
-	hlcoord 12, 2
-	lb bc, 6, 8
+	hlcoord 10, 2
+	lb bc, 6, 10
 	call Pokedex_PlaceBorder
 
 	hlcoord 12, 10
 	lb bc, 8, 8
 	call Pokedex_PlaceBorder
+	
+;	print window overlap graphic
+	hlcoord 10, 2
+	ld a, $2F	;	top tile
+	ld de, SCREEN_WIDTH
+	ld [hl], a
+	add hl, de
+	ld a, $24	;	middle tile
+	ld c, 4		;	size
+.next_tile
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .next_tile
+	ld a, $30	;	bottom tile
+	ld [hl], a
 
 	hlcoord 1, 1
 	ld de, .SearchByTypeString
 	call PlaceString
 
-	hlcoord 13, 1
+	hlcoord 12, 1
 	ld de, .SelectedString
 	call PlaceString
 
 	call Pokedex_PlaceSearchScreenTypeList
 	call Pokedex_PlaceSearchScreenTypeStrings
-	hlcoord 2, 4
+	hlcoord 1, 4
 	ld [hl], '▶'
 	call Pokedex_WaitBGMap
 	ret
 
 .SearchByTypeString:
-	db "ぞくせい　で　さがす@"
+	db "TYPEFINDER@"
 
 .SelectedString:
-	db "えらんだもの@"
+	db "CHOICE@"
 
 FirstTypeSelectedMenu:
-	db   "さがす"
-	next "もうひとつ"
-	next "やめる@"
+	db   "FIND"
+	next "BACK"
+	next "STOP@"
 
 SecondTypeSelectedMenu:
-	db   "さがす"
-	next "やりなおし"
-	next "やめる@"
+	db   "FIND"
+	next "REDO"
+	next "STOP@"
 
 Pokedex_PlaceSearchScreenTypeList:
 	ld a, [wDexListingCursor]
 	call Pokedex_GetTypeString
-	hlcoord 3, 4
+	hlcoord 2, 4
 	ld c, 7
 .loop
 	push bc
@@ -360,12 +376,12 @@ endr
 Pokedex_PlaceSearchScreenTypeStrings:
 	ld a, [wDexSearchMonType1]
 	call .check_type
-	hlcoord 14, 4
+	hlcoord 11, 4
 	call PlaceString
 
 	ld a, [wDexSearchMonType2]
 	call .check_type
-	hlcoord 14, 6
+	hlcoord 11, 6
 	call PlaceString
 	ret
 
@@ -381,7 +397,7 @@ Pokedex_PlaceSearchScreenTypeStrings:
 	ret
 
 .NoTypeString
-db "ーーーー@"
+db "ーーーーーーーー@"
 
 Pokedex_GetTypeString:
 	ld e, a
@@ -417,7 +433,7 @@ Pokedex_MoveSearchMenuCursor:
 	ret z
 
 	dec [hl]
-	hlcoord 3, 3
+	hlcoord 2, 3
 	lb bc, 14, 8
 	call ClearBox
 	call Pokedex_PlaceSearchScreenTypeList
@@ -434,7 +450,7 @@ Pokedex_MoveSearchMenuCursor:
 	ret nc
 
 	inc [hl]
-	hlcoord 3, 3
+	hlcoord 2, 3
 	lb bc, 14, 8
 	call ClearBox
 	call Pokedex_PlaceSearchScreenTypeList
@@ -490,14 +506,14 @@ Pokedex_GetSearchScreenCursorPos:
 	ld l, a
 	ret
 
-.CursorPosTable:
-	dwcoord 2, 4
-	dwcoord 2, 6
-	dwcoord 2, 8
-	dwcoord 2, 10
-	dwcoord 2, 12
-	dwcoord 2, 14
-	dwcoord 2, 16
+.CursorPosTable:	;	good going game freak, can't use the menu routine you already have
+	dwcoord 1, 4
+	dwcoord 1, 6
+	dwcoord 1, 8
+	dwcoord 1, 10
+	dwcoord 1, 12
+	dwcoord 1, 14
+	dwcoord 1, 16
 
 Pokedex_MoveTypeSelectedMenuCursor:
 	ld hl, hJoyDown

@@ -1716,7 +1716,7 @@ Pokedex_PlaceSlowpoke:
 	call WaitForAutoBgMapTransfer
 	ld a, [wDexListingEnd]
 	ld [wPokedexSlowpokeNumSearchEntries], a
-	depixel 9, 6, 4, 0
+	depixel 9, 8, 4, 0
 	ld a, SPRITE_ANIM_OBJ_POKEDEX_SLOWPOKE
 	call InitSpriteAnimStruct
 	ld a, c
