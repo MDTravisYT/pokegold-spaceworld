@@ -175,7 +175,10 @@ SpriteAnimFrameData:
 
 .Frameset_PokedexCursor:
 	oamframe SPRITE_ANIM_OAMSET_POKEDEX_CURSOR, 1
-	oamwait 1
+	oamframe SPRITE_ANIM_OAMSET_POKEDEX_CURSOR2, 1
+	oamframe SPRITE_ANIM_OAMSET_POKEDEX_CURSOR3, 1
+	oamframe SPRITE_ANIM_OAMSET_POKEDEX_CURSOR4, 1
+	oamframe SPRITE_ANIM_OAMSET_POKEDEX_CURSOR5, 1
 	oamrestart
 
 .Frameset_PokedexSlowpoke1:

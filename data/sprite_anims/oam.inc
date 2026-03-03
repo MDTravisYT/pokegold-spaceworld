@@ -72,6 +72,10 @@ SpriteAnimOAMData:
 	spriteanimoam $10, .OAMData_TradePoofBubble          ; SPRITE_ANIM_OAMSET_TRADEMON_BUBBLE
 	spriteanimoam $00, .OAMData_Unknown1                 ; SPRITE_ANIM_OAMSET_EVOLUTION_BALL_OF_LIGHT
 	spriteanimoam $00, .OAMData_RadioFrequencyMeter      ; SPRITE_ANIM_OAMSET_RADIO_FREQUENCY_METER
+	spriteanimoam $04, .OAMData_PokedexCursor2            ; SPRITE_ANIM_OAMSET_POKEDEX_CURSOR
+	spriteanimoam $04, .OAMData_PokedexCursor3            ; SPRITE_ANIM_OAMSET_POKEDEX_CURSOR
+	spriteanimoam $04, .OAMData_PokedexCursor4            ; SPRITE_ANIM_OAMSET_POKEDEX_CURSOR
+	spriteanimoam $04, .OAMData_PokedexCursor5            ; SPRITE_ANIM_OAMSET_POKEDEX_CURSOR
 
 .OAMData_1x1_Palette0:
 	db 1
@@ -376,27 +380,67 @@ db 27
 	dbsprite -1, -1,  7,  7, $00, 0
 
 .OAMData_PokedexCursor:
-	db 20
-	dbsprite  0, -1,  0,  0, $00, 0
-	dbsprite  1, -1,  0,  0, $01, 0
-	dbsprite  2, -1,  0,  0, $01, 0
-	dbsprite  3, -1,  0,  0, $01, 0
-	dbsprite  4, -1,  0,  0, $01, 0
-	dbsprite  5, -1,  0,  0, $01, 0
-	dbsprite  6, -1,  0,  0, $01, 0
-	dbsprite  7, -1,  0,  0, $01, 0
-	dbsprite  8, -1,  0,  0, $01, 0
-	dbsprite  9, -1,  0,  0, $00, 0 | X_FLIP
-	dbsprite  0,  0,  0,  0, $00, 0 | Y_FLIP
-	dbsprite  1,  0,  0,  0, $01, 0 | Y_FLIP
-	dbsprite  2,  0,  0,  0, $01, 0 | Y_FLIP
-	dbsprite  3,  0,  0,  0, $01, 0 | Y_FLIP
-	dbsprite  4,  0,  0,  0, $01, 0 | Y_FLIP
-	dbsprite  5,  0,  0,  0, $01, 0 | Y_FLIP
-	dbsprite  6,  0,  0,  0, $01, 0 | Y_FLIP
-	dbsprite  7,  0,  0,  0, $01, 0 | Y_FLIP
-	dbsprite  8,  0,  0,  0, $01, 0 | Y_FLIP
-	dbsprite  9,  0,  0,  0, $00, 0 | X_FLIP | Y_FLIP
+	db 6
+	dbsprite  0, -1,  0,  0, $00, 0                     ;-
+	dbsprite  8, -1,  0,  0, $01, 0                     ;	     -
+	dbsprite  9, -1,  0,  0, $00, 0 | X_FLIP            ;	      -
+	dbsprite  0,  0,  0,  0, $00, 0 | Y_FLIP            ;=
+	dbsprite  1,  0,  0,  0, $01, 0 | Y_FLIP            ; =	
+	dbsprite  9,  0,  0,  0, $00, 0 | X_FLIP | Y_FLIP	;	      =
+
+.OAMData_PokedexCursor2:
+	db 6
+	dbsprite  0, -1,  0,  0, $00, 0                     ;-
+	dbsprite  1, -1,  0,  0, $01, 0                     ; -	
+	dbsprite  2, -1,  0,  0, $01, 0                     ;  -
+	dbsprite  7,  0,  0,  0, $01, 0 | Y_FLIP            ;	    =
+	dbsprite  8,  0,  0,  0, $01, 0 | Y_FLIP            ;	     =
+	dbsprite  9,  0,  0,  0, $00, 0 | X_FLIP | Y_FLIP	;	      =
+.OAMData_PokedexCursor3:
+	db 6
+	dbsprite  2, -1,  0,  0, $01, 0                     ;  -
+	dbsprite  3, -1,  0,  0, $01, 0                     ;	-
+	dbsprite  4, -1,  0,  0, $01, 0                     ;	 -
+	dbsprite  5,  0,  0,  0, $01, 0 | Y_FLIP            ;	  =
+	dbsprite  6,  0,  0,  0, $01, 0 | Y_FLIP            ;	   =
+	dbsprite  7,  0,  0,  0, $01, 0 | Y_FLIP            ;	    =
+.OAMData_PokedexCursor4:
+	db 6
+	dbsprite  4, -1,  0,  0, $01, 0                     ;	 -
+	dbsprite  5, -1,  0,  0, $01, 0                     ;	  -
+	dbsprite  6, -1,  0,  0, $01, 0                     ;	   -
+	dbsprite  3,  0,  0,  0, $01, 0 | Y_FLIP            ;	=
+	dbsprite  4,  0,  0,  0, $01, 0 | Y_FLIP            ;	 =
+	dbsprite  5,  0,  0,  0, $01, 0 | Y_FLIP            ;	  =
+.OAMData_PokedexCursor5:
+	db 6
+	dbsprite  6, -1,  0,  0, $01, 0                     ;	   -
+	dbsprite  7, -1,  0,  0, $01, 0                     ;	    -
+	dbsprite  8, -1,  0,  0, $01, 0                     ;	     -
+	dbsprite  1,  0,  0,  0, $01, 0 | Y_FLIP            ; =	
+	dbsprite  2,  0,  0,  0, $01, 0 | Y_FLIP            ;  =
+	dbsprite  3,  0,  0,  0, $01, 0 | Y_FLIP            ;	=
+
+;	dbsprite  0, -1,  0,  0, $00, 0                     ;-
+;	dbsprite  1, -1,  0,  0, $01, 0                     ; -	
+;	dbsprite  2, -1,  0,  0, $01, 0                     ;  -
+;	dbsprite  3, -1,  0,  0, $01, 0                     ;	-
+;	dbsprite  4, -1,  0,  0, $01, 0                     ;	 -
+;	dbsprite  5, -1,  0,  0, $01, 0                     ;	  -
+;	dbsprite  6, -1,  0,  0, $01, 0                     ;	   -
+;	dbsprite  7, -1,  0,  0, $01, 0                     ;	    -
+;	dbsprite  8, -1,  0,  0, $01, 0                     ;	     -
+;	dbsprite  9, -1,  0,  0, $00, 0 | X_FLIP            ;	      -
+;	dbsprite  0,  0,  0,  0, $00, 0 | Y_FLIP            ;=
+;	dbsprite  1,  0,  0,  0, $01, 0 | Y_FLIP            ; =	
+;	dbsprite  2,  0,  0,  0, $01, 0 | Y_FLIP            ;  =
+;	dbsprite  3,  0,  0,  0, $01, 0 | Y_FLIP            ;	=
+;	dbsprite  4,  0,  0,  0, $01, 0 | Y_FLIP            ;	 =
+;	dbsprite  5,  0,  0,  0, $01, 0 | Y_FLIP            ;	  =
+;	dbsprite  6,  0,  0,  0, $01, 0 | Y_FLIP            ;	   =
+;	dbsprite  7,  0,  0,  0, $01, 0 | Y_FLIP            ;	    =
+;	dbsprite  8,  0,  0,  0, $01, 0 | Y_FLIP            ;	     =
+;	dbsprite  9,  0,  0,  0, $00, 0 | X_FLIP | Y_FLIP	;	      =
 
 .OAMData_PokedexSlowpoke1:
 	db 15
