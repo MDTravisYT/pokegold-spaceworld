@@ -205,7 +205,7 @@ PokemonNames_ENG::
 	monname "DONPHAN"		
 	monname "TSUINZU"		
 	monname "KIRINRIKI"		
-	monname "DOOBURU"		
+	monname "PEINTAA"		
 	monname "KOONYA"		
 	monname "RINRIN"		
 	monname "BERURUN"		
