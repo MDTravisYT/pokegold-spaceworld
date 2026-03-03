@@ -1636,62 +1636,60 @@ PlaceStatusString::
 	or b
 	pop de
 	jr nz, PlaceNonFaintStatus
-	; "FNT" equivalent string
-	ld a, 'ひ'
-	ld [hli], a
-	ld a, 'ん'
-	ld [hli], a
-	ld [hl], 'し'
+	push de
+	ld de, .FntString
+	call CopyStatusString
+	pop de
 	and a
+	ret
+	
+.FntString:
+	db "FNT@"
+
+CopyStatusString:
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	ld [hl], a
 	ret
 
 PlaceNonFaintStatus::
+	push de
 	ld a, [de]
+	ld de, .PsnString
 	bit PSN, a
-	jr nz, .PsnString
+	jr nz, .place
+	ld de, .BrnString
 	bit BRN, a
-	jr nz, .BrnString
+	jr nz, .place
+	ld de, .FrzString
 	bit FRZ, a
-	jr nz, .FrzString
+	jr nz, .place
+	ld de, .ParString
 	bit PAR, a
-	jr nz, .ParString
+	jr nz, .place
+	ld de, .SlpString
 	and SLP
-	ret z
-	; "SLP" equivalent string
-	ld a, 'ね'
-	ld [hli], a
-	ld a, 'む'
-	ld [hli], a
-	ld [hl], 'り'
+	jr z, .no_status
+
+.place
+	call CopyStatusString
+	ld a, TRUE
+	and a
+
+.no_status
+	pop de
 	ret
 
-.PsnString
-	ld a, '<DO>'
-	ld [hli], a
-	ld [hl], 'く'
-	ret
-
-.BrnString
-	ld a, 'や'
-	ld [hli], a
-	ld a, 'け'
-	ld [hli], a
-	ld [hl], '<DO>'
-	ret
-
-.FrzString
-	ld a, 'こ'
-	ld [hli], a
-	ld a, 'お'
-	ld [hli], a
-	ld [hl], 'り'
-	ret
-
-.ParString
-	ld a, 'ま'
-	ld [hli], a
-	ld [hl], 'ひ'
-	ret
+.SlpString: db "SLP@"
+.PsnString: db "PSN@"
+.BrnString: db "BRN@"
+.FrzString: db "FRZ@"
+.ParString: db "PAR@"
 
 GetMonBackpic::
 	ld a, $00
