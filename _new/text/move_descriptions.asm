@@ -1221,15 +1221,15 @@ SunnyDayDescription_ENG:
 
 F2Description_ENG:
 	db   "Comment being"	;	not a dev note, actual description
-	next "written."
+	next "written.@"
 
 F3Description_ENG:
 	db   "Comment being"	;	not a dev note, actual description
-	next "written."
+	next "written.@"
 
 F4Description_ENG:
 	db   "Comment being"	;	not a dev note, actual description
-	next "written."
+	next "written.@"
 
 UprootDescription_ENG:
 	db   "Heavily strikes"
@@ -1241,7 +1241,7 @@ WindRideDescription_ENG:
 
 WaterSportDescription_ENG:
 	db   "Comment being"	;	not a dev note, actual description
-	next "written."
+	next "written.@"
 
 StrongArmDescription_ENG:
 	db   "A move that may"
