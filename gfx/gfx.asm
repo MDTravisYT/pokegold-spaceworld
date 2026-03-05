@@ -59,8 +59,7 @@ INCBIN "gfx/sgb/sgb_border_gold.2bpp"
 else
 
 AlternateSGBBorderTilemap::
-;INCBIN "gfx/sgb/sgb_border_alt_silver.sgb.tilemap"
-INCBIN "gfx/sgb/todo/sgb_border_alt_silver.bin"	;	MDT TODO: Decode (tilemap)
+INCBIN "gfx/sgb/sgb_border_alt_silver.sgb.tilemap"
 
 AlternateSGBBorderPalettes:
 ;INCLUDE "gfx/sgb/sgb_border_alt_silver.pal"
@@ -70,8 +69,7 @@ AlternateSGBBorderGFX::
 INCBIN "gfx/sgb/sgb_border_alt.2bpp"
 
 SGBBorderTilemap::
-;INCBIN "gfx/sgb/sgb_border_silver.sgb.tilemap"
-INCBIN "gfx/sgb/todo/sgb_border_silver.bin"	;	MDT TODO: Decode (tilemap)
+INCBIN "gfx/sgb/sgb_border_silver.sgb.tilemap"
 
 SGBBorderPalettes:
 ;INCLUDE "gfx/sgb/sgb_border_silver.pal"
