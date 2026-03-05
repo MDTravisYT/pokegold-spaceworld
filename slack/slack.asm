@@ -1,3 +1,5 @@
+INCLUDE "constants.asm"
+
 SECTION "slack.asm@Bank 01 Padding", ROMX
 
 Bank01Padding:
