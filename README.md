@@ -11,3 +11,15 @@ For safety reasons, most `text_far` calls and code modifications are padded back
 Big thanks to [@Narishma-gb](https://github.com/Narishma-gb/) for their disassemblies of the Japanese versions of the retail games. I wouldn't have been able to know where to look for various things without them.
 
 Find a bug? Something untranslated? Something translated wrong? I made a dumb typo? Report it at the [issues tab](https://github.com/MDTravisYT/pokegold-spaceworld/issues)!
+
+## Compiling
+Until my dense head figures out how to work with makefiles, there are two makefiles for compiling Gold Version and Silver Version. Commands are as follows:
+
+To make Gold Version:
+```make -j```
+
+To make Silver Version:
+```make -f MakefileSilver -j```
+
+To switch between versions:
+```make clean | [command for version to switch to]```

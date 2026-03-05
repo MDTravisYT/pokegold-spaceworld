@@ -1,7 +1,7 @@
 ROM := pokegold97-english.gb
-BASEROM := baserom.gb
+BASEROM := baserom_g.gb
 
-DIRS := home engine data gfx audio maps scripts ram slack _new
+DIRS := home engine data gfx audio maps scripts ram _new
 FILES :=
 
 BUILD := build
@@ -88,7 +88,6 @@ $(BUILD)/shim.asm: shim.sym | $$(dir $$@)
 
 ### Misc file-specific graphics rules
 include gfx/gfx.mk
-include slack/slack.mk
 
 
 ### Catch-all build target rules

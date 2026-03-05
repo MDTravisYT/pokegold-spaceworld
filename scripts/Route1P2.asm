@@ -59,9 +59,15 @@ Route1P2Text2:
 	call OpenTextbox
 	ld hl, $D3A2
 	set 1, [hl]
+if DEF(GOLD)
 	ld a, TRAINER_KIMONO_GIRL
 	ld [wOtherTrainerClass], a
 	ld a, KIMONO_GIRL_KOUME
+else
+	ld a, TRAINER_KIMONO_GIRL
+	ld [wOtherTrainerClass], a
+	ld a, KIMONO_GIRL_TAMAO
+endc
 	ld [wOtherTrainerID], a
 	ld hl, wOverworldFlags
 	set 7, [hl]

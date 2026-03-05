@@ -134,9 +134,6 @@ ROMX $02
 	"gfx.asm@Title Screen BG Decoration Border"
 	"engine/gfx/sgb_layouts.asm"
 	"gfx.asm@SGB GFX"
-;	"slack.asm@Unknownaebc"
-;	"slack.asm@Corrupted SGB GFX"
-;	"slack.asm@Unknownbb43"
 
 ROMX $03
 	org $4000
@@ -779,7 +776,6 @@ ROMX $30
 ROMX $31
 	org $4000
 	"gfx.asm@Bank 31 Sprites 2"
-	"slack.asm@Corrupted Sprites"
 
 ROMX $32
 	org $4000
@@ -933,7 +929,6 @@ ROMX $39
 	"gfx.asm@Intro Underwater GFX"
 	"gfx.asm@Intro Forest GFX"
 	"gfx.asm@Intro Mon"
-	"slack.asm@Unknowne7e9f"
 
 ROMX $3a
 	org $4000

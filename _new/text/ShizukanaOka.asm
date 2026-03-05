@@ -2,6 +2,8 @@ INCLUDE "constants.asm"
 
 SECTION "_new/text/ShizukanaOka.asm", ROMX
 
+if DEF(GOLD)
+
 _ShizukanaOkaTrainer6EncounterString:
 	text "Look, look!"
 	
@@ -82,6 +84,91 @@ _ShizukanaOkaTrainer2WonString:
 	
 	para "How could I lose?"
 	done
+
+else
+
+_ShizukanaOkaTrainer6EncounterString:
+	text "ShizukanaOkaTrainer6EncounterString"	;	TODO
+;	text "じゃーん！"
+;	line "みたことない　ポケモン"
+;	cont "だいはっけん"
+;	done
+;
+;	text "ほかの　ポケモンも"
+;	line "つかまえて　おくべきだったー"
+	done
+
+_ShizukanaOkaTrainer6WonString:
+	text "ShizukanaOkaTrainer6WonString"	;	TODO
+;	text "きみの　ポケモンも　みたことないな"
+;	line "ね　こうかん　しない？"
+	done
+
+_ShizukanaOkaTrainer5EncounterString:
+	text "ShizukanaOkaTrainer5EncounterString"	;	TODO
+;	text "ねーねー　あたしと"
+;	line "ポケモンしょうぶ　しよーよー"
+;	done
+;
+;	text "やーん"
+	done
+
+_ShizukanaOkaTrainer5WonString:
+	text "ShizukanaOkaTrainer5WonString"	;	TODO
+;	text "よるになると　くらくなるじゃない？"
+;	line "あるいてても　まわりが"
+;	cont "よくわからなくて　こわいわ"
+	done
+
+_ShizukanaOkaTrainer4EncounterString:
+	text "ShizukanaOkaTrainer4EncounterString"	;	TODO
+;	text "きみ！"
+;
+;	para "おこらないから"
+;	line "いけが　あるところを　おしえなさい！"
+;	done
+;
+;	text "みずが　ちかくに　ないと⋯⋯"
+	done
+
+_ShizukanaOkaTrainer4WonString:
+	text "ShizukanaOkaTrainer4WonString"	;	TODO
+;	text "どうして　おじさんは"
+;	line "こんなところに　いるんだ？"
+	done
+
+_ShizukanaOkaTrainer3EncounterString:
+	text "ShizukanaOkaTrainer3EncounterString"	;	TODO
+;	text "ポケモンは　はじめたばかり？"
+;	line "それやったら　まけへんで"
+;	done
+;
+;	text "うわ　なんでやねん"
+	done
+
+_ShizukanaOkaTrainer3WonString:
+	text "ShizukanaOkaTrainer3WonString"	;	TODO
+;	text "なんか　すっげー　くやしいわ"
+	done
+
+_ShizukanaOkaTrainer2EncounterString:
+	text "ShizukanaOkaTrainer2EncounterString"	;	TODO
+;	text "ここは　ひろくて"
+;	line "トレーニングに　さいてきだ"
+;
+;	para "なんのって　もちろん"
+;	line "ポケモンの　トレーニングだよ！"
+;	done
+;
+;	text "れ　れんしゅう　ぶそくか⋯⋯"
+	done
+
+_ShizukanaOkaTrainer2WonString:
+	text "ShizukanaOkaTrainer2WonString"	;	TODO
+;	text "よーし　はしる　ぞー"
+	done
+
+endc
 	
 _ShizukanaOkaText1String:
 	text "The #MON around"

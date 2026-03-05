@@ -367,10 +367,18 @@ DemoItemList::
 	db -1
 
 DemoPlayerName::
+if DEF(GOLD)
 	db "ASH@"
+else
+	db "GARY@"
+endc
 
 DemoRivalName::
+if DEF(GOLD)
 	db "GARY@"
+else
+	db "ASH@"
+endc
 
 OakSpeechDemo::	;	01:587b
 	text_far _OakSpeechDemo
@@ -510,9 +518,15 @@ PlayerNameMenuData:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B
 	db 04 ; items
 	db "じぶんできめる@"
+if DEF(GOLD)
 	db "ゴールド@"
 	db "サトシ@"
 	db "ジャック@"
+else
+	db "シルバー@"
+	db "シゲル@"
+	db "ジョン@"
+endc
 	db 3 ; x offset for the title string
 	db "なまえこうほ@"
 
@@ -563,9 +577,15 @@ RivalNameMenuData:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B
 	db 04 ; items
 	db "じぶんできめる@"
+if DEF(GOLD)
 	db "シルバー@"
 	db "シゲル@"
 	db "ジョン@"
+else
+	db "ゴールド@"
+	db "サトシ@"
+	db "ジャック@"
+endc
 	db 3
 	db "なまえこうほ@"
 

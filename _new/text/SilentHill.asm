@@ -84,6 +84,8 @@ _SilentHillTextPokemonInGrassString:
 	cont "for a sec!"
 	done
 	
+if DEF(GOLD)
+	
 _SilentHillTextBackpackString:
 	text "That's such a cute"
 	line "BAG! Where'd you"
@@ -96,3 +98,21 @@ _SilentHillTextPokemonHateString:
 	cont "doesn't like"
 	cont "#MON?"
 	done
+	
+else
+	
+_SilentHillTextBackpackString:
+	text "SilentHillTextBackpackString"	;	TODO
+;	text "その　とけい　かっこいいわね"
+;	line "えっ　トレーナーギアって　いうの？"
+;	done
+	
+_SilentHillTextPokemonHateString:
+	text "SilentHillTextPokemonHateString"	;	TODO
+;	text "なに？　きみは"
+;	line "ポケモンを　あつめてるのか！"
+;
+;	para "それは　すばらしいことだ"
+;	done
+
+endc

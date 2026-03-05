@@ -2,6 +2,7 @@ INCLUDE "constants.asm"
 
 SECTION "_new/text/Route1P2.asm", ROMX
 
+if DEF(GOLD)
 _Route1P2TextString1:
 	text "What a lovely"
 	line "trainer you are!"
@@ -20,7 +21,22 @@ _Route1P2TextString3:
 _Route1P2TextString4:
 	text "GARY: Oh, if it"
 	line "isn't ASH!"
+else
+_Route1P2TextString1:
+	text "Route1P2TextString1"	;	TODO
+;	text "うちの　ポケモン"
+;	line "そら　もう　かわいいんどすえ"
+	done
 	
+_Route1P2TextString3:
+	text "Route1P2TextString3"	;	TODO
+;	text "プりンちゃんが　かわいそ　どす"
+	done
+	
+_Route1P2TextString4:
+	text "ASH: Oh, if it"
+	line "isn't GARY!"
+endc
 	para "Guess you actually"
 	line "made it all the"
 	cont "way here."

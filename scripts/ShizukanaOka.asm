@@ -52,9 +52,15 @@ ShizukanaOkaTrainer2:
 	call OpenTextbox
 	ld hl, wd3a5
 	set 1, [hl]
+IF DEF(GOLD)
 	ld a, TRAINER_SCHOOLBOY
 	ld [wOtherTrainerClass], a
 	ld a, SCHOOLBOY_TETSUYA
+else
+	ld a, TRAINER_SPORTSMAN
+	ld [wOtherTrainerClass], a
+	ld a, SPORTSMAN_TETSUJI
+endc
 	ld [wOtherTrainerID], a
 	call InitTrainerBattle
 	ret
@@ -71,9 +77,15 @@ ShizukanaOkaTrainer3:
 	call OpenTextbox
 	ld hl, wd3a5
 	set 2, [hl]
+IF DEF(GOLD)
 	ld a, TRAINER_BUG_CATCHER_BOY
 	ld [wOtherTrainerClass], a
 	ld a, BUG_CATCHER_BOY_JUNICHI
+else
+	ld a, TRAINER_BUG_CATCHER_BOY
+	ld [wOtherTrainerClass], a
+	ld a, BUG_CATCHER_BOY_KEN
+endc
 	ld [wOtherTrainerID], a
 	call InitTrainerBattle
 	ret
@@ -90,9 +102,15 @@ ShizukanaOkaTrainer4:
 	call OpenTextbox
 	ld hl, wd3a5
 	set 3, [hl]
+IF DEF(GOLD)
 	ld a, TRAINER_FIREBREATHER
 	ld [wOtherTrainerClass], a
 	ld a, FIREBREATHER_AKITO
+else
+	ld a, TRAINER_FISHER
+	ld [wOtherTrainerClass], a
+	ld a, FISHER_HISASHI
+endc
 	ld [wOtherTrainerID], a
 	call InitTrainerBattle
 	ret
@@ -109,9 +127,15 @@ ShizukanaOkaTrainer5:
 	call OpenTextbox
 	ld hl, wd3a5
 	set 4, [hl]
+IF DEF(GOLD)
 	ld a, TRAINER_BEAUTY
 	ld [wOtherTrainerClass], a
 	ld a, BEAUTY_MEGUMI
+else
+	ld a, TRAINER_LASS
+	ld [wOtherTrainerClass], a
+	ld a, LASS_HIZUKI
+endc
 	ld [wOtherTrainerID], a
 	call InitTrainerBattle
 	ret
@@ -128,9 +152,15 @@ ShizukanaOkaTrainer6:
 	call OpenTextbox
 	ld hl, wd3a5
 	set 5, [hl]
+IF DEF(GOLD)
 	ld a, TRAINER_BUG_CATCHER_BOY
 	ld [wOtherTrainerClass], a
 	ld a, BUG_CATCHER_BOY_SOUSUKE
+else
+	ld a, TRAINER_BUG_CATCHER_BOY
+	ld [wOtherTrainerClass], a
+	ld a, BUG_CATCHER_BOY_KENJI
+endc
 	ld [wOtherTrainerID], a
 	call InitTrainerBattle
 	ret
