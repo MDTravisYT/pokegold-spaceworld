@@ -101,18 +101,20 @@ _SilentHillTextPokemonHateString:
 	
 else
 	
-_SilentHillTextBackpackString:
-	text "SilentHillTextBackpackString"	;	TODO
-;	text "その　とけい　かっこいいわね"
-;	line "えっ　トレーナーギアって　いうの？"
-;	done
+_SilentHillTextBackpackString:	;	Translation by GlitterBerri
+	text "That's a cool"
+	line "watch!"
 	
-_SilentHillTextPokemonHateString:
-	text "SilentHillTextPokemonHateString"	;	TODO
-;	text "なに？　きみは"
-;	line "ポケモンを　あつめてるのか！"
-;
-;	para "それは　すばらしいことだ"
-;	done
+	para "Oh, it's called a"
+	line "TOOLGEAR?"
+	done
+	
+_SilentHillTextPokemonHateString:	;	Translation by GlitterBerri
+	text "What? You're"
+	line "collecting"
+	cont "#MON?"
+	
+	para "That's fantastic!"
+	done
 
 endc

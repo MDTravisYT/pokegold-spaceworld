@@ -23,14 +23,12 @@ _Route1P2TextString4:
 	line "isn't ASH!"
 else
 _Route1P2TextString1:
-	text "Route1P2TextString1"	;	TODO
-;	text "うちの　ポケモン"
-;	line "そら　もう　かわいいんどすえ"
+	text "Look, my #MON"
+	line "are so cute!"
 	done
 	
 _Route1P2TextString3:
-	text "Route1P2TextString3"	;	TODO
-;	text "プりンちゃんが　かわいそ　どす"
+	text "Poor JIGGLYPUFF..."
 	done
 	
 _Route1P2TextString4:
