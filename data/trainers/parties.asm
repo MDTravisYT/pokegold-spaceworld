@@ -73,11 +73,18 @@ endc
 
 TsukishiGroup::
 LassGroup::
+if DEF(GOLD)
 	; LASS_ATSUKO
 	db "あつこ@", TRAINERTYPE_ITEM_MOVES
 	db  8, DEX_ODDISH, ITEM_NONE
 	; No moves?
 	db -1 ; end
+else
+	; LASS_HIZUKI
+	db "ひづき@", TRAINERTYPE_ITEM_MOVES
+	db 10, DEX_ODDISH, ITEM_NONE, MOVE_ABSORB, MOVE_STUN_SPORE, MOVE_NONE, MOVE_NONE
+	db -1 ; end
+endc
 
 ; Leftover Lass data from Red/Blue
 	db  9, MON_PIDGEY, MON_PIDGEY, 0
@@ -233,11 +240,18 @@ ProtagonistGroup::
 SibaGroup::
 KasumiGroup::
 FisherGroup::
+if DEF(GOLD)
 	; FISHER_HISASHI
 	db "ひさし@", TRAINERTYPE_ITEM_MOVES
 	db  8, DEX_PUKU, ITEM_NONE
 	; No moves?
 	db -1 ; end
+else
+	; FISHER_HISASHI
+	db "ひさし@", TRAINERTYPE_ITEM_MOVES
+	db 10, DEX_PUKU, ITEM_NONE, MOVE_PECK, MOVE_FLAIL, MOVE_NONE, MOVE_NONE
+	db -1 ; end
+endc
 ; Leftover Fisher data from Red/Blue
 	db 17, MON_GOLDEEN, MON_TENTACOOL, MON_GOLDEEN, 0
 	db 17, MON_TENTACOOL, MON_STARYU, MON_SHELLDER, 0
@@ -293,10 +307,13 @@ GerugeMemberMGroup::
 
 Trio1Group::
 BeautyGroup::
+IF DEF(GOLD)
 	; BEAUTY_MEGUMI
 	db "めぐみ@", TRAINERTYPE_ITEM_MOVES
 	db 10, DEX_MEOWTH, ITEM_NONE, MOVE_PAY_DAY, MOVE_GROWL, MOVE_NONE, MOVE_NONE
 	db -1 ; end
+else
+endc
 ; Leftover Beauty data from Red/Blue
 	db 21, MON_ODDISH, MON_BELLSPROUT, MON_ODDISH, MON_BELLSPROUT, 0
 	db 24, MON_BELLSPROUT, MON_BELLSPROUT, 0
@@ -617,12 +634,12 @@ endc
 
 FirebreatherGroup::
 if DEF(GOLD)
-	; MOLTRESBREATHER_AKITO
+	; FIREBREATHER_AKITO
 	db "あきと@", TRAINERTYPE_ITEM_MOVES
 	db 10, DEX_BOOBY, ITEM_NONE, MOVE_SCRATCH, MOVE_SMOG, MOVE_NONE, MOVE_NONE
 	db -1 ; end
 else
-	; MOLTRESBREATHER_AKITO
+	; FIREBREATHER_AKITO
 	db "あきと@", TRAINERTYPE_ITEM
 	db  8, DEX_BOOBY, ITEM_NONE
 	db -1 ; end
@@ -635,8 +652,7 @@ if DEF(GOLD)
 	db  8, DEX_DONPHAN, ITEM_NONE
 	db -1 ; end
 else
-; TODO: This guy clearly ain't named "Shigeki", he's "Tetsuji". Add a trainer constant accordingly
-	; SPORTSMAN_SHIGEKI
+	; SPORTSMAN_TETSUJI
 	db "てつじ@", TRAINERTYPE_ITEM_MOVES
 	db  9, DEX_DONPHAN, ITEM_NONE, MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_NONE, MOVE_NONE
 	db -1 ; end
