@@ -105,8 +105,8 @@ _SilentHillTextBackpackString:	;	Translation by GlitterBerri
 	text "That's a cool"
 	line "watch!"
 	
-	para "Oh, it's called a"
-	line "TOOLGEAR?"
+	para "Oh, it's called"
+	line "<TRAINER> GEAR?"
 	done
 	
 _SilentHillTextPokemonHateString:	;	Translation by GlitterBerri

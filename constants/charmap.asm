@@ -383,6 +383,9 @@
 	charmap "'s",        $bd
 	charmap "'t",        $be
 	charmap "'v",        $bf
+	
+	charmap "<TR>",      $d1
+	charmap "<NR>",      $d2
 
 	charmap "'",         $e0
 	charmap "<PK>",      $e1

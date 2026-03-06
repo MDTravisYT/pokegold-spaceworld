@@ -60,7 +60,7 @@ DebugMenuHeader:
 	db "SOUND@"
 	db "MINIGAME@"
 	db "#DEX@"
-	db "TOOLGEAR@"
+	db "<TR><NR>GEAR@"
 	db "CREDITS@"
 
 DebugMenuItems:
