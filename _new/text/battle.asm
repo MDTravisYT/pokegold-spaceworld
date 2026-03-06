@@ -205,7 +205,6 @@ _BattleText_PlayerPickedUpPayDayMoney:
 	prompt
 	
 _FaintedText:
-	text "Enemy @"
 	text_from_ram wBattleMonNickname
 	text_start
 	line "fainted!"
