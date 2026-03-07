@@ -334,75 +334,77 @@ GetMapPalsIndex:
 	jr z, .env5
 	cp INDOOR
 	jr z, .indoors
-	call Function9527
-	jr c, .sub_9524
-	call Function9543
+	call CheckTimeNotDay
+	jr c, .is_night
+	call ApplyMapGroupPalette
 	ret
 
 .indoors
-	call Function9536
-	jr c, .sub_9524
-	call Function9543
+	call CheckTimeDarkness
+	jr c, .is_night
+	call ApplyMapGroupPalette
 	ret
 
 .is_route
-	call Function9527
-	jr c, .sub_9524
-	ld a, $00
+	call CheckTimeNotDay
+	jr c, .is_night
+	ld a, PAL_ROUTE
 	ret
 
 .is_cave
-	call Function9527
-	jr c, .sub_9524
-	ld a, $0c
+	call CheckTimeNotDay
+	jr c, .is_night
+	ld a, PAL_TOWN_OLDCITY
 	ret
 
 .is_gate
-	ld a, $03
+	ld a, PAL_TOWN_WEST
 	ret
 
 .env5
-	ld a, $04
+	ld a, PAL_TOWN_NEWTYPE
 	ret
 
-.sub_9524
-	ld a, $0d
+.is_night
+	ld a, PAL_NIGHTTIME
 	ret
 
-Function9527:
+CheckTimeNotDay:
 	ld a, [wTimeOfDay]
 	and $03
-	jr z, .sub_9534
-	cp $03
-	jr z, .sub_9534
+	jr z, .is_day
+	cp MORN_F
+	jr z, .is_day
 	scf
 	ret
-.sub_9534
+.is_day
 	and a
 	ret
 
-Function9536:
+CheckTimeDarkness:
 	ld a, [wTimeOfDay]
 	and $03
-	cp $02
-	jr nz, .sub_9541
+	cp DARKNESS_F
+	jr nz, .is_not_darkness
 	scf
 	ret
-.sub_9541
+.is_not_darkness
 	and a
 	ret
 
-Function9543:
+ApplyMapGroupPalette:
 	ld a, [wMapGroup]
 	ld e, a
 	ld d, $00
 	ld hl, MapGroupPalettes
-	add hl, de
+	add hl, de ; FIXME: MapGroupPalettes overflows if "wMapGroup" is "MISC". This only affects
+	           ; the Power Plant maps which are normally incessible. Later fixed in
+	           ; "SOURCE\BACKUP\SGB_COL.DMG", by adding several dummy entries to MapGroupPalettes.
 	ld a, [hl]
 	ret
 
 MapGroupPalettes:
-	db PAL_TOWN_NORTH ; ???
+	db PAL_TOWN_NORTH ; dummy
 	db PAL_TOWN_SILENTHILL ; Silent Hill
 	db PAL_TOWN_OLDCITY ; Old City
 	db PAL_TOWN_WEST ; West
@@ -418,6 +420,12 @@ MapGroupPalettes:
 	db PAL_TOWN_STAND ; Mt.Fuji
 	db PAL_TOWN_SOUTH ; South
 	db PAL_TOWN_NORTH ; North
+
+;	db PAL_TOWN_SILENTHILL ; dummy
+;	db PAL_TOWN_SILENTHILL ; dummy
+;	db PAL_TOWN_SILENTHILL ; dummy
+;	db PAL_TOWN_SILENTHILL ; dummy
+;	db PAL_TOWN_SILENTHILL ; dummy
 
 _LoadSGBLayout_ReturnFromJumpTable:
 	push de
