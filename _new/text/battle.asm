@@ -341,10 +341,11 @@ _RecoveredUsingText:
 	prompt
 	
 _UseItemFailedText:	;	translated by Discord user @mauvesea
-	text "<USER>'s @"
+	text "<USER>'s"
+	line "@"
 	text_from_ram wStringBuffer1
 	text " "
-	line "has activated!"
+	cont "has activated!"
 	prompt
 	
 _FastAsleepText::
