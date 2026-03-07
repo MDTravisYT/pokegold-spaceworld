@@ -193,7 +193,10 @@ _CheckMovementDebug:
 
 CheckMovementSkateboard::
 	call _CheckMovementSkateboard
-	jp SetPlayerMovement
+	jp SetPlayerMovement ; FIXME: .skip_debug_move already calls SetPlayerMovement
+	                     ;        The skateboard doesn't work, because it uses the current
+	                     ;        coordinate as player animation. This line was later commented
+	                     ;        out in "SOURCE\BACKUP\JIKIMOVE.OLD", fixing the issue.
 
 _CheckMovementSkateboard:
 	ld a, [wSkatingDirection]
@@ -583,9 +586,7 @@ _OverworldMovementCheck::
 GetPlayerMovementByState:
 	ld a, [wPlayerState]
 	cp PLAYER_SKATE
-	jp z, CheckMovementSkateboard ; FIXME: CheckMovementSkateboard already calls SetPlayerMovement
-	                                 ;        The skateboard doesn't work, because it uses the current
-	                                 ;        coordinate as player animation.
+	jp z, CheckMovementSkateboard
 	cp PLAYER_SURF
 	jp z, CheckMovementSurf
 	jp CheckMovementWalk
