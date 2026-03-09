@@ -1474,30 +1474,21 @@ GivePoke::
 	ret
 
 WasSentToBillsPCText:
-	text_from_ram wStringBuffer1
-	text "は　マサキの　ところへ"
-	line "てんそうされた！"
-	prompt
+	text_far _ItemUseBallText07
+	text_end
 
 WasSentToSomeonesPCText:
-	text_from_ram wStringBuffer1
-	text "は　だれかの　<PC>に" ; "was transferred to"
-	line "てんそうされた！" ; "Someone's PC!"
-	prompt
+	text_far _ItemUseBallText08
+	text_end
 
 NewDexDataText:
-	text_from_ram wStringBuffer1
-	text "の　データが　あたらしく" ; "New Dex data will"
-	line "#ずかんに　セーブされます！@" ; "be added for (MON)!"
-	sound_slot_machine_start
-	text_waitbutton
+	text_far _ItemUseBallText06
 	text_end
 
 GotItText:
-	text "ゲットした　@" ; "Got it!"
+	text_far _ItemUseBallText05
+	text_end
 
 AskGiveNicknameText:
-	text_from_ram wStringBuffer1
-	text "に" ; "Would you like to"
-	line "なまえを　つけますか？" ; "give it a name?"
-	done
+	text_far _DoYouWantToNicknameText
+	text_end

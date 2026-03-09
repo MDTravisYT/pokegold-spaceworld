@@ -294,3 +294,41 @@ _MoveCantForgetHMText::
 	text "HM moves can't be"
 	line "forgotten now."
 	prompt
+	
+_DoYouWantToNicknameText::
+	text "Do you want to"
+	line "give a nickname"
+	cont "to @"
+	text_from_ram wStringBuffer1
+	text "?"
+	done
+	
+_ItemUseBallText07::
+	text_from_ram wStringBuffer1
+	text " was"
+	line "transferred to"
+	cont "BILL's PC!"
+	prompt
+
+_ItemUseBallText08::
+	text_from_ram wStringBuffer1
+	text " was"
+	line "transferred to"
+	cont "someone's PC!"
+	prompt
+
+_ItemUseBallText06::
+	text "New #DEX data"
+	line "will be added for"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "!@"
+	text_end
+
+_ItemUseBallText05::
+	text "All right!"
+	line "@"
+	text_from_ram wStringBuffer1
+	text " was"
+	cont "caught!@"
+	text_end

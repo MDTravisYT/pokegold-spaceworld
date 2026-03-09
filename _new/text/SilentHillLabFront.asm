@@ -3,534 +3,572 @@ INCLUDE "constants.asm"
 SECTION "_new/text/SilentHillLabFront.asm", ROMX
 
 _SilentHillLabFronttextString1:	;	34:4ffd
-	text "SilentHillLabFronttextString1"
-	;text "パソコンを　みると"
-	;line "なんと　メールが　きていた！"
-
-	;para "<⋯⋯>　<⋯⋯>　<⋯⋯>"
-	;line "オーキドはかせ！"
-	;cont "あなたが　ゆくえふめいに"
-	;cont "なっていると　せけんは"
-	;cont "おおさわぎ　です！"
-
-	;para "それは　そうと"
-	;line "はかせ　から　みつけるように"
-	;cont "たのまれた　れいの#"
-	;cont "みつけるどころか"
-	;cont "まだ　てがかりも"
-	;cont "つかむことが　できません"
-
-	;para "やはり　あいつは"
-	;line "かくうの　#なのでは"
-	;cont "ないでしょうか<⋯⋯>"
-	;cont "<⋯⋯>　<⋯⋯>　<⋯⋯>じょしゅより"
+	text "There's an e-mail"
+	line "out in the open!"
+	
+	para "...PROF.OAK! The"
+	line "whole world's in a"
+	cont "terrible stir over"
+	cont "your whereabouts!"
+	
+	para "As for the #MON"
+	line "you asked I search"
+	cont "for, I have yet to"
+	cont "find even a single"
+	cont "lead-- let alone"
+	cont "its hiding spot."
+	
+	para "I suppose that's"
+	line "to be expected..."
+	
+	para "It's high up in"
+	line "the sky after all."
+	
+	para "Regards,"
+	line "Your AIDE"
 	done
 
 _SilentHillLabFronttextString2A:	;	34:50ca
-	text "SilentHillLabFronttextString2A"
-	;text "スタート　ボタンを　プシュ！"
-	;line "おすと　メニューが　ひらくなり"
+	text "Push START to"
+	line "open the MENU!"
 	done
 
 _SilentHillLabFronttextString2B:	;	34:50ea
-	text "SilentHillLabFronttextString2B"
-	;text "セーブするには　#　レポート"
-	;line "こまめに　かくと　いいなり"
+	text "The SAVE option is"
+	line "on the MENU"
+	cont "screen."
+	
+	para "Remember to"
+	line "save frequently."
 	done
 
 _SilentHillLabFronttextString3:	;	34:510f
-	text "SilentHillLabFronttextString3"
-	;text "カギが　かかっている"
+	text "Huh?"
+	line "It's locked..."
 	done
 
 _SilentHillLabFronttextString4:	;	34:512a
-	text "SilentHillLabFronttextString4"
-	;text "オーキド『ごくろうさん！"
+	text "OAK: Good work!"
 	done
 
 _SilentHillLabFronttextString5:	;	34:5138
-	text "SilentHillLabFronttextString5@"
-	;text "オーキド『そうとも！"
-	;line "わしが　オーキドじゃ！"
-	;cont "じじいで　わるかったな！"
-
-	;para "おまえたち　ふたりは"
-	;line "この　オーキドが　よんだのじゃ！"
-
-	;para "すこし　わしの　はなしを"
-	;line "きいては　くれんか？@"
+	text "OAK: Indeed! I am"
+	line "PROF.OAK. You've"
+	cont "got quite the"
+	cont "mouth on you!"
+	
+	para "It is indeed I who"
+	line "called you here!"
+	
+	para "Won't you listen"
+	line "for a while?@"
 	text_end
 
 _SilentHillLabFronttextString6A:	;	34:51ae
-	text "SilentHillLabFronttextString6A"
-	;text "オーキド『いまから　１ねんまえ"
-	;line "わしは　カントーで"
-	;cont "きみたちの　ような　しょうねんに"
-	;cont "#の　けんきゅうの　ため"
-	;cont "#と　ずかんを　わたした"
+	text "OAK: One year ago,"
+	line "in KANTO, I"
+	cont "entrusted two boys"
+	cont "much like you"
+	cont "with a #MON and"
+	cont "a #DEX each,"
+	cont "to assist in"
+	cont "my research."
 
-	;para "そして　かれらは"
-	;line "じつに　よくやってくれた！"
-
-	;para "１５０しゅるいの"
-	;line "#を　みつけることに"
-	;cont "せいこう　したのじゃ！"
-	;cont "が　<⋯⋯>　<⋯⋯>　<⋯⋯>"
-	;cont "しかし　<⋯⋯>　<⋯⋯>"
-
-	;para "せかいは　ひろいものじゃ"
-	;line "そのご　ぜんこく　かくちで"
-	;cont "あたらしい　#が　ぞくぞくと"
-	;cont "みつかっておる！"
-
-	;para "そこで　わしは　カントーから"
-	;line "ここ　サイレントヒルに"
-	;cont "けんきゅうの　ばしょを　うつした"
-
-	;para "ばしょが　かわれば"
-	;line "あたらしい　#にも"
-	;cont "であうことが　できるからな"
-	;cont "<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>"
-
-	;para "これからも　どんどんと"
-	;line "けんきゅうを　すすめるが"
-	;cont "わしも　ごらんのとおりの　おいぼれ"
-	;cont "まごや　じょしゅたちも　おるが"
-	;cont "それでも　やはり　かずが　たらん！"
-
-	;para "<PLAYER>！　<RIVAL>！"
-	;line "#けんきゅうの　ために"
-	;cont "ちからを　かして　くれんか！"
+	para "In the end, their"
+	line "work was truly"
+	cont "astounding!"
+	
+	para "They succeeded in"
+	line "discovering 150"
+	cont "#MON species!"
+	
+	para "However..."
+	
+	para "It's a vast world"
+	line "we live in. With"
+	cont "that, new #MON"
+	cont "started being"
+	cont "found all over"
+	cont "the country!"
+	
+	para "Therefore, I moved"
+	line "from KANTO to"
+	cont "here, SILENT HILL,"
+	cont "to establish a new"
+	cont "laboratory!"
+	
+	para "Because, you see,"
+	line "in a new place,"
+	cont "new #MON may"
+	cont "well be found."
+	cont "..."
+	
+	para "Research will keep"
+	line "me busy, but as"
+	cont "you see, I'm"
+	cont "growing old. My"
+	cont "grandson and AIDEs"
+	cont "help, but they can"
+	cont "only do so much..."
+	
+	para "<PLAYER>! <RIVAL>!"
+	line "Please! Help me"
+	cont "research #MON!"
 	done
 
 _SilentHillLabFronttextString6B:	;	34:5332
-	text "SilentHillLabFronttextString6B"
-	;text "オーキド『そうか<⋯⋯>"
-	;line "わしに　ひとを　みるめが"
-	;cont "なかったと　いうことじゃな<⋯⋯>"
-
-	;para "いや！"
-	;line "わしの　ひとを　みるめは"
-	;cont "まちがっては　おらんはず！"
-
-	;para "な？"
-	;cont "わしの　はなしを　きいてくれるな？"
+	text "OAK: Oh. I might"
+	line "not be as good a"
+	cont "judge of character"
+	cont "as I thought..."
+	
+	para "No! It can't be!"
+	line "I have an eye for"
+	cont "this sorta thing!"
+	
+	para "You'll surely"
+	line "listen, no?"
 	done
 
 _SilentHillLabFronttextString7:	;	34:538d
-	text "SilentHillLabFronttextString7"
-	;text "オーキド『ふたりとも！"
-	;line "ちょっと　わしに　ついてこい！"
+	text "OAK: Follow me,"
+	line "you two!"
 	done
 
 _SilentHillLabFronttextString8:	;	34:53bf
-	text "SilentHillLabFronttextString8"
-	;text "オーキド『<PLAYER>！<RIVAL>！"
-	;line "このずかんを"
-	;cont "おまえたちに　あずける！"
+	text "OAK: <PLAYER> and"
+	line "<RIVAL>! Take"
+	cont "these with you!"
 	done
 
 _SilentHillLabFronttextString9:	;	34:53de
-	text "SilentHillLabFronttextString9"
-	;text "<PLAYER>は　オーキドから"
-	;line "#ずかんを　もらった！"
+	text "<PLAYER> got"
+	line "#DEX from OAK!"
 	done
 
 _SilentHillLabFronttextString10:	;	34:53f5
-	text "SilentHillLabFronttextString10"
-	;text "オーキド『この　せかいの　すべての"
-	;line "#を　きろくした"
-	;cont "かんぺきな　ずかんを　つくること！"
-	;cont "それが　わしの　ゆめ　だった！"
-
-	;para "しかし　しんしゅの　#は"
-	;cont "ぞくぞくと　みつかっている！"
-
-	;para "わしに　のこされた"
-	;line "じかんは　すくない！"
-
-	;para "そこで　おまえ　たちには"
-	;line "わしの　かわりに"
-	;cont "ゆめを　はたして　ほしいのじゃ！"
-
-	;para "さあ　ふたりとも"
-	;line "さっそく　しゅっぱつ　してくれい！"
-	;cont "これは　#の　れきしに　のこる"
-	;cont "いだいな　しごとじゃー！"
+	text "OAK: To make a"
+	line "complete guide on"
+	cont "all the #MON"
+	cont "in the world..."
+	
+	para "That was my dream!"
+	
+	para "But new #MON"
+	line "are being found"
+	cont "even as we speak."
+	
+	para "I don't have"
+	line "enough time left"
+	cont "in this world..."
+	
+	para "So, I want you two"
+	line "to fulfill my"
+	cont "dream for me!"
+	
+	para "This is a great"
+	line "undertaking in"
+	cont "#MON history!"
 	done
 
 _SilentHillLabFronttextString11A:	;	34:54c3
-	text "SilentHillLabFronttextString11A"
-	;text "オーキド『せかい　じゅうの"
-	;line "#たちが"
-	;cont "<PLAYER>を　まって　おるぞー"
+	text "OAK: #MON"
+	line "around the world"
+	cont "wait for you,"
+	cont "<PLAYER>!"
 	done
 
 _SilentHillLabFronttextString11B:	;	34:54e3
-	text "SilentHillLabFronttextString11B"
-	;text "オーキド『おう！　<PLAYER>"
-	;line "どうだ？"
-	;cont "わしの　あげた　#は<⋯⋯>？"
-
-	;para "ほう！"
-	;cont "だいぶ　なついた　みたいだな"
-
-	;para "おまえには　#トレーナーの"
-	;line "さいのうが　あるかもしれん"
-	;cont "これからも　ときどきは"
-	;cont "わしのところへ　かおを　だせ！"
-
-	;para "#ずかんの　ページが"
-	;line "きに　なるからな"
+	text "OAK: <PLAYER>!"
+	line "How is the #MON"
+	cont "I gave you doing?"
+	
+	para "Oho! It seems to"
+	line "have taken a"
+	cont "liking to you."
+	
+	para "It looks like you"
+	line "have a knack for"
+	cont "being a #MON"
+	cont "trainer."
+	
+	para "I'm interested in"
+	line "seeing how your"
+	cont "#DEX develops,"
+	cont "so please come by"
+	cont "and say hello"
+	cont "once in a while!"
 	done
 
 _SilentHillLabFronttextString12:	;	34:5567
-	text "SilentHillLabFronttextString12"
-	;text "オーキド『よく　きたな！"
-	;line "#ずかんの"
-	;cont "ちょうしは　どうかな？"
-
-	;para "どれ<⋯⋯>　ちょっと"
-	;cont "みて　あげようか！"
+	text "OAK: Good to see"
+	line "you! How is your"
+	cont "#DEX coming?"
+	
+	para "Here, let me take"
+	line "a look!"
 	done
 
 _SilentHillLabFronttextString13:	;	34:55a1
-	text "SilentHillLabFronttextString13"
-	;text "オーキド『<⋯⋯>　おっほんッ！"
-	;line "よくやったな　<PLAYER>！"
-
-	;para "ちょっと"
-	;line "わしに　ついて　きなさい！"
-
-	;para "<RIVAL>は　すまんが"
-	;line "そこで　まっていなさい！"
-
-	;para "<RIVAL>『えー！"
-	;line "なんだよ　ケチー！"
-
-	;para "オーキド『<RIVAL>は"
-	;line "でんせつの　#が"
-	;cont "ほしかった　だけじゃないのか？"
-	;cont "<RIVAL>『ギクッ！"
+	text "OAK: ...Oho! Well"
+	line "done, <PLAYER>!"
+	
+	para "Come with me for"
+	line "just a moment."
+	
+	para "Sorry, <RIVAL>,"
+	line "but you'll have to"
+	cont "wait there."
+	
+	para "<RIVAL>: Whaaat!"
+	line "C'mon, me too!"
+	
+	para "OAK: <RIVAL>, you"
+	line "were after the"
+	cont "legendary #MON,"
+	cont "weren't you?"
+	
+	para "<RIVAL>: Urk!"
 	done
 
 _SilentHillLabFronttextString14:	;	34:5621
-	text "SilentHillLabFronttextString14"
-	;text "<RIVAL>『なんだ"
-	;line "<PLAYER>じゃないか！"
-	;cont "おれも　ここが"
-	;cont "あやしいと　おもって　きたんだけど"
-	;cont "だれも　いないみたいだな<⋯⋯>"
+	text "<RIVAL>: Well, if"
+	line "it isn't <PLAYER>!"
+	
+	para "Now, you're in the"
+	line "right spot, but"
+	cont "it looks like this"
+	cont "place is empty?"
 	done
 
 _SilentHillLabFronttextString15:	;	34:565f
-	text "SilentHillLabFronttextString15"
-	;text "<RIVAL>『よっしゃあ！"
-	;line "じいさん！　おれにまかせな！"
+	text "<RIVAL>: Alright!"
+	line "Leave it to me,"
+	cont "old man!"
 	done
 
 _SilentHillLabFronttextString16:	;	34:5678
-	text "SilentHillLabFronttextString16"
-	;text "<RIVAL>『おれが　えらんだ"
-	;line "#のほうが　つよそうだぜ！"
-	;cont "こっちに　したかったんじゃないの？"
+	text "<RIVAL>: My"
+	line "#MON looks"
+	cont "stronger!"
+	
+	para "Sure you didn't"
+	line "want this one?"
 	done
 
 _SilentHillLabFronttextString17:	;	34:56a4
-	text "SilentHillLabFronttextString17"
-	;text "<RIVAL>『<PLAYER>！"
-	;line "せっかく　じいさんに"
-	;cont "#　もらったんだから"
-	;cont "<⋯⋯>　ちょっと"
-	;cont "たたかわせて　みようぜ！"
+	text "<RIVAL>: Hey,"
+	line "<PLAYER>, since"
+	cont "we just got these"
+	cont "#MON and all..."
+	
+	para "Let's try 'em out"
+	line "with a battle!"
 	done
 
 _SilentHillLabFronttextString18:	;	34:56d4
-	text "SilentHillLabFronttextString18"
-	;text "<RIVAL>『くっそー！"
-	;line "こんどは　ぜったい　まけないぞ！"
+	text "<RIVAL>: Darn it!"
+	
+	para "I won't lose"
+	line "next time!"
 	done
 
 _SilentHillLabFronttextString19:	;	34:56ee
-	text "SilentHillLabFronttextString19"
-	;text "<RIVAL>『よーし！"
-	;line "ほかの　#と　たたかわせて"
-	;cont "もっと　もっと　つよくしよう！"
-
-	;para "そんじゃ　ばいばい！"
+	text "<RIVAL>: Okay!"
+	line "I'll make my"
+	cont "#MON fight to"
+	cont "toughen it up!"
+	
+	para "<PLAYER>! Old man!"
+	line "See ya later!"
 	done
 
 _SilentHillLabFronttextString20:	;	34:571f
-	text "SilentHillLabFronttextString20"
-	;text "じいちゃん！"
-	;line "つれてきたよー！"
+	text "Gramps!"
+	line "Look who I found!"
 	done
 
 _SilentHillLabFronttextString21:	;	34:5730
-	text "SilentHillLabFronttextString21"
-	;text "ぼくは　かつて"
-	;line "#トレーナーの　ちょうてんを"
-	;cont "めざしたことが　あるんだ"
-	;cont "そのとき　いいきに　なっていた"
-	;cont "ぼくの　てんぐのはなを"
-	;cont "へしおった　やつに"
-	;cont "きみは　どことなく　にている"
+	text "I used to want to"
+	line "be the strongest"
+	cont "#MON trainer."
 
-	;para "あいつの　おかげで　ぼくは"
-	;line "こころを　いれかえて"
-	;cont "じいさんの　けんきゅうを"
-	;cont "てつだうように　なったのさ"
-	;cont "<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>"
+	para "When I got too"
+	line "arrogant, there"
+	cont "was one who showed"
+	cont "me humility."
 
-	;para "さあ！"
-	;line "これが　#ずかんだ！"
-
-	;para "みつけた　#の　データが"
-	;line "じどうてきに　かきこまれて"
-	;cont "ページが　ふえて　いく　という"
-	;cont "とても　ハイテクな　ずかん　だよ！"
+	para "Somehow... you"
+	line "remind me of him."
+	
+	para "Thanks to him, I"
+	line "was able to mend"
+	cont "my ways."
+	
+	para "Since, I started"
+	line "helping my grandpa"
+	cont "with his research."
+	cont "... ..."
+	
+	para "Oh right! Here's"
+	line "your #DEX!"
+	
+	para "It automatically"
+	line "records data on"
+	cont "#MON you've"
+	cont "seen or caught!"
 	done
 
 _SilentHillLabFronttextString22:	;	34:581b
-	text "SilentHillLabFronttextString22"
-	;text "ぼくも　むかし　やったけど"
-	;line "なかなか　たいへんだよ<⋯⋯>"
-	;cont "がんばってね！"
+	text "I did the same"
+	line "work you did long"
+	cont "ago, but it's real"
+	cont "hard... Good luck!"
 	done
 
 _SilentHillLabFronttextString23:	;	34:5846
-	text "SilentHillLabFronttextString23"
-	;text "ナナミ『さっき　あなたを　"
-	;line "つれてきた　わかい　おとこのこ<⋯⋯>"
-	;cont "あれは　わたしの　おとうとなの"
-	;cont "<⋯⋯>ということは　つまり"
-
-	;para "そう！"
-	;line "わたしも　オーキドの　まご　なの！"
-
-	;para "おじいちゃんは　りっぱな"
-	;cont "#けんきゅうしゃよ"
-	;cont "わたしは　おてつだい　できることが"
-	;cont "とっても　うれしいの！"
-	;cont "あっ　こんなこと　しられたら"
-	;cont "おじいちゃん　ちょうしに　のるから"
-	;cont "ないしょに　しておいてね！"
-
-	;para "<⋯⋯>おじいちゃん　すっかり"
-	;line "わすれている　みたいだから"
-
-	;para "わたしが　かわりに　これを　あげる！"
-	;line "さいしんがた　#リュックよ"
-
-	;para "<PLAYER>は"
-	;line "#リュックを　もらった！"
-
-	;para "ナナミ『この　リュックには"
-	;line "モンスターボールを"
-	;cont "まとめて　いれられる"
-	;cont "ボールホルダと"
-	;cont "わざマシンを　まとめて　いれられる"
-	;cont "わざマシンホルダが　ついているの"
-
-	;para "モンスターボール　６こと　"
-	;line "わざマシンひとつは　オマケしておくわ"
-	;cont "ホルダに　なんにも　はいってないと"
-	;cont "さびしいもんね！"
-
-	;para "ねえ　<PLAYER>くン"
-	;line "あなたの　おかあさんが"
-	;cont "しんぱいすると　いけないから"
-	;cont "このまちを　でるまえに"
-	;cont "かおを　みせに　いってあげてね"
-
-	;para "<⋯⋯>あなたの　かつやく"
-	;line "いのっているわ"
+	text "DAISY: The young"
+	line "boy who brought"
+	cont "you here... That's"
+	cont "my little brother."
+	cont "In other words..."
+	
+	para "I'm PROF.OAK's"
+	line "granddaughter!"
+	
+	para "Grandpa's a super"
+	line "researcher! I'm so"
+	cont "happy I get to"
+	cont "help out. Oh, but"
+	cont "grandpa would get"
+	cont "full of himself"
+	cont "if he heard that,"
+	cont "so don't tell him!"
+	
+	para "Grandpa seems to"
+	line "have completely"
+	cont "forgotten, so..."
+	
+	para "I guess I'll give"
+	line "this to you! It's"
+	cont "the newest model"
+	cont "of #PACK!"
+	
+	para "<PLAYER> received"
+	line "a #PACK!"
+	
+	para "DAISY: This PACK"
+	line "comes with a BALL"
+	cont "HOLDER for"
+	cont "# BALLs, and a "
+	cont "TM HOLDER for TMs!"
+	
+	para "I'll throw in six"
+	line "# BALLs and a"
+	cont "TM as a freebie!"
+	
+	para "<PLAYER>, we can't"
+	line "have your mother"
+	cont "worrying, so"
+	cont "before you leave"
+	cont "town, make sure"
+	cont "to say goodbye."
+	
+	para "I'll be rooting"
+	line "for you!"
 	done
 
 _SilentHillLabFronttextString24:	;	34:5a23
-	text "SilentHillLabFronttextString24"
-	;text "<⋯⋯>あなたの　かつやく"
-	;line "いのってるわ"
+	text "I'll be rooting"
+	line "for you!"
 	done
 
 _SilentHillLabFronttextString25:	;	34:5a3d
-	text "SilentHillLabFronttextString25"
-	;text "わたしは"
-	;line "はかせの　じょしゅ　です"
-
-	;para "わたしは　もちろん"
-	;line "はかせを　ソンケー　しております"
-
-	;para "あなた　とは　また　どこかで"
-	;line "おあい　することに"
-	;cont "なるような　きがします"
+	text "I am one of PROF."
+	line "OAK's AIDEs."
+	
+	para "Of course,"
+	line "I respect the"
+	cont "professor greatly."
+	
+	para "I have a feeling"
+	line "that we'll see"
+	cont "each other again."
 	done
 
 _SilentHillLabFronttextString26:	;	34:5a97
-	text "SilentHillLabFronttextString26"
-	;text "わたしは"
-	;line "はかせの　じょしゅ　です"
-
-	;para "わたしは　もちろん"
-	;line "はかせを　ソンケー　しております"
-
-	;para "あなた　とは　また　どこかで"
-	;line "おあい　することに"
-	;cont "なるような　きがします"
+	text "I am one of PROF."
+	line "OAK's AIDEs."
+	
+	para "Of course,"
+	line "I respect the"
+	cont "professor greatly."
+	
+	para "I have a feeling"
+	line "that we'll see"
+	cont "each other again."
 	done
 
 _SilentHillLabFronttextString27:	;	34:5af1
-	text "SilentHillLabFronttextString27"
-	;text "なんだろう？"
-	;line "でんし　てちょう　かな？"
+	text "What's this...?"
+	line "Some sort of PDA?"
 	done
 
 _SilentHillLabFronttextString28:	;	34:5b0d
-	text "SilentHillLabFronttextString28"
-	;text "<RIVAL>『あのメールを　くれた"
-	;line "オーキドって　こんな　じじい<⋯⋯>"
-
-	;para "あっ　ゴメン"
-	;line "こんな　じいさん　なのか？"
-	;cont "ほんもの　はじめて　みたよ！"
+	text "<RIVAL>: I can't"
+	line "believe this old"
+	cont "geezer is"
+	cont "PROF.OAK..."
+	
+	para "Oh, sorry, I mean,"
+	line "old man!? It's"
+	cont "the first time I"
+	cont "see him in person!"
 	done
 
 _SilentHillLabFronttextString29:	;	34:5b4f
-	text "SilentHillLabFronttextString29"
-	;text "<RIVAL>『<PLAYER>！"
-	;line "なんだか"
-	;cont "おもしろく　なってきたな！"
+	text "<RIVAL>: Hey,"
+	line "<PLAYER>!"
+	
+	para "This just got"
+	line "interesting!"
 	done
 
 _SilentHillLabFronttextString30:	;	34:5b6f
-	text "SilentHillLabFronttextString30"
-	;text "わたしは"
-	;line "はかせの　じょしゅ　です"
-
-	;para "あなた　とは　また　どこかで"
-	;line "おあい　することに"
-	;cont "なるような　きがします"
+	text "I am one of PROF."
+	line "OAK's AIDEs."
+	
+	para "Of course,"
+	line "I respect the"
+	cont "professor greatly."
+	
+	para "I have a feeling"
+	line "that we'll see"
+	cont "each other again."
 	done
 
 _SilentHillLabFronttextString31:	;	34:5bae
-	text "SilentHillLabFronttextString31"
-	;text "わたしは"
-	;line "はかせの　じょしゅ　です"
-
-	;para "あなた　とは　また　どこかで"
-	;line "おあい　することに"
-	;cont "なるような　きがします"
+	text "I am one of PROF."
+	line "OAK's AIDEs."
+	
+	para "Of course,"
+	line "I respect the"
+	cont "professor greatly."
+	
+	para "I have a feeling"
+	line "that we'll see"
+	cont "each other again."
 	done
 	
 _SilentHillLabBackTextString1:
-	text "SilentHillLabBackTextString1"
-	;text "オーキド『ほれ　そこに　３びき"
-	;cont "ポケモンが　いる　じゃろう！"
-	;cont "ほっほ！"
-
-	;para "こいつらを　きみたちに"
-	;cont "いっぴき　づつ　やろう！"
-	;cont "⋯⋯　さあ　えらべ！"
+	text "OAK: Look over"
+	line "there! Do you see"
+	cont "those 3 #MON?"
+	cont "Hohoho!"
+	
+	para "You can each have"
+	line "one! ...Choose!"
 	done
 
 _SilentHillLabBackTextString2:
-	text "SilentHillLabBackTextString2"
-	;text "オーキド『まあ"
-	;line "あわてるな　<RIVAL>！"
-	;cont "おまえも　すきなものを　とれ！"
+	text "OAK: Now now,"
+	line "<RIVAL>, there's"
+	cont "no need to rush."
+	
+	para "Take whichever one"
+	line "you'd like!"
 	done
 
 _SilentHillLabBackTextString3:
-	text "SilentHillLabBackTextString3"
-	;text "オーキド『さあ　<PLAYER>"
-	;line "どの　ポケモンに　するかね？"
+	text "OAK: Now, <PLAYER>,"
+	line "which #MON"
+	cont "do you want?"
 	done
 
 _SilentHillLabBackTextString4:
-	text "SilentHillLabBackTextString4@"
-	;text "オーキド『ほう！　ほのおのポケモン"
-	;line "@"
-	;text_from_ram wStringBuffer1
-	;text "に　するんじゃな？@"
+	text "So, you want the"
+	line "fire #MON,"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "?@"
 	text_end
 
 _SilentHillLabBackTextString5:
-	text "SilentHillLabBackTextString5@"
-	;text "オーキド『ふむ　みずのポケモン"
-	;line "@"
-	;text_from_ram wStringBuffer1
-	;text "に　きめるのじゃな？@"
+	text "So, you want the"
+	line "water #MON,"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "?@"
 	text_end
 
 _SilentHillLabBackTextString6:
-	text "SilentHillLabBackTextString6@"
-	;text "オーキド『おお！　くさのポケモン"
-	;line "@"
-	;text_from_ram wStringBuffer1
-	;text "が　いいんじゃな？@"
+	text "So, you want the"
+	line "grass #MON,"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "?@"
 	text_end
 	
 _SilentHillLabBackTextString7:
-	text "SilentHillLabBackTextString7"
-	;text "では"
-	;line "どれに　するのじゃ？"
+	text "Very well."
+	
+	para "Which one would"
+	line "you like?"
 	done
 
 _SilentHillLabBackTextString8:
-	text "SilentHillLabBackTextString8"
-	;text "オーキド『この　ポケモンは"
-	;line "ほんとに　げんきが　いいぞ！"
-
-	;para "<PLAYER>は　オーキドはかせから"
-	;line "@"
-	;text_from_ram wStringBuffer1
-	;text "を　もらった！"
+	text "This #MON is"
+	line "really lively!"
+	
+	para "<PLAYER> recieved"
+	line "@"
+	text_from_ram wStringBuffer1
+	text "!"
 	prompt
 
 _SilentHillLabBackTextString9:
-	text "SilentHillLabBackTextString9"
-	;text "オーキド『そうじゃ！"
-	;line "やせいの　ポケモンが　でて　きても"
-	;cont "そいつを　たたかわせて　いけば"
-	;cont "となりまちへ　いける！"
+	text "OAK: If a wild"
+	line "#MON appears,"
+	cont "your #MON can"
+	cont "fight against it!"
 	done
 	
 _SilentHillLabBackTextString10:
-	text "SilentHillLabBackTextString10"
-	;text "<RIVAL>『あッ！　おれにも！"
-	;line "じいさん　おれにもくれよう！"
+	text "<RIVAL>: Me too!"
+	line "C'mon, gramps,"
+	cont "gimme one too!"
 	done
 
 _SilentHillLabBackTextString11:
-	text "SilentHillLabBackTextString11"
-	;text "<RIVAL>『いいぜ　<PLAYER>！"
-	;line "さきに　えらんで！"
-	;cont "おれは　こころが　ひろいからな"
+	text "<RIVAL>: I'll let"
+	line "you choose first,"
+	cont "<PLAYER>, 'cause"
+	cont "I'm a generous"
+	cont "kind of guy!"
 	done
 
 _SilentHillLabBackTextString12:
-	text "SilentHillLabBackTextString12"
-	;text "<RIVAL>『じゃ　おれは　これ！"
+	text "<RIVAL>: I'll take"
+	line "this one, then!"
 	done
 
 _SilentHillLabBackTextString13:
-	text "SilentHillLabBackTextString13"
-	;text "<RIVAL>は　オーキドから"
-	;line "@"
-	;text_from_ram wStringBuffer1
-	;text "を　もらった！"
+	text "<RIVAL> recieved"
+	line "@"
+	text_from_ram wStringBuffer1
+	text "!"
 	done
 
 _SilentHillLabBackTextString14:
-	text "SilentHillLabBackTextString14"
-	;text "<RIVAL>『<PLAYER>の#"
-	;line "いいなあ！"
-	;cont "でも　おれのポケモンも"
-	;cont "ちょっと　いいだろ？"
+	text "<RIVAL>: Your"
+	line "#MON is really"
+	cont "cool, <PLAYER>!"
+	
+	para "But mine's pretty"
+	line "nice too, right?"
 	done
 	
 _SilentHillLabBackTextString15:
-	text "SilentHillLabBackTextString15"
-	;text "オーキド『これ！"
-	;line "よくばっちゃ　いかん！"
+	text "OAK: Hey now!"
+	line "Don't be greedy!"
 	done
