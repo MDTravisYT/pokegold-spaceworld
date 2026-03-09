@@ -161,54 +161,33 @@ SilentHillLabBackText1:
 	ret
 
 SilentHillLabBackTextString1:
-	text "オーキド『ほれ　そこに　３びき"
-	cont "ポケモンが　いる　じゃろう！"
-	cont "ほっほ！"
-
-	para "こいつらを　きみたちに"
-	cont "いっぴき　づつ　やろう！"
-	cont "⋯⋯　さあ　えらべ！"
-	done
+	text_far _SilentHillLabBackTextString1
+	text_end
 
 SilentHillLabBackTextString2:
-	text "オーキド『まあ"
-	line "あわてるな　<RIVAL>！"
-	cont "おまえも　すきなものを　とれ！"
-	done
+	text_far _SilentHillLabBackTextString2
+	text_end
 
 SilentHillLabBackTextString3:
-	text "オーキド『さあ　<PLAYER>"
-	line "どの　ポケモンに　するかね？"
-	done
+	text_far _SilentHillLabBackTextString3
+	text_end
 
 SilentHillLabBackTextString4:
-	text "オーキド『ほう！　ほのおのポケモン"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "に　するんじゃな？@"
-
+	text_far _SilentHillLabBackTextString4
 	start_asm
 	call ConfirmPokemonSelection
 	call TextAsmEnd
 	ret
 
 SilentHillLabBackTextString5:
-	text "オーキド『ふむ　みずのポケモン"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "に　きめるのじゃな？@"
-
+	text_far _SilentHillLabBackTextString5
 	start_asm
 	call ConfirmPokemonSelection
 	call TextAsmEnd
 	ret
 
 SilentHillLabBackTextString6:
-	text "オーキド『おお！　くさのポケモン"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "が　いいんじゃな？@"
-
+	text_far _SilentHillLabBackTextString6
 	start_asm
 	call ConfirmPokemonSelection
 	call TextAsmEnd
@@ -245,26 +224,16 @@ ConfirmPokemonSelection:
 	ret
 
 SilentHillLabBackTextString7:
-	text "では"
-	line "どれに　するのじゃ？"
-	done
+	text_far _SilentHillLabBackTextString7
+	text_end
 
 SilentHillLabBackTextString8:
-	text "オーキド『この　ポケモンは"
-	line "ほんとに　げんきが　いいぞ！"
-
-	para "<PLAYER>は　オーキドはかせから"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "を　もらった！"
-	prompt
+	text_far _SilentHillLabBackTextString8
+	text_end
 
 SilentHillLabBackTextString9:
-	text "オーキド『そうじゃ！"
-	line "やせいの　ポケモンが　でて　きても"
-	cont "そいつを　たたかわせて　いけば"
-	cont "となりまちへ　いける！"
-	done
+	text_far _SilentHillLabBackTextString9
+	text_end
 
 SilentHillLabBackFunc3:
 	ld hl, wd41b
@@ -277,33 +246,24 @@ SilentHillLabBackFunc3:
 	ret
 
 SilentHillLabBackTextString10:
-	text "<RIVAL>『あッ！　おれにも！"
-	line "じいさん　おれにもくれよう！"
-	done
+	text_far _SilentHillLabBackTextString10
+	text_end
 
 SilentHillLabBackTextString11:
-	text "<RIVAL>『いいぜ　<PLAYER>！"
-	line "さきに　えらんで！"
-	cont "おれは　こころが　ひろいからな"
-	done
+	text_far _SilentHillLabBackTextString11
+	text_end
 
 SilentHillLabBackTextString12:
-	text "<RIVAL>『じゃ　おれは　これ！"
-	done
+	text_far _SilentHillLabBackTextString12
+	text_end
 
 SilentHillLabBackTextString13:
-	text "<RIVAL>は　オーキドから"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "を　もらった！"
-	done
+	text_far _SilentHillLabBackTextString13
+	text_end
 
 SilentHillLabBackTextString14:
-	text "<RIVAL>『<PLAYER>の#"
-	line "いいなあ！"
-	cont "でも　おれのポケモンも"
-	cont "ちょっと　いいだろ？"
-	done
+	text_far _SilentHillLabBackTextString14
+	text_end
 
 SilentHillLabBackFunc4:
 	ld hl, wd41b
@@ -358,9 +318,8 @@ SilentHillLabBackStarterData:
 	db DEX_HONOGUMA
 
 SilentHillLabBackTextString15:
-	text "オーキド『これ！"
-	line "よくばっちゃ　いかん！"
-	done
+	text_far _SilentHillLabBackTextString15
+	text_end
 
 SilentHillLabBackTextPointers2:
 	dw PokemonBooksScript

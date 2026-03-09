@@ -659,30 +659,14 @@ SilentHillLabFrontText1:
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString1:
-	text "パソコンを　みると"
-	line "なんと　メールが　きていた！"
+SilentHillLabFrontTextString1:	;	34:4ffd
+	text_far _SilentHillLabFronttextString1
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "<⋯⋯>　<⋯⋯>　<⋯⋯>"
-	line "オーキドはかせ！"
-	cont "あなたが　ゆくえふめいに"
-	cont "なっていると　せけんは"
-	cont "おおさわぎ　です！"
-
-	para "それは　そうと"
-	line "はかせ　から　みつけるように"
-	cont "たのまれた　れいの#"
-	cont "みつけるどころか"
-	cont "まだ　てがかりも"
-	cont "つかむことが　できません"
-
-	para "やはり　あいつは"
-	line "かくうの　#なのでは"
-	cont "ないでしょうか<⋯⋯>"
-	cont "<⋯⋯>　<⋯⋯>　<⋯⋯>じょしゅより"
-	done
-
-SilentHillLabFrontText2:
+SilentHillLabFrontText2:	;	34:50b3
 	ld hl, wd39d
 	bit 0, [hl]
 	set 0, [hl]
@@ -696,26 +680,33 @@ SilentHillLabFrontText2:
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString2A:
-	text "スタート　ボタンを　プシュ！"
-	line "おすと　メニューが　ひらくなり"
-	done
+SilentHillLabFrontTextString2A:	;	34:50ca
+	text_far _SilentHillLabFronttextString2A
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString2B:
-	text "セーブするには　#　レポート"
-	line "こまめに　かくと　いいなり"
-	done
+SilentHillLabFrontTextString2B:	;	34:50ea
+	text_far _SilentHillLabFronttextString2B
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontText3:
+SilentHillLabFrontText3:	;	34:5108
 	ld hl, SilentHillLabFrontTextString3
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString3:
-	text "カギが　かかっている"
-	done
+SilentHillLabFrontTextString3:	;	34:510f
+	text_far _SilentHillLabFronttextString3
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontText4:
+SilentHillLabFrontText4:	;	34:511b
 	ld a, [wMapScriptNumber]
 	cp $0E
 	jp nc, SilentHillLabFrontText7
@@ -723,21 +714,15 @@ SilentHillLabFrontText4:
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString4:
-	text "オーキド『ごくろうさん！"
-	done
+SilentHillLabFrontTextString4:	;	34:512a
+	text_far _SilentHillLabFronttextString4
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString5:
-	text "オーキド『そうとも！"
-	line "わしが　オーキドじゃ！"
-	cont "じじいで　わるかったな！"
-
-	para "おまえたち　ふたりは"
-	line "この　オーキドが　よんだのじゃ！"
-
-	para "すこし　わしの　はなしを"
-	line "きいては　くれんか？@"
-
+SilentHillLabFrontTextString5:	;	34:5138
+	text_far _SilentHillLabFronttextString5
 	start_asm
 	call YesNoBox
 	jr c, .jump
@@ -753,67 +738,32 @@ SilentHillLabFrontTextString5:
 	call YesNoBox
 	jr c, .jump
 	jr .loop
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString6A:
-	text "オーキド『いまから　１ねんまえ"
-	line "わしは　カントーで"
-	cont "きみたちの　ような　しょうねんに"
-	cont "#の　けんきゅうの　ため"
-	cont "#と　ずかんを　わたした"
+SilentHillLabFrontTextString6A:	;	34:51ae
+	text_far _SilentHillLabFronttextString6A
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "そして　かれらは"
-	line "じつに　よくやってくれた！"
+SilentHillLabFrontTextString6B:	;	34:5332
+	text_far _SilentHillLabFronttextString6B
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "１５０しゅるいの"
-	line "#を　みつけることに"
-	cont "せいこう　したのじゃ！"
-	cont "が　<⋯⋯>　<⋯⋯>　<⋯⋯>"
-	cont "しかし　<⋯⋯>　<⋯⋯>"
+SilentHillLabFrontTextString7:	;	34:538d
+	text_far _SilentHillLabFronttextString7
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "せかいは　ひろいものじゃ"
-	line "そのご　ぜんこく　かくちで"
-	cont "あたらしい　#が　ぞくぞくと"
-	cont "みつかっておる！"
-
-	para "そこで　わしは　カントーから"
-	line "ここ　サイレントヒルに"
-	cont "けんきゅうの　ばしょを　うつした"
-
-	para "ばしょが　かわれば"
-	line "あたらしい　#にも"
-	cont "であうことが　できるからな"
-	cont "<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>"
-
-	para "これからも　どんどんと"
-	line "けんきゅうを　すすめるが"
-	cont "わしも　ごらんのとおりの　おいぼれ"
-	cont "まごや　じょしゅたちも　おるが"
-	cont "それでも　やはり　かずが　たらん！"
-
-	para "<PLAYER>！　<RIVAL>！"
-	line "#けんきゅうの　ために"
-	cont "ちからを　かして　くれんか！"
-	done
-
-SilentHillLabFrontTextString6B:
-	text "オーキド『そうか<⋯⋯>"
-	line "わしに　ひとを　みるめが"
-	cont "なかったと　いうことじゃな<⋯⋯>"
-
-	para "いや！"
-	line "わしの　ひとを　みるめは"
-	cont "まちがっては　おらんはず！"
-
-	para "な？"
-	cont "わしの　はなしを　きいてくれるな？"
-	done
-
-SilentHillLabFrontTextString7:
-	text "オーキド『ふたりとも！"
-	line "ちょっと　わしに　ついてこい！"
-	done
-
-SilentHillLabFrontText7:
+SilentHillLabFrontText7:	;	34:53aa
 	ld a, [wMapScriptNumber]
 	cp $12
 	jr z, .jump
@@ -826,336 +776,239 @@ SilentHillLabFrontText7:
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString8:
-	text "オーキド『<PLAYER>！<RIVAL>！"
-	line "このずかんを"
-	cont "おまえたちに　あずける！"
-	done
+SilentHillLabFrontTextString8:	;	34:53bf
+	text_far _SilentHillLabFronttextString8
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString9:
-	text "<PLAYER>は　オーキドから"
-	line "#ずかんを　もらった！"
-	done
+SilentHillLabFrontTextString9:	;	34:53de
+	text_far _SilentHillLabFronttextString9
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString10:
-	text "オーキド『この　せかいの　すべての"
-	line "#を　きろくした"
-	cont "かんぺきな　ずかんを　つくること！"
-	cont "それが　わしの　ゆめ　だった！"
+SilentHillLabFrontTextString10:	;	34:53f5
+	text_far _SilentHillLabFronttextString10
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "しかし　しんしゅの　#は"
-	cont "ぞくぞくと　みつかっている！"
+SilentHillLabFrontTextString11A:	;	34:54c3
+	text_far _SilentHillLabFronttextString11A
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "わしに　のこされた"
-	line "じかんは　すくない！"
+SilentHillLabFrontTextString11B:	;	34:54e3
+	text_far _SilentHillLabFronttextString11B
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "そこで　おまえ　たちには"
-	line "わしの　かわりに"
-	cont "ゆめを　はたして　ほしいのじゃ！"
-
-	para "さあ　ふたりとも"
-	line "さっそく　しゅっぱつ　してくれい！"
-	cont "これは　#の　れきしに　のこる"
-	cont "いだいな　しごとじゃー！"
-	done
-
-SilentHillLabFrontTextString11A:
-	text "オーキド『せかい　じゅうの"
-	line "#たちが"
-	cont "<PLAYER>を　まって　おるぞー"
-	done
-
-SilentHillLabFrontTextString11B:
-	text "オーキド『おう！　<PLAYER>"
-	line "どうだ？"
-	cont "わしの　あげた　#は<⋯⋯>？"
-
-	para "ほう！"
-	cont "だいぶ　なついた　みたいだな"
-
-	para "おまえには　#トレーナーの"
-	line "さいのうが　あるかもしれん"
-	cont "これからも　ときどきは"
-	cont "わしのところへ　かおを　だせ！"
-
-	para "#ずかんの　ページが"
-	line "きに　なるからな"
-	done
-
-SilentHillLabFrontText8:
+SilentHillLabFrontText8:	;	34:5560
 	ld hl, SilentHillLabFrontTextString12
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString12:
-	text "オーキド『よく　きたな！"
-	line "#ずかんの"
-	cont "ちょうしは　どうかな？"
+SilentHillLabFrontTextString12:	;	34:5567
+	text_far _SilentHillLabFronttextString12
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "どれ<⋯⋯>　ちょっと"
-	cont "みて　あげようか！"
-	done
-
-SilentHillLabFrontText9:
+SilentHillLabFrontText9:	;	34:559a
 	ld hl, SilentHillLabFrontTextString13
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString13:
-	text "オーキド『<⋯⋯>　おっほんッ！"
-	line "よくやったな　<PLAYER>！"
+SilentHillLabFrontTextString13:	;	34:55a1
+	text_far _SilentHillLabFronttextString13
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "ちょっと"
-	line "わしに　ついて　きなさい！"
-
-	para "<RIVAL>は　すまんが"
-	line "そこで　まっていなさい！"
-
-	para "<RIVAL>『えー！"
-	line "なんだよ　ケチー！"
-
-	para "オーキド『<RIVAL>は"
-	line "でんせつの　#が"
-	cont "ほしかった　だけじゃないのか？"
-	cont "<RIVAL>『ギクッ！"
-	done
-
-SilentHillLabFrontText10:
+SilentHillLabFrontText10:	;	34:561a
 	ld hl, SilentHillLabFrontTextString14
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString14:
-	text "<RIVAL>『なんだ"
-	line "<PLAYER>じゃないか！"
-	cont "おれも　ここが"
-	cont "あやしいと　おもって　きたんだけど"
-	cont "だれも　いないみたいだな<⋯⋯>"
-	done
+SilentHillLabFrontTextString14:	;	34:5621
+	text_far _SilentHillLabFronttextString14
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontText11:
+SilentHillLabFrontText11:	;	34:5658
 	ld hl, SilentHillLabFrontTextString16
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString15:
-	text "<RIVAL>『よっしゃあ！"
-	line "じいさん！　おれにまかせな！"
-	done
+SilentHillLabFrontTextString15:	;	34:565f
+	text_far _SilentHillLabFronttextString15
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString16:
-	text "<RIVAL>『おれが　えらんだ"
-	line "#のほうが　つよそうだぜ！"
-	cont "こっちに　したかったんじゃないの？"
-	done
+SilentHillLabFrontTextString16:	;	34:5678
+	text_far _SilentHillLabFronttextString16
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString17:
-	text "<RIVAL>『<PLAYER>！"
-	line "せっかく　じいさんに"
-	cont "#　もらったんだから"
-	cont "<⋯⋯>　ちょっと"
-	cont "たたかわせて　みようぜ！"
-	done
+SilentHillLabFrontTextString17:	;	34:56a4
+	text_far _SilentHillLabFronttextString17
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString18:
-	text "<RIVAL>『くっそー！"
-	line "こんどは　ぜったい　まけないぞ！"
-	done
+SilentHillLabFrontTextString18:	;	34:56d4
+	text_far _SilentHillLabFronttextString18
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString19:
-	text "<RIVAL>『よーし！"
-	line "ほかの　#と　たたかわせて"
-	cont "もっと　もっと　つよくしよう！"
+SilentHillLabFrontTextString19:	;	34:56ee
+	text_far _SilentHillLabFronttextString19
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "そんじゃ　ばいばい！"
-	done
+SilentHillLabFrontTextString20:	;	34:571f
+	text_far _SilentHillLabFronttextString20
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString20:
-	text "じいちゃん！"
-	line "つれてきたよー！"
-	done
+SilentHillLabFrontTextString21:	;	34:5730
+	text_far _SilentHillLabFronttextString21
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString21:
-	text "ぼくは　かつて"
-	line "#トレーナーの　ちょうてんを"
-	cont "めざしたことが　あるんだ"
-	cont "そのとき　いいきに　なっていた"
-	cont "ぼくの　てんぐのはなを"
-	cont "へしおった　やつに"
-	cont "きみは　どことなく　にている"
-
-	para "あいつの　おかげで　ぼくは"
-	line "こころを　いれかえて"
-	cont "じいさんの　けんきゅうを"
-	cont "てつだうように　なったのさ"
-	cont "<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>"
-
-	para "さあ！"
-	line "これが　#ずかんだ！"
-
-	para "みつけた　#の　データが"
-	line "じどうてきに　かきこまれて"
-	cont "ページが　ふえて　いく　という"
-	cont "とても　ハイテクな　ずかん　だよ！"
-	done
-
-SilentHillLabFrontText12:
+SilentHillLabFrontText12:	;	34:5814
 	ld hl, SilentHillLabFrontTextString22
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString22:
-	text "ぼくも　むかし　やったけど"
-	line "なかなか　たいへんだよ<⋯⋯>"
-	cont "がんばってね！"
-	done
+SilentHillLabFrontTextString22:	;	34:581b
+	text_far _SilentHillLabFronttextString22
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontText13:
+SilentHillLabFrontText13:	;	34:583f
 	ld hl, SilentHillLabFrontTextString24
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString23:
-	text "ナナミ『さっき　あなたを　"
-	line "つれてきた　わかい　おとこのこ<⋯⋯>"
-	cont "あれは　わたしの　おとうとなの"
-	cont "<⋯⋯>ということは　つまり"
+SilentHillLabFrontTextString23:	;	34:5846
+	text_far _SilentHillLabFronttextString23
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "そう！"
-	line "わたしも　オーキドの　まご　なの！"
+SilentHillLabFrontTextString24:	;	34:5a23
+	text_far _SilentHillLabFronttextString24
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "おじいちゃんは　りっぱな"
-	cont "#けんきゅうしゃよ"
-	cont "わたしは　おてつだい　できることが"
-	cont "とっても　うれしいの！"
-	cont "あっ　こんなこと　しられたら"
-	cont "おじいちゃん　ちょうしに　のるから"
-	cont "ないしょに　しておいてね！"
-
-	para "<⋯⋯>おじいちゃん　すっかり"
-	line "わすれている　みたいだから"
-
-	para "わたしが　かわりに　これを　あげる！"
-	line "さいしんがた　#リュックよ"
-
-	para "<PLAYER>は"
-	line "#リュックを　もらった！"
-
-	para "ナナミ『この　リュックには"
-	line "モンスターボールを"
-	cont "まとめて　いれられる"
-	cont "ボールホルダと"
-	cont "わざマシンを　まとめて　いれられる"
-	cont "わざマシンホルダが　ついているの"
-
-	para "モンスターボール　６こと　"
-	line "わざマシンひとつは　オマケしておくわ"
-	cont "ホルダに　なんにも　はいってないと"
-	cont "さびしいもんね！"
-
-	para "ねえ　<PLAYER>くン"
-	line "あなたの　おかあさんが"
-	cont "しんぱいすると　いけないから"
-	cont "このまちを　でるまえに"
-	cont "かおを　みせに　いってあげてね"
-
-	para "<⋯⋯>あなたの　かつやく"
-	line "いのっているわ"
-	done
-
-SilentHillLabFrontTextString24:
-	text "<⋯⋯>あなたの　かつやく"
-	line "いのってるわ"
-	done
-
-SilentHillLabFrontText14:
+SilentHillLabFrontText14:	;	34:5a36
 	ld hl, SilentHillLabFrontTextString25
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString25:
-	text "わたしは"
-	line "はかせの　じょしゅ　です"
+SilentHillLabFrontTextString25:	;	34:5a3d
+	text_far _SilentHillLabFronttextString25
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "わたしは　もちろん"
-	line "はかせを　ソンケー　しております"
-
-	para "あなた　とは　また　どこかで"
-	line "おあい　することに"
-	cont "なるような　きがします"
-	done
-
-SilentHillLabFrontText15:
+SilentHillLabFrontText15:	;	34:5a90
 	ld hl, SilentHillLabFrontTextString26
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString26:
-	text "わたしは"
-	line "はかせの　じょしゅ　です"
+SilentHillLabFrontTextString26:	;	34:5a97
+	text_far _SilentHillLabFronttextString26
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "わたしは　もちろん"
-	line "はかせを　ソンケー　しております"
-
-	para "あなた　とは　また　どこかで"
-	line "おあい　することに"
-	cont "なるような　きがします"
-	done
-
-SilentHillLabFrontText16:
+SilentHillLabFrontText16:	;	34:5aea
 	ld hl, SilentHillLabFrontTextString27
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString27:
-	text "なんだろう？"
-	line "でんし　てちょう　かな？"
-	done
+SilentHillLabFrontTextString27:	;	34:5af1
+	text_far _SilentHillLabFronttextString27
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontText17:
+SilentHillLabFrontText17:	;	34:5b06
 	ld hl, SilentHillLabFrontTextString28
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString28:
-	text "<RIVAL>『あのメールを　くれた"
-	line "オーキドって　こんな　じじい<⋯⋯>"
+SilentHillLabFrontTextString28:	;	34:5b0d
+	text_far _SilentHillLabFronttextString28
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "あっ　ゴメン"
-	line "こんな　じいさん　なのか？"
-	cont "ほんもの　はじめて　みたよ！"
-	done
+SilentHillLabFrontTextString29:	;	34:5b4f
+	text_far _SilentHillLabFronttextString29
+	text_end
+;rept $11
+;	nop
+;endr
 
-SilentHillLabFrontTextString29:
-	text "<RIVAL>『<PLAYER>！"
-	line "なんだか"
-	cont "おもしろく　なってきたな！"
-	done
-
-SilentHillLabFrontText18:
+SilentHillLabFrontText18:	;	34:5b68
 	ld hl, SilentHillLabFrontTextString30
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString30:
-	text "わたしは"
-	line "はかせの　じょしゅ　です"
+SilentHillLabFrontTextString30:	;	34:5b6f
+	text_far _SilentHillLabFronttextString30
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "あなた　とは　また　どこかで"
-	line "おあい　することに"
-	cont "なるような　きがします"
-	done
-
-SilentHillLabFrontText19:
+SilentHillLabFrontText19:	;	34:5ba7
 	ld hl, SilentHillLabFrontTextString31
 	call OpenTextbox
 	ret
 
-SilentHillLabFrontTextString31:
-	text "わたしは"
-	line "はかせの　じょしゅ　です"
+SilentHillLabFrontTextString31:	;	34:5bae
+	text_far _SilentHillLabFronttextString31
+	text_end
+;rept $11
+;	nop
+;endr
 
-	para "あなた　とは　また　どこかで"
-	line "おあい　することに"
-	cont "なるような　きがします"
-	done
+;	34:5be6
