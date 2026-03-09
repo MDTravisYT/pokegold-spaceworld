@@ -15,15 +15,15 @@ SetClockDialog:
 	ld hl, SetClockDialog_ConfirmTimeDate
 	call PrintText
 
-	hlcoord 3, 13
+	hlcoord 1, 14
 	call SetClockDialog_PrintDayOfWeek
+
 	ld de, wHourBuffer
-
-	hlcoord 8, 14
+	hlcoord 11, 14
 	call SetClockDialog_PrintNumber
-	ld de, wMinuteBuffer
 
-	hlcoord 12, 14
+	ld de, wMinuteBuffer
+	hlcoord 14, 14
 	call SetClockDialog_PrintNumber
 
 	call YesNoBox
@@ -106,9 +106,9 @@ SetClockDialog_RunFunction:
 SetClockDialog_AskDay:
 	ld hl, SetClockDialog_WhatDayIsIt
 	call PrintText
-	hlcoord 10, 16
-	ld de, .DayString
-	call PlaceString
+;	hlcoord 10, 16
+;	ld de, .DayString
+;	call PlaceString
 
 	ld hl, wJumptableIndex
 	inc [hl]
@@ -118,7 +118,7 @@ SetClockDialog_AskDay:
 	db "ようび@"
 
 SetClockDialog_ChooseDayOfWeek:
-	hlcoord 9, 15
+	hlcoord 5, 16
 	call SetClockDialog_PrintDayOfWeek
 	call GetJoypadDebounced
 	ld hl, hJoySum
@@ -168,7 +168,7 @@ SetClockDialog_AskHour:
 	ld hl, SetClockDialog_HowManyHours
 	call PrintText
 
-	hlcoord 10, 16
+	hlcoord 8, 16
 	ld de, .HoursString
 	call PlaceString
 	ld hl, wJumptableIndex
@@ -176,11 +176,11 @@ SetClockDialog_AskHour:
 	ret
 
 .HoursString:
-	db "じ@"
+	db "o'clock@"
 
 SetClockDialog_ChooseHour:
 	ld de, wHourBuffer
-	hlcoord 8, 16
+	hlcoord 5, 16
 	call SetClockDialog_PrintNumber
 	call GetJoypadDebounced
 	ld hl, hJoySum
@@ -245,11 +245,11 @@ SetClockDialog_AskMinutes:
 	ret
 
 .MinutesString:
-	db "ふん@"
+	db "min.@"
 
 SetClockDialog_ChooseMinutes:
 	ld de, wMinuteBuffer
-	hlcoord 8, 16
+	hlcoord 7, 16
 	call SetClockDialog_PrintNumber
 	call GetJoypadDebounced
 	ld hl, hJoySum
@@ -306,17 +306,26 @@ SetClockDialog_ChooseMinutes:
 	ret
 
 SetClockDialog_PrintDayOfWeek:
-; Print top half
 	ld a, [wDayOfWeekBuffer]
-	sla a
-	add $40
-	ld [hl], a
-	inc a
-
-; Move down one row and print the bottom half
-	ld de, SCREEN_WIDTH
-	add hl, de
-	ld [hl], a
+	push hl
+	ld hl, DaysOfTheWeek
+	ld b, 0
+	ld c, 10
+	call AddNTimes
+	ld d, h
+	ld e, l
+	pop hl
+	call PlaceString
+; Print top half
+;	sla a
+;	add $40
+;	ld [hl], a
+;	inc a
+;
+;; Move down one row and print the bottom half
+;	ld de, SCREEN_WIDTH
+;	add hl, de
+;	ld [hl], a
 	ret
 
 SetClockDialog_PrintNumber:
@@ -325,24 +334,31 @@ SetClockDialog_PrintNumber:
 	ld [hli], a
 	ld [hl], a
 	pop hl
-	lb bc, 1, 2
+	lb bc, 1+(1<<7), 2
 	call PrintNumber
 	ret
 
 SetClockDialog_WhatDayIsIt:
-	text "きょうは　なんようび　だったかの？"
-	done
+	text_far _SetClockDialog_WhatDayIsIt
+	text_end
 
 SetClockDialog_HowManyHours:
-	text "いまは　なんじ　じゃ？"
-	done
+	text_far _SetClockDialog_HowManyHours
+	text_end
 
 SetClockDialog_HowManyMinutes:
-	deciram wStartHour, 1, 2
-	text "じ　なんふん　かな？"
-	done
+	text_far _SetClockDialog_HowManyMinutes
+	text_end
 
 SetClockDialog_ConfirmTimeDate:
-	text "　　　ようび　　　じ　　　ふん"
-	line "ほんとうに　あっているかの？"
-	done
+	text_far _SetClockDialog_ConfirmTimeDate
+	text_end
+
+DaysOfTheWeek:
+	db "  SUNDAY @"
+	db "  MONDAY @"
+	db " TUESDAY @"
+	db "WEDNESDAY@"
+	db " THURSDAY@"
+	db "  FRIDAY @"
+	db " SATURDAY@"

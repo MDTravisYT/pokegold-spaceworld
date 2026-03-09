@@ -106,3 +106,23 @@ _ChooseRivalNameEndText::
 	text "Oh that's right!"
 	line "His name is <RIVAL>!"
 	prompt
+
+
+_SetClockDialog_WhatDayIsIt:
+	text "What day is it?"
+	done
+
+_SetClockDialog_HowManyHours:
+	text "What time is it?"
+	done
+
+_SetClockDialog_HowManyMinutes:
+;	deciram wStartHour, 1, 2
+;	text "hour, but how"
+	text "How many minutes?"
+	done
+
+_SetClockDialog_ConfirmTimeDate:
+	text "            :"
+	line "Is that correct?"
+	done
