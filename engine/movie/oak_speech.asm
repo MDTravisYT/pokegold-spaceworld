@@ -388,70 +388,32 @@ rept $D6-1
 endr
 
 OakSpeech1::	;	01:5956
-	text "いやあ　またせた！"
+	text_far _OakSpeech1
+	text_end
 
-	para "ポケット　モンスターの　せかいへ"
-	line "ようこそ！"
+OakSpeech2::	;	01:599f
+	text_far _OakSpeech2
+	text_end
 
-	para "わたしの　なまえは　オーキド"
+OakSpeech3::	;	01:59e8
+	text_far _OakSpeech3
+	text_end
 
-	para "みんなからは　#　はかせと"
-	line "したわれて　おるよ"
-	prompt
+OakSpeech4::	;	01:5a35
+	text_far _OakSpeech4
+	text_end
 
-OakSpeech2::
-	text "きみも　もちろん"
-	line "しっているとは　おもうが"
+OakSpeech5::	;	01:5a52
+	text_far _OakSpeech5
+	text_end
 
-	para "この　せかいには"
-	line "ポケット　モンスターと　よばれる"
-	cont "いきもの　たちが"
-	cont "いたるところに　すんでいる！"
-	prompt
+OakSpeech6::	;	01:5a8f
+	text_far _OakSpeech6
+	text_end
 
-OakSpeech3::
-	text "その　#　という　いきものを"
-	line "ひとは　ペットに　したり"
-	cont "しょうぶに　つかったり"
-	cont "そして・・・"
-
-	para "わたしは　この　#の"
-	line "けんきゅうを　してる　というわけだ"
-	prompt
-
-OakSpeech4::
-	text "では　はじめに　きみの　なまえを"
-	line "おしえて　もらおう！"
-	prompt
-
-OakSpeech5::
-	text "そして　この　しょうねんは"
-	line "きみの　おさななじみであり"
-	cont"ライバルである"
-
-	para "・・・えーと？"
-	line "なまえは　なんて　いったかな？"
-	prompt
-
-OakSpeech6::
-	text "さて　きみの　きねんすべき"
-	line "たびだちのひを"
-	cont "きろくしておこう！"
-
-	para "じかんも　なるべく　せいかくにな！"
-	prompt
-
-OakSpeech7::
-	text "<PLAYER>！"
-
-	para "いよいよ　これから"
-	line "きみの　ものがたりの　はじまりだ！"
-
-	para "ゆめと　ぼうけんと！"
-	line "ポケット　モンスターの　せかいへ！"
-
-	para "レッツ　ゴー！"
-	done
+OakSpeech7::	;	01:5ac2
+	text_far _OakSpeech7
+	text_end
 
 SetPlayerNamesDebug::
 	ld hl, DebugPlayerName
@@ -504,9 +466,8 @@ ChoosePlayerName::
 	ret
 
 ChoosePlayerNameEndText:
-	text "ふむ・・・"
-	line "<PLAYER>　と　いうんだな！"
-	prompt
+	text_far _ChoosePlayerNameEndText
+	text_end
 
 PlayerNameMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -517,18 +478,18 @@ PlayerNameMenuHeader:
 PlayerNameMenuData:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B
 	db 04 ; items
-	db "じぶんできめる@"
+	db "NEW NAME@"
 if DEF(GOLD)
-	db "ゴールド@"
-	db "サトシ@"
-	db "ジャック@"
+	db "GOLD@"
+	db "ASH@"
+	db "JACK@"
 else
-	db "シルバー@"
-	db "シゲル@"
-	db "ジョン@"
+	db "SILVER@"
+	db "GARY@"
+	db "JOHN@"
 endc
 	db 3 ; x offset for the title string
-	db "なまえこうほ@"
+	db "NAME@"
 
 ChooseRivalName::
 	call PanPortraitRight
@@ -563,9 +524,8 @@ ChooseRivalName::
 	ret
 
 ChooseRivalNameEndText:
-	text "そうか　そうだったな"
-	line "<RIVAL>　という　なまえだ"
-	prompt
+	text_far _ChooseRivalNameEndText
+	text_end
 
 RivalNameMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -576,18 +536,18 @@ RivalNameMenuHeader:
 RivalNameMenuData:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B
 	db 04 ; items
-	db "じぶんできめる@"
+	db "NEW NAME@"
 if DEF(GOLD)
-	db "シルバー@"
-	db "シゲル@"
-	db "ジョン@"
+	db "SILVER@"
+	db "GARY@"
+	db "JOHN@"
 else
-	db "ゴールド@"
-	db "サトシ@"
-	db "ジャック@"
+	db "GOLD@"
+	db "ASH@"
+	db "JACK@"
 endc
 	db 3
-	db "なまえこうほ@"
+	db "NAME@"
 
 MomNamePrompt::
 	ld hl, MomNameMenuHeader
@@ -625,12 +585,12 @@ MomNameMenuHeader:
 .MomNameMenuData:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B
 	db 04 ; items
-	db "じぶんで　きめる@"
-	db "おかあさん@"
-	db "ママ@"
-	db "かあちゃん@"
+	db "NEW NAME@"
+	db "MOM@"
+	db "MAMA@"
+	db "MOMMY@"
 	db 3
-	db "なまえこうほ@"
+	db "NAME@"
 
 NamingWindow::
 	; loads the menu header put into hl
