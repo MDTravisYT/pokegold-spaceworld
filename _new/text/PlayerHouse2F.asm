@@ -62,8 +62,8 @@ _PlayerHouse2FTextString5:
 	para "Oh? There seems to"
 	line "be a new e-mail"
 	cont "addressed to"
-	cont "<PLAYER>! Read it?"
-	start_asm
+	cont "<PLAYER>! Read it?@"
+	text_end
 	
 _PlayerHouse2FTextString6:
 	text "I hope you'll"
@@ -72,8 +72,9 @@ _PlayerHouse2FTextString6:
 	cont "is something that"
 	cont "I would like to"
 	cont "entrust you with."
-	cont "Won't you come by"
-	cont "and collect it?"
+	
+	para "Won't you come by"
+	line "and collect it?"
 	
 	para "#MON researcher"
 	line "OAK"

@@ -43,8 +43,8 @@ _SilentHillTextRival1:
 	line "huh, then..."
 	
 	para "What do you call"
-	line "your mommie?!"
-	done
+	line "your mommie?!@"
+	text_end
 	
 _SilentHillTextRival2:
 	text "<RIVAL>: Hahaha,"

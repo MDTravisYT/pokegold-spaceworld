@@ -397,11 +397,6 @@ SilentHill_TextPointers::	;	36:78d5
 
 SilentHillTextRival1:	;	36:78dd
 	text_far _SilentHillTextRival1
-	text_end
-rept $8C
-	nop
-endr
-
 	start_asm
 	call LoadStandardMenuHeader
 	callfar MomNamePrompt
@@ -410,6 +405,9 @@ endr
 	call UpdateSprites
 	call UpdateTimePals
 	jp TextAsmEnd
+rept $8D
+	nop
+endr
 
 MomNameMenuHeaderUnused:	;	36:7989
 	db MENU_BACKUP_TILES ; flags

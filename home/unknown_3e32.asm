@@ -104,3 +104,8 @@ PageChar::
 	ld c, l
 	pop hl
 	ret
+	
+ErrorText:
+	deciram hEventID, 1, 2
+	text "ERROR"
+	done

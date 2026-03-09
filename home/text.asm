@@ -237,7 +237,7 @@ NullChar:: ; unused
 	; displays an error message with the current
 	; value of hEventID in decimal format.
 	; This is a debugging leftover.
-	ld de, .Text
+	ld de, ErrorText
 	dec de
 	ret
 
