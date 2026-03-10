@@ -13,7 +13,7 @@ SECTION "engine/menu/field_debug_menu.asm@FieldDebugMenuHeader", ROMX
 
 FieldDebugMenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 0, 0, 7, 17
+	menu_coords 0, 0, 12, 17
 	dw .MenuData
 	db 1
 

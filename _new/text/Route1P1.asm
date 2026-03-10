@@ -20,7 +20,7 @@ _Route1P1TextString2:
 	
 _Route1P1TextString3:
 	text "Beyond here lies"
-	line "the SILENT HILLS."
+	line "the QUIET HILLS."
 	
 	para "Beware of wild"
 	line "#MON."

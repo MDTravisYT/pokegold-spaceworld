@@ -58,48 +58,48 @@ LandmarkPositions:
 SECTION "data/maps/landmarks.asm@LandmarkNames", ROMX
 
 LandmarkNames::
-	db "サイレント@" ; SILENT
-	db "オールド@" ; OLD
-	db "ウエスト@" ; WEST
-	db "ハイテク@" ; HIGH_TECH
-	db "フォント@" ; FOUNT
-	db "バードン@" ; BIRDON
-	db "ニュータイプ@" ; NEW_TYPE
-	db "シュガー@" ; SUGAR
-	db "ブルーフォレスト@" ; BLUE_FOREST
-	db "スタンド@" ; STAND
-	db "カントー@" ; KANTO
-	db "プリンス@" ; PRINCE
-	db "フジヤマ@" ; MT_FUJI
-	db "サウス@" ; SOUTH
-	db "ノース@" ; NORTH
-	db "１５ばんどうろ@" ; ROUTE_15
-	db "１８ばんどうろ@" ; ROUTE_18
-	db "はつでんしょ１@" ; POWER_PLANT_1
-	db "はつでんしょ２@" ; POWER_PLANT_2
-	db "はつでんしょ３@" ; POWER_PLANT_3
-	db "はつでんしょ４@" ; POWER_PLANT_4
-	db "いせき　１@" ; RUINS_1
-	db "いせき　２@" ; RUINS_2
-	db "はいこう１@" ; MINES_1
-	db "はいこう２@" ; MINES_2
-	db "はいこう３@" ; MINES_3
-	db "はいこう４@" ; MINES_4
-	db "はいこう５@" ; MINES_5
-	db "はいこう６@" ; MINES_6
-	db "はいこう７@" ; MINES_7
-	db "アジト　１@" ; HIDEOUT_1
-	db "アジト　２@" ; HIDEOUT_2
-	db "アジト　３@" ; HIDEOUT_3
-	db "ヤドンの　いど１@" ; SLOWPOKE_WELL_1
-	db "ヤドンの　いど２@" ; SLOWPOKE_WELL_2
-	db "#りーぐ１@" ; POKEMON_LEAGUE_1
-	db "#りーぐ１@" ; POKEMON_LEAGUE_1_2
-	db "#りーぐ２@" ; POKEMON_LEAGUE_2
-	db "#りーぐ３@" ; POKEMON_LEAGUE_3
-	db "#りーぐ４@" ; POKEMON_LEAGUE_4
-	db "#りーぐ５@" ; POKEMON_LEAGUE_5
-	db "#りーぐ６@" ; POKEMON_LEAGUE_6
-	db "#りーぐ７@" ; POKEMON_LEAGUE_7
-	db "#りーぐ７@" ; POKEMON_LEAGUE_7_2
-	db "しずかなおか@" ; SILENT_HILL
+	db "SILENT@" ; SILENT
+	db "OLD@" ; OLD
+	db "WEST@" ; WEST
+	db "HIGHTECH@" ; HIGH_TECH
+	db "FONT@" ; FOUNT
+	db "BIRDON@" ; BIRDON
+	db "NEWTYPE@" ; NEW_TYPE
+	db "SUGAR@" ; SUGAR
+	db "BLUE FOREST@" ; BLUE_FOREST
+	db "STAND@" ; STAND
+	db "KANTO@" ; KANTO
+	db "PRINCE@" ; PRINCE
+	db "MT.FUJI@" ; MT_FUJI
+	db "SOUTH@" ; SOUTH
+	db "NORTH@" ; NORTH
+	db "ROUTE 15@" ; ROUTE_15
+	db "ROUTE 18@" ; ROUTE_18
+	db "POWER PLANT 1@" ; POWER_PLANT_1
+	db "POWER PLANT 2@" ; POWER_PLANT_2
+	db "POWER PLANT 3@" ; POWER_PLANT_3
+	db "POWER PLANT 4@" ; POWER_PLANT_4
+	db "RUINS 1@" ; RUINS_1
+	db "RUINS 2@" ; RUINS_2
+	db "MINES 1@" ; MINES_1
+	db "MINES 2@" ; MINES_2
+	db "MINES 3@" ; MINES_3
+	db "MINES 4@" ; MINES_4
+	db "MINES 5@" ; MINES_5
+	db "MINES 6@" ; MINES_6
+	db "MINES 7@" ; MINES_7
+	db "HIDEOUT 1@" ; HIDEOUT_1
+	db "HIDEOUT 2@" ; HIDEOUT_2
+	db "HIDEOUT 3@" ; HIDEOUT_3
+	db "SLOWPOKE WELL 1@" ; SLOWPOKE_WELL_1
+	db "SLOWPOKE WELL 2@" ; SLOWPOKE_WELL_2
+	db "#MON LEAGUE1@" ; POKEMON_LEAGUE_1
+	db "#MON LEAGUE1@" ; POKEMON_LEAGUE_1_2
+	db "#MON LEAGUE2@" ; POKEMON_LEAGUE_2
+	db "#MON LEAGUE3@" ; POKEMON_LEAGUE_3
+	db "#MON LEAGUE4@" ; POKEMON_LEAGUE_4
+	db "#MON LEAGUE5@" ; POKEMON_LEAGUE_5
+	db "#MON LEAGUE6@" ; POKEMON_LEAGUE_6
+	db "#MON LEAGUE7@" ; POKEMON_LEAGUE_7
+	db "#MON LEAGUE7@" ; POKEMON_LEAGUE_7_2
+	db "QUIET HILLS@" ; SILENT_HILL

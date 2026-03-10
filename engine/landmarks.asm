@@ -8,7 +8,7 @@ DebugMenu_DisplayWarpSubmenu::
 	call LoadStandardMenuHeader
 	ld hl, wTileMap
 	ld b, 10
-	ld c, 11
+	ld c, 16
 	call DrawTextBox
 	call UpdateSprites
 	ld hl, DebugMenu_WarpMenuHeader
@@ -27,7 +27,7 @@ DebugMenu_DisplayWarpSubmenu::
 
 DebugMenu_WarpMenuHeader::
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 1, 1, 11, 10
+	menu_coords 1, 1, 16, 10
 	dw .MenuData2
 	db 1 ; default option
 

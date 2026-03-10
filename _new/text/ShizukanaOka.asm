@@ -174,14 +174,14 @@ _ShizukanaOkaText1String:
 	done
 	
 _ShizukanaOkaSignpost2String:
-	text "SILENT HILLS"
+	text "QUIET HILLS"
 	
 	para "This way to"
 	line "SILENT HILL"
 	done
 	
 _ShizukanaOkaSignpost1String:
-	text "SILENT HILLS"
+	text "QUIET HILLS"
 	
 	para "This way to"
 	line "OLD CITY"
