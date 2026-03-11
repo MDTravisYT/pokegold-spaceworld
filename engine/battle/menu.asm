@@ -22,7 +22,7 @@ CommonBattleMenu:
 
 BattleMenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 7, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 8, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1
 
@@ -31,8 +31,8 @@ BattleMenuHeader:
 	dn 2, 2
 	db 6
 	db "FIGHT@" ; "FIGHT" 4
-	db "ITEM@"   ; "ITEM" 3
-	db "PKMN@"       ; "<PK><MN>" 1
+	db "<PK><MN>@"  ; "<PK><MN>" 1
+	db "ITEM@"  ; "ITEM" 3
 	db "RUN@"   ; "RUN" 3
 	; 11 bytes orig
 

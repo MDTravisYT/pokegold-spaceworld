@@ -3260,9 +3260,9 @@ BattleMenu:
 	cp 1
 	jp z, BattleMenu_Fight
 	cp 2
-	jp z, BattleMenu_Pack
-	cp 3
 	jp z, BattleMenu_PKMN
+	cp 3
+	jp z, BattleMenu_Pack
 	cp 4
 	jp z, BattleMenu_Run
 	jr .loop
