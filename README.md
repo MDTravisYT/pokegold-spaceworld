@@ -23,3 +23,6 @@ To make Silver Version:
 
 To switch between versions:
 ```make clean | [command for version to switch to]```
+
+To build with the Story Mode flag or bugfixes flag:
+Amend to `RGBASMFLAGS` in either one of the Makefiles: `-DSTORY` for Story Mode, `-DFIXBUGS` for bugfixes.
