@@ -46,12 +46,12 @@ _SilentHillPokecenterTextString4:
 	done
 	
 _SilentHillPokecenterTextString5:
-	text "This is HOUNDOOM!"
+	text "This is HELUGAA!"
 	
 	para "It's a #MON of"
 	line "a brand new type!"
 	done
 	
 _SilentHillPokecenterTextString6:
-	text "HOUNDOOM: Grrrr..."
+	text "HELUGAA: Grrrr..."
 	done
