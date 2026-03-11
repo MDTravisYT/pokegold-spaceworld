@@ -1,34 +1,34 @@
 ; FieldDebug_Jumptable constants
 	const_def
 	const FIELDDEBUG_RESET                   ; 0
-	const FIELDDEBUG_CLOSE_MENU              ; 1
+	const FIELDDEBUG_CLOSE_MENU              ; 1 used
 	const FIELDDEBUG_FRAME_TYPE              ; 2
-	const FIELDDEBUG_MINIGAMES               ; 3
-	const FIELDDEBUG_CHANGE_TRANSPORTATION   ; 4
+	const FIELDDEBUG_MINIGAMES               ; 3 used
+	const FIELDDEBUG_CHANGE_TRANSPORTATION   ; 4 used
 	const FIELDDEBUG_CHANGE_TILESET          ; 5
-	const FIELDDEBUG_TOWN_MAP                ; 6
-	const FIELDDEBUG_SPRITE_VIEWER           ; 7
+	const FIELDDEBUG_TOWN_MAP                ; 6 used
+	const FIELDDEBUG_SPRITE_VIEWER           ; 7 used
 	const FIELDDEBUG_NAME_PLAYER             ; 8
-	const FIELDDEBUG_TOOLGEAR                ; 9
-	const FIELDDEBUG_CLEAR_EVENT_FLAGS       ; $a
-	const FIELDDEBUG_HEAL_POKEMON            ; $b
+	const FIELDDEBUG_TOOLGEAR                ; 9 used
+	const FIELDDEBUG_CLEAR_EVENT_FLAGS       ; $a used
+	const FIELDDEBUG_HEAL_POKEMON            ; $b used
 	const FIELDDEBUG_CABLE_CLUB              ; $c
-	const FIELDDEBUG_GO_TO_NEXT_PAGE         ; $d
+	const FIELDDEBUG_GO_TO_NEXT_PAGE         ; $d used
 	const FIELDDEBUG_NPC_MOVEMENT_TEST       ; $e
 	const FIELDDEBUG_POKEMON_FOLLOWING       ; $f
-	const FIELDDEBUG_FOLLOW_NPC_TEST         ; $10
-	const FIELDDEBUG_WARP                    ; $11
+	const FIELDDEBUG_FOLLOW_NPC_TEST         ; $10 used
+	const FIELDDEBUG_WARP                    ; $11 used
 	const FIELDDEBUG_FIELD_CUT               ; $12
 	const FIELDDEBUG_CHECK_TILE              ; $13
 	const FIELDDEBUG_MOVE_TO_ROUTE1_ENTRANCE ; $14
 	const FIELDDEBUG_TOGGLE_NPC_MOVEMENT     ; $15
-	const FIELDDEBUG_MAP_VIEWER              ; $16
+	const FIELDDEBUG_MAP_VIEWER              ; $16 used
 	const FIELDDEBUG_ITEM_TEST               ; $17
-	const FIELDDEBUG_PC_MENU                 ; $18
-	const FIELDDEBUG_POKEMART_MENU           ; $19
-	const FIELDDEBUG_TELEPORT                ; $1a
-	const FIELDDEBUG_VRAM_VIEWER             ; $1b
-	const FIELDDEBUG_TRAINER_GEAR            ; $1c
+	const FIELDDEBUG_PC_MENU                 ; $18 used
+	const FIELDDEBUG_POKEMART_MENU           ; $19 used
+	const FIELDDEBUG_TELEPORT                ; $1a used
+	const FIELDDEBUG_VRAM_VIEWER             ; $1b used
+	const FIELDDEBUG_TRAINER_GEAR            ; $1c used
 
 FieldDebug_MenuStrings:
 	db "RESET@"
@@ -92,7 +92,11 @@ FieldDebug_Jumptable:
 	dw FieldDebug_VRAMViewer
 	dw FieldDebug_TrainerGear
 
+if DEF(FIXBUGS)
+DEF FIELDDEBUG_NUM_PAGES EQU 6
+else
 DEF FIELDDEBUG_NUM_PAGES EQU 3
+endc
 
 FieldDebug_Pages:
 ; page 1
@@ -127,3 +131,34 @@ FieldDebug_Pages:
 	db FIELDDEBUG_TOWN_MAP
 	db FIELDDEBUG_CLOSE_MENU
 	db -1
+
+if DEF(FIXBUGS)
+; page 4
+	db 7    ; number of items
+	db FIELDDEBUG_GO_TO_NEXT_PAGE
+	db FIELDDEBUG_FRAME_TYPE
+	db FIELDDEBUG_CHANGE_TILESET
+	db FIELDDEBUG_NAME_PLAYER
+	db FIELDDEBUG_CABLE_CLUB
+	db FIELDDEBUG_NPC_MOVEMENT_TEST
+	db FIELDDEBUG_CLOSE_MENU
+	db -1
+	
+; page 5
+	db 7    ; number of items
+	db FIELDDEBUG_GO_TO_NEXT_PAGE
+	db FIELDDEBUG_POKEMON_FOLLOWING
+	db FIELDDEBUG_FIELD_CUT
+	db FIELDDEBUG_CHECK_TILE
+	db FIELDDEBUG_MOVE_TO_ROUTE1_ENTRANCE
+	db FIELDDEBUG_TOGGLE_NPC_MOVEMENT
+	db FIELDDEBUG_CLOSE_MENU
+	db -1
+	
+; page 6
+	db 3    ; number of items
+	db FIELDDEBUG_GO_TO_NEXT_PAGE
+	db FIELDDEBUG_ITEM_TEST
+	db FIELDDEBUG_CLOSE_MENU
+	db -1
+endc
