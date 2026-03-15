@@ -95,11 +95,16 @@ GetNamingScreenSetup:
 	ld h, b
 	ld de, .NicknameText
 	call PlaceString
-	call .StoreSpriteIconParams
+	inc de
+	hlcoord 5, 4
+	call PlaceString
+	ld a, 10
+	call .StoreSpriteIconParams_userval
 	ret
 
 .NicknameText
-	db "のニックネームは？@"
+	db "'S@"
+	db "NICKNAME?@"
 
 .Player:
 	ld de, GoldSpriteGFX
@@ -111,7 +116,7 @@ GetNamingScreenSetup:
 	ret
 
 .NameText:
-	db "あなた　の　なまえは？@"
+	db "YOUR NAME?@"
 
 .Rival:
 	ld de, SilverSpriteGFX
@@ -124,7 +129,7 @@ GetNamingScreenSetup:
 
 .RivalText:
 ; the ret just preceeding this would make the first word Rival.
-	db "ライバル　の　なまえは？@"
+	db "RIVAL'S NAME?@"
 
 .Mom:
 	ld de, MomSpriteGFX
@@ -136,7 +141,7 @@ GetNamingScreenSetup:
 	ret
 
 .MomText:
-	db "ははおや　の　なまえは？@"
+	db "MOTHER'S NAME?@"
 
 .Box:
 	ld de, PokeBallSpriteGFX
@@ -160,7 +165,7 @@ GetNamingScreenSetup:
 	ret
 
 .BoxText:
-	db "バンク　の　なまえは？@"
+	db "BOX NAME?@"
 
 .LoadSprite:
 ; copies the sprite at de into the top of VRAM, as well as the sprite $C0 after de
@@ -186,9 +191,10 @@ GetNamingScreenSetup:
 	ret
 
 .StoreSpriteIconParams:
-	ld a, $05
+	ld a, 5
+.StoreSpriteIconParams_userval:
 	ld [wNamingScreenMaxNameLength], a
-	hlcoord 6, 5
+	hlcoord 6, 6
 	ld a, l
 	ld [wNamingScreenStringEntryCoordY], a
 	ld a, h
@@ -219,12 +225,12 @@ NamingScreen_InitText:
 	hlcoord 1, 9
 	lb bc, $08, $12
 	call ClearBox
-	hlcoord 2, 9
+	hlcoord 2, 10
 	ld de, TextEntryChars
-	ld b, $08
+	ld b, 6	; orig 8
 
 .outerloop
-	ld c, $11
+	ld c, 16 ; orig 17
 
 .innerloop
 	ld a, [de]
@@ -233,6 +239,7 @@ NamingScreen_InitText:
 	dec c
 	jr nz, .innerloop
 
+	inc hl
 	inc hl
 	inc hl
 	inc hl
@@ -270,7 +277,7 @@ NamingScreenJoypadLoop:
 	ldh [hBGMapMode], a
 	hlcoord 1, 3
 	lb bc, $05, $12
-	call ClearBox
+;	call ClearBox
 	ld hl, wNamingScreenDestinationPointer
 	ld e, [hl]
 	inc hl
@@ -301,7 +308,7 @@ NamingScreenJoypadLoop:
 	dw .ReadButtons
 
 .InitCursor:
-	depixel 11, 3, 0, 0
+	depixel 12, 3, 0, 0
 	ld a, SPRITE_ANIM_OBJ_NAMING_SCREEN_CURSOR
 	call InitSpriteAnimStruct
 	ld a, c
@@ -367,7 +374,7 @@ NamingScreen_AnimateCursor:
 	ld hl, $000C
 	add hl, bc
 	ld a, [hl]
-	cp $0E
+	cp $0D
 	jr nc, .skip1
 	inc [hl]
 	jr .escape
@@ -385,14 +392,14 @@ NamingScreen_AnimateCursor:
 	dec [hl]
 	jr .escape
 .skip2
-	ld [hl], $0E
+	ld [hl], $0D
 	jr .escape
 
 .downjump
 	ld hl, $000D
 	add hl, bc
 	ld a, [hl]
-	cp $07
+	cp $05
 	jr nc, .skip3
 	inc [hl]
 	jr .escape
@@ -409,7 +416,7 @@ NamingScreen_AnimateCursor:
 	dec [hl]
 	jr .escape
 .skip4
-	ld [hl], $07
+	ld [hl], $05
 	jr .escape
 .escape
 	ld hl, $000C
@@ -435,7 +442,7 @@ NamingScreen_AnimateCursor:
 	ret
 
 LetterOffsetsTable1:
-	db $00, $08, $10, $18, $20, $30, $38, $40, $48, $50, $60, $68, $70, $78, $80
+	db $00, $08, $10, $18, $20, $28, $30, $48, $50, $58, $60, $68, $70, $78, $80
 
 LetterOffsetsTable2:
 	db $00, $08, $10, $18, $20, $28, $30, $38
