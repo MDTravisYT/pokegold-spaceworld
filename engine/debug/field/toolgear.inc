@@ -81,17 +81,17 @@ OpenToolgearMenu:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 0, 0, 7, 14
+	menu_coords 0, 0, 9, 14
 	dw .MenuData
 	db 1
 
 .MenuData:
 	db STATICMENU_CURSOR
 	db 6
-	db "とけい@"
-	db "ざひょう@"
-	db "アジャスト@"
-	db "６０びょう@"
-	db "２４じかん@"
+	db "CLOCK@"
+	db "COORDS@"
+	db "ADJUST@"
+	db "60 SEC.@"
+	db "24 HR.@"
 	db "けす@"
 

@@ -143,7 +143,7 @@ FieldDebug_SpriteViewer:
 	jr nc, .setup
 	ld c, a
 .setup
-	hlcoord 5, 4
+	hlcoord 3, 4
 	ld a, [wSpriteViewerMenuStartingItem]
 	inc a
 	ld [wStringBuffer1], a
@@ -361,7 +361,8 @@ FieldDebug_SpriteViewer:
 	ret
 
 .FollowPromptString:
-	text "これを　せんたくしますか？"
+	text "Would you like to"
+	line "select this one?"
 	done
 
 .SetStartingPoint:
@@ -378,7 +379,7 @@ LoadUnderDevelopmentString:
 	ret
 
 .String:
-	db "かいはつちゅう@"
+	db " in the works@"
 
 Functionfc689:
 	ld de, wShadowOAM

@@ -33,16 +33,16 @@ FieldDebug_PokemartMenu:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 0, 0, 10, 8
+	menu_coords 0, 0, 12, 8
 	dw .MenuData
 	db 1 ; default
 
 .MenuData:
 	db STATICMENU_CURSOR
 	db 3 ; items
-	db "どうぐを　かう@"
-	db "どうぐを　うる@"
-	db "さようなら@"
+	db "BUY ITEMS@"
+	db "SELL ITEMS@"
+	db "SEE YA!@"
 
 .MenuJumptable:
 	dw DebugMart_Buy
@@ -76,18 +76,22 @@ DebugMart_BuyMenuHeader:
 	ld d, h
 	ld e, l
 	pop hl
+	push de
+	ld de, SCREEN_WIDTH
+	add hl, de
+	pop de
 	ld c, $83
 	call PrintBCDNumber
 	ld [hl], '円'
 	ret
 
 DebugMart_WelcomeText:
-	text "フレンドリーショップへ　"
-	line "ようこそ！"
+	text "Welcome to the"
+	line "#MON MART!"
 	prompt
 
 DebugMart_PokemartMenuText:
-	text "なんになさいますか？"
+	text "May I help you?"
 	done
 
 DebugMart_GoodbyeText:
@@ -146,22 +150,22 @@ DebugMart_Buy:
 	done
 
 .HowManyText:
-	text "いくつ　おかいあげになりますか"
+	text "How many would you"
+	line "like to purchase?"
 	done
 
 .ConfirmPurchaseText:
 	text_from_ram wStringBuffer2
-	text "を　@"
-	deciram wItemQuantity, 1, 2
-	text "こで"
-	line "@"
+	text "?"
+	line "That will be"
+	cont "¥@"
 	deciram hMoneyTemp, 3, 6
-	text "円　おかいあげですか？"
+	text ". OK?"
 	done
 
 .UnderDevelopmentText:
-	text "ごめんね"
-	line "かいはつちゅうなんだ"
+	text "Sorry. Still under"
+	line "development."
 	prompt
 
 INCLUDE "data/debug/field_debug_pokemart_items.inc"
@@ -253,8 +257,8 @@ DebugMart_Sell:
 	ret
 
 .NoItemsText:
-	text "どうぐを　ひとつも"
-	next "もっていません！"
+	text "You don't have any"
+	next "item on hand!"
 	prompt
 
 .ItemQuantityPrompt:
@@ -262,7 +266,7 @@ DebugMart_Sell:
 	call PrintText
 	callfar SelectQuantityToBuy
 	jr c, .got_quantity
-	jr .CannotSellItem
+	jp .CannotSellItem
 
 .got_quantity
 	and a
@@ -338,6 +342,5 @@ DebugMart_ShowPlaceholderText:
 	ret
 
 .PlaceholderText:
-	text "かいはつちゅうです"
-	next ""
+	text "Under development."
 	prompt

@@ -39,9 +39,10 @@ FieldDebug_ShowWarpToText:
 	ret
 
 .WarpToText:
+	text "Warping to"
+	line "@"
 	text_from_ram wStringBuffer2
-	text "に"
-	line "ワープします！"
+	text "!"
 	done
 
 DoTeleportAnimation:

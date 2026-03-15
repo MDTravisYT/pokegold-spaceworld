@@ -192,8 +192,11 @@ _CheckMovementDebug:
 	ret
 
 CheckMovementSkateboard::
+if DEF(FIXBUGS)
+else
 	call _CheckMovementSkateboard
 	jp SetPlayerMovement
+endc
 
 _CheckMovementSkateboard:
 	ld a, [wSkatingDirection]

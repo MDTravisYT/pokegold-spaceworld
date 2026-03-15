@@ -72,35 +72,36 @@ FieldDebug_ChangeTransportation:
 
 .ChangeTransportationMenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 3, 3, 12, 13
+	menu_coords 3, 3, 15, 13
 	dw .ChangeTransportationMenuData
 	db 1
 
 .ChangeTransportationMenuData:
 	db STATICMENU_WRAP | STATICMENU_CURSOR
 	db 4
-	db "あるき@"
-	db "じてんしゃ@"
-	db "スケボー@"
-	db "ラプラス@"
+	db "WALK@"
+	db "BICYCLE@"
+	db "SKATEBOARD@"
+	db "LAPRAS@"
 
 .PlayerTransportationString1:
-	text "<PLAYER>は@"
-	text_low
+	text "<PLAYER> got on"
+	line "the @"
 	text_from_ram wStringBuffer2
-	text "から　おりた"
+	text "."
 	prompt
 
 .PlayerTransportationString2:
-	text "<PLAYER>は@"
-	text_low
+	text "<PLAYER> got off"
+	line "the @"
 	text_from_ram wStringBuffer2
-	text "に　のった"
+	text "."
+	prompt
 	prompt
 
 .CannotSurfString:
-	text "ここでは　のることが"
-	next "できません"
+	text "You cannot ride"
+	next "here."
 	prompt
 
 SetTransportation:

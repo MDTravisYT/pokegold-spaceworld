@@ -92,7 +92,7 @@ include gfx/gfx.mk
 
 ### Catch-all build target rules
 
-RGBASMFLAGS += -E -i $(BUILD)/ -DGOLD
+RGBASMFLAGS += -E -i $(BUILD)/ -DGOLD -DFIXBUGS
 
 $(BUILD)/%.o: $(BUILD)/%.asm | $$(dir $$@) rgbdscheck.o
 	$(RGBASM) $(RGBASMFLAGS) $(OUTPUT_OPTION) $<
