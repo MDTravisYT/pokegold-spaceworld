@@ -85,14 +85,14 @@ FieldDebug_ChangeTransportation:
 	db "LAPRAS@"
 
 .PlayerTransportationString1:
-	text "<PLAYER> got on"
+	text "<PLAYER> got off"
 	line "the @"
 	text_from_ram wStringBuffer2
 	text "."
 	prompt
 
 .PlayerTransportationString2:
-	text "<PLAYER> got off"
+	text "<PLAYER> got on"
 	line "the @"
 	text_from_ram wStringBuffer2
 	text "."
