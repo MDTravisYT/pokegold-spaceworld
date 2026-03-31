@@ -20,6 +20,9 @@ Baadon_MapEvents::
 	warp_event 15, 15, BAADON_LEAGUE_1F, 2, 136
 	warp_event  8,  5, FONTO_ROUTE_GATE_2, 1, 53
 	warp_event  9,  5, FONTO_ROUTE_GATE_2, 2, 53
+if DEF(FIXBUGS)
+	warp_event  9,  9, SLOWPOKE_WELL_ENTRANCE, 2, 0
+endc
 
 	def_bg_events
 	bg_event  4,  4, 1

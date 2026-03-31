@@ -13,6 +13,9 @@ Route18_MapEvents::
 	warp_event  8,  5, NEWTYPE_ROUTE_GATE, 1, 53
 	warp_event  9,  5, NEWTYPE_ROUTE_GATE, 2, 53
 	warp_event 13, 28, ROUTE_18_POKECENTER_1F, 1, 247
+if DEF(FIXBUGS)
+	warp_event 15, 13, POWER_PLANT_1, 4, 0
+endc
 
 	def_bg_events
 

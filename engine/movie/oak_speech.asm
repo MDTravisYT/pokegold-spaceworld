@@ -218,6 +218,9 @@ DebugBagItems::
 	db ITEM_TM_HOLDER, $01
 	db ITEM_BALL_HOLDER, $01
 	db ITEM_BICYCLE, $01
+if DEF(FIXBUGS)
+	db ITEM_SKATEBOARD, $01
+endc
 	db ITEM_MAIL, $06
 	db ITEM_ULTRA_BALL, $1E
 	db ITEM_POKE_BALL, $63
@@ -343,6 +346,9 @@ DebugKeyItemsList::
 	db ITEM_BALL_HOLDER
 	db ITEM_BAG
 	db ITEM_BICYCLE
+if DEF(FIXBUGS)
+	db ITEM_SKATEBOARD
+endc
 	db $FF
 
 DemoSetUpPlayer::

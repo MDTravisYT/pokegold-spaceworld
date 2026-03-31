@@ -15,9 +15,15 @@ ItemTest_BagMenu:
 	db SCROLLINGMENU_ITEMS_QUANTITY
 	dbw 0, wItems
 ; Incorrectly configured, will cause the game to crash
+if DEF(FIXBUGS)
+	db BANK(PlaceMenuItemName)
+	dw PlaceMenuItemName
+	db BANK(PlaceMenuItemQuantity)
+else
 	db BANK(PlaceMenuItemName), $cd
 	dw PlaceMenuItemName
 	db BANK(PlaceMenuItemQuantity), $cd
+endc
 	dw PlaceMenuItemQuantity
 	db BANK(UpdateItemDescription)
 	dw UpdateItemDescription
@@ -39,9 +45,15 @@ ItemTest_KeyItemMenu:
 	db SCROLLINGMENU_ITEMS_QUANTITY
 	dbw 0, wNumKeyItems
 ; Incorrectly configured, will cause the game to crash
+if DEF(FIXBUGS)
+	db BANK(PlaceMenuItemName)
+	dw PlaceMenuItemName
+	db BANK(PlaceMenuItemQuantity)
+else
 	db BANK(PlaceMenuItemName), $cd
 	dw PlaceMenuItemName
 	db BANK(PlaceMenuItemQuantity), $cd
+endc
 	dw PlaceMenuItemQuantity
 	db BANK(UpdateItemDescription)
 	dw UpdateItemDescription

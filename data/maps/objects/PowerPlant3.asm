@@ -8,6 +8,13 @@ PowerPlant3_MapEvents::
 	dw $0 ; unknown
 
 	def_warp_events
+if DEF(FIXBUGS)
+	warp_event  0,  6, POWER_PLANT_2, 3, 0
+	warp_event  0,  7, POWER_PLANT_2, 4, 0
+	warp_event 26, 30, POWER_PLANT_4, 1, 0
+	warp_event 23, 19, POWER_PLANT_4, 2, 0
+	warp_event 26,  6, POWER_PLANT_4, 3, 0
+endc
 
 	def_bg_events
 

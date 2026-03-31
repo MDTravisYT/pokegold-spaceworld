@@ -373,13 +373,13 @@ OldIsTileCollisionGrass::
 ; Result:
 ; nz - not grass
 ;  z - grass
-	cp $82
+	cp OLD_COLLISION_GRASS_82
 	ret z
-	cp $83
+	cp OLD_COLLISION_GRASS_83
 	ret z
-	cp $8a
+	cp OLD_COLLISION_CAVE_GRASS_8A
 	ret z
-	cp $8b
+	cp OLD_COLLISION_CAVE_GRASS_8B
 	ret
 
 OldCheckMovementSurf::
@@ -646,6 +646,9 @@ CheckMovementWalkLand::
 	ld b, movement_step | RIGHT
 	cp (COLLISION_LAND_E & COLLISION_SUBTYPE_MASK)
 	jr z, .finish
+if DEF(FIXBUGS)
+	ret
+endc
 	; fall-through --> map other codes to COLLISION_LAND_E
 .finish
 	ld a, b
@@ -684,7 +687,11 @@ CheckMovementWalkLand2::
 	ld b, movement_step | RIGHT
 	cp (COLLISION_LAND2_E & COLLISION_SUBTYPE_MASK)
 	jr z, .finish
+if DEF(FIXBUGS)
+	ret
+endc
 	; fall-through --> map other codes to COLLISION_LAND2_E
+
 .finish
 	ld a, b
 	ret
@@ -757,6 +764,9 @@ CheckMovementWalkSpecial::
 	jp CheckMovementWalkRegular
 
 CheckMovementWalkRegular::
+if DEF(FIXBUGS)
+	jp _CheckMovementWalkOrBike
+else
 	ldh a, [hJoyState]
 	bit D_DOWN_F, a
 	jp nz, CheckWalkDown
@@ -767,6 +777,7 @@ CheckMovementWalkRegular::
 	bit D_RIGHT_F, a
 	jp nz, CheckWalkRight
 	jp NoWalkMovement
+endc
 
 CheckMovementWalkJump:
 	ldh a, [hJoyState]
