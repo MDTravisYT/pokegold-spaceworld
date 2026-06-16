@@ -1,6 +1,13 @@
 INCLUDE "constants.asm"
 
 
+SECTION "garbage.asm@Bank 00 Garbage", ROM0
+if DEF(_DEBUG)
+INCLUDE "garbage/bank00_debug.inc"
+else
+INCLUDE "garbage/bank00_nondebug.inc"
+endc
+
 SECTION "garbage.asm@Bank 01 Garbage", ROMX
 
 if DEF(_GOLD)

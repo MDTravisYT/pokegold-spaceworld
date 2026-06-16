@@ -1666,7 +1666,9 @@ OverworldLoop_07::
 	ret
 
 OverworldLoop_DebugMapViewer::
+if DEF(_DEBUG)
 	callfar DebugMapViewer
+endc
 	ld a, MAPSTATUS_RETURN_TO_MAIN
 	call SetMapStatus
 	ret

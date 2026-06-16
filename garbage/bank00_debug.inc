@@ -1,7 +1,3 @@
-INCLUDE "constants.asm"
-
-SECTION "home/unknown_3e32.asm", ROM0
-
 ; A collection of seemingly old functions that match up with the used functions in some areas,
 ; but have differing addresses in others.
 
