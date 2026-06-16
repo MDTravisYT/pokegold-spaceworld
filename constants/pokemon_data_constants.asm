@@ -1,29 +1,29 @@
 ; base data struct members (see data/pokemon/base_stats/*.asm)
-DEF BASE_DEX_NO      EQUS "(wBaseDexNo - wCurBaseData)"
-DEF BASE_STATS       EQUS "(wBaseStats - wCurBaseData)"
-DEF BASE_HP          EQUS "(wBaseHP - wCurBaseData)"
-DEF BASE_ATK         EQUS "(wBaseAttack - wCurBaseData)"
-DEF BASE_SPD         EQUS "(wBaseSpeed - wCurBaseData)"
-DEF BASE_SAT         EQUS "(wBaseSpecialAttack - wCurBaseData)"
-DEF BASE_SDF         EQUS "(wBaseSpecialDefense - wCurBaseData)"
-DEF BASE_TYPES       EQUS "(wBaseType - wCurBaseData)"
-DEF BASE_TYPE_1      EQUS "(wBaseType1 - wCurBaseData)"
-DEF BASE_TYPE_2      EQUS "(wBaseType2 - wCurBaseData)"
-DEF BASE_CATCH_RATE  EQUS "(wBaseCatchRate - wCurBaseData)"
-DEF BASE_EXP         EQUS "(wBaseExp - wCurBaseData)"
-DEF BASE_ITEMS       EQUS "(wBaseItems - wCurBaseData)"
-DEF BASE_ITEM_1      EQUS "(wBaseItem1 - wCurBaseData)"
-DEF BASE_ITEM_2      EQUS "(wBaseItem2 - wCurBaseData)"
-DEF BASE_GENDER      EQUS "(wBaseGender - wCurBaseData)"
-DEF BASE_UNKNOWN_1   EQUS "(wBaseUnknown1 - wCurBaseData)"
-DEF BASE_EGG_STEPS   EQUS "(wBaseEggSteps - wCurBaseData)"
-DEF BASE_UNKNOWN_2   EQUS "(wBaseUnknown2 - wCurBaseData)"
-DEF BASE_PIC_SIZE    EQUS "(wBasePicSize - wCurBaseData)"
-DEF BASE_FRONT_PTR   EQUS "(wBaseFrontPtr - wCurBaseData)"
-DEF BASE_Back_PTR    EQUS "(wBaseBackPtr - wCurBaseData)"
-DEF BASE_GROWTH_RATE EQUS "(wBaseGrowthRate - wCurBaseData)"
-DEF BASE_TMHM        EQUS "(wBaseTMHM - wCurBaseData)"
-DEF BASE_DATA_SIZE   EQUS "(wCurBaseDataEnd - wCurBaseData)"
+DEF BASE_DEX_NO      EQUS "(wMonHIndex - wMonHeader)"
+DEF BASE_STATS       EQUS "(wMonHBaseStats - wMonHeader)"
+DEF BASE_HP          EQUS "(wMonHBaseHP - wMonHeader)"
+DEF BASE_ATK         EQUS "(wMonHBaseAttack - wMonHeader)"
+DEF BASE_SPD         EQUS "(wMonHBaseSpeed - wMonHeader)"
+DEF BASE_SAT         EQUS "(wMonHBaseSpecialAtt - wMonHeader)"
+DEF BASE_SDF         EQUS "(wMonHBaseSpecialDef - wMonHeader)"
+DEF BASE_TYPES       EQUS "(wMonHTypes - wMonHeader)"
+DEF BASE_TYPE_1      EQUS "(wMonHType1 - wMonHeader)"
+DEF BASE_TYPE_2      EQUS "(wMonHType2 - wMonHeader)"
+DEF BASE_CATCH_RATE  EQUS "(wMonHCatchRate - wMonHeader)"
+DEF BASE_EXP         EQUS "(wMonHBaseEXP - wMonHeader)"
+DEF BASE_ITEMS       EQUS "(wMonHItems - wMonHeader)"
+DEF BASE_ITEM_1      EQUS "(wMonHItem1 - wMonHeader)"
+DEF BASE_ITEM_2      EQUS "(wMonHItem2 - wMonHeader)"
+DEF BASE_GENDER      EQUS "(wMonHGenderRatio - wMonHeader)"
+DEF BASE_UNKNOWN_1   EQUS "(wMonHUnk0 - wMonHeader)"
+DEF BASE_EGG_STEPS   EQUS "(wMonHUnk1 - wMonHeader)"
+DEF BASE_UNKNOWN_2   EQUS "(wMonHUnk2 - wMonHeader)"
+DEF BASE_PIC_SIZE    EQUS "(wMonHSpriteDim - wMonHeader)"
+DEF BASE_FRONT_PTR   EQUS "(wMonHFrontSprite - wMonHeader)"
+DEF BASE_Back_PTR    EQUS "(wMonHBackSprite - wMonHeader)"
+DEF BASE_GROWTH_RATE EQUS "(wMonHGrowthRate - wMonHeader)"
+DEF BASE_TMHM        EQUS "(wMonHLearnset - wMonHeader)"
+DEF BASE_DATA_SIZE   EQUS "(wMonHeaderEnd - wMonHeader)"
 
 ; gender ratio constants
 DEF GENDER_MALE    EQU 0 percent
@@ -40,10 +40,8 @@ DEF GENDER_UNKNOWN EQU -1
 	const GROWTH_FAST          ; 04
 	const GROWTH_SLOW          ; 05
 
-
 ; pokedex entries (see data/pokemon/dex_entries.asm)
 DEF NUM_DEX_ENTRY_BANKS EQU 4
-
 
 ; party_struct members (see macros/wram.asm)
 DEF MON_SPECIES            EQUS "(wPartyMon1Species - wPartyMon1)"
@@ -80,7 +78,6 @@ DEF PARTYMON_STRUCT_LENGTH EQUS "(wPartyMon1StatsEnd - wPartyMon1)"
 
 DEF REDMON_STRUCT_LENGTH EQU 44
 
-
 ; caught data
 
 DEF CAUGHT_TIME_MASK  EQU %11000000
@@ -95,7 +92,6 @@ DEF CAUGHT_BY_BOY     EQU 2
 
 DEF CAUGHT_EGG_LEVEL EQU 1
 
-
 ; maximum number of party pokemon
 DEF PARTY_LENGTH EQU 6
 
@@ -109,7 +105,6 @@ DEF HOF_MON_LENGTH EQUS "(wHallOfFamePokemonListMon1End - wHallOfFamePokemonList
 DEF HOF_LENGTH EQUS "(wHallOfFamePokemonListEnd - wHallOfFamePokemonList + 1)"
 DEF NUM_HOF_TEAMS EQU 30
 
-
 ; evolution types (used in data/pokemon/evos_attacks.asm)
 	const_def 1
 	const EVOLVE_LEVEL
@@ -117,16 +112,14 @@ DEF NUM_HOF_TEAMS EQU 30
 	const EVOLVE_ITEM
 	const EVOLVE_TRADE
 
-
 ; wild data
 
 DEF NUM_GRASSMON EQU 18 ; data/wild/*_grass.asm table size
 
-DEF GRASS_WILDDATA_DAYBLOCK_START    EQU 3 ; 
+DEF GRASS_WILDDATA_DAYBLOCK_START    EQU 3 ;
 DEF GRASS_WILDDATA_NITEBLOCK_START   EQU 7 ; the slot in GrassMonProbTable to start at
 
 DEF GRASS_WILDDATA_LENGTH EQU (NUM_GRASSMON * 2) + 3 + 2
-
 
 DEF BASE_HAPPINESS        EQU 70
 

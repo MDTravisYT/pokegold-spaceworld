@@ -1,6 +1,6 @@
 INCLUDE "constants.asm"
 
-SECTION "engine/dumps/bank23.asm@ClearSpriteAnims", ROMX
+SECTION "engine/sprite_anims/core.asm", ROMX
 
 ClearSpriteAnims::
 	ld hl, wSpriteAnimData
@@ -192,7 +192,7 @@ UpdateAnimFrame::
 	ld h, [hl]
 	ld l, a
 	push bc
-	ld a, [wCurSpriteOAMAddr]	; wCurSpriteOAMAddr = $C4BD
+	ld a, [wCurSpriteOAMAddr] ; wCurSpriteOAMAddr = $C4BD
 	ld e, a
 	ld d, HIGH(wShadowOAM)
 	ld a, [hli]
@@ -291,7 +291,7 @@ AddOrSubtractX:
 	ret
 
 GetSpriteOAMAttr:
-	ld a, [wSpriteAnimAddrBackup]	; wSpriteAnimAddrBackup = $C4C0
+	ld a, [wSpriteAnimAddrBackup] ; wSpriteAnimAddrBackup = $C4C0
 	ld b, a
 	ld a, [hl]
 	xor b

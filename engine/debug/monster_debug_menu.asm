@@ -49,16 +49,16 @@ MonsterTest:
 
 	ld [wTempSpecies], a
 	ret
-	
+
 .Different:
 	ld a, [wTempSpecies]
 	dec a
 	ld [wTempSpecies], a
 	ld c, a
-	ld a, [wOptionsTextSpeedCursorX]	; page size
+	ld a, [wOptionsTextSpeedCursorX] ; page size
 	cp NUM_MONSTERTEST_ITEMS + 1
 	jr c, .ScrollPosition
-	
+
 	sub c
 	cp NUM_MONSTERTEST_ITEMS
 	jr c, .AllowChange
@@ -75,7 +75,7 @@ MonsterTest:
 	ld [wOptionsMenuCursorX], a
 	ret
 .AllowChange:
-	ld a, [wOptionsTextSpeedCursorX]	; page size
+	ld a, [wOptionsTextSpeedCursorX] ; page size
 	sub a, NUM_MONSTERTEST_ITEMS
 	ld [wOptionsMenuCursorY], a
 	ld d, a
@@ -96,14 +96,14 @@ MonsterTest_List:
 	ld [wTempSpecies], a
 	ld d, NUM_MONSTERTEST_ITEMS
 	; fallthrough
-.TextInput_Loop:						; put mons number & mons name
+.TextInput_Loop: ; put mons number & mons name
 	ld a, [wTempSpecies]
 	inc a
 	ld [wTempSpecies], a
 	push af
 
-	push de								; counter save
-	push hl								; vram address save
+	push de ; counter save
+	push hl ; vram address save
 
 	ld de, wTempSpecies
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
@@ -115,10 +115,10 @@ MonsterTest_List:
 	inc hl
 	call PlaceString
 
-	pop hl								; vram address load
+	pop hl ; vram address load
 	ld bc, $28
 	add hl, bc
-	pop de								; counter load
+	pop de ; counter load
 
 	pop af
 	ld [wTempSpecies], a
@@ -130,10 +130,10 @@ MonsterTest_List:
 
 	call MonsterTest_Cursor
 
-	bit B_BUTTON_F, a					; cancel by "B" button
+	bit B_BUTTON_F, a ; cancel by "B" button
 	jp nz, .close_menu
 
-	bit SELECT_F, a						; trainer or monster change
+	bit SELECT_F, a ; trainer or monster change
 	jr z, .move_up
 	ld hl, wWhichPicTest
 	ld a, [hl]
@@ -143,21 +143,21 @@ MonsterTest_List:
 	ld [wOptionsMenuCursorY], a
 	jr MonsterTest_List
 .move_up:
-	bit D_UP_F, a						; up key
+	bit D_UP_F, a ; up key
 	jr z, .move_down
 
 	ld a, [wOptionsMenuCursorY]
 	and a
 	jp z, .Loop
 
-	dec a								; scroll up by 1 if possible
+	dec a ; scroll up by 1 if possible
 	ld [wOptionsMenuCursorY], a
 	jp .Loop
 .move_down:
-	bit D_DOWN_F, a						; down key
+	bit D_DOWN_F, a ; down key
 	jr z, .next_page
 
-	ld a, [wOptionsTextSpeedCursorX]	; page size
+	ld a, [wOptionsTextSpeedCursorX] ; page size
 	cp NUM_MONSTERTEST_ITEMS
 	jp c, .Loop
 
@@ -167,14 +167,14 @@ MonsterTest_List:
 	cp b
 	jp z, .Loop
 
-	inc a								; scroll down by 1 if possible
+	inc a ; scroll down by 1 if possible
 	ld [wOptionsMenuCursorY], a
 	jp .Loop
 .next_page:
-	bit D_RIGHT_F, a					; right key
+	bit D_RIGHT_F, a ; right key
 	jr z, .previous_page
 
-	ld a, [wOptionsTextSpeedCursorX]	; page size
+	ld a, [wOptionsTextSpeedCursorX] ; page size
 	cp NUM_MONSTERTEST_ITEMS
 	jp c, .Loop
 
@@ -186,20 +186,20 @@ MonsterTest_List:
 	cp b
 	jp c, .Loop
 
-	dec b								; scroll up by 9 if possible
+	dec b ; scroll up by 9 if possible
 	ld a, b
 	ld [wOptionsMenuCursorY], a
 	jp .Loop
 .previous_page:
-	bit D_LEFT_F, a						; left key
+	bit D_LEFT_F, a ; left key
 	jr z, .no_input
 
 	ld a, [wOptionsMenuCursorY]
 	sub NUM_MONSTERTEST_ITEMS
-	ld [wOptionsMenuCursorY], a	
+	ld [wOptionsMenuCursorY], a
 	jp nc, .Loop
 
-	xor a								; scroll down by 9 if possible
+	xor a ; scroll down by 9 if possible
 	ld [wOptionsMenuCursorY], a
 	jp .Loop
 .no_input:
@@ -233,14 +233,13 @@ MonsterTest_ListGetString:
 .is_a_pokemon:
 	call GetPokemonName
 	ret
-	
+
 MonsterTest_ClearScreen:
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, '　'
 	call ByteFill
 	ret
-	
 
 MonsterTest_SelectedMenu:
 	xor a
@@ -259,9 +258,6 @@ MonsterTest_SelectedMenu:
 	call GetJoypadDebounced
 
 	ld hl, hJoySum
-;	ld a, [hl]
-;	and (START)
-;	jr nz, .increment_unown
 	ld a, [hl]
 	and (A_BUTTON | B_BUTTON)
 	ret nz
@@ -290,15 +286,6 @@ MonsterTest_SelectedMenu:
 	ld a, c
 	ld [wTempSpecies], a
 	jp MonsterTest_SelectedMenu
-;.increment_unown:
-;	ld a, [wUnownDex]
-;	inc a
-;	ld [wUnownDex], a
-;	cp NUM_ANNON + 1
-;	jr c, MonsterTest_SelectedMenu
-;	ld a, 1
-;	ld [wUnownDex], a
-;	jr z, MonsterTest_SelectedMenu
 
 MonsterTest_PlaceBorder:
 	ld de, 20
@@ -365,12 +352,12 @@ MonsterTest_GetPic:
 	predef PlaceGraphic
 	ret
 .is_a_pokemon
-	ld a, [wUnownDex]				; BUG: wUnownDex isn't set beforehand so an invalid Unown ($00) is displayed instead.
+	ld a, [wUnownDex] ; BUG: wUnownDex isn't set beforehand so an invalid Unown ($00) is displayed instead.
 	ld [wAnnonID], a
 
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
-									; No code is present to load the palettes yet, but SGB_POKEDEX works on the front sprites.
+; No code is present to load the palettes yet, but SGB_POKEDEX works on the front sprites.
 ;	ld b, SGB_POKEDEX
 ;	call GetSGBLayout
 ;	call SetPalettes
@@ -387,7 +374,7 @@ MonsterTest_GetPic:
 	call PrepMonFrontpic
 	ld hl, wMonHBackSprite - wMonHeader
 	call UncompressMonSprite
-	
+
 	ld hl, vChars2 tile $31
 	predef GetMonBackpic
 
@@ -423,7 +410,7 @@ MonsterTest_Cursor:
 	ld a, [wOptionsMenuCursorX]
 	and a
 	jr z, .return
-	
+
 	call .get_position
 	ld [hl], '　'
 	ld hl, wOptionsMenuCursorX
@@ -433,7 +420,7 @@ MonsterTest_Cursor:
 	ld a, [wOptionsMenuCursorX]
 	cp NUM_MONSTERTEST_ITEMS-1
 	jr nc, .return
-	
+
 	call .get_position
 	ld [hl], '　'
 	ld hl, wOptionsMenuCursorX

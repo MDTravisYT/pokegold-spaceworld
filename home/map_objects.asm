@@ -462,8 +462,8 @@ UnfreezeObject::
 	res FROZEN_F, [hl]
 	ret
 
-; Iterates through a dba function table at 'hl' that is 16 entries long. 
-Unreferenced_FarCallLoop::
+; Iterates through a dba function table at 'hl' that is 16 entries long.
+HealingMachineLoop::
 	xor a
 .loop
 	push af

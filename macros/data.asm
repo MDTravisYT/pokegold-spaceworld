@@ -122,7 +122,6 @@ MACRO? dba_pic ; dbw bank, address
 	dw \1
 ENDM
 
-
 MACRO? dbpixel
 if _NARG >= 4
 ; x tile, x pxl, y tile, y pxl
@@ -138,13 +137,23 @@ MACRO? dsprite
 	db LOW(\1 * 8) + \2, LOW(\3 * 8) + \4, \5, \6
 ENDM
 
-
 MACRO? menu_coords
 ; x1, y1, x2, y2
 	db \2, \1 ; start coords
 	db \4, \3 ; end coords
 ENDM
 
+MACRO? dname
+	if _NARG == 2
+		def n = \2
+	else
+		def n = PLAYER_NAME_LENGTH - 1
+	endc
+	assert STRFIND(\1, "@") == -1, "String terminator \"@\" in name: \1"
+	assert CHARLEN(\1) <= n, "Name longer than {d:n} characters: \1"
+	db \1
+	ds n - CHARLEN(\1), '@'
+ENDM
 
 MACRO? bcd
 rept _NARG
@@ -152,7 +161,6 @@ rept _NARG
 	shift
 endr
 ENDM
-
 
 MACRO? sine_table
 ; \1 samples of sin(x) from x=0 to x<32768 (pi radians)

@@ -101,7 +101,7 @@ _Breeder::
 	ld a, GET_BREED_MON
 	ld [wPokemonWithdrawDepositParameter], a
 	predef DepositBreedmonOrBuffermon
-	
+
 	xor a ; REMOVE_PARTY
 	ld [wPokemonWithdrawDepositParameter], a
 	callfar RemoveMonFromPartyOrBox ; in the same bank, no need to farcall!
@@ -191,9 +191,9 @@ _Breeder::
 .MenuData:
 	db STATICMENU_CURSOR
 	db 3
-	db "あずける@"	; Deposit
-	db "ひきとる@"	; Withdraw
-	db "やめる@"	; Cancel
+	db "あずける@"	 ; Deposit
+	db "ひきとる@" ; Withdraw
+	db "やめる@" ; Cancel
 
 .DepositedText:
 	text "あずけた！"

@@ -3,10 +3,10 @@ INCLUDE "constants.asm"
 ; Trainer data structure:
 ; - db "NAME@", TRAINERTYPE_* constant
 ; - 1 to 6 Pokémon:
-;	* for TRAINERTYPE_NORMAL:	 db level, species
-;	* for TRAINERTYPE_ITEM:	   db level, species, item
-;	* for TRAINERTYPE_MOVES:	  db level, species, 4 moves
-;	* for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
+;    * for TRAINERTYPE_NORMAL:     db level, species
+;    * for TRAINERTYPE_ITEM:       db level, species, item
+;    * for TRAINERTYPE_MOVES:      db level, species, 4 moves
+;    * for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
 ; - db -1 ; end
 
 SECTION "data/trainers/parties.asm@Trainer Parties", ROMX
@@ -684,5 +684,12 @@ if DEF(_SILVER)
 	; KIMONO_GIRL_TAMAO
 	db "たまお@", TRAINERTYPE_ITEM_MOVES
 	db 10, DEX_JIGGLYPUFF, ITEM_NONE, MOVE_CHARM, MOVE_POUND, MOVE_ENCORE, MOVE_NONE
+	db -1 ; end
+
+	db -1 ; end
+
+	; early version of KIMONO_GIRL_KOUME?
+	db "こうめ@", TRAINERTYPE_ITEM_MOVES
+	db  8, DEX_CLEFAIRY, ITEM_NONE
 	db -1 ; end
 endc

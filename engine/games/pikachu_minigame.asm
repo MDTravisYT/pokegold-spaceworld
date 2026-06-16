@@ -1,21 +1,5 @@
 INCLUDE "constants.asm"
 
-; MinigamePikachuDoMovement.Jumptable constants
-	const_def
-	const MINIGAME_PIKACHU_INIT    ; 00
-	const MINIGAME_PIKACHU_CONTROL ; 01
-	const MINIGAME_PIKACHU_JUMPING ; 02
-	const MINIGAME_PIKACHU_FALLING ; 03
-
-; PikachuMiniGame_PerformGameFunction.Jumptable constants
-	const_def
-	const PIKACHU_MINIGAME_SETUP                ; 00
-	const PIKACHU_MINIGAME_NOTE_SPAWNER         ; 01
-	const PIKACHU_MINIGAME_SET_NEXT_SCENE_TIMER ; 02
-	const PIKACHU_MINIGAME_WAIT_AND_GOTO_NEXT   ; 03
-	const PIKACHU_MINIGAME_SHOW_JIGGLYPUFF      ; 04
-	const PIKACHU_MINIGAME_FADE_OUT             ; 05
-
 SECTION "engine/games/pikachu_minigame.asm@Pikachu Minigame", ROMX
 
 PikachuMiniGame::
@@ -252,9 +236,9 @@ PikachuMiniGame_BlinkText:
 
 .text
 	db "スタートホタン▶タイトルかめん"
-	db 0	; terminator
+	db 0 ; terminator
 
-PikachuMiniGame_Copy128Tiles:	; unreferenced?
+PikachuMiniGame_Copy128Tiles: ; unreferenced?
 	ld bc, $80 tiles
 .loop
 	ld a, [de]
@@ -335,7 +319,6 @@ PikachuMiniGame_Draw2x2Tile:
 	pop bc
 	ret
 
-
 PikachuMiniGame_RunFrame:
 ; Run a single frame of the minigame
 
@@ -403,7 +386,6 @@ PikachuMiniGame_RunFrame:
 	scf
 	ret
 
-
 PikachuMiniGame_RunTimer:
 	ld hl, wPikachuMinigameTimeFrames
 
@@ -430,7 +412,6 @@ PikachuMiniGame_RunTimer:
 	ld a, PIKACHU_MINIGAME_SET_NEXT_SCENE_TIMER
 	ld [wPikachuMinigameJumptableIndex], a
 	ret
-
 
 PikachuMiniGame_UpdateBlocks:
 	ldh a, [hSCX]
@@ -460,7 +441,6 @@ PikachuMiniGame_UpdateBlocks:
 	ld a, 1
 	ld [wVBCopySize], a
 	ret
-
 
 PikachuMiniGame_PrintBCD:
 ; Print the BCD number in HL to DE, least-significant
@@ -708,7 +688,7 @@ PikachuMiniGame_NoteSpawner:
 	ld [hl], e
 	ret
 
-.next_scene	; can this be reached?
+.next_scene ; can this be reached?
 	ld hl, wPikachuMinigameJumptableIndex
 	inc [hl]
 	ret
@@ -1142,7 +1122,6 @@ MinigamePikachuCheckFloorCollision:
 	cp [hl]
 	ret
 
-
 PikachuMiniGame_ScrollScene:
 	ld hl, wPikachuMinigameScrollSpeed
 	ldh a, [hSCX]
@@ -1176,7 +1155,6 @@ PikachuMiniGame_ScrollScene:
 	ld a, $01
 	ldh [hRedrawRowOrColumnMode], a
 	ret
-
 
 PikachuMiniGame_RenderColumn:
 	call PikachuMiniGame_GetNextColumn
@@ -1278,12 +1256,12 @@ PikachuMiniGame_GetNextColumn:
 	dw .DummyCommand  ; f6
 	dw .DummyCommand  ; f7
 	dw .DummyCommand  ; f8
-	dw .CommandF9	  ; f9
-	dw .CommandFA	  ; fa
-	dw .CommandFB	  ; fb
-	dw .JumpCommand	  ; fc
-	dw .CommandFD	  ; fd
-	dw .CallCommand	  ; fe
+	dw .CommandF9     ; f9
+	dw .CommandFA     ; fa
+	dw .CommandFB     ; fb
+	dw .JumpCommand   ; fc
+	dw .CommandFD     ; fd
+	dw .CallCommand   ; fe
 	dw .ReturnCommand ; ff
 
 .DummyCommand:

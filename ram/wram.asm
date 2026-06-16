@@ -136,13 +136,11 @@ NEXTU
 
 wClockDialogArrowBlinkCounter:: ds 1
 
-
 wc40a:: ds 1
 
 ; Monster or Trainer test?
 wWhichPicTest::
 	db
-
 
 wc40c:: ds 1
 wc40d:: ds 1
@@ -155,6 +153,10 @@ wOptionsBattleAnimCursorX:: db
 wOptionsBattleStyleCursorX:: db
 wOptionsAudioSettingsCursorX:: db
 wOptionsBottomRowCursorX:: db
+NEXTU
+; link patch lists
+wPlayerPatchLists:: ds SERIAL_PATCH_LIST_LENGTH
+wOTPatchLists:: ds SERIAL_PATCH_LIST_LENGTH
 NEXTU
 	ds 7
 
@@ -172,12 +174,12 @@ wMinuteBuffer:: db
 	ds 150
 
 UNION
-	wCurSpriteOAMAddr:: dw
+wCurSpriteOAMAddr:: dw
 NEXTU
 	ds 1
-	wCurIcon:: db
+wCurIcon:: db
 ENDU
-	wCurIconTile:: db
+wCurIconTile:: db
 
 UNION
 wCurSpriteOAMFlags:: db
@@ -207,6 +209,17 @@ wNamingScreenCursorObjectPointer:: dw
 wNamingScreenLastCharacter:: db
 wNamingScreenStringEntryCoordY:: db
 wNamingScreenStringEntryCoordX:: db
+
+NEXTU
+ds 200
+; trade
+wPlayerTrademon:: trademon wPlayerTrademon
+wOTTrademon::     trademon wOTTrademon
+wTradeAnimAddress:: dw
+wLinkPlayer1Name:: ds PLAYER_NAME_LENGTH
+wLinkPlayer2Name:: ds PLAYER_NAME_LENGTH
+wLinkTradeSendmonSpecies:: db
+wLinkTradeGetmonSpecies::  db
 
 NEXTU
 
@@ -256,6 +269,25 @@ NEXTU
 
 	ds 200
 
+wPokerAddress:: ds 13 * 4
+wPokerCardNumber:: db
+wPokerTurnNumber:: db
+wPokerPosition:: db
+wPokerPreviousCard:: db
+wPokerSortOrder:: ds 5
+wPokerString:: ds 5
+wPokerAllow:: db
+wPokerPayout:: db
+wPokerCurrentBet:: dw
+wPokerWork:: db
+wPokerDoubleUp:: dw
+wPokerColWork:: db
+wPokerWorkEnd:: ds 32
+
+NEXTU
+
+	ds 200
+
 wPokedexOrder:: ds $100
 wPokedexOrderEnd::
 
@@ -292,6 +324,7 @@ wDexPlaySlowpokeAnimation:: db
 
 ENDU
 
+
 SECTION "Map Buffer", WRAM0
 
 wMapBuffer::
@@ -304,12 +337,22 @@ wOverworldFlags:: db
 	ds 18
 wMapBufferEnd::
 
-
 UNION
 
+wLinkData::
 wc600::
 wOverworldMapBlocks:: ds 1300
+wLinkDataEnd::
 wOverworldMapBlocksEnd::
+
+NEXTU
+	ds 700
+wLinkPlayerMail::
+wLinkPlayerMailPreamble:: ds SERIAL_MAIL_PREAMBLE_LENGTH
+wLinkPlayerMailMessages:: ds MAIL_STRUCT_LENGTH * PARTY_LENGTH
+wLinkPlayerMailPatchSet:: ds 35
+wLinkPlayerMailEnd::
+	ds 10
 
 NEXTU
 
@@ -321,6 +364,33 @@ wLYOverrides2End::
 
 NEXTU
 
+; link data members
+wLinkPlayerName:: ds PLAYER_NAME_LENGTH
+wLinkPartyCount:: db
+wLinkPartySpecies:: ds PARTY_LENGTH
+wLinkPartyEnd:: db ; older code doesn't check PartyCount
+
+; link player data
+wLinkPlayerData::
+; wLinkPlayerPartyMon1 - wLinkPlayerPartyMon6
+for n, 1, PARTY_LENGTH + 1
+wLinkPlayerPartyMon{d:n}:: party_struct wLinkPlayerPartyMon{d:n}
+endr
+
+wLinkPlayerPartyMonOTs::
+; wLinkPlayerPartyMon1OT - wLinkPlayerPartyMon6OT
+for n, 1, PARTY_LENGTH + 1
+wLinkPlayerPartyMon{d:n}OT:: ds NAME_LENGTH
+endr
+
+wLinkPlayerPartyMonNicknames::
+; wLinkPlayerPartyMon1Nickname - wLinkPlayerPartyMon6Nickname
+for n, 1, PARTY_LENGTH + 1
+wLinkPlayerPartyMon{d:n}Nickname:: ds NAME_LENGTH
+endr
+
+NEXTU
+
 ; Pikachu minigame
 
 wPikachuMinigamePikachuObjectPointer:: ds 2
@@ -329,12 +399,12 @@ wPikachuMinigamePikachuNextAnim:: ds 1
 
 wPikachuMinigameControlEnable:: ds 1
 
-wc606:: ds 1	; written to, but is this read from?
+wc606:: ds 1 ; written to, but is this read from?
 
 wPikachuMinigamePikachuYOffset:: ds 1
 wPikachuMinigameNoteTimer:: ds 1
 wPikachuMinigameScore:: ds 2
-wPikachuMinigameNoteCounter:: ds 2	; not used for anything meaningful?
+wPikachuMinigameNoteCounter:: ds 2 ; not used for anything meaningful?
 
 wPikachuMinigameSpawnTypeIndex:: ds 1
 wPikachuMinigameSpawnDataIndex:: ds 1
@@ -541,7 +611,7 @@ wCriticalHit::
 ; 1 for a critical hit
 ; 2 for a OHKO
 	db
-	
+
 wAttackMissed::
 ; nonzero for a miss
 wca3a:: db
@@ -577,7 +647,6 @@ wEnemyPerishCount:: db
 wEnemyFuryCutterCount:: db
 
 	ds 1
-
 
 wPlayerDamageTaken:: dw
 wEnemyDamageTaken:: dw
@@ -626,7 +695,6 @@ wPlayerAccLevel:: db
 wPlayerEvaLevel:: db
 
 	ds 1
-
 
 wEnemyStatLevels::
 wEnemyAtkLevel::
@@ -713,7 +781,6 @@ wWeatherCount:: db
 ENDU
 
 
-
 SECTION "CB14", WRAM0[$CB14]
 wBattleEnd::
 
@@ -733,8 +800,10 @@ wRedrawFlashlightWidthHeight:: db
 ; in units of two tiles (people event meta tile)
 ENDU
 
+
 SECTION "CB3C", WRAM0[$CB3C]
 wTileAnimBuffer:: ds 1 tiles
+
 
 SECTION "CB56", WRAM0[$CB4C]
 UNION
@@ -758,6 +827,7 @@ wSelectedItem::
 wCurSpecies:: db
 wNamedObjectTypeBuffer:: db
 
+
 SECTION "CB5E", WRAM0[$CB5E]
 wJumptableIndex:: db
 
@@ -768,11 +838,13 @@ wIntroSceneFrameCounter::
 wTrainerGearPointerPosition::
 wPokedexSlowpokeNumSearchEntries::
 wNestIconBlinkCounter::
+wFrameCounter::
 wBattleTransitionCounter:: db
 
 UNION
 wBattleTransitionSineWaveOffset::
 wBattleTransitionSpinQuadrant::
+wFrameCounter2::
 wIntroSceneTimer::
 wTrainerGearCard::
 wcb60:: ds 1
@@ -794,6 +866,7 @@ wPlayerStepVectorY:: db
 wPlayerStepFlags:: db
 wPlayerStepDirection:: db
 
+
 SECTION "CB71", WRAM0[$CB70]
 
 wQueuedMinorObjectGFX:: db
@@ -808,6 +881,7 @@ wMovementObject:: db
 
 wIndexedMovement2Pointer:: dw
 
+
 SECTION "Collision buffer", WRAM0[$CB90]
 
 wTileDown::  db
@@ -818,9 +892,11 @@ wTileRight:: db
 wScreenSave::
 	ds 6 * 5
 
+
 SECTION "CBB2", WRAM0[$CBB2]
 wToolgearBuffer::
 	ds $40
+
 
 SECTION "CBF2", WRAM0[$CBF2]
 
@@ -834,6 +910,7 @@ wWhichIndexSet::
 wActiveBackpackPocket:: db
 wScrollingMenuCursorPosition:: db
 wWindowStackSize:: db
+
 
 SECTION "CC09", WRAM0[$CC02]
 
@@ -903,6 +980,7 @@ wMenuCursorX:: db
 wCursorOffCharacter:: db
 wCursorCurrentTile:: dw
 
+
 SECTION "CC32", WRAM0[$CC32] ; Please merge when more is disassembled
 wVBlankJoyFrameCounter: db
 
@@ -919,7 +997,6 @@ wTitleSequenceOpeningType::
 
 wDefaultSpawnPoint::
 	db
-
 
 UNION
 
@@ -965,10 +1042,17 @@ wBattleMenuRows:: db
 wBattleMenuColumns:: db
 
 NEXTU
+; trade
+wCurTradePartyMon:: db
+wCurOTTradePartyMon:: db
+wBufferTrademonNickname:: ds MON_NAME_LENGTH
+
+NEXTU
 
 wTempBoxName:: ds BOX_NAME_LENGTH
 
 ENDU
+
 
 SECTION "CC9A", WRAM0[$CC9A]
 
@@ -977,7 +1061,6 @@ wCompanionCollisionFrameCounter:: db
 
 wObjectMasks::
 	ds NUM_OBJECTS
-
 
 wSpriteCurPosX::         ds 1
 wSpriteCurPosY::         ds 1
@@ -1006,9 +1089,11 @@ wLowHealthAlarmBuffer:: db
 
 wTileAnimationTimer:: db
 
+
 SECTION "CCC7", WRAM0[$CCC7]
 
 wDisableVBlankOAMUpdate:: db
+
 
 SECTION "CCCA", WRAM0[$CCCA]
 
@@ -1020,6 +1105,7 @@ wNumHits:: db
 
 wDisableVBlankWYUpdate:: db
 wSGB:: db
+
 
 SECTION "CCD0", WRAM0[$CCD0]
 
@@ -1050,6 +1136,7 @@ wccf2:: ds 1
 wccf3:: ds 1
 wccf4:: ds 1
 
+
 SECTION "CD11", WRAM0[$CD11]
 
 wMonOrItemNameBuffer:: ds MON_NAME_LENGTH
@@ -1060,8 +1147,8 @@ wTMHMMoveNameBackup:: ds 8
 
 	ds 1
 
-
 wStringBuffer1:: ds STRING_BUFFER_LENGTH
+
 
 SECTION "CD31", WRAM0[$CD31]
 
@@ -1088,6 +1175,7 @@ wcd32:: db
 wcd33:: db
 
 ENDU
+
 
 SECTION "CD3C", WRAM0[$CD3C]
 
@@ -1150,7 +1238,8 @@ wBattleResult:: db
 	ds 1
 
 wChosenStarter:: db
-wcd60:: db
+wCurMartCount:: db
+
 
 SECTION "CD70", WRAM0[$CD70]
 wListPointer:: dw
@@ -1241,7 +1330,7 @@ wHPBarHPDifference:: dw
 NEXTU
 ; switch AI
 wEnemyEffectivenessVsPlayerMons:: flag_array PARTY_LENGTH
-wPlayerEffectivenessVsEnemyMons:: flag_array PARTY_LENGTH	
+wPlayerEffectivenessVsEnemyMons:: flag_array PARTY_LENGTH
 
 NEXTU
 wBuySellItemPrice:: dw
@@ -1259,7 +1348,7 @@ wcdc4:: db
 wcdc5:: db
 
 wcdc6:: db
-wcdc7:: db
+wLinkBattleRNPreamble:: db
 wcdc8:: db
 	ds 1
 wEnemyItemUsed:: db
@@ -1290,7 +1379,6 @@ wLinkBattleRNs:: ds 10
 
 wTempEnemyMonSpecies:: ds 1
 wTempBattleMonSpecies:: ds 1
-
 
 wEnemyMon:: battle_struct wEnemyMon
 wEnemyMonBaseStats:: ds NUM_EXP_STATS
@@ -1370,7 +1458,6 @@ wMonHLearnset::
 	ds 1
 wMonHeaderEnd::
 
-
 wMapAnimsBackup:: db
 
 	ds 2
@@ -1384,7 +1471,7 @@ wRepelEffect:: db
 wListMoves_MoveIndicesBuffer:: ds NUM_MOVES
 wPutativeTMHMMove:: db
 wce33:: ds 1
-wce34:: ds 1
+wInitListType:: ds 1
 wWildMon:: db
 wBattleHasJustStarted:: db
 
@@ -1427,6 +1514,7 @@ wTimeOfDay:: db
 wcd3e: ds 1
 wcd3f: ds 1
 
+
 SECTION "Options", WRAM0[$CE5F]
 
 wOptions::
@@ -1438,7 +1526,6 @@ wOptions::
 ; bit 6: battle style shift/set
 ; bit 7: battle scene off/on
 	db
-
 
 ; Used as a buffer for sOptions to check if a save file exists.
 ; Only checks the bottom bit (since all valid text speeds have that bit set).
@@ -1580,6 +1667,7 @@ wPlayerState:: db
 wd265:: db
 wd266:: db
 
+
 ;The starting house's map script number is stored at d29a. Others are probably nearby.
 SECTION "D29A", WRAM0[$D29A]
 wPlayerHouse2FCurScript:: db
@@ -1597,15 +1685,16 @@ wSilentHillsCurScript:: db
 wd2a6:: db
 
 
-
 SECTION "D39D", WRAM0[$D39A]
 wd39a:: db
 wd39b:: db
 wd39c:: db
 wd39d:: db
 
+
 SECTION "D3A5", WRAM0[$D3A5]
 wd3a5:: db
+
 
 SECTION "Game Event Flags", WRAM0[$D41A]
 wd41a:: db
@@ -1623,6 +1712,7 @@ wd41d:: db
 ; 76543210
 ;      \--- beat rival in the lab
 wd41e:: db
+
 
 SECTION "D4A9", WRAM0[$D4A7]
 ; Bit 0 set when exiting a battle.
@@ -1643,6 +1733,7 @@ wJoypadFlags:: db
 ; \-------- joypad disabled
 	ds 1
 wMovementFlags_Old:: db
+
 
 SECTION "wDigWarpNumber", WRAM0[$D4B2]
 
@@ -1671,7 +1762,6 @@ REPT 32 ; TODO: confirm this
 	ds 5
 ENDR
 
-
 wCurMapBGEventCount::
 	db
 
@@ -1693,7 +1783,7 @@ wMapStatus:: db ;OW battle state? $3 wild battle, $8 is trainer battle $4 is lef
 wLastMapStatus:: db ;wMapStatus's last written-to value
 
 wGameDataEnd::
-	
+
 ; Sort of redundant to separate data like this when they're right next to each other.
 wGameData2::
 
@@ -1764,7 +1854,6 @@ wNorthMapConnection:: map_connection_struct wNorth
 wSouthMapConnection:: map_connection_struct wSouth
 wWestMapConnection::  map_connection_struct wWest
 wEastMapConnection::  map_connection_struct wEast
-
 
 wTileset::
 wTilesetBank::
@@ -1845,12 +1934,14 @@ wBreedMon2:: box_struct wBreedMon2
 wBreedMonGenders:: db
 wOTPlayerName:: ds PLAYER_NAME_LENGTH
 
+
 SECTION "D913", WRAM0[$D913]
 
 wOTPartyData::
 wOTPartyCount:: db
 wOTPartySpecies:: ds PARTY_LENGTH
 wOTPartySpeciesEnd:: db
+
 
 SECTION "Wild mon buffer", WRAM0[$D91B]
 
@@ -1889,6 +1980,7 @@ ENDU
 wPokemonDataEnd::
 
 wBox:: box wBox
+
 
 SECTION "Stack Bottom", WRAM0
 

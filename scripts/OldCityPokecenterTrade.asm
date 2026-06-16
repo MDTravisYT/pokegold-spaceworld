@@ -2,6 +2,9 @@ INCLUDE "constants.asm"
 
 SECTION "scripts/OldCityPokecenterTrade.asm", ROMX
 
+; unreferenced
+	ret
+
 OldCityPokecenterTrade_ScriptLoader:
 	ld hl, OldCityPokecenterTradeScriptPointers
 	call RunMapScript
@@ -34,7 +37,7 @@ OldCityPokecenterTradeText1:
 	call OpenTextbox
 	ld hl, wJoypadFlags
 	res 5, [hl]
-	callfar Function28000
+	callfar StartLinkCommunications
 	ret
 
 OldCityPokecenterTradeTextString1:

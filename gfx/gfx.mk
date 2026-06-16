@@ -1,8 +1,3 @@
-$(BUILD)/slack/corrupted_9e1c.2bpp: tools/gfx += --trim-whitespace
-$(BUILD)/slack/corrupted_a66c.2bpp: tools/gfx += --trim-whitespace
-$(BUILD)/slack/corrupted_b1e3.2bpp: tools/gfx += --trim-whitespace
-$(BUILD)/slack/sgb_border_gold_corrupted.2bpp: tools/gfx += --trim-whitespace
-
 $(BUILD)/gfx/sgb/sgb_border_alt.2bpp: tools/gfx += --trim-whitespace
 $(BUILD)/gfx/sgb/sgb_border_gold.2bpp: tools/gfx += --trim-whitespace
 $(BUILD)/gfx/sgb/sgb_border_silver.2bpp: tools/gfx += --trim-whitespace
@@ -49,3 +44,5 @@ $(BUILD)/gfx/battle_anims/skyattack.2bpp: tools/gfx += --remove-whitespace
 $(BUILD)/gfx/battle_anims/status.2bpp: tools/gfx += --remove-whitespace
 
 $(BUILD)/gfx/evo/bubbles.2bpp: tools/gfx += --remove-xflip --remove-yflip --remove-whitespace
+
+$(BUILD)/gfx/trade/game_boy.2bpp: tools/gfx += --remove-duplicates --preserve=0x23,0x27

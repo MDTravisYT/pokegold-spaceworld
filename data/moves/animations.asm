@@ -4,7 +4,7 @@ SECTION "data/moves/animations.asm", ROMX
 
 BattleAnimations::
 ; entries correspond to constants/move_constants.asm
-	table_width 2, BattleAnimations
+	table_width 2
 	dw BattleAnim_Dummy
 	dw BattleAnim_Pound
 	dw BattleAnim_KarateChop
@@ -611,7 +611,7 @@ BattleAnim_PlayerDamage:
 
 ; Leftover from Generation I. In those games, this animation would be used instead of the standard damage animation
 ; if the move had an additional effect.
-BattleAnim_ShakeHorizontalUnused: 
+BattleAnim_ShakeHorizontalUnused:
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $20
 	anim_wait 40
 	anim_ret

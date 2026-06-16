@@ -102,7 +102,6 @@ CopyWord::
 	ld [de], a
 	ret
 
-
 SetMapScriptNumber::
 	ld [wMapScriptNumber], a
 	ret
@@ -125,7 +124,6 @@ WriteBackMapScriptNumber::
 	ld a, [wMapScriptNumber]
 	ld [hl], a
 	ret
-
 
 GetMapPointer::
 	ld a, [wMapGroup]
@@ -150,7 +148,6 @@ GetAnyMapPointer::
 	call AddNTimes
 	ret
 
-
 SwitchToMapBank::
 	ld a, [wMapGroup]
 	ld b, a
@@ -165,7 +162,6 @@ SwitchToAnyMapBank::
 	call Bankswitch
 	pop hl
 	ret
-
 
 CopyMapPartial::
 	ldh a, [hROMBank]
@@ -247,10 +243,8 @@ GetWorldMapLocation::
 	ld a, b
 	ret
 
-
 EmptyFunction2252::
 	ret
-
 
 LoadMap::
 	ldh a, [hMapEntryMethod]
@@ -274,7 +268,6 @@ LoadMap::
 	dw MapSetup_Warp
 	dw MapSetup_Connection
 	dw MapSetup_2275 ; TODO
-
 
 MapSetup_2275::
 	ldh a, [hROMBank]
@@ -375,7 +368,7 @@ MapSetup_Warp::
 	call GetSGBLayout
 	call LoadWildMonData
 	call FadeIn
-	call Function2407 ; TODO
+	call CheckExitTiles
 	ret
 
 LoadMapTimeOfDay::
@@ -439,13 +432,13 @@ FadeIn:: ; This is not OverworldFadeIn, but I don't know what it is
 	call RefreshTiles
 	ld hl, wStateFlags
 	set SPRITE_UPDATES_DISABLED_F, [hl]
-	call Function2407
+	call CheckExitTiles
 	callfar InitSprites
 	call DelayFrame
 	callfar OverworldFadeIn
 	ret
 
-Function2407::
+CheckExitTiles::
 	ld a, movement_step_sleep
 	ld [wPlayerMovement], a
 	xor a
@@ -454,15 +447,15 @@ Function2407::
 	and %00001100
 	ld [wPlayerFacing], a
 	ld a, [wPlayerTile]
-	and COLLISION_TYPE_MASK
-	cp HI_NYBBLE_WARPS
+	and COLLMASK_TYPE
+	cp COLLMASK_TYPE_WARPS
 	ret nz
 	ld a, [wPlayerTile]
-	cp COLLISION_STEPS
+	cp COLL_LADDER
 	ret z
-	cp COLLISION_CARPET
+	cp COLL_CARPET
 	ret z
-	cp $78
+	cp (COLL_CARPET | COLLFLAG_ENCOUNTER)
 	ret z
 Function242c::
 	ld a, $0
@@ -682,7 +675,6 @@ EnterMapConnection:
 	scf
 	ret
 
-
 WarpCheck::
 	call GetDestinationWarpPointer
 	ret nc
@@ -737,7 +729,6 @@ GetDestinationWarpPointer:
 	inc hl
 	scf
 	ret
-
 
 CopyMapPartialAndAttributes::
 	call SwitchToMapBank
@@ -816,7 +807,6 @@ GetMapConnection::
 	jr nz, .copy
 	ret
 
-
 ReadWarps::
 	ld a, [hli]
 	ld [wCurrMapWarpCount], a
@@ -838,7 +828,6 @@ ReadWarps::
 	jr nz, .next
 	ret
 
-
 ReadBGEvents::
 	ld a, [hli]
 	ld [wCurMapBGEventCount], a
@@ -857,7 +846,6 @@ ReadBGEvents::
 	dec c
 	jr nz, .next
 	ret
-
 
 ReadObjectEvents::
 	push hl
@@ -934,14 +922,12 @@ ClearObjectStructs::
 	jr nz, .clear_cmd_queue
 	ret
 
-
 ReadWord:: ; TODO: is this used?
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
 	inc hl
 	ret
-
 
 ; Initializes all object masks except the first two entries: the player and follower.
 InitObjectMasks::
@@ -953,7 +939,7 @@ InitObjectMasks::
 	ld bc, NUM_OBJECTS - 2
 	ld a, $ff
 	call ByteFill
-	
+
 	ld hl, wMapScriptPointerLocation
 	ld e, [hl]
 	inc hl
@@ -996,7 +982,6 @@ InitObjectMasks::
 .done
 	ret
 
-
 RestoreFacingAfterWarp::
 	ld hl, wMapObjectsPtr
 	ld a, [hli]
@@ -1019,7 +1004,6 @@ RestoreFacingAfterWarp::
 	call GetCoordOfUpperLeftCorner
 	ret
 
-
 Function275e:: ; TODO: is this used?
 	inc hl
 	inc hl
@@ -1035,7 +1019,6 @@ Function275e:: ; TODO: is this used?
 	and 1
 	ld [wMetatileNextX], a
 	ret
-
 
 GetCoordOfUpperLeftCorner::
 	ld hl, wOverworldMapBlocks
@@ -1323,7 +1306,6 @@ ENDR
 	dec c
 	jr nz, .row
 	ret
-
 
 ChangeMap::
 	ld hl, wOverworldMapBlocks
@@ -1635,7 +1617,7 @@ OverworldLoop_Main::
 	ld a, [wOverworldFlags]
 	bit OVERWORLD_DISABLE_MAP_CONNECTIONS_F, a
 	jr nz, .loop
-	
+
 	call CheckMovingOffEdgeOfMap
 	ret c
 	call WarpCheck

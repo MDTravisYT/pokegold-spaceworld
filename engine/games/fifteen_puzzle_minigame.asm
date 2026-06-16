@@ -2,18 +2,6 @@ INCLUDE "constants.asm"
 
 SECTION "engine/games/fifteen_puzzle_minigame.asm", ROMX
 
-	const_def
-	const FIFTEENPUZZLE_DOING_PUZZLE
-	const FIFTEENPUZZLE_SOLVED_PUZZLE
-	const FIFTEENPUZZLE_SLIDE_FINAL_PANEL
-	const FIFTEENPUZZLE_SLIDE_PUZZLE_LEFT
-	const FIFTEENPUZZLE_END_SCREEN
-
-
-DEF FIFTEENPUZZLE_END_LOOP_F EQU 7
-DEF FIFTEENPUZZLE_PANEL_COUNT EQU 16
-DEF FIFTEENPUZZLE_EMPTY_PANEL_NUM EQU FIFTEENPUZZLE_PANEL_COUNT - 1
-
 FifteenPuzzleMinigame:
 	call .LoadGFXAndPals
 	call DelayFrame
@@ -31,10 +19,10 @@ FifteenPuzzleMinigame:
 
 	ld a, BANK(FifteenPuzzleGFX)
 	call FarCopyData
-	
+
 	call FifteenPuzzleMinigame_Tilemap.PlaceBorderTiles
 	call .SetPanels
-	
+
 	xor a
 	ldh [hSCY], a
 	ldh [hSCX], a
@@ -56,14 +44,14 @@ FifteenPuzzleMinigame:
 	cp [hl]
 	jr z, .SetPanels
 	ld [hl], a
-	
+
 	call FifteenPuzzleMinigame_Tilemap.InitShufflePuzzleLayout
 	call FifteenPuzzleMinigame_Tilemap
 	call FifteenPuzzleMinigame_Tilemap.ShufflePuzzleLayout
 	call FifteenPuzzleMinigame_Tilemap.PlaceTiles
 	ld a, FIFTEENPUZZLE_EMPTY_PANEL_NUM
 	ld [wFifteenPuzzlePosition], a
-	
+
 	ld a, 200
 .SetPanelsLoop:
 	push af
@@ -91,7 +79,7 @@ FifteenPuzzleMinigame:
 
 .JumptableLoop:
 	ld a, [wJumptableIndex]
-	bit FIFTEENPUZZLE_END_LOOP_F, a
+	bit MINIGAME_END_LOOP_F, a
 	jr nz, .quit
 
 	call .ExecuteJumptable
@@ -123,7 +111,7 @@ FifteenPuzzleMinigame:
 	ld a, [de]
 	inc de
 	add a, FIFTEENPUZZLE_PANEL_COUNT
-	ld [hl+], a
+	ld [hli], a
 	dec c
 	jr nz, .LoadGFXBuffersLoop
 	ret
@@ -143,14 +131,14 @@ FifteenPuzzleMinigame:
 	jr c, .InitPuzzle
 
 	ldh a, [hJoypadDown]
-	ld [wFifteenPuzzleJoyStateBuffer], a	; The code to exit the minigame was blatantly stubbed out.
+	ld [wFifteenPuzzleJoyStateBuffer], a ; The code to exit the minigame was blatantly stubbed out.
 ;	and B_BUTTON
 ;	jr nz, .ExitPuzzle
 	call .ExecutePanelJumptable
 	ret
 .ExitPuzzle:
 ;	ld hl, wJumptableIndex
-;	set FIFTEENPUZZLE_END_LOOP_F, [hl]
+;	set MINIGAME_END_LOOP_F, [hl]
 ;	ret
 .InitPuzzle:
 	ld hl, wJumptableIndex
@@ -166,7 +154,7 @@ FifteenPuzzleMinigame:
 	ret
 .FinishedPuzzle_Next:
 	ld hl, wJumptableIndex
-	inc [hl]								; FIFTEENPUZZLE_SLIDE_FINAL_PANEL
+	inc [hl] ; FIFTEENPUZZLE_SLIDE_FINAL_PANEL
 	ld a, 4
 	ld [wJumptableIndex + 1], a
 .SlideFinalPanel:
@@ -182,7 +170,7 @@ FifteenPuzzleMinigame:
 .SlideFinalPanelScroll:
 	call FifteenPuzzleMinigame_Tilemap
 	ld hl, wJumptableIndex
-	inc [hl]								; FIFTEENPUZZLE_SLIDE_PUZZLE_LEFT
+	inc [hl] ; FIFTEENPUZZLE_SLIDE_PUZZLE_LEFT
 	ld a, SCREEN_WIDTH - 4
 	ld [wJumptableIndex + 1], a
 	ld a, $02
@@ -204,7 +192,7 @@ FifteenPuzzleMinigame:
 	ret
 .SlidePuzzleLeft_End:
 	ld hl, wJumptableIndex
-	inc [hl]								; FIFTEENPUZZLE_END_SCREEN
+	inc [hl] ; FIFTEENPUZZLE_END_SCREEN
 	ld a, SCREEN_WIDTH - 4
 	ld [wJumptableIndex + 1], a
 .PuzzleEndScreen:
@@ -213,9 +201,9 @@ FifteenPuzzleMinigame:
 	and a
 	jr z, .PuzzleEndScreen_End
 	dec [hl]
-	
+
 	call FifteenPuzzleMinigame_Tilemap.SlidePuzzleLeft
-	
+
 	ld hl, wJumptableIndex + 2
 	ld a, [hl]
 	xor %11111111
@@ -228,7 +216,7 @@ FifteenPuzzleMinigame:
 
 .PuzzleEndScreen_End:
 	ld hl, wJumptableIndex
-	set FIFTEENPUZZLE_END_LOOP_F, [hl]
+	set MINIGAME_END_LOOP_F, [hl]
 	xor a
 	ldh [hSCY], a
 	ret
@@ -241,29 +229,29 @@ FifteenPuzzleMinigame:
 	ld hl, .PositionJumptable
 	add hl, de
 	add hl, de
-	ld a, [hl+]
+	ld a, [hli]
 	ld h, [hl]
 	ld l, a
 	jp hl
-	
+
 .PositionJumptable:
-	dw .PanelCanMoveUpLeft					; 1		(Row 1 Right)
-	dw .PanelCanMoveUpLeftRight				; 2		(Row 1 Middle Right)
-	dw .PanelCanMoveUpLeftRight 			; 3		(Row 1 Middle Left)
-	dw .PanelCanMoveUpRight					; 4		(Row 1 Left)
-	dw .PanelCanMoveUpDownLeft				; 5		(Row 2 Right)
-	dw .PanelCanMoveAllDirections			; 6		(Row 2 Middle Right)
-	dw .PanelCanMoveAllDirections			; 7		(Row 2 Middle Left)
-	dw .PanelCanMoveUpDownRight				; 8		(Row 2 Left)
-	dw .PanelCanMoveUpDownLeft				; 9		(Row 3 Right)
-	dw .PanelCanMoveAllDirections			; 10	(Row 3 Middle Right)
-	dw .PanelCanMoveAllDirections			; 11	(Row 3 Middle Left)
-	dw .PanelCanMoveUpDownRight				; 12	(Row 3 Left)
-	dw .PanelCanMoveDownLeft				; 13	(Row 4 Right)
-	dw .PanelCanMoveDownLeftRight			; 14	(Row 4 Middle Right)
-	dw .PanelCanMoveDownLeftRight			; 15	(Row 4 Middle Left)
-	dw .PanelCanMoveDownRight				; 16	(Row 4 Left)
-	
+	dw .PanelCanMoveUpLeft        ;  1 (Row 1 Right)
+	dw .PanelCanMoveUpLeftRight   ;  2 (Row 1 Middle Right)
+	dw .PanelCanMoveUpLeftRight   ;  3 (Row 1 Middle Left)
+	dw .PanelCanMoveUpRight       ;  4 (Row 1 Left)
+	dw .PanelCanMoveUpDownLeft    ;  5 (Row 2 Right)
+	dw .PanelCanMoveAllDirections ;  6 (Row 2 Middle Right)
+	dw .PanelCanMoveAllDirections ;  7 (Row 2 Middle Left)
+	dw .PanelCanMoveUpDownRight   ;  8 (Row 2 Left)
+	dw .PanelCanMoveUpDownLeft    ;  9 (Row 3 Right)
+	dw .PanelCanMoveAllDirections ; 10 (Row 3 Middle Right)
+	dw .PanelCanMoveAllDirections ; 11 (Row 3 Middle Left)
+	dw .PanelCanMoveUpDownRight   ; 12 (Row 3 Left)
+	dw .PanelCanMoveDownLeft      ; 13 (Row 4 Right)
+	dw .PanelCanMoveDownLeftRight ; 14 (Row 4 Middle Right)
+	dw .PanelCanMoveDownLeftRight ; 15 (Row 4 Middle Left)
+	dw .PanelCanMoveDownRight     ; 16 (Row 4 Left)
+
 .PanelCanMoveUpLeft:
 	call .PanelMoveUpCheck
 	ret nc
@@ -387,7 +375,7 @@ FifteenPuzzleMinigame:
 	ld [wFifteenPuzzlePosition], a
 	and a
 	ret
-	
+
 .PanelMoveLeftCheck:
 	ld a, [wFifteenPuzzleJoyStateBuffer]
 	and D_LEFT
@@ -435,14 +423,14 @@ FifteenPuzzleMinigame_Tilemap:
 	add hl, de
 	ld b, [hl]
 	inc hl
-	ld a, [hl+]
+	ld a, [hli]
 	ld h, [hl]
 	ld l, a
 	ld de, wFifteenPuzzleGFXPointer
 	ld a, b
 	ld bc, FIFTEENPUZZLE_PANEL_COUNT * 4
 	call FarCopyData
-	
+
 	ld hl, wFifteenPuzzleGFXPointer
 	call .TilemapPositions
 	call .LoadTilemap
@@ -452,13 +440,13 @@ FifteenPuzzleMinigame_Tilemap:
 .TilemapPositions:
 	decoord 0, 1
 	call .GetPosition
-	
+
 	decoord 8, 1
 	call .GetPosition
-	
+
 	decoord 0, 9
 	call .GetPosition
-	
+
 	decoord 8, 9
 	call .GetPosition
 	ret
@@ -471,12 +459,12 @@ FifteenPuzzleMinigame_Tilemap:
 	ld c, [hl]
 	inc hl
 	ld b, [hl]
-	
+
 	ld a, 8
 .GetPosition_Loop_1:
 	push af
 	xor a
-	
+
 	sla c
 	jr nc, .GetPosition_Pass
 	inc a
@@ -488,11 +476,11 @@ FifteenPuzzleMinigame_Tilemap:
 .GetPosition_Pass_1:
 	ld [de], a
 	inc de
-	
+
 	pop af
 	dec a
 	jr nz, .GetPosition_Loop_1
-	
+
 	pop de
 	ld hl, SCREEN_WIDTH
 	add hl, de
@@ -502,7 +490,7 @@ FifteenPuzzleMinigame_Tilemap:
 	inc hl
 	inc hl
 	pop af
-	
+
 	dec a
 	jr nz, .GetPosition_Loop
 	ret
@@ -513,32 +501,32 @@ FifteenPuzzleMinigame_Tilemap:
 .LoadTilemap_Loop:
 	push bc
 	push hl
-	ld a, [hl+]
+	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	
+
 	ld a, 4
 .LoadTilemap_Loop_1:
 	push af
 	push hl
-	
+
 	ld a, 4
 .LoadTilemap_Loop_2:
 	push af
-	ld a, [hl+]
+	ld a, [hli]
 	ld [de], a
 	inc de
 	pop af
 	dec a
 	jr nz, .LoadTilemap_Loop_2
-	
+
 	pop hl
 	ld bc, SCREEN_WIDTH
 	add hl, bc
 	pop af
 	dec a
 	jr nz, .LoadTilemap_Loop_1
-	
+
 	pop hl
 	inc hl
 	inc hl
@@ -557,7 +545,7 @@ FifteenPuzzleMinigame_Tilemap:
 	push af
 	push de
 	push hl
-	
+
 	ld a, [de]
 	ld de, wFifteenPuzzleBitmap
 	and %00001111
@@ -568,7 +556,7 @@ FifteenPuzzleMinigame_Tilemap:
 .PlaceTiles_Pass:
 	ld e, a
 
-	ld a, [hl+]
+	ld a, [hli]
 	ld h, [hl]
 	ld l, a
 
@@ -585,7 +573,7 @@ FifteenPuzzleMinigame_Tilemap:
 	ld a, 1
 	ldh [hBGMapMode], a
 	ret
-	
+
 .PlaceTiles_Set:
 	ld a, 4
 .PlaceTiles_Loop_1:
@@ -596,11 +584,11 @@ FifteenPuzzleMinigame_Tilemap:
 	push af
 	ld a, [de]
 	inc de
-	ld [hl+], a
+	ld [hli], a
 	pop af
 	dec a
 	jr nz, .PlaceTiles_Loop_2
-	
+
 	pop hl
 	ld bc, SCREEN_WIDTH
 	add hl, bc
@@ -626,13 +614,13 @@ FifteenPuzzleMinigame_Tilemap:
 	dwcoord 4, 13
 	dwcoord 8, 13
 	dwcoord 12, 13
-	
+
 .InitShufflePuzzleLayout:
 	ld hl, wFifteenPuzzlePanelNumberOrder
 	ld c, FIFTEENPUZZLE_PANEL_COUNT
 	xor a
 .InitShufflePuzzleLayout_Loop:
-	ld [hl+], a
+	ld [hli], a
 	inc a
 	dec c
 	jr nz, .InitShufflePuzzleLayout_Loop
@@ -653,7 +641,7 @@ FifteenPuzzleMinigame_Tilemap:
 	ld [wFifteenPuzzleEmptyPanelNumber], a
 	ld hl, wFifteenPuzzleEmptyPanelBitmap
 	ld bc, FIFTEENPUZZLE_PANEL_COUNT
-	ld a, $1f								; Blank Tile
+	ld a, $1f ; Blank Tile
 	call ByteFill
 	ret
 .ShufflePuzzleLayout_SubRow:
@@ -661,7 +649,7 @@ FifteenPuzzleMinigame_Tilemap:
 .ShufflePuzzleLayout_Loop:
 	ld a, [de]
 	inc de
-	ld [hl+], a
+	ld [hli], a
 	dec c
 	jr nz, .ShufflePuzzleLayout_Loop
 	ld bc, FIFTEENPUZZLE_PANEL_COUNT
@@ -704,7 +692,7 @@ FifteenPuzzleMinigame_Tilemap:
 	inc hl
 	ld c, 7
 .SlideFinalPanelLeft_Loop:
-	ld a, [hl+]
+	ld a, [hli]
 	ld [de], a
 	inc de
 	dec c
@@ -735,23 +723,23 @@ FifteenPuzzleMinigame_Tilemap:
 	ld e, l
 	ld d, h
 	inc hl
-	ld c, SCREEN_WIDTH - 5					; Scroll Start Offset
+	ld c, SCREEN_WIDTH - 5 ; Scroll Start Offset
 .SlidePuzzleLeft_Move_Loop:
-	ld a, [hl+]
+	ld a, [hli]
 	ld [de], a
 	inc de
 	dec c
 	jr nz, .SlidePuzzleLeft_Move_Loop
-	ld a, $1f								; Blank Tile
+	ld a, $1f ; Blank Tile
 	ld [de],a
 	ret
-	
+
 .PlaceBorderTiles:
 	hlcoord 0, 0
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	ld a, $04
 	call ByteFill
-	
+
 	hlcoord 0, 0
 	ld bc, SCREEN_HEIGHT - 2
 	ld a, $05
@@ -808,7 +796,8 @@ FifteenPuzzleMinigame_Tilemap:
 	ret
 
 SECTION "engine/games/fifteen_puzzle_minigame.asm@FifteenPuzzleIconTable", ROMX
-	FifteenPuzzleIconTable:				; Icons used in the minigame are pulled from this table.
+FifteenPuzzleIconTable: ; Icons used in the minigame are pulled from this table.
+	table_width 3
 	dba RhydonSpriteGFX
 	dba ClefairySpriteGFX
 	dba PidgeySpriteGFX
@@ -817,3 +806,4 @@ SECTION "engine/games/fifteen_puzzle_minigame.asm@FifteenPuzzleIconTable", ROMX
 	dba SeelSpriteGFX
 	dba PoliwrathSpriteGFX
 	dba LaprasSpriteGFX
+	assert_table_length 8
