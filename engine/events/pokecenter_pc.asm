@@ -24,17 +24,21 @@ PokemonCenterPC:
 ; Open the player's PC menu
 	ld hl, .TurnOnText
 	call MenuTextBoxBackup
+if DEF(_DEBUG)
 	ld hl, wDebugFlags
 	bit DEBUG_FIELD_F, [hl]
 	jr nz, .DisplayMenu
 	ld hl, .NotConnectedText
 	call MenuTextBoxBackup
 	ret
+endc
 
+if DEF(_DEBUG)
 .NotConnectedText:
 	text "<⋯⋯>　が　つながっていなかった"
 	line "ようだ　<⋯⋯>"
 	prompt
+endc
 
 .DisplayMenu:
 	ld hl, .TopMenu
