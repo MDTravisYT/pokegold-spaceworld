@@ -6,7 +6,13 @@
 	db TYPE_DARK, TYPE_NORMAL ; type
 	db 255 ; catch rate
 	db 100 ; base exp
+if DEF(_SILVER)
 	db ITEM_BERRY, ITEM_TAG ; items
+elif DEF(_DEBUG)
+	db ITEM_BERRY, ITEM_TAG ; items
+else
+	db ITEM_APPLE, ITEM_TAG ; items
+endc
 	db GENDER_50_50 ; gender ratio
 	db 100, 4, 70 ; unknown
 	dn 7, 7 ; sprite dimensions

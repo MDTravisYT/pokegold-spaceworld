@@ -89,7 +89,7 @@ ROM0
 	"home/pokemon.asm@3AED"
 	"home/misc_3c43.asm"
 	"home/audio.asm"
-	"garbage.asm@Bank 00 Garbage"
+	"garbage.asm@Home Garbage"
 
 ROMX $01
 	"engine/link/place_waiting_text.asm"
