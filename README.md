@@ -1,3 +1,8 @@
+> [!NOTE]
+> No AI was used in the making of this project!
+> [!CAUTION]
+> This project is not permitted to be sold in any way, such as a physical reproduction cartridge or console pack-in. If you find this project on there, *you've been scammed*!
+
 # Pokémon Gold and Silver: Space World 1997 (English Translation)
 
 This is a work-in-progress English translation of the Pokémon Gold and Pokémon Silver prototypes demoed at Space World 1997.
