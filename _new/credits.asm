@@ -18,6 +18,8 @@ TranslationCredits:
 	call .string
 	ld de, CreditsText5
 	call .string
+	ld de, CreditsText6
+	call .string
 	ld a, MUSIC_TITLE
 	ld [wMusicFadeID], a
 	ld hl, wMusicFade
@@ -60,9 +62,10 @@ TranslationCredits:
 
 CreditsText1:
 	db   "#MON GOLD VERSION"
-	next   "SPACEWORLD 1997 DEMO"
-	next   "ENGLISH  TRANSLATION"
-	next   "----- CREDITS ------"
+	next "SPACEWORLD 1997 DEMO"
+	next "ENGLISH  TRANSLATION"
+	db   "       v0.1         "
+	next "----- CREDITS ------"
 	
 	next "PROGRAM:"
 	next "- MDTravis"
@@ -103,4 +106,14 @@ CreditsText5:
 	db   "github.com/         "
 	db   "MDTravisYT/pokegold-"
 	db   "spaceworld/issues"
+	db   "@"
+CreditsText6:
+	db   "   THIS PROJECT     "
+	db   "SHOULD NOT BE SOLD! "
+	db   "                    "
+	db   " If you have bought "
+	db   "   this game on a   "
+	db   "cartridge or console"
+	db   " pack-in, YOU HAVE  "
+	db   "    BEEN SCAMMED!   "
 	db   "@"
