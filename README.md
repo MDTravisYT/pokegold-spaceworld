@@ -1,5 +1,6 @@
 > [!NOTE]
 > No AI was used in the making of this project!
+
 > [!CAUTION]
 > This project is not permitted to be sold in any way, such as a physical reproduction cartridge or console pack-in. If you find this project on there, *you've been scammed*!
 
