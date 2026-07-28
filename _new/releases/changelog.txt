@@ -1,0 +1,9 @@
+v0.1.1 --------------------------------------------------------
+	- Winning a trainer battle now shows the name of the
+	  trainer fought, not just the trainer class.
+	
+	- The full Pokémon name now shows when a move is 
+	  learned
+
+v0.1 ----------------------------------------------------------
+	- Initial beta release

@@ -64,7 +64,7 @@ CreditsText1:
 	db   "#MON GOLD VERSION"
 	next "SPACEWORLD 1997 DEMO"
 	next "ENGLISH  TRANSLATION"
-	db   "       v0.1         "
+	db   "      v0.1.1        "
 	next "----- CREDITS ------"
 	
 	next "PROGRAM:"

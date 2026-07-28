@@ -245,7 +245,9 @@ _GotMoneyForWinningText:
 
 _BattleText_EnemyWasDefeated:
 	text_from_ram wOTClassName
-	text " "
+	text " @"
+	text_from_ram wStringBuffer1
+	text_start
 	line "was defeated!"
 	prompt
 	
