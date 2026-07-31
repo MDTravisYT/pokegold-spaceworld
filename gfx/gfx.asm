@@ -401,15 +401,27 @@ INCBIN "gfx/tilesets/tileset_19.2bpp"
 Tileset_19_Meta:
 INCBIN "data/tilesets/tileset_19_metatiles.bin"
 Tileset_19_Coll:
+if DEF(FIXBUGS)
+INCBIN "data/tilesets/fix/tileset_19_collision.bin"
+else
 INCBIN "data/tilesets/tileset_19_collision.bin"
+endc
 
 SECTION "gfx.asm@Bank 13 Tilesets 1a", ROMX
 Tileset_1a_GFX:
+if DEF(FIXBUGS)
+INCBIN "gfx/tilesets/tileset_1a_fix.2bpp"
+else
 INCBIN "gfx/tilesets/tileset_1a.2bpp"
+endc
 Tileset_1a_Meta:
 INCBIN "data/tilesets/tileset_1a_metatiles.bin"
 Tileset_1a_Coll:
+if DEF(FIXBUGS)
+INCBIN "data/tilesets/fix/tileset_1a_collision.bin"
+else
 INCBIN "data/tilesets/tileset_1a_collision.bin"
+endc
 
 SECTION "gfx.asm@PKMN Sprite Bank List", ROMX
 INCLUDE "gfx/pokemon/pkmn_pic_banks.inc"
@@ -611,7 +623,11 @@ INCBIN "gfx/tilesets/tileset_17.2bpp"
 Tileset_17_Meta:
 INCBIN "data/tilesets/tileset_17_metatiles.bin"
 Tileset_17_Coll:
+if DEF(FIXBUGS)
+INCBIN "data/tilesets/fix/tileset_17_collision.bin"
+else
 INCBIN "data/tilesets/tileset_17_collision.bin"
+endc
 
 SECTION "gfx.asm@Bank 37 Tilesets 18", ROMX
 Tileset_18_GFX:
@@ -619,7 +635,11 @@ INCBIN "gfx/tilesets/tileset_18.2bpp"
 Tileset_18_Meta:
 INCBIN "data/tilesets/tileset_18_metatiles.bin"
 Tileset_18_Coll:
+if DEF(FIXBUGS)
+INCBIN "data/tilesets/fix/tileset_18_collision.bin"
+else
 INCBIN "data/tilesets/tileset_18_collision.bin"
+endc
 
 SECTION "gfx.asm@Poker GFX", ROMX
 PokerGFX::

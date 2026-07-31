@@ -424,6 +424,9 @@ Data954f:
 	db PAL_TOWN_STAND	;	fuji
 	db PAL_TOWN_SOUTH	;	south
 	db PAL_TOWN_NORTH	;	north
+if DEF(FIXBUGS)
+	db PAL_TOWN_SILENT	;	special
+endc
 
 _LoadSGBLayout_ReturnFromJumpTable:
 	push de

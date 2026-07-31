@@ -155,7 +155,11 @@ ItemEffects:
 	dw Dummy_NewItemEffect ; ITEM_MOMS_LOVE
 	dw Dummy_NewItemEffect ; ITEM_SMOKESCREEN
 	dw Dummy_NewItemEffect ; ITEM_WET_HORN
+if DEF(FIXBUGS)
+	dw SkateboardEffect    ; ITEM_SKATEBOARD
+else
 	dw Dummy_NewItemEffect ; ITEM_SKATEBOARD
+endc
 	dw Dummy_NewItemEffect ; ITEM_CRIMSON_JEWEL
 	dw Dummy_NewItemEffect ; ITEM_INVISIBLE_WALL
 	dw Dummy_NewItemEffect ; ITEM_SHARP_SCYTHE
@@ -733,7 +737,48 @@ BicycleEffect:
 	call PlayMapMusic
 	call ScreenCleanup
 	ret
+if DEF(FIXBUGS)
+SkateboardEffect:
+	xor a
+	ld [wItemEffectSucceeded], a
+	call .CheckEnvironment
+	ret c
+	ldh a, [hROMBank]
+	ld hl, .UseSkateboard
+	call QueueScript
+	ld a, 1
+	ld [wItemEffectSucceeded], a
+	ret
 
+.CheckEnvironment:
+	ret z
+
+.nope
+	scf
+	ret
+
+.UseSkateboard:
+	call RefreshScreen
+	ld a, [wPlayerState]
+	cp PLAYER_SKATE
+	jr z, .get_off_skateboard
+	ld a, PLAYER_SKATE
+	ld [wPlayerState], a
+	ld hl, ItemGotOnText
+	jr .done
+
+.get_off_skateboard
+	xor a
+	ld [wPlayerState], a
+	ld hl, ItemGotOffText
+.done
+	call MenuTextBox
+	call CloseWindow
+	call RedrawPlayerSprite
+	call PlayMapMusic
+	call ScreenCleanup
+	ret
+endc
 EvoStoneEffect:
 	ld a, [wBattleMode]
 	and a

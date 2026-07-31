@@ -8,6 +8,10 @@ SlowpokeWellEntrance_MapEvents::
 	dw $0 ; unknown
 
 	def_warp_events
+if DEF(FIXBUGS)
+	warp_event  9, 17, SLOWPOKE_WELL_MAIN, 1, 0
+	warp_event 11,  0, BAADON, 10, 0
+endc
 
 	def_bg_events
 

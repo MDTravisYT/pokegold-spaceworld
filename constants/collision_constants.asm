@@ -8,7 +8,15 @@
 ; What exactly flag means or if it
 ; means anything is up to Type.
 ; Old Types:
-; ???
+; 0 - Regular             8 - BG Event
+; 1 - Regular 2           9 - unused
+; 2 - Water               A - unused
+; 3 - ???                 B - unused
+; 4 - Water 2             C - unused
+; 5 - Pits                D - unused
+; 6 - Warps               E - unused
+; 7 - Special Talk Action F - unused
+;
 ; New Types:
 ; 0 - Regular            8 - ???
 ; 1 - Trees, Grass etc.  9 - Special Talk Action
@@ -40,7 +48,9 @@ DEF OLD_COLLISION_WALL     EQU $04
 
 DEF OLD_COLLISION_LEDGE    EQU $11
 
-DEF OLD_COLLISION_WATER2_S EQU $40
+DEF OLD_COLLISION_WATER2_S  EQU $40
+DEF OLD_COLLISION_WHIRLPOOL EQU $44
+DEF OLD_COLLISION_WATERFALL EQU $48
 
 DEF OLD_COLLISION_ROCK EQU $51
 
@@ -52,8 +62,19 @@ DEF OLD_COLLISION_SHOP_SIGN EQU $71
 DEF OLD_COLLISION_MART_ITEM EQU $72
 DEF OLD_COLLISION_COUNTER   EQU $73
 
-DEF OLD_COLLISION_CUT_TREE EQU $80
-DEF OLD_COLLISION_GRASS    EQU $82
+if DEF(FIXBUGS)
+DEF OLD_COLLISION_CUT_TREE      EQU $12
+DEF OLD_COLLISION_GRASS_82      EQU $08
+DEF OLD_COLLISION_GRASS_83      EQU $18
+DEF OLD_COLLISION_CAVE_GRASS_8A EQU $08
+DEF OLD_COLLISION_CAVE_GRASS_8B EQU $18
+else
+DEF OLD_COLLISION_CUT_TREE      EQU $80
+DEF OLD_COLLISION_GRASS_82      EQU $82
+DEF OLD_COLLISION_GRASS_83      EQU $83
+DEF OLD_COLLISION_CAVE_GRASS_8A EQU $8A
+DEF OLD_COLLISION_CAVE_GRASS_8B EQU $8B
+endc
 
 ; new collision constants
 
